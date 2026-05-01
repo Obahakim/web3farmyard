@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /hakim
+Disallow: /api-proxy.php
+
+Sitemap: https://www.web3farmyard.com/sitemap.xml

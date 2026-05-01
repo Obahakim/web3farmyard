@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/junkyard/layout,_N_T_/junkyard/[project]/layout,_N_T_/junkyard/[project]/page,_N_T_/junkyard/luna-ust"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/junkyard/$d$project/__PAGE__",
+    "/junkyard/$d$project",
+    "/junkyard",
+    "/_index",
+    "/_head"
+  ]
+}

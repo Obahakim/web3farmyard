@@ -1,0 +1,3 @@
+module.exports=[58802,a=>{"use strict";var b=a.i(66364);a.s(["default",0,function({src:a,alt:c,size:d=36,fallback:e,className:f="",padding:g=4}){let h=(c||"?").split(" ").map(a=>a[0]||"").join("").slice(0,2).toUpperCase();return(0,b.jsx)("img",{src:a,alt:c,width:d,height:d,className:f,style:{objectFit:"contain",padding:g,display:"block"},onError:a=>{let b=a.target;b.style.display="none",b.parentElement&&(b.parentElement.innerHTML=e||`<span style="font-family:'Space Mono',monospace;font-size:${Math.floor(d/3)}px;font-weight:700;color:#666">${h}</span>`)}})}])}];
+
+//# sourceMappingURL=Documents_web3farmyard_w3f-next_components_ChainLogo_tsx_0tw7laz._.js.map

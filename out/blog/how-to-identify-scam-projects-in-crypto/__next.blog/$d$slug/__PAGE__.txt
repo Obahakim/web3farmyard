@@ -1,0 +1,393 @@
+1:"$Sreact.fragment"
+2:I[69548,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0tfvsrc11i63-.js","/_next/static/chunks/10lwf4yd6.~~w.js"],"default"]
+3:I[4735,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0tfvsrc11i63-.js","/_next/static/chunks/10lwf4yd6.~~w.js"],""]
+d:I[26519,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0tfvsrc11i63-.js","/_next/static/chunks/10lwf4yd6.~~w.js"],"default"]
+11:I[66450,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+4:T2675,
+<figure class="wp-block-image size-large"><img decoding="async" src="https://web3farmyard.com/cms/wp-content/uploads/2026/04/AZ216Z-9Gtyg35c1Gw9eLA-AZ216Z-9PwgjwiCMBFYgfw-1024x584.jpg" alt="How to identify Scam crypto projects" class="wp-image-55" title="Shows the danger of falling victim of crypto scams"/></figure>
+
+
+
+<h2 class="wp-block-heading">How to Identify Scam Crypto Projects: A Beginner-Friendly Guide</h2>
+
+
+
+<p>Crypto can be exciting. New tokens launch every day, communities form overnight, and some projects promise life-changing gains. But mixed into that excitement is a darker corner of the market: scams.</p>
+
+
+
+<p>For beginners, scam projects can look polished, professional, and convincing. A sleek website, a flashy roadmap, and a loud community on social media can make almost anything seem legitimate.</p>
+
+
+
+<p>That is why learning how to identify scam crypto projects is one of the most valuable skills you can build.</p>
+
+
+
+<p>This guide breaks it down in simple language so you can protect your money, your time, and your peace of mind.</p>
+
+
+
+<p>What Is a Scam Crypto Project?</p>
+
+
+
+<p>A scam crypto project is a token, platform, NFT collection, or Web3 product created mainly to deceive people, waste their precious time and take their money</p>
+
+
+
+<p>Some scams disappear quickly after launch. Others move slowly, pretending to be real businesses while draining users over time.</p>
+
+
+
+<p>Their main goal is usually to get investors to buy into their worthless token, steal wallet funds. They Collect deposits Create hype, then dump on buyers and vanish. Sometimes, Harvest user data or seed phrases.</p>
+
+
+
+<p>In short; they sell dreams and keep the cash.</p>
+
+
+
+<p>Why Beginners Get Targeted Most</p>
+
+
+
+<p>Scammers often target beginners most because new users may not know what warning signs to watch for.</p>
+
+
+
+<p>These scammers always seem to rely on FOMO (fear of missing out), Urgency (trying to convince you to profit from them, the earlier the better they will say), Confusing technical language, Fake success stories, Social proof from bots or paid promoters</p>
+
+
+
+<p>If you feel rushed and uninformed, then you are easier to trap.</p>
+
+
+
+<p>10 Ways to Identify Scam Crypto Projects</p>
+
+
+
+<ol class="wp-block-list">
+<li>Unrealistic Profit Promises</li>
+</ol>
+
+
+
+<p>If a project guarantees huge returns with no risk, treat it as a warning sign.</p>
+
+
+
+<p>Examples:</p>
+
+
+
+<pre class="wp-block-code"><code>•   “100x guaranteed”
+•   “Daily passive income forever”
+•   “Turn $100 into $10,000 fast”</code></pre>
+
+
+
+<p>No real market works like a vending machine.</p>
+
+
+
+<p>Legitimate investments involve risk, uncertainty, and volatility.</p>
+
+
+
+<p>2.Team With No Credibility</p>
+
+
+
+<p>Some good builders stay anonymous in crypto, but you should be cautious.</p>
+
+
+
+<p>Ask:</p>
+
+
+
+<pre class="wp-block-code"><code>•   Is there a visible team?
+•   Do founders have history in tech or crypto?
+•   Can their claims be verified?
+•   Are LinkedIn profiles real? (If they don’t have LinkedIn verify X(formerly Twitter) accounts)</code></pre>
+
+
+
+<p>If the team has zero accountability and huge promises, danger increases.</p>
+
+
+
+<ol start="3" class="wp-block-list">
+<li>Poor or Copied Website</li>
+</ol>
+
+
+
+<p>Many scam projects rush their websites.</p>
+
+
+
+<p>In their hurry they make unconventional mistakes. Not that there can’t be bugs but there are mistakes that doesn’t make sense for a proper business.<br>Look for:</p>
+
+
+
+<pre class="wp-block-code"><code>•   Broken links
+•   Grammar mistakes
+•   Impressive trendy, overused words or phrases that sound impressive but doesn’t clear meaning or real substance. 
+•   Stolen images; if they don’t care about creating their own images, how can they be real serious?
+•   No real product </code></pre>
+
+
+
+<ol start="4" class="wp-block-list">
+<li>No Clear Use Case<br>What does this project actually do?</li>
+</ol>
+
+
+
+<p>If the answer is vague, confusing, or full of jargon like “Revolutionizing decentralized synergy” or something like “Next-generation AI blockchain wealth engine”, RUN.</p>
+
+
+
+<p>If you cannot explain the product in plain language, leave it for someone else. That way if it flops, you will be safe and if it doesn’t flop, you know you did right but was unlucky.</p>
+
+
+
+<ol start="5" class="wp-block-list">
+<li>Suspicious Tokenomics</li>
+</ol>
+
+
+
+<p>Tokenomics means how tokens are distributed. So while you farm projects or research them, keep an eye out for when the tokenomics is released. How the distribution of tokens are structured, matters a lot.<br>Red flags you should look out for in Tokenomics include:</p>
+
+
+
+<pre class="wp-block-code"><code>•   Team owns most of supply
+•   Tiny public allocation
+•   No lockups for insiders
+•   Massive future unlocks
+•   Hidden wallet concentration</code></pre>
+
+
+
+<p>If a team’s wallet or wallets control everything, users may be the one being farmed.</p>
+
+
+
+<ol start="6" class="wp-block-list">
+<li>Fake Community Hype</li>
+</ol>
+
+
+
+<p>Does having a large following on C or other social platform mean a project is genuine? No. Large follower counts can be purchased.<br>Instead Watch for:</p>
+
+
+
+<pre class="wp-block-code"><code>•   Thousands of followers but little real engagement
+•   Comments like “Great project!”
+•   Constant shilling with no real substance/meaningful message 
+•   Telegram groups full of bots
+•   Recycling its own content over and over without creating new fresh contents
+•   Ai generated posts and images. </code></pre>
+
+
+
+<ol start="7" class="wp-block-list">
+<li>Pressure to Buy Immediately<br>Guess what scammers love as much as they love lying? Scammers love countdown clocks. “Last chance”, “Buy now before listing”, “Only 10 minutes left”, “You’ll regret missing this”</li>
+</ol>
+
+
+
+<p>Urgency is often used to stop thinking and trigger your emergency button.If an opportunity cannot survive one night of research, you’re too late. Let it go</p>
+
+
+
+<ol start="8" class="wp-block-list">
+<li>No Security Audit or Transparency<br>For DeFi projects especially, smart contract risk matters. You need to check whether the project shares:Audit reports, Open-source code, their security practices, Risk disclosures.</li>
+</ol>
+
+
+
+<p>An audit is not a guarantee that a project is legit, but it is better than total secrecy. What is Blockchain if it’s not transparent?</p>
+
+
+
+<ol start="9" class="wp-block-list">
+<li>Influencers Pushing It Aggressively</li>
+</ol>
+
+
+
+<p>Some influencers are paid to promote projects/tokens without proper disclosure(stating that it’s a paid ad) making “Hidden gem” videos every day. When you notice sponsored hype threads especially if it includes Price predictions with no analysis, RUN</p>
+
+
+
+<ol start="10" class="wp-block-list">
+<li>Withdrawal Problems<br>If users can deposit easily but struggle to withdraw, this is a major danger sign.</li>
+</ol>
+
+
+
+<p>Watch for complaints about:</p>
+
+
+
+<pre class="wp-block-code"><code>•   Frozen funds
+•   Delayed withdrawals
+•   Endless verification requests
+•   Extra fees to release funds</code></pre>
+
+
+
+<p>This is especially for DeFi/Dex users. I once had an experience where I swapped on a dex and the Pool responsible for that swap doesn’t have enough to take me back to USDT. I lost about 35% of the amount I was using to swap. This also ties somehow into being careful of slippage but that’s a lesson for another day.</p>
+
+
+
+<p>How to Research a Crypto Project Properly</p>
+
+
+
+<p>Before investing, do this checklist:</p>
+
+
+
+<p>Read the Website Carefully</p>
+
+
+
+<p>Can you clearly understand what they do?</p>
+
+
+
+<p>Check the Team</p>
+
+
+
+<p>Do real people stand behind it?</p>
+
+
+
+<p>Search Community Feedback</p>
+
+
+
+<p>Look on socials; Reddit, X, Discord and telegram groups.</p>
+
+
+
+<p>Study Token Supply</p>
+
+
+
+<p>Who owns the tokens?</p>
+
+
+
+<p>Test the Product</p>
+
+
+
+<p>If possible, try it with zero or tiny amounts first.</p>
+
+
+
+<p>Ask Yourself One Honest Question</p>
+
+
+
+<p>Would this still look attractive without the hype?</p>
+
+
+
+<p>That question slices through fog and opens your eye.</p>
+
+
+
+<p>Common Types of Crypto Scams</p>
+
+
+
+<p>Rug Pull: Developers hype token, attract buyers, then dump or remove liquidity.</p>
+
+
+
+<p>Ponzi Model: Old users paid using money from new users.</p>
+
+
+
+<p>Fake Presale: Money collected, token never launches.</p>
+
+
+
+<p>Wallet Drainer: websites tricks users into signing malicious transactions. Sometimes this can be a link to a website you thought you know. So be careful and always verify URL</p>
+
+
+
+<p>Copycat Project: Uses branding similar to famous projects.</p>
+
+
+
+<p>Best Safety Rules for Beginners</p>
+
+
+
+<pre class="wp-block-code"><code>•   Never invest money you cannot lose
+•   Never share seed phrase
+•   Double-check URLs
+•   Use separate wallet for risky experiments
+•   Start small
+•   Ignore emotional pressure
+•   Research before buying into any token </code></pre>
+
+
+
+<p>In crypto, you can never be too careful. Caution is not weakness. It is armor.</p>
+
+
+
+<p>In conclusion</p>
+
+
+
+<p>The crypto world has real innovation, but it also attracts opportunists. You do not need to know everything at once to stay safe. You only need a few strong habits.</p>
+
+
+
+<p>Just take it easy; Slow down. Verify claims. Ask simple questions. If something feels engineered to trigger greed, that feeling is worth listening to. Personally, my own instincts has saved me a lot of times. Just don’t be judgmental, follow specific rules. And in crypto, avoiding one disaster can matter more than catching one moonbag<br><br><br>Go to our <a href="https://web3farmyard.com/junkyard">JunkYard</a>, the first graveyard for (dead) crypto projects, to see how many millions have been lost and where/how.<br></p>
+0:{"rsc":["$","$1","c",{"children":[[["$","$L2",null,{}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO\",\"datePublished\":\"2026-04-22T16:33:30\",\"dateModified\":\"2026-04-22T23:59:08\",\"author\":{\"@type\":\"Person\",\"name\":\"defiOG.eth\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Web3Farmyard\",\"url\":\"https://www.web3farmyard.com\"},\"description\":\"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\",\"mainEntityOfPage\":\"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto\"}"}}],["$","main",null,{"className":"max-w-[760px] mx-auto px-7 py-8","children":[["$","nav",null,{"className":"mb-6","children":["$","ol",null,{"className":"flex gap-2 font-mono text-[9px] flex-wrap","style":{"listStyle":"none","color":"#999"},"children":[["$","li",null,{"children":["$","$L3",null,{"href":"/","style":{"color":"#1a6b00"},"children":"Home"}]}],["$","li",null,{"children":"/"}],["$","li",null,{"children":["$","$L3",null,{"href":"/blog","style":{"color":"#1a6b00"},"children":"Blog"}]}],["$","li",null,{"children":"/"}],["$","li",null,{"style":{"overflow":"hidden","textOverflow":"ellipsis","whiteSpace":"nowrap","maxWidth":200},"children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}]]}]}],["$","header",null,{"style":{"marginBottom":32},"children":[["$","div",null,{"className":"flex gap-2 flex-wrap mb-4","children":[[["$","span","Blog",{"className":"font-mono text-[8px] font-bold px-3 py-[3px] rounded-full","style":{"background":"#dcfce7","color":"#166534"},"children":"Blog"}]],["$","span",null,{"className":"font-mono text-[8px]","style":{"color":"#aaa"},"children":"6 min read"}]]}],["$","h1",null,{"className":"font-serif font-bold text-dark mb-4","style":{"fontSize":"clamp(26px,5vw,44px)","lineHeight":1.15,"letterSpacing":"-0.02em"},"dangerouslySetInnerHTML":{"__html":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}}],["$","div",null,{"className":"flex items-center gap-4 flex-wrap","children":[["$","div",null,{"className":"font-mono text-[9px]","style":{"color":"#888"},"children":["By ",["$","strong",null,{"style":{"color":"#0a0a0a"},"children":"defiOG.eth"}]]}],["$","div",null,{"className":"font-mono text-[9px]","style":{"color":"#aaa"},"children":"22 April 2026"}],["$","div",null,{"className":"font-mono text-[9px]","style":{"color":"#ccc"},"children":["Updated ","22 April 2026"]}]]}]]}],"",["$","div",null,{"className":"wp-content","style":{"fontSize":16,"lineHeight":1.85,"color":"#333","marginBottom":40},"dangerouslySetInnerHTML":{"__html":"$4"}}],"$L5","$L6","$L7"]}],"$L8","$L9"],["$La","$Lb"],"$Lc"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"iqsNnoPoQ1r0SB1zUK2Wn"}
+5:["$","div",null,{"style":{"borderTop":"1px solid #f0f0f0","paddingTop":24,"marginBottom":32},"children":[["$","span",null,{"className":"font-mono text-[8px]","style":{"color":"#aaa","marginRight":12},"children":"TOPICS:"}],[["$","span","Blog",{"className":"font-mono text-[8px] font-bold px-3 py-[3px] rounded-full mr-2","style":{"background":"#f0f0f0","color":"#555"},"children":"Blog"}]]]}]
+6:["$","div",null,{"className":"flex gap-3 flex-wrap mb-12","children":[["$","$L3",null,{"href":"/blog","className":"btn-outline","children":"← ALL POSTS"}],["$","$L3",null,{"href":"/toolkit","className":"btn-primary","children":"🛠️ Web3 Toolkit"}]]}]
+7:["$","div",null,{"style":{"background":"#0a0a0a","borderRadius":20,"padding":32,"marginBottom":8},"children":[["$","div",null,{"className":"font-mono text-[8px] tracking-[0.2em] mb-2","style":{"color":"#c8ff00"},"children":"FREE NEWSLETTER"}],["$","h2",null,{"className":"font-serif font-bold mb-3","style":{"fontSize":22,"color":"#f0f0f0"},"children":"Enjoyed this? Get more like it."}],["$","p",null,{"style":{"fontSize":14,"color":"#888","lineHeight":1.7,"marginBottom":24},"children":"Airdrop alerts, DeFi analysis, post-mortems. Signal only. No spam."}],["$","$Ld",null,{}]]}]
+e:T82b,
+        .wp-content h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:#0a0a0a; margin:36px 0 16px; line-height:1.2; }
+        .wp-content h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:#0a0a0a; margin:28px 0 12px; }
+        .wp-content h4 { font-family:'Space Mono',monospace; font-size:13px; font-weight:700; color:#0a0a0a; margin:24px 0 10px; letter-spacing:0.05em; text-transform:uppercase; }
+        .wp-content p  { margin:0 0 20px; }
+        .wp-content a  { color:#1a6b00; font-weight:600; }
+        .wp-content a:hover { color:#0a0a0a; }
+        .wp-content ul, .wp-content ol { margin:0 0 20px 24px; }
+        .wp-content li { margin-bottom:8px; }
+        .wp-content strong { color:#0a0a0a; font-weight:700; }
+        .wp-content blockquote { border-left:4px solid #c8ff00; padding:16px 24px; margin:28px 0; background:#f9ffe0; border-radius:0 12px 12px 0; font-style:italic; color:#444; }
+        .wp-content code { background:#f0f0f0; padding:2px 6px; border-radius:4px; font-family:'Space Mono',monospace; font-size:13px; color:#cc0000; }
+        .wp-content pre { background:#0a0a0a; color:#c8ff00; padding:20px 24px; border-radius:12px; overflow-x:auto; margin:0 0 20px; font-family:'Space Mono',monospace; font-size:13px; line-height:1.7; }
+        .wp-content pre code { background:none; color:inherit; padding:0; }
+        .wp-content img { max-width:100%; border-radius:12px; margin:8px 0; }
+        .wp-content table { width:100%; border-collapse:collapse; margin:0 0 20px; }
+        .wp-content th { background:#0a0a0a; color:#c8ff00; font-family:'Space Mono',monospace; font-size:11px; padding:10px 14px; text-align:left; }
+        .wp-content td { padding:10px 14px; border-bottom:1px solid #f0f0f0; font-size:14px; color:#444; }
+        .wp-content hr { border:none; border-top:1px solid #e8e8e8; margin:32px 0; }
+        .wp-content .wp-block-callout, .wp-content .notice { background:#f9ffe0; border-left:4px solid #c8ff00; padding:16px 20px; border-radius:0 10px 10px 0; margin:0 0 20px; }
+      8:["$","style",null,{"children":"$e"}]
+9:["$","footer",null,{"className":"bg-[#0a0a0a] border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 py-16","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-[#1a6b00] mb-4","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Learn Web3, find airdrops, farm profitably. A guide for beginners."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Platform"}],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":["$","$L3",null,{"href":"/","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Home"}]}],["$","li",null,{"children":["$","$L3",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Onboarding"}]}],["$","li",null,{"children":["$","$L3",null,{"href":"/toolkit","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Toolkit"}]}],["$","li",null,{"children":["$","$L3",null,{"href":"/airdrops","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Airdrops"}]}],["$","li",null,{"children":["$","$L3",null,{"href":"/blog","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Blog"}]}],["$","li",null,{"children":["$","$L3",null,{"href":"/junkyard","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Junkyard"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Resources"}],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":["$","a",null,{"href":"https://metamask.io","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"MetaMask"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://uniswap.org","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Uniswap"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://aave.com","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Aave"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://galxe.com","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Galxe"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://taskon.xyz","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"TaskOn"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://zealy.io","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Zealy"}]}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Follow Us"}],["$","ul",null,{"className":"space-y-3 text-sm","children":[["$","li",null,{"children":["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":[["$","span",null,{"children":"𝕏 Twitter"}],["$","span",null,{"className":"text-xs text-gray-600","children":"@web3farmyard"}]]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://tiktok.com/@web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":[["$","span",null,{"children":"🎵 TikTok"}],["$","span",null,{"className":"text-xs text-gray-600","children":"@web3farmyard"}]]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://discord.gg/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":["$","span",null,{"children":"🎮 Discord"}]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://t.me/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":["$","span",null,{"children":"💬 Telegram"}]}]}]]}]]}]]}],["$","div",null,{"className":"border-t border-gray-800 pt-8","children":["$","div",null,{"className":"flex flex-col md:flex-row justify-between items-center gap-4","children":["$Lf","$L10"]}]}]]}]}]
+a:["$","script","script-0",{"src":"/_next/static/chunks/0tfvsrc11i63-.js","async":true}]
+b:["$","script","script-1",{"src":"/_next/static/chunks/10lwf4yd6.~~w.js","async":true}]
+c:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+f:["$","p",null,{"className":"text-gray-500 text-sm","children":"© 2024 Web3Farmyard. Not financial advice. DYOR (Do Your Own Research)."}]
+10:["$","div",null,{"className":"flex gap-6 text-sm","children":[["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Twitter"}],["$","a",null,{"href":"https://tiktok.com/@web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"TikTok"}],["$","a",null,{"href":"https://discord.gg/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Discord"}],["$","a",null,{"href":"https://t.me/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Telegram"}]]}]
+13:null

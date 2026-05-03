@@ -1,404 +1,330 @@
-import { generateHomepageMetadata } from '@/lib/metadata'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import NewsletterForm from '@/components/NewsletterForm'
+import { getAllChains, fmt, fmtPct, llamaLogo, toSlug } from '@/lib/defillama'
+import { SEED_PROJECTS } from '@/lib/junkyard-data'
 
-export const metadata = generateHomepageMetadata()
+export const metadata: Metadata = {
+  title: 'Web3Farmyard — Live DeFi Data, Crypto Airdrops & Graveyard',
+  description: 'Track live TVL across every blockchain, discover profitable crypto airdrops, and learn from the biggest failures in Web3 history.',
+  keywords: [
+    'DeFi',
+    'airdrops',
+    'TVL tracker',
+    'blockchain data',
+    'crypto farming',
+    'Web3 learning',
+  ],
+  alternates: { canonical: 'https://www.web3farmyard.com/' },
+  openGraph: {
+    title: 'Web3Farmyard — Live DeFi Data & Airdrops',
+    description: 'Track live TVL, discover airdrops, learn from failures.',
+    url: 'https://www.web3farmyard.com/',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.web3farmyard.com/og-image.png',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+}
 
-export default function HomePage() {
+export const revalidate = 3600
+
+export default async function HomePage() {
+  const chains = await getAllChains()
+  const top5 = chains.slice(0, 5)
+  const totalTvl = chains.reduce((s, c) => s + (c.tvl || 0), 0)
+  
+  const SCHEMA = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Web3Farmyard',
+    url: 'https://www.web3farmyard.com',
+    description: 'Live DeFi data, airdrops, and crypto graveyard',
+  }
+
   return (
-    <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff', padding: '40px 20px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Hero Section */}
-        <section style={{ marginBottom: '80px', textAlign: 'center' }}>
-          <h1 style={{ 
-            fontSize: '64px', 
-            marginBottom: '20px',
-            color: '#c8ff00',
-            fontWeight: '700',
-            letterSpacing: '-0.02em'
-          }}>
-             Web3Farmyard
-          </h1>
-          <p style={{ 
-            fontSize: '20px', 
-            marginBottom: '40px', 
-            color: '#999',
-            lineHeight: '1.6',
-            maxWidth: '600px',
-            margin: '0 auto 40px'
-          }}>
-            Learn DeFi. Track live chain data. Discover airdrops. Earn while you learn.
-          </p>
-        </section>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
+      />
+      <Nav />
+      <main className="max-w-[1100px] mx-auto px-7">
 
-        {/* Newsletter Signup */}
-        <section style={{
-          background: '#111',
-          padding: '60px 40px',
-          borderRadius: '12px',
-          marginBottom: '80px',
-          textAlign: 'center'
-        }}>
-          <h2 style={{
-            fontSize: '28px',
-            marginBottom: '15px',
-            color: '#f0f0f0'
-          }}>
-            Join 1000+ Web3 Farmers
-          </h2>
-          <p style={{
-            fontSize: '16px',
-            color: '#999',
-            marginBottom: '30px'
-          }}>
-            Get weekly insights on airdrops, DeFi strategies, and on-chain opportunities.
-          </p>
-
-          <form style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '15px',
-            maxWidth: '500px',
-            margin: '0 auto',
-            marginBottom: '20px'
-          }}>
-            {/* Email Input */}
-            <input 
-              type="email" 
-              placeholder="your@email.com" 
-              style={{ 
-                padding: '14px 18px', 
-                background: '#0a0a0a',
-                border: '1px solid #333',
-                color: '#fff',
-                borderRadius: '6px',
-                fontSize: '16px',
-                outline: 'none'
-              }}
-              required
-            />
-
-            {/* Farmer Name */}
-            <input 
-              type="text" 
-              placeholder="Your farmer name (optional)" 
-              style={{ 
-                padding: '14px 18px', 
-                background: '#0a0a0a',
-                border: '1px solid #333',
-                color: '#fff',
-                borderRadius: '6px',
-                fontSize: '16px',
-                outline: 'none'
-              }}
-            />
-
-            {/* Checkbox */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              fontSize: '14px',
-              color: '#999'
-            }}>
-              <input 
-                type="checkbox" 
-                id="subscribe"
-                defaultChecked
-                style={{
-                  width: '20px',
-                  height: '20px',
-                  cursor: 'pointer'
-                }}
-              />
-              <label htmlFor="subscribe" style={{ cursor: 'pointer' }}>
-                I want to receive weekly airdrop tips and Web3 insights
-              </label>
-            </div>
-
-            {/* Submit Button */}
-            <button 
-              type="submit"
+        {/* HERO */}
+        <section className="py-16 animate-fadeUp">
+          <div
+            className="font-mono text-[8px] tracking-[0.25em] mb-3"
+            style={{ color: '#1a6b00' }}
+          >
+            DECENTRALIZED · LIVE · YOURS
+          </div>
+          <h1
+            className="font-serif font-bold text-dark mb-4"
+            style={{
+              fontSize: 'clamp(36px,6vw,68px)',
+              lineHeight: 1.05,
+              letterSpacing: '-0.03em',
+            }}
+          >
+            The farmer&apos;s edge
+            <br />
+            <span
               style={{
-                padding: '14px',
-                background: '#c8ff00',
-                color: '#0a0a0a',
-                border: 'none',
-                borderRadius: '6px',
-                fontSize: '16px',
-                fontWeight: '700',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                letterSpacing: '0.5px'
+                WebkitTextStroke: '1.5px #c8ff00',
+                color: 'transparent',
               }}
             >
-               Subscribe & Start Learning
-            </button>
-          </form>
-
-          <p style={{ fontSize: '12px', color: '#666' }}>
-            No spam, unsubscribe anytime. Read our privacy policy.
+              in every cycle.
+            </span>
+          </h1>
+          <p
+            className="text-[15px] mb-8 max-w-[520px]"
+            style={{ color: '#555', lineHeight: 1.8 }}
+          >
+            Live TVL across every blockchain. Curated airdrops. A permanent
+            record of everything that failed — so you don&apos;t repeat it.
           </p>
-        </section>
-
-        {/* Featured Pages Grid */}
-        <section style={{ marginBottom: '80px' }}>
-          <h2 style={{ 
-            fontSize: '32px', 
-            marginBottom: '40px',
-            color: '#f0f0f0'
-          }}>
-            Your Learning Path
-          </h2>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '30px'
-          }}>
-            {/* Onboarding Card */}
-            <a href="/onboarding/day-1" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div style={{
-                background: '#111',
-                padding: '40px 30px',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                border: '1px solid #222',
-                height: '100%'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#1a1a1a'
-                e.currentTarget.style.borderColor = '#c8ff00'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#111'
-                e.currentTarget.style.borderColor = '#222'
-              }}>
-                <div style={{ fontSize: '48px', marginBottom: '15px' }}>🌱</div>
-                <h3 style={{ 
-                  color: '#c8ff00', 
-                  marginBottom: '12px',
-                  fontSize: '20px',
-                  fontWeight: '700'
-                }}>
-                  Onboarding
-                </h3>
-                <p style={{ 
-                  color: '#999',
-                  fontSize: '14px',
-                  lineHeight: '1.6'
-                }}>
-                  Learn Web3 fundamentals in 7 days. Create wallets, execute swaps, and build your on-chain reputation.
-                </p>
-                <div style={{
-                  marginTop: '20px',
-                  fontSize: '12px',
-                  color: '#666'
-                }}>
-                  ⏱️ 30 min per day
-                </div>
-              </div>
-            </a>
-
-            {/* Airdrops Card */}
-            <a href="/airdrops" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div style={{
-                background: '#111',
-                padding: '40px 30px',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                border: '1px solid #222',
-                height: '100%'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#1a1a1a'
-                e.currentTarget.style.borderColor = '#00ffe0'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#111'
-                e.currentTarget.style.borderColor = '#222'
-              }}>
-                <div style={{ fontSize: '48px', marginBottom: '15px' }}>🎁</div>
-                <h3 style={{ 
-                  color: '#00ffe0', 
-                  marginBottom: '12px',
-                  fontSize: '20px',
-                  fontWeight: '700'
-                }}>
-                  Airdrops
-                </h3>
-                <p style={{ 
-                  color: '#999',
-                  fontSize: '14px',
-                  lineHeight: '1.6'
-                }}>
-                  Curated airdrop opportunities with risk ratings, deadlines, and step-by-step tasks.
-                </p>
-                <div style={{
-                  marginTop: '20px',
-                  fontSize: '12px',
-                  color: '#666'
-                }}>
-                  📊 {Math.floor(Math.random() * 50) + 20}+ active airdrops
-                </div>
-              </div>
-            </a>
-
-            {/* Toolkit Card */}
-            <a href="/toolkit" style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div style={{
-                background: '#111',
-                padding: '40px 30px',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.3s',
-                border: '1px solid #222',
-                height: '100%'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#1a1a1a'
-                e.currentTarget.style.borderColor = '#ff9f00'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#111'
-                e.currentTarget.style.borderColor = '#222'
-              }}>
-                <div style={{ fontSize: '48px', marginBottom: '15px' }}>🛠️</div>
-                <h3 style={{ 
-                  color: '#ff9f00', 
-                  marginBottom: '12px',
-                  fontSize: '20px',
-                  fontWeight: '700'
-                }}>
-                  Toolkit
-                </h3>
-                <p style={{ 
-                  color: '#999',
-                  fontSize: '14px',
-                  lineHeight: '1.6'
-                }}>
-                  30+ essential tools: wallets, DEXs, bridges, lending protocols, and analytics.
-                </p>
-                <div style={{
-                  marginTop: '20px',
-                  fontSize: '12px',
-                  color: '#666'
-                }}>
-                  🔗 All verified & tested
-                </div>
-              </div>
-            </a>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/airdrops" className="btn-primary">
+              🌾 EXPLORE AIRDROPS
+            </Link>
+            <Link href="/showroom" className="btn-outline">
+              📊 LIVE CHAIN DATA
+            </Link>
           </div>
         </section>
 
-        {/* DeFi Showroom Card */}
-        <section style={{
-          background: 'linear-gradient(135deg, #1a1a1a 0%, #111 100%)',
-          padding: '60px 40px',
-          borderRadius: '12px',
-          marginBottom: '80px',
-          border: '1px solid #222'
-        }}>
-          <h2 style={{ 
-            fontSize: '28px', 
-            marginBottom: '20px',
-            color: '#f0f0f0'
-          }}>
-            📊 Live DeFi Metrics
-          </h2>
-          <p style={{ 
-            color: '#999',
-            marginBottom: '30px',
-            fontSize: '16px'
-          }}>
-            Track 191+ blockchains in real-time. See TVL, protocol counts, and 24h changes.
-          </p>
-          <a href="/showroom" style={{
-            display: 'inline-block',
-            padding: '14px 28px',
-            background: '#c8ff00',
-            color: '#0a0a0a',
-            textDecoration: 'none',
-            borderRadius: '6px',
-            fontWeight: '700',
-            transition: 'all 0.3s'
-          }}>
-            Explore Showroom →
-          </a>
+        {/* LIVE STATS */}
+        <section className="glass p-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              ['TOTAL TVL TRACKED', fmt(totalTvl), '#1a6b00'],
+              ['CHAINS TRACKED', chains.length.toString(), '#0a0a0a'],
+              ['TOP CHAIN', chains[0]?.name || '—', '#0a0a0a'],
+              ['CONFIRMED DEAD', SEED_PROJECTS.length + '+ Projects', '#ff4d4d'],
+            ].map(([label, val, color]) => (
+              <div key={label}>
+                <div
+                  className="font-mono text-[8px] tracking-[0.12em] mb-1"
+                  style={{ color: '#aaa' }}
+                >
+                  {label}
+                </div>
+                <div
+                  className="font-serif text-2xl font-bold"
+                  style={{ color }}
+                >
+                  {val}
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* The Graveyard Card */}
-        <section style={{
-          background: 'linear-gradient(135deg, #2a1a1a 0%, #1a0a0a 100%)',
-          padding: '60px 40px',
-          borderRadius: '12px',
-          marginBottom: '80px',
-          border: '1px solid #441111'
-        }}>
-          <h2 style={{ 
-            fontSize: '28px', 
-            marginBottom: '20px',
-            color: '#ff6b6b'
-          }}>
-            ⚰️ The Crypto Graveyard
-          </h2>
-          <p style={{ 
-            color: '#999',
-            marginBottom: '30px',
-            fontSize: '16px'
-          }}>
-            Learn from 29+ major failures. Luna, FTX, BitConnect, and more. Don't repeat history.
-          </p>
-          <a href="/junkyard" style={{
-            display: 'inline-block',
-            padding: '14px 28px',
-            background: '#ff6b6b',
-            color: '#fff',
-            textDecoration: 'none',
-            borderRadius: '6px',
-            fontWeight: '700',
-            transition: 'all 0.3s'
-          }}>
-            See the Failures →
-          </a>
+        {/* BENTO GRID */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <Link
+            href="/airdrops"
+            className="bento glass p-6 no-underline md:col-span-2 block hover:shadow-lg transition-shadow"
+          >
+            <div
+              className="font-mono text-[8px] tracking-[0.18em] mb-3"
+              style={{ color: '#1a6b00' }}
+            >
+              🌾 AIRDROPS
+            </div>
+            <div className="font-serif text-2xl font-bold text-dark mb-2">
+              Curated Airdrop Listings
+            </div>
+            <p className="text-sm mb-4" style={{ color: '#666', lineHeight: 1.7 }}>
+              Risk-rated, deadline-tracked, chain-filtered. Every airdrop
+              reviewed.
+            </p>
+            <div
+              className="font-mono text-[8px] font-bold"
+              style={{ color: '#1a6b00' }}
+            >
+              VIEW LIVE AIRDROPS →
+            </div>
+          </Link>
+
+          <Link
+            href="/showroom"
+            className="bento glass p-6 no-underline block hover:shadow-lg transition-shadow"
+            style={{ background: '#0a0a0a' }}
+          >
+            <div
+              className="font-mono text-[8px] tracking-[0.18em] mb-3"
+              style={{ color: '#c8ff00' }}
+            >
+              📊 SHOWROOM
+            </div>
+            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
+              Live Chain Metrics
+            </div>
+            <p className="text-sm mb-4" style={{ color: '#888', lineHeight: 1.7 }}>
+              TVL, protocol counts, 24h changes. Every major chain, live.
+            </p>
+            <div
+              className="font-mono text-[8px] font-bold"
+              style={{ color: '#c8ff00' }}
+            >
+              VIEW SHOWROOM →
+            </div>
+          </Link>
+
+          <Link
+            href="/junkyard"
+            className="bento glass p-6 no-underline block hover:shadow-lg transition-shadow"
+            style={{ background: '#0d0606' }}
+          >
+            <div
+              className="font-mono text-[8px] tracking-[0.18em] mb-3"
+              style={{ color: '#ff4d4d' }}
+            >
+              ☠️ JUNKYARD
+            </div>
+            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
+              The Crypto Graveyard
+            </div>
+            <p className="text-sm mb-4" style={{ color: '#777', lineHeight: 1.7 }}>
+              Rugs, Ponzis, exploits. Documented so history doesn&apos;t repeat.
+            </p>
+            <div
+              className="font-mono text-[8px] font-bold"
+              style={{ color: '#ff4d4d' }}
+            >
+              ENTER GRAVEYARD →
+            </div>
+          </Link>
+
+          <Link
+            href="/resources/mobile-farmer"
+            className="bento glass p-6 no-underline md:col-span-2 block hover:shadow-lg transition-shadow"
+            style={{ background: 'linear-gradient(135deg,#0d1a00,#0a0a0a)' }}
+          >
+            <div
+              className="font-mono text-[8px] tracking-[0.18em] mb-3"
+              style={{ color: '#c8ff00' }}
+            >
+              📱 FREE EBOOK
+            </div>
+            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
+              The Mobile Farmer
+            </div>
+            <p className="text-sm mb-4" style={{ color: '#888', lineHeight: 1.7 }}>
+              Farm airdrops on your phone. No desktop. No jargon. Free forever.
+            </p>
+            <div
+              className="font-mono text-[8px] font-bold"
+              style={{ color: '#c8ff00' }}
+            >
+              READ FREE →
+            </div>
+          </Link>
         </section>
 
-        {/* Footer CTA */}
-        <section style={{
-          textAlign: 'center',
-          paddingTop: '40px',
-          borderTop: '1px solid #222',
-          marginTop: '60px'
-        }}>
-          <h2 style={{ 
-            fontSize: '24px', 
-            marginBottom: '15px',
-            color: '#f0f0f0'
-          }}>
-            Ready to Earn Your First Airdrop?
-          </h2>
-          <p style={{ 
-            color: '#999',
-            marginBottom: '30px',
-            fontSize: '16px'
-          }}>
-            Start with Day 1 of Onboarding. No blockchain experience needed.
-          </p>
-          <a href="/onboarding/day-1" style={{
-            display: 'inline-block',
-            padding: '16px 32px',
-            background: '#c8ff00',
-            color: '#0a0a0a',
-            textDecoration: 'none',
-            borderRadius: '6px',
-            fontWeight: '700',
-            fontSize: '16px',
-            transition: 'all 0.3s'
-          }}>
-             Start Learning Now
-          </a>
+        {/* TOP CHAINS */}
+        {top5.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="font-serif text-xl font-bold text-dark">
+                Top Chains by TVL
+              </h2>
+              <Link
+                href="/showroom"
+                className="font-mono text-[8px] font-bold no-underline hover:underline"
+                style={{ color: '#1a6b00' }}
+              >
+                VIEW ALL {chains.length} →
+              </Link>
+            </div>
+            <div className="glass overflow-hidden">
+              {top5.map((chain, i) => (
+                <Link
+                  key={chain.name}
+                  href={`/showroom/${toSlug(chain.name)}`}
+                  className="flex items-center gap-4 no-underline transition-colors hover:bg-opacity-75"
+                  style={{
+                    padding: '14px 20px',
+                    borderBottom:
+                      i < 4 ? '1px solid rgba(0,0,0,0.05)' : 'none',
+                  }}
+                >
+                  <span
+                    className="font-mono text-[8px] w-5 text-right flex-shrink-0"
+                    style={{ color: '#ccc' }}
+                  >
+                    #{i + 1}
+                  </span>
+                  <img
+                    src={llamaLogo(chain.name)}
+                    alt={chain.name}
+                    width={28}
+                    height={28}
+                    className="rounded-full flex-shrink-0"
+                    style={{ objectFit: 'cover' }}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none'
+                    }}
+                  />
+                  <div className="flex-1 min-w-0">
+                    <div className="font-mono text-[10px] font-bold text-dark">
+                      {chain.name}
+                    </div>
+                  </div>
+                  <div
+                    className="font-serif text-base font-bold"
+                    style={{ color: '#1a6b00' }}
+                  >
+                    {fmt(chain.tvl)}
+                  </div>
+                  {chain.change_1d !== null && chain.change_1d !== undefined && (
+                    <div
+                      className="font-mono text-[9px] w-16 text-right flex-shrink-0"
+                      style={{
+                        color: chain.change_1d >= 0 ? '#1a6b00' : '#ff4d4d',
+                      }}
+                    >
+                      {fmtPct(chain.change_1d)}
+                    </div>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* NEWSLETTER */}
+        <section className="glass p-8 mb-2">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div
+                className="font-mono text-[8px] tracking-[0.2em] mb-2"
+                style={{ color: '#1a6b00' }}
+              >
+                FREE NEWSLETTER
+              </div>
+              <h2 className="font-serif text-2xl font-bold text-dark mb-3">
+                Stay ahead of the cycle.
+              </h2>
+              <p className="text-sm" style={{ color: '#666', lineHeight: 1.8 }}>
+                Airdrop alerts, DeFi news, post-mortems. Signal, not noise. No
+                ads. Ever.
+              </p>
+            </div>
+            <NewsletterForm />
+          </div>
         </section>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   )
 }

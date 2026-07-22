@@ -1,0 +1,353 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AuthProvider {
+  EMAIL
+  WALLET
+  PASSKEY
+  OAUTH
+}
+
+enum PrivacyLevel {
+  PRIVATE
+  LOCKED
+  HIDDEN
+  LOCAL_ONLY
+}
+
+enum AiMode {
+  GENTLE
+  COACH
+  TRUTH
+}
+
+enum AiRole {
+  USER
+  ASSISTANT
+  SYSTEM
+}
+
+enum AiProvider {
+  OPENAI
+  LOCAL
+  DISABLED
+}
+
+enum StorageProvider {
+  LOCAL
+  S3
+}
+
+enum TranscriptionStatus {
+  NOT_REQUESTED
+  QUEUED
+  PROCESSING
+  COMPLETE
+  FAILED
+}
+
+enum AuditEventType {
+  USER_CREATED
+  LOGIN_SUCCEEDED
+  LOGIN_FAILED
+  MAGIC_LINK_REQUESTED
+  WALLET_LINKED
+  WALLET_UNLINKED
+  VAULT_ENTRY_CREATED
+  VAULT_ENTRY_UPDATED
+  VAULT_ENTRY_DELETED
+  LOCKED_VAULT_UNLOCK_ATTEMPTED
+  AI_PROCESSING_STARTED
+  AI_PROCESSING_COMPLETED
+  DATA_EXPORT_REQUESTED
+  ACCOUNT_DELETION_REQUESTED
+  STORAGE_OBJECT_DELETED
+  ONBOARDING_COMPLETED
+  ACCOUNT_SETTINGS_UPDATED
+  PRIVACY_SETTINGS_UPDATED
+  SESSION_REVOKED
+}
+
+model User {
+  id                    String    @id @default(cuid())
+  name                  String?
+  email                 String?   @unique
+  emailVerified         Boolean   @default(false)
+  emailVerifiedAt       DateTime?
+  image                 String?
+  authProvider          AuthProvider @default(EMAIL)
+  privacyMode           String    @default("standard")
+  aiEnabledDefault      Boolean   @default(false)
+  timezone              String    @default("UTC")
+  locale                String    @default("en-US")
+  onboardingCompletedAt DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  deletedAt             DateTime?
+
+  wallets             UserWallet[]
+  sessions            Session[]
+  accounts            Account[]
+  passkeys            Passkey[]
+  entries             VaultEntry[]
+  audioDumps          AudioDump[]
+  audioTranscripts    AudioTranscript[]
+  aiConversations     AiConversation[]
+  moodCheckins        MoodCheckin[]
+  memories            AiMemoryItem[]
+  auditLogs           AuditLog[]
+  featureFlagOverrides FeatureFlagOverride[]
+  privacySettings     UserPrivacySettings?
+
+  @@index([deletedAt])
+}
+
+model Session {
+  id            String   @id @default(cuid())
+  userId        String
+  token         String   @unique
+  expiresAt     DateTime
+  ipAddress     String?
+  userAgent     String?
+  ipHash        String?
+  userAgentHash String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  userId                String
+  accountId             String
+  providerId            String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  accessTokenEncrypted  String?
+  refreshTokenEncrypted String?
+  expiresAt             DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([providerId, accountId])
+}
+
+model Passkey {
+  id           String   @id @default(cuid())
+  userId       String
+  credentialId String   @unique
+  publicKey    String
+  counter      Int      @default(0)
+  transports   String[]
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Verification {
+  id         String    @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime? @default(now())
+  updatedAt  DateTime? @updatedAt
+
+  @@index([identifier])
+}
+
+model UserPrivacySettings {
+  id                        String       @id @default(cuid())
+  userId                    String       @unique
+  defaultPrivacyLevel       PrivacyLevel @default(PRIVATE)
+  aiProcessingDefault       Boolean      @default(false)
+  audioTranscriptionDefault Boolean      @default(false)
+  memoryEnabled             Boolean      @default(false)
+  analyticsEnabled          Boolean      @default(false)
+  dataExportFormat          String       @default("JSON")
+  createdAt                 DateTime     @default(now())
+  updatedAt                 DateTime     @updatedAt
+  user                      User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserWallet {
+  id             String   @id @default(cuid())
+  userId         String
+  walletAddress  String
+  chain          String   @default("solana")
+  walletProvider String?
+  verifiedAt     DateTime
+  createdAt      DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([chain, walletAddress])
+}
+
+model VaultEntry {
+  id                  String   @id @default(cuid())
+  userId              String
+  title               String?
+  encryptedContent    String
+  contentNonce        String
+  contentKeyVersion   Int      @default(1)
+  mood                String?
+  moodIntensity       Int?
+  privacyLevel        PrivacyLevel @default(PRIVATE)
+  isLocked            Boolean  @default(false)
+  isHidden            Boolean  @default(false)
+  aiProcessingAllowed Boolean  @default(false)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  deletedAt           DateTime?
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  themes              EntryTheme[]
+  memories            AiMemoryItem[]
+  @@index([userId, createdAt])
+  @@index([userId, deletedAt])
+}
+
+model AudioDump {
+  id                  String   @id @default(cuid())
+  userId              String
+  storageKey          String
+  storageProvider     StorageProvider @default(LOCAL)
+  encryptedStorageKey String?
+  durationSeconds     Int?
+  mimeType            String
+  fileSize            BigInt
+  mood                String?
+  privacyLevel        PrivacyLevel @default(PRIVATE)
+  isLocked            Boolean @default(false)
+  aiProcessingAllowed Boolean @default(false)
+  transcriptionStatus TranscriptionStatus @default(NOT_REQUESTED)
+  createdAt           DateTime @default(now())
+  deletedAt           DateTime?
+  user                User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transcript          AudioTranscript?
+  @@index([userId, createdAt])
+}
+
+model AudioTranscript {
+  id                  String   @id @default(cuid())
+  audioDumpId         String   @unique
+  userId              String
+  encryptedTranscript String
+  transcriptNonce     String
+  language            String?
+  confidenceScore     Float?
+  createdAt           DateTime @default(now())
+  deletedAt           DateTime?
+  audioDump           AudioDump @relation(fields: [audioDumpId], references: [id], onDelete: Cascade)
+  user                User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AiConversation {
+  id           String   @id @default(cuid())
+  userId       String
+  mode         AiMode
+  title        String?
+  privacyLevel PrivacyLevel @default(PRIVATE)
+  isLocked     Boolean @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deletedAt    DateTime?
+  user         User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages     AiMessage[]
+}
+
+model AiMessage {
+  id                   String   @id @default(cuid())
+  conversationId       String
+  userId               String
+  role                 AiRole
+  encryptedContent     String
+  contentNonce         String
+  modelProvider        AiProvider?
+  modelName            String?
+  safetyClassification String?
+  createdAt            DateTime @default(now())
+  conversation         AiConversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  @@index([conversationId, createdAt])
+}
+
+model MoodCheckin {
+  id             String   @id @default(cuid())
+  userId         String
+  mood           String
+  intensity      Int
+  notesEncrypted String?
+  notesNonce     String?
+  createdAt      DateTime @default(now())
+  user           User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, createdAt])
+}
+
+model Theme {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  description String?
+  createdAt   DateTime @default(now())
+  entries     EntryTheme[]
+}
+
+model EntryTheme {
+  id         String   @id @default(cuid())
+  userId     String
+  entryId    String
+  themeId    String
+  confidence Float
+  source     String
+  createdAt  DateTime @default(now())
+  entry      VaultEntry @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  theme      Theme @relation(fields: [themeId], references: [id], onDelete: Cascade)
+  @@unique([entryId, themeId, source])
+}
+
+model AiMemoryItem {
+  id               String   @id @default(cuid())
+  userId           String
+  memoryType       String
+  encryptedSummary String
+  summaryNonce     String
+  embeddingId      String?
+  confidence       Float
+  sourceEntryId    String?
+  userApproved     Boolean @default(false)
+  expiresAt        DateTime?
+  createdAt        DateTime @default(now())
+  deletedAt        DateTime?
+  user             User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sourceEntry      VaultEntry? @relation(fields: [sourceEntryId], references: [id], onDelete: SetNull)
+}
+
+model AuditLog {
+  id            String   @id @default(cuid())
+  userId        String?
+  eventType     AuditEventType
+  ipHash        String?
+  userAgentHash String?
+  metadata      Json?
+  createdAt     DateTime @default(now())
+  user          User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+  @@index([userId, createdAt])
+  @@index([eventType, createdAt])
+}
+
+model FeatureFlagOverride {
+  id        String   @id @default(cuid())
+  userId    String?
+  flag      String
+  enabled   Boolean
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User? @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@unique([userId, flag])
+}

@@ -1,0 +1,391 @@
+1:"$Sreact.fragment"
+3:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+4:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+f:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+13:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+14:"$Sreact.suspense"
+2:Tb28,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital","name":"Web3Farmyard Blog","description":"When I first entered Web3, I didn&#8217;t have the capital to chase investments or expensive opportunities. Instead, I focused on platforms that rewarded curios","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital#webpage","url":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital","name":"New to Web3? These Platforms Helped Me Learn and Earn Before I Had Capital","description":"When I first entered Web3, I didn&#8217;t have the capital to chase investments or expensive opportunities. Instead, I focused on platforms that rewarded curios","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"New to Web3? These Platforms Helped Me Learn and Earn Before I Had Capital","description":"When I first entered Web3, I didn&#8217;t have the capital to chase investments or expensive opportunities. Instead, I focused on platforms that rewarded curios","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-07-06T12:33:27","dateModified":"2026-07-06T12:33:29","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"New to Web3? These Platforms Helped Me Learn and Earn Before I Had Capital","item":"https://www.web3farmyard.com/blog/new-to-web3-these-platforms-helped-me-learn-and-earn-before-i-had-capital"}]}]}0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L3",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L4",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":["$L5","$L6"]}],"$L7","$L8"]}],"$L9"]}],"$La"],["$Lb"],"$Lc"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"build-1784103503707"}
+5:["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"New to Web3? These Platforms Helped Me Learn and Earn Before I Had Capital"}]
+6:["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-07-06T12:33:27","children":["Published: ","July 6, 2026"]}],["$","time",null,{"dateTime":"2026-07-06T12:33:29","children":["Updated: ","July 6, 2026"]}]]}]
+d:T392d,
+<p>When people ask me how to get started in Web3 without money, they   expect one of two answers. Either “Buy crypto Or “Farm airdrops and hope something happens.” But if I’m being accurate to my own experience, that wasn’t how I entered. I didn’t start with capital, I didn’t start with deep technical knowledge. What I had was curiosity, time, a phone, and a willingness to keep showing up. So, New to Web3? These Platforms Helped Me Learn and Earn Before I Had Capital. Long before I understood liquidity, retroactive rewards, perpetual DEXes, tokenomics, or on-chain analytics.</p>
+
+
+
+<p>Three platforms played a huge role in that process for me:</p>
+
+
+
+<ul>
+<li>TaskOn</li>
+
+
+
+<li>Galxe</li>
+
+
+
+<li>Gib.work</li>
+</ul>
+
+
+
+<p>Each helped me differently. They were not perfect as with everything else, but together, they gave me an entry path that felt possible even without capital.</p>
+
+
+
+<h2><strong>NOTE: THIS IS NOT INVESTMENT/FINANCIAL ADVICE</strong></h2>
+
+
+
+<p>This is simply the path that helped me move from observer to participant.</p>
+
+
+
+<h2>1. TaskOn: The Platform That Quietly Introduced Me to Web3 Participation</h2>
+
+
+
+<p>TaskOn was one of the first places that made Web3 feel accessible. Before then, crypto felt confusing. Everyone seemed to already know which chains mattered where opportunities were which communities were worth joining, I knew nothing.  TaskOn gave me structure. Instead of opening Discord and feeling lost, I suddenly had tasks. Simple actions like join a community, follow an account. Interact with a certain dApp, join earn raffles, return, repeat.</p>
+
+
+
+<p>TaskOn became a discovery engine. It introduced me to ecosystems I would never have found by myself. Projects. Builders. New launches. Conversations. With time I accumulated over 50 NFTs. Mind you, these were not expensive NFTs but proof of participation. Proof that I showed up, that I actually interacted. And I spent less than $1 total in gas while collecting many of them. </p>
+
+
+
+<p>I also earned small amounts occasionally, nothing dramatic. Random $5 $10 $20 Usually from completing social tasks or campaign participation. Was it stable income? No. But it was honest work which i can now use as gas to participate in free Nfts or some airdrops that needed gas. Now i have base capital to advance one step further into web3 and better positioning. You do not always need capital to start building exposure. You sometimes need attention and consistency. TaskOn also unexpectedly improved my social discovery.</p>
+
+
+
+<p>When you repeatedly interact with crypto communities, your X algorithm changes. You start seeing better discussions, project updates, web3 opportunities, ecosystem conversations. The quality of your feed evolves. That alone adds value..<br><br><strong>Step-by-Step to Get Started and Earn</strong></p>
+
+
+
+<p><strong>Claim and withdraw your real USDT</strong> After tasks are verified, go to your Participant’s Center or User Center (usually top-right profile icon). Check “My Rewards,” “Assets,” or “Rewards History.” GEM shows up here and can be directly exchanged or withdrawn as USDT. Token rewards (USDT/USDC from the project or TaskOn) often appear in the Assets section for withdrawal to your wallet. Some rewards are instant or within a week; project-distributed ones may require you to follow up in their Discord with proof. I withdrew multiple times and had USDT hit my wallet within hours to a couple of days.</p>
+
+
+
+
+<p><a href="https://taskon.xyz"><strong>Go to the site and sign in</strong> </a>Head to taskon.xyz (or the main TaskOn domain). You can sign in with your X account, other socials, or directly connect an EVM wallet like MetaMask, OKX Wallet, or Rabby. No KYC, no deposit required. I started with just a fresh wallet and my X account.</p>
+
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4440-473x1024.png" alt="Taskon login page">
+
+
+
+
+<p><strong>Bind your social accounts right away</strong> In your profile or settings, connect X, Discord, and Telegram. This is crucial. Many quests verify completion through these connections, and binding raises your “real user” score. It unlocks more tasks and reduces the chance of rejection. I did this on day one and immediately had access to better-paying social campaigns.</p>
+
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4441-473x1024.png" alt="">
+
+
+
+<p><strong>Explore and filter for real-value quests</strong> On the homepage you’ll see “Happening Now,” trending quests, and categories like DeFi, NFT, or specific chains. Look for campaigns that explicitly mention USDT, USDC, or GEM rewards. Filter or sort by “Trending” or check the winner lists/channels for campaigns distributed by TaskOn itself (faster payouts)</p>
+
+
+
+<p><strong>Select a quest and complete tasks precisely</strong> Click into a campaign. Read every requirement carefully — some need you to hold a specific NFT, maintain a token balance, reach a certain TaskOn level, or be in allowed regions. For social quests: follow the project X, like specific tweets, comment meaningfully (not spam), repost, or join Discord and engage. Connect your already-bound accounts so verification is automatic. Do the tasks in order if listed. Take screenshots or notes of completion in case of disputes.</p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4439-473x1024.png" alt="">
+
+
+
+<p><br><br>However, Customer support, in my experience, was weak.</p>
+
+
+
+<p>At one point I claimed token rewards using what was presented as a free gas claim process. I followed through. Waited. Nothing. Months passed. Then a year. Still nothing. I had complained about it several times too. So I would avoid the free gas option if i were you.</p>
+
+
+
+<h2>2. Galxe — The Platform That Helped Me Understand Community Reputation</h2>
+
+
+
+<p>If TaskOn introduced me to participation…Galxe introduced me to reputation. Galxe did not feel so different. More ecosystem-driven. More identity-based. I approached it the same way; complete quests. Join communities. Interact. Move on. Galxe encouraged contribution, consistency, identity, visibility. This was where I started understanding concepts like: OATs. Campaign participation. Social proof. Points. Community history. Proof of Humanity</p>
+
+
+
+<p>I started collecting Galxe OATs and interacting with projects I find interesting and rewarding. I of course use burner wallets for onchain interactions (never forget that). Again, I learned more than I earned. But earning did happen Occasionally token raffles, community rewards, campaign outcomes. Nothing guaranteed, but enough to reinforce engagement.</p>
+
+
+
+<p>And again… My algorithm improved. People underestimate this. If you interact intentionally in Web3 long enough your feed changes, your opportunities change, your network changes. Galxe accelerated that. But Galxe has also evolved. Today there are more requirements.</p>
+
+
+
+<p>Now users may encounter task that need Galxe Passport Galxe Score or Galxe+ for participation. Claims for points or OATs sometimes involve gas. Unlike TaskOn where participation often felt lighter. Galxe Score is not necessarily expensive. For someone entering seriously, spending around a few dollars to establish reputation may not be unreasonable.</p>
+
+
+
+<h3>Exact Step-by-Step to Get Started</h3>
+
+
+
+<p><strong>Visit <a href="https://app.galxe.com">app.galxe.com</a> and connect your wallet</strong> Use any EVM-compatible wallet. No deposit needed to start browsing.</p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4446-473x1024.png" alt="Login Galxe page">
+
+
+
+<h3>Explore quests and spaces </h3>
+
+
+
+<p>Browse “Explore,” trending, or search for specific projects/chains. Look for quests that list token rewards (USDT/USDC examples appear in many). Join spaces or start participating in active campaigns.</p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4443-473x1024.png" alt="">
+
+
+
+<h3>Complete tasks </h3>
+
+
+
+<p>Tasks often include: follow/project X, join Discord and verify role or message in channels, on-chain interactions (bridge, swap, mint via wallet). Connect your X/Discord when prompted for automatic verification. Some are simple social proof; others require proof of work (screenshots, links).</p>
+
+
+
+<h3>Claim rewards and manage fees </h3>
+
+
+
+<p>Once eligible, claim OATs, points, NFTs, or tokens. You’ll usually pay a small claim fee (tiered discounts for active users; lower on Gravity network). Enable the Gas Station/Smart Savings if available for that quest to cover or reduce gas. Some quests are gasless. Tokens and certain rewards go directly or via claim flow.</p>
+
+
+
+
+<p><strong>Set up Galxe Score and Passport if you want serious access</strong> Many top projects now require or prefer a Galxe Score for eligibility/filtering. Minting and maintaining the Score requires an annual subscription (around $5 via Smart Savings). Passport involves ID verification (~$5 fee, waived once for higher plans). Do this only when you’re consistently active — it unlocks better positioning but isn’t free anymore.</p>
+
+
+
+
+
+<img data-id="197" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4444-473x1024.png" alt="earn with galxe+ subscription">
+
+
+
+<img data-id="198" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4445-473x1024.png" alt="">
+
+
+
+
+<h2>3. Gib.work — The Platform That Showed Me Web3 Isn’t Only About Airdrops</h2>
+
+
+
+<p>This one is entirely different. TaskOn and Galxe helped me participate. Gib.work made me think differently. Because Gib.work focuses more on creators builders contributors startups. This is where a lot of beginners miss opportunities. People enter Web3 and immediately think Airdrops, tokens and Referrals. But what if your actual edge is writing? Design? Community? Research? Content? . This platform allows you grow your presence on Twitter (X) not your algorithm this time. In web3, having a social presence is actually one of the best things you can do for yourself. </p>
+
+
+
+<p>Gib.work reminded me that Web3 still runs on people; startups still need attention, storytelling, engagement creators and that creates opportunity. If someone is new and trying to grow their account this is one of the more interesting paths. You do actual work helping projects grow (not spam posts or reposts), you gain visibility. Your reputation grows while you create contents, you learn and on top of all that, you earn even before X monetizes your account which could take years. That there constitutes a healthy growth part for an aspiring web3 social presence.</p>
+
+
+
+
+<img data-id="199" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4448-473x1024.png" alt="">
+
+
+
+<img data-id="203" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4449-473x1024.png" alt="">
+
+
+
+
+<p>And for startups? This is interesting too. Instead of immediately paying huge influencer budget they can get more organic engagement through contributors. People who genuinely participate. That dynamic feels more sustainable. I also think this gives beginners something important (Stories. Experiences. Opinions). Having to think up interesting topics as a newbie can be quite the hassle but with GIb work, you get an idea about things to write about. Which eventually compounds into opportunity.</p>
+
+
+
+<p><strong>Exact Steps for  Creators</strong></p>
+
+
+
+
+<p>Go to app.gib.work and sign up. Fast options: Google, email + OTP, or connect X/Discord/GitHub. Usually easy to do. Takes 1–2 minutes.</p>
+
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4451-473x1024.png" alt="">
+
+
+
+<h3>Browse tasks and pick carefully </h3>
+
+
+
+<p>Filter by skill (content, writing, social, research). Read the Overview, exact requirements, deadline, and reward (usually USDC). Only choose ones where you 100% understand what’s expected and you are sure you can deliver. If the task you chose requires being verified, find another one if you cant afford verification. If you can afford it, being verified presents you more opportunities and better participation.</p>
+
+
+
+
+<img data-id="201" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4450-473x1024.png" alt="tasks to earn">
+
+
+
+<img data-id="202" src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/IMG_4450-1-473x1024.png" alt="">
+
+
+
+
+<p>Choose a suitable Task you can complete then go ahead and put your content together. Be Original because that is what Gibwork is all about. The team is heavy about organic healthy engagement and content originality and not promoting startups via Spam contents or slop</p>
+
+
+
+<h3>Submit Proof of Completion</h3>
+
+
+
+<p>After Completion go back to the task and submit properly Do the work to spec. Submit via the app with clear proof (X link, published thread, screenshots, research file whatever they ask).</p>
+
+
+
+<p>Get reviewed and paid on-chain The poster reviews. Once approved, you get paid automatically on-chain. Track submissions, status, and earnings in the app.</p>
+
+
+
+<h2>Note To Newbie</h2>
+
+
+
+<p>Web3 rewards participation before expertise. You do not need to know everything. You need to Observe the ecosystem when you enter. Interact. Learn. Improve. Then earn when opportunities appear. Rewards are never guaranteed. They are not. Communities disappoint. Projects disappear. Campaigns change. But participation creates optionality, presence and better positioning. </p>
+
+
+
+<p>Do not chase everything. You can start small here in web3. Go to <a href="https://web3farmyard.com" target="_blank" rel="noreferrer noopener">Web3FarmYard</a>, get hands on experience exploring web3. Understand wallets, secure your accounts, talk to people. Again, Observe. Then head to <a href="https://www.web3farmyard.com/toolkit/" target="_blank" rel="noreferrer noopener">TOOLKIT</a> Pick one platform (anyone from the 3 mentioned above). Learn how quests work. Do not spend money trying to get into web3 yet. And never trust promises simply because they sound exciting. Web3 changes fast. But communities, skills, and experience tend to stay with you.</p>
+
+
+
+<pre><code><a href="https://web3farmyard.com">Start your easy hands on web3 onboarding and experience and be able to interact with your first airdrops in 7 days max</a>
+
+<a href="https://www.web3farmyard.com/blog/step-by-step-beginner-guide-how-to-create-secure-your-first-crypto-wallet/">How to Create &amp; Secure Your First Crypto Wallet in 2026 (Step-by-Step for Complete Beginners)</a></code></pre>
+7:["$","div",null,{"className":"prose prose-lg max-w-none","children":["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$d"},"style":{"lineHeight":"1.8"}}]}]
+e:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          8:["$","style",null,{"children":"$e"}]
+9:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L4",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+a:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L4",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L4",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L4",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L4",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L4",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Lf",null,{"iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Lf",null,{"iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Lf",null,{"iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Lf",null,{"iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],"$L10","$L11"]}],"$L12"]}]}]
+b:["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true}]
+c:["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]
+10:["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}]
+11:["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]
+12:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+15:null

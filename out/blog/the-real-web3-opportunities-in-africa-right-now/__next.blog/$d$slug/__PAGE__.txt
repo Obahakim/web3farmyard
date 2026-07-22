@@ -1,0 +1,344 @@
+1:"$Sreact.fragment"
+3:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+4:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+e:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+12:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+13:"$Sreact.suspense"
+2:Ta3b,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now","name":"Web3Farmyard Blog","description":"Discover overlooked Web3 opportunities in Africa in 2026: stablecoin adoption, community building, grants, education, content creation, and ecosystem roles. A g","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now#webpage","url":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now","name":"The Real Web3 Opportunities in Africa Right Now","description":"Discover overlooked Web3 opportunities in Africa in 2026: stablecoin adoption, community building, grants, education, content creation, and ecosystem roles. A g","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"The Real Web3 Opportunities in Africa Right Now","description":"Discover overlooked Web3 opportunities in Africa in 2026: stablecoin adoption, community building, grants, education, content creation, and ecosystem roles. A g","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-05-26T01:37:40","dateModified":"2026-05-26T01:50:13","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"The Real Web3 Opportunities in Africa Right Now","item":"https://www.web3farmyard.com/blog/the-real-web3-opportunities-in-africa-right-now"}]}]}0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L3",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L4",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"The Real Web3 Opportunities in Africa Right Now"}],["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-05-26T01:37:40","children":["Published: ","May 26, 2026"]}],"$L5"]}]]}],"$L6","$L7"]}],"$L8"]}],"$L9"],["$La"],"$Lb"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"build-1784103503707"}
+5:["$","time",null,{"dateTime":"2026-05-26T01:50:13","children":["Updated: ","May 26, 2026"]}]
+c:T2f0c,
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/05/web3-africa-1024x687.jpg" alt="The Real Web3 Opportunities in Africa Right Now That Most Beginners Miss (Beyond Airdrops)" title="Shows The Real Web3 Opportunities in Africa Right Now That Most Beginners Miss (Beyond Airdrops)">
+
+
+
+<p>I remember sitting in a small Lagos café in late 2024, watching a group of young people huddled over their phones. The conversation wasn’t about building anything, it was about the next big airdrop, the next “free money” project. By 2026, that scene hasn’t changed much. Airdrop hunting remains the entry drug for thousands of African youth desperate for an economic edge. But beneath the noise of farming points and Discord grinds for roles lies a quieter, more substantial layer of opportunity. One that rewards consistency, skill, and genuine contribution. They are The Real Web3 Opportunities in Africa 2026  and many actually ignore them.</p>
+
+
+
+<p>What many beginners don’t realize is that Africa’s Web3 story is no longer just about speculation. It’s evolving into infrastructure, real utility, and ecosystem participation. Sub-Saharan Africa saw over $205 billion in on-chain value between July 2024 and June 2025. According to reports, that is a 52% year over year increase. Stablecoins now account for a huge chunk of that activity, especially in remittances, trade settlement, and savings. This isn’t hype. It’s survival economics meeting technology that is not limited by borders.</p>
+
+
+
+<h3>Why Most Beginners Only See Airdrops</h3>
+
+
+
+<p>The psychology is understandable. In economies where youth unemployment is high, Naira (or Cedi, or Rand) volatility bites hard, and traditional jobs feel out of reach, the promise of quick tokens feels like the only viable ladder. Social media amplifies this with screenshots of “successful” farmers while quietly hiding the thousands who burn out or fall for scams.I’ve observed this pattern repeatedly across Nigeria, Kenya, Ghana, and beyond. The airdrop meta creates a gold-rush mentality that keeps people in a cycle of short-term chasing instead of long-term positioning. Meanwhile, protocols and ecosystems quietly build teams, communities, and infrastructure  often prioritizing people who show up consistently with value rather than just wallet activity.<br></p>
+
+
+
+<h2>Stablecoins and Real-World Financial Infrastructure</h2>
+
+
+
+<p>One of the biggest opportunities beginners (and most OGs) miss is the quiet revolution in stablecoin adoption for everyday economic needs. In Nigeria especially, stablecoins have become a hedge against Naira volatility and a faster, cheaper rail for remittances and business payments. Businesses use them for import settlement, and treasury management. Individuals use them to receive money from family abroad without exorbitant fees or delays.</p>
+
+
+
+<p>How you can position here, specially as a beginner; </p>
+
+
+
+<ul>
+<li>Start Learning, if you haven’t, practical stablecoin usage (on-ramping/off-ramping, bridging, basic DeFi lending).</li>
+</ul>
+
+
+
+<ul>
+<li>Create educational content explaining local use cases if you can. Gives you exposure</li>
+
+
+
+<li>Build or join services around stablecoin education, wallet setup for non-tech users, or local merchant acceptance.</li>
+</ul>
+
+
+
+<p>This isn’t glamorous farming, but the demand is structural and growing. People who become trusted local guides in this space build lasting audiences (and income streams). Your local ‘Idolo” might not tell you that.</p>
+
+
+
+<h2>Community Management, Moderation, and Ecosystem Roles</h2>
+
+
+
+<p>Web3 projects desperately need culturally inclined community managers, moderators, and ambassadors who understand African internet culture; the slang, the trust dynamics, the mobile-first reality, and the economic pressures. Roles in Discord/Telegram moderation, ambassador programs, content moderation, and regional growth have expanded. Many protocols now run structured ambassador programs that reward consistent contribution with stipends, tokens, travel to events, and networking.  I’ve also noticed that projects expanding into Africa often struggle with a kind of cultural disconnect, and only few has being able to deal with it. A Nigerian or Kenyan who can translate complex concepts into Pidgin, Swahili-infused explanations, or relatable local examples becomes incredibly valuable.</p>
+
+
+
+<p>If you are thinking about how to start:</p>
+
+
+
+<ul>
+<li>Join active Discord servers and become a helpful member first (answer questions, organize AMAs, create guides).</li>
+
+
+
+<li>Document your journey publicly.</li>
+
+
+
+<li>Apply to programs like Yellow Card Ambassador, local exchange campus programs, or emerging DAOs.</li>
+</ul>
+
+
+
+<p>Many of these roles start unpaid or low-paid but evolve into full-time remote or hybrid positions as communities grow.</p>
+
+
+
+<h2>Web3 Education, Content Creation, and Local Media</h2>
+
+
+
+<p>Africa has a massive youth population hungry for clear, trustworthy information. The gap between global English content and local realities is wide. Opportunities exist in creating beginner-friendly tutorials in local languages or Pidgin, Building paid communities or newsletters around practical Web3 skills, Podcasting or YouTube channels focused on African use cases and Protocol documentation and translation work.</p>
+
+
+
+<p>Writers, researchers, and educators who consistently produce high-quality work often attract grants, sponsorships, or full-time roles with foundations and projects. Some transition into “Web3 researcher” or “ecosystem analyst” positions.</p>
+
+
+
+<h2>Grants, DAOs, and Builder Pathways.</h2>
+
+
+
+<p>Several ecosystems now run targeted programs for African builders. like the Sui grant, Celo Africa DAO incubators, Solana Superteam microgrants for emerging markets, Circle grants, and various foundation programs. Beginners often overlook these because they require proposal writing, basic project ideas, and persistence. But equity-free funding, mentorship, and exposure are far more sustainable than most airdrops. </p>
+
+
+
+<p>Mindset shift needed: Move from “how do I farm this” to “what problem can I solve for users in my community?”</p>
+
+
+
+<h2>On-Chain Analytics, Research, and Governance</h2>
+
+
+
+<p>As activity grows, demand rises for people who can read on-chain data, track protocols, participate meaningfully in governance, and produce research.Tools like Dune Analytics, on-chain explorers, and basic data skills (even learned on mobile) open doors. DAOs increasingly reward quality governance participation and research contributions.</p>
+
+
+
+<h2>AI + Web3 Intersection and Creative Roles</h2>
+
+
+
+<p>The union of AI with blockchain (decentralized compute, AI agents, content tools) creates new niches. Designers, meme creators, branding specialists, and AI prompt engineers who understand both Web3 and local culture are still rare.</p>
+
+
+
+<h2>Validator Infrastructure and Technical Pathways</h2>
+
+
+
+<p>For those technically inclined, running nodes or participating in testnet infrastructure (especially on chains optimizing for mobile/low-resource environments) remains viable, though it requires learning and reliable power/internet. Validator infrastructure (running nodes) will be covered in a later article, subscribe to our <a href="https://web3farmyard.com">newsletter</a> if interested… </p>
+
+
+
+<h2>The Barriers (and Warnings)</h2>
+
+
+
+<p>Let’s be honest. This space is still full of risks. Scams remain rampant fake jobs, pig butchering schemes, exploitative “work for tokens” arrangements that never deliver. Burnout from constant Discord grind is also real. Many ambassador roles pay poorly or in volatile tokens. Regulatory uncertainty varies by country. The unhealthy speculation culture especially on social media outlets, trains people to chase hype instead of building substance. I’ve seen talented young people waste years jumping from one narrative to another without developing transferable skills. I was once like that. The Key mindsets that hold people back are:</p>
+
+
+
+<ul>
+<li>Expecting overnight success.</li>
+
+
+
+<li>Hiding behind anonymity while contributing nothing.</li>
+
+
+
+<li>Treating every project as a potential 100x instead of asking “does this solve a real problem?”</li>
+</ul>
+
+
+
+<h2>Africa’s Unique Timing Advantage</h2>
+
+
+
+<p>Africa’s combination of youthful demographics, mobile-first population, unstable local currencies, and massive under-banked segments creates opportunity. The continent already leads in mobile money, Web3 can build on that foundation rather than replace it. Projects and foundations increasingly recognize that authentic African voices and builders are essential for real adoption. Those who start positioning now while many are still purely farming, gain compounding advantages in reputation, network, and skill.</p>
+
+
+
+<p>How to Actually Position Yourself in 2026</p>
+
+
+
+<ol>
+<li>Build in public: Document your learning journey honestly.</li>
+
+
+
+<li>Develop one high value skill deeply (research, content, community, data, design).</li>
+
+
+
+<li>Contribute before you ask: Help projects and communities first.</li>
+
+
+
+<li>Network locally and regionally: Attend or follow events like Africa Blockchain, DeFi &amp; Web3 Summit, Blockchain fest</li>
+
+
+
+<li>Focus on utility: Stablecoins, payments, education, and local problem-solving have staying power.</li>
+
+
+
+<li>Protect yourself:  Learn security, verify opportunities, diversify income.</li>
+</ol>
+
+
+
+<p>Conclusion<br>Switch from just being a Hunter to being a Builder: The real opportunity in African Web3 isn’t another points and XP farming system. It’s becoming someone ecosystems need whether as an educator, community leader, researcher, builder, or specialist.Those who shift from reward hunting to value creation will look back in a few years and see that while others were farming points, they were farming skills, reputation, and real economic participation. </p>
+
+
+
+<p>Web3 in Africa won’t be defined by who farmed the biggest airdrop. It will be defined by who helped build the infrastructure, educated the masses, solved local problems, and created sustainable paths.The hidden layers are there. The question is whether you’ll keep scrolling for the next airdrop or start digging into the work that actually compounds.The farmyard is bigger than the daily drops. It’s time more of us started tending the actual land.</p>
+
+
+
+<p>Here are more articles that i think might catch your fancy</p>
+
+
+
+<pre><code><a href="https://www.web3farmyard.com/blog/are-free-airdrops-dead-in-2026-heres-what-actually-changed/">Are free airdrops dead in 2026 here's what actually changed</a>
+<a href="https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto/">HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO</a>
+<a href="https://www.web3farmyard.com/blog/what-can-50-realistically-do-in-web3/">What Can $50 Realistically Do in Web3?</a></code></pre>
+
+
+
+<p>Want to onboard to web3 as a newbie? Vist <a href="https://www.web3farmyard.com/">Web3FarmYard</a></p>
+
+
+
+<p>Get a Free Ebook for users with low budget and setup web3 farming/participation using only mobile no PC needed: <a href="https://selar.com/789u838788">THE MOBILE FARMER</a></p>
+
+
+
+<strong>Q: Are there really paying Web3 jobs for beginners in Africa in 2026?</strong> <p>A: Yes, especially in community, content, education, and operations roles. They often start small but grow with proven contribution.</p>  <strong>Q: How do I avoid scams while exploring these opportunities?</strong> <p>A: Never send money or seed phrases. Verify programs through official channels. Start by contributing value without expecting immediate pay <a href="https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto/">Read more</a></p>  <strong>Q: Which skills are most in demand?</strong> <p>A: Clear communication, community building, basic on-chain research, content creation in local contexts, and stablecoin/DeFi practical knowledge.</p>  
+6:["$","div",null,{"className":"prose prose-lg max-w-none","children":["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$c"},"style":{"lineHeight":"1.8"}}]}]
+d:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          7:["$","style",null,{"children":"$d"}]
+8:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L4",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+9:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L4",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L4",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L4",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L4",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L4",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Le",null,{"iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Le",null,{"iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Le",null,{"iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Le",null,{"iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],"$Lf","$L10"]}],"$L11"]}]}]
+a:["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true}]
+b:["$","$L12",null,{"children":["$","$13",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]
+f:["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}]
+10:["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]
+11:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+14:null

@@ -35,7 +35,6 @@ export default function Day5Page() {
   const markDayComplete = async () => {
     const newStreak = streak + 1
     const newDays = [...new Set([...completedDays, 5])]
-
     setStreak(newStreak)
     setCompletedDays(newDays)
     setCompleted(true)
@@ -61,7 +60,7 @@ export default function Day5Page() {
           <div className="font-mono text-xs text-[#1a6b00]">🔥 {streak} day streak</div>
         </div>
 
-        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 5: Lend on DeFi</h1>
+        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 5: Advanced Swaps, Bridges & Lending</h1>
         <p className="text-gray-600 mb-10">Earn interest by lending test tokens on Aave.</p>
 
         <div className="bg-white border border-gray-200 rounded-3xl p-8 mb-10">

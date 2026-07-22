@@ -1,3 +1,4 @@
+// Day 4: Bridge Tokens Between Chains
 
 'use client'
 
@@ -8,7 +9,7 @@ import Footer from '@/components/Footer'
 import { saveOnboardingProgress } from '@/lib/supabase'
 import { trackOnboardingProgress } from '@/lib/analytics'
 
-export default function Day3Page() {
+export default function Day4Page() {
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [streak, setStreak] = useState(0)
@@ -32,7 +33,7 @@ export default function Day3Page() {
 
   const markDayComplete = async () => {
     const newStreak = streak + 1
-    const newDays = [...new Set([...completedDays, 3])]
+    const newDays = [...new Set([...completedDays, 4])]
 
     setStreak(newStreak)
     setCompletedDays(newDays)
@@ -59,23 +60,24 @@ export default function Day3Page() {
           <div className="font-mono text-xs text-[#1a6b00]">🔥 {streak} day streak</div>
         </div>
 
-        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 3: First Token Swap</h1>
-        <p className="text-gray-600 mb-10">Execute your first swap on Uniswap testnet. Learn how decentralized exchanges work.</p>
+        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 3: Bridge Tokens</h1>
+        <p className="text-gray-600 mb-10">Move test tokens between different blockchains using a bridge.</p>
 
         <div className="bg-white border border-gray-200 rounded-3xl p-8 mb-10">
-          <a href="https://app.uniswap.org/#/swap?chain=sepolia" target="_blank" rel="noopener noreferrer" className="block w-full py-6 bg-[#1a6b00] text-white text-center rounded-3xl font-medium text-xl mb-6 hover:bg-[#0f4600] transition-all">
-            Open Uniswap Testnet →
+          <a href="https://testnet.brid.gg/base-sepolia" target="_blank" rel="noopener noreferrer" className="block w-full py-6 bg-[#1a6b00] text-white text-center rounded-3xl font-medium text-xl mb-6 hover:bg-[#0f4600] transition-all">
+            Open Test Bridge →
           </a>
           <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-sm space-y-3">
-            <p><strong>How to get started:</strong></p>
-            <ol className="list-decimal list-inside space-y-2 text-gray-700">
-              <li>Click the button above to open Uniswap</li>
-              <li>Go to Settings (⚙️ icon, top right)</li>
-              <li>Toggle <strong>Testnets</strong> ON</li>
-              <li>Select <strong>Sepolia</strong> network</li>
-              <li>Swap your testnet ETH for another token</li>
+            <p><strong>What you'll do:</strong></p>
+            <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <li>Connect your wallet to the bridge</li>
+              <li>Select source chain: Sepolia</li>
+              <li>Select destination chain: Base Sepolia</li>
+              <li>Enter amount to bridge</li>
               <li>Complete the transaction</li>
-            </ol>
+              <li>Wait for confirmation on destination chain</li>
+            </ul>
+            <p className="mt-3"><strong>Why bridges matter:</strong> Airdrops happen on different chains. You need to know how to move assets around efficiently.</p>
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export default function Day3Page() {
 
         {completed && (
           <div className="mt-8 text-center">
-            <Link href="/onboarding/day-4" className="inline-block bg-[#1a6b00] text-white px-12 py-5 rounded-3xl text-xl hover:bg-[#0f4600] transition-all">
+            <Link href="/onboarding/day-5" className="inline-block bg-[#1a6b00] text-white px-12 py-5 rounded-3xl text-xl hover:bg-[#0f4600] transition-all">
               Continue to Day 4 →
             </Link>
           </div>
@@ -103,3 +105,4 @@ export default function Day3Page() {
     </>
   )
 }
+

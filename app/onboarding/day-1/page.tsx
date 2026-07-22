@@ -1,506 +1,187 @@
-'use client'
+// FILE: app/onboarding/day-1/page.tsx
+// DAY 1 - Create Your Wallet (with article links)
 
-import { useEffect, useState } from 'react'
-import { trackOnboardingStarted, trackOnboardingCompleted } from '@/lib/analytics-complete'
+import Link from 'next/link'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import { CheckCircle2, ArrowRight, BookOpen } from 'lucide-react'
 
-export default function Day1() {
-  const [completed, setCompleted] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    trackOnboardingStarted('user@example.com')
-  }, [])
-
-  const handleComplete = () => {
-    trackOnboardingCompleted('user@example.com')
-    setCompleted(true)
-  }
-
-  if (!mounted) return null
-
+export default function Day1Page() {
   return (
-    <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff', padding: '40px 20px' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
-        {/* Header */}
-        <div style={{ marginBottom: '60px' }}>
-          <a href="/onboarding/day-1" style={{ color: '#c8ff00', textDecoration: 'none' }}>
-            🌱 Onboarding
-          </a>
-          <h1 style={{ 
-            fontSize: '48px', 
-            marginTop: '10px',
-            marginBottom: '10px',
-            color: '#f0f0f0',
-            fontWeight: '700'
-          }}>
-            Day 1: Create Your Wallet
-          </h1>
-          <p style={{ 
-            fontSize: '16px',
-            color: '#999',
-            marginBottom: '20px'
-          }}>
-            Your first step into Web3: Create a secure wallet and claim testnet ETH
-          </p>
-        </div>
-
+    <>
+      <Nav />
+      <main className="max-w-4xl mx-auto px-6 py-12">
+        
         {/* Progress Bar */}
-        <div style={{
-          background: '#111',
-          padding: '20px',
-          borderRadius: '8px',
-          marginBottom: '40px'
-        }}>
-          <div style={{
-            fontSize: '12px',
-            color: '#999',
-            marginBottom: '10px'
-          }}>
-            Progress: Day 1 of 7
-          </div>
-          <div style={{
-            background: '#0a0a0a',
-            height: '8px',
-            borderRadius: '4px',
-            overflow: 'hidden'
-          }}>
-            <div style={{
-              background: '#c8ff00',
-              height: '100%',
-              width: '14%',
-              transition: 'width 0.3s'
-            }} />
+        <div className="mb-12">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="font-mono text-xs text-gray-600 font-bold">PROGRESS</span>
+            <div className="flex-1 bg-gray-200 rounded-full h-2 overflow-hidden">
+              <div className="bg-[#1a6b00] h-full w-1/7"></div>
+            </div>
+            <span className="font-mono text-xs text-gray-600">1 / 7</span>
           </div>
         </div>
 
-        {/* Main Content Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 300px',
-          gap: '40px',
-          marginBottom: '60px'
-        }}>
-          {/* Left Column - Lessons */}
-          <div>
-            {/* Lesson 1 */}
-            <section style={{
-              background: '#111',
-              padding: '30px',
-              borderRadius: '8px',
-              marginBottom: '30px',
-              border: '1px solid #222'
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                marginBottom: '20px'
-              }}>
-                <div style={{
-                  background: '#c8ff00',
-                  color: '#0a0a0a',
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: '700',
-                  fontSize: '16px'
-                }}>
-                  1
-                </div>
-                <h2 style={{ 
-                  fontSize: '20px',
-                  color: '#f0f0f0',
-                  fontWeight: '700'
-                }}>
-                  Download a Web3 Wallet
-                </h2>
-              </div>
-
-              <p style={{
-                color: '#ccc',
-                lineHeight: '1.7',
-                marginBottom: '20px'
-              }}>
-                A Web3 wallet is your gateway to the blockchain. Think of it like a bank account, but you have complete control. No middleman.
-              </p>
-
-              <div style={{
-                background: '#0a0a0a',
-                padding: '20px',
-                borderRadius: '6px',
-                marginBottom: '20px',
-                borderLeft: '4px solid #c8ff00'
-              }}>
-                <div style={{
-                  fontSize: '14px',
-                  color: '#ccc',
-                  marginBottom: '15px',
-                  fontWeight: '700'
-                }}>
-                  ✅ Choose one:
-                </div>
-                <ul style={{
-                  color: '#999',
-                  fontSize: '14px',
-                  marginLeft: '20px',
-                  lineHeight: '1.8'
-                }}>
-                  <li><strong>MetaMask</strong> - Most popular. Works on Chrome, Firefox, Safari</li>
-                  <li><strong>Coinbase Wallet</strong> - Beginner-friendly alternative</li>
-                  <li><strong>Rabby Wallet</strong> - Advanced features, high security</li>
-                </ul>
-              </div>
-
-              <a href="https://metamask.io" target="_blank" rel="noopener noreferrer" style={{
-                display: 'inline-block',
-                padding: '12px 20px',
-                background: '#c8ff00',
-                color: '#0a0a0a',
-                textDecoration: 'none',
-                borderRadius: '4px',
-                fontWeight: '700',
-                fontSize: '14px'
-              }}>
-                Download MetaMask →
-              </a>
-            </section>
-
-            {/* Lesson 2 */}
-            <section style={{
-              background: '#111',
-              padding: '30px',
-              borderRadius: '8px',
-              marginBottom: '30px',
-              border: '1px solid #222'
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                marginBottom: '20px'
-              }}>
-                <div style={{
-                  background: '#c8ff00',
-                  color: '#0a0a0a',
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: '700',
-                  fontSize: '16px'
-                }}>
-                  2
-                </div>
-                <h2 style={{ 
-                  fontSize: '20px',
-                  color: '#f0f0f0',
-                  fontWeight: '700'
-                }}>
-                  Create Your First Wallet
-                </h2>
-              </div>
-
-              <p style={{
-                color: '#ccc',
-                lineHeight: '1.7',
-                marginBottom: '20px'
-              }}>
-                After installing your wallet, create a new wallet. You'll get a 12-word seed phrase - this is your wallet's master key.
-              </p>
-
-              <div style={{
-                background: '#0a0a0a',
-                padding: '20px',
-                borderRadius: '6px',
-                marginBottom: '20px',
-                borderLeft: '4px solid #ff6b6b'
-              }}>
-                <div style={{
-                  fontSize: '14px',
-                  color: '#ff6b6b',
-                  marginBottom: '10px',
-                  fontWeight: '700'
-                }}>
-                  ⚠️ CRITICAL: Seed Phrase Safety
-                </div>
-                <p style={{
-                  color: '#ccc',
-                  fontSize: '14px',
-                  lineHeight: '1.6'
-                }}>
-                  Write these 12 words on paper. Keep them private. Never share them with anyone, not even support staff. If someone has your seed phrase, they control your funds.
-                </p>
-              </div>
-
-              <div style={{
-                background: '#0a0a0a',
-                padding: '20px',
-                borderRadius: '6px',
-                borderLeft: '4px solid #00ffe0'
-              }}>
-                <div style={{
-                  fontSize: '14px',
-                  color: '#00ffe0',
-                  marginBottom: '10px',
-                  fontWeight: '700'
-                }}>
-                  💡 Pro Tip
-                </div>
-                <p style={{
-                  color: '#ccc',
-                  fontSize: '14px',
-                  lineHeight: '1.6'
-                }}>
-                  Use a password manager to store your seed phrase safely. Consider using a hardware wallet (Ledger, Trezor) for large amounts.
-                </p>
-              </div>
-            </section>
-
-            {/* Lesson 3 */}
-            <section style={{
-              background: '#111',
-              padding: '30px',
-              borderRadius: '8px',
-              marginBottom: '30px',
-              border: '1px solid #222'
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                marginBottom: '20px'
-              }}>
-                <div style={{
-                  background: '#c8ff00',
-                  color: '#0a0a0a',
-                  width: '32px',
-                  height: '32px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: '700',
-                  fontSize: '16px'
-                }}>
-                  3
-                </div>
-                <h2 style={{ 
-                  fontSize: '20px',
-                  color: '#f0f0f0',
-                  fontWeight: '700'
-                }}>
-                  Get Your Address & Testnet ETH
-                </h2>
-              </div>
-
-              <p style={{
-                color: '#ccc',
-                lineHeight: '1.7',
-                marginBottom: '20px'
-              }}>
-                Your wallet has an address (like an IBAN). This is public - you can share it safely. Use testnet to practice without real money.
-              </p>
-
-              <div style={{
-                background: '#0a0a0a',
-                padding: '20px',
-                borderRadius: '6px',
-                marginBottom: '20px'
-              }}>
-                <div style={{
-                  fontSize: '12px',
-                  color: '#999',
-                  marginBottom: '8px'
-                }}>
-                  Steps:
-                </div>
-                <ol style={{
-                  color: '#ccc',
-                  fontSize: '14px',
-                  marginLeft: '20px',
-                  lineHeight: '1.8'
-                }}>
-                  <li>Click your wallet address in MetaMask</li>
-                  <li>Copy it (you'll see a check mark)</li>
-                  <li>Go to <strong>sepolia.faucet.paradigm.xyz</strong></li>
-                  <li>Paste your address</li>
-                  <li>Click "Send me ETH"</li>
-                  <li>Wait 1-2 minutes - you'll see funds appear!</li>
-                </ol>
-              </div>
-            </section>
+        {/* Header */}
+        <div className="mb-12">
+          <div className="inline-block px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-full font-mono text-xs font-bold mb-4">
+            DAY 1 / 7
           </div>
-
-          {/* Right Sidebar */}
-          <div>
-            {/* Quick Checklist */}
-            <div style={{
-              background: '#111',
-              padding: '20px',
-              borderRadius: '8px',
-              border: '1px solid #222',
-              position: 'sticky',
-              top: '20px'
-            }}>
-              <div style={{
-                fontSize: '14px',
-                color: '#c8ff00',
-                fontWeight: '700',
-                marginBottom: '15px'
-              }}>
-                ✅ Today's Tasks
-              </div>
-
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px'
-              }}>
-                {[
-                  'Download MetaMask/Wallet',
-                  'Create new wallet',
-                  'Save seed phrase safely',
-                  'Switch to Sepolia testnet',
-                  'Claim testnet ETH',
-                  'See funds arrive'
-                ].map((task, i) => (
-                  <label key={i} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    cursor: 'pointer',
-                    fontSize: '13px',
-                    color: '#ccc'
-                  }}>
-                    <input type="checkbox" style={{ cursor: 'pointer' }} />
-                    {task}
-                  </label>
-                ))}
-              </div>
-
-              <div style={{
-                marginTop: '20px',
-                padding: '15px',
-                background: '#0a0a0a',
-                borderRadius: '6px',
-                borderLeft: '4px solid #c8ff00'
-              }}>
-                <div style={{
-                  fontSize: '12px',
-                  color: '#999',
-                  marginBottom: '8px'
-                }}>
-                  ⏱️ Time needed
-                </div>
-                <div style={{
-                  fontSize: '18px',
-                  color: '#c8ff00',
-                  fontWeight: '700'
-                }}>
-                  15-20 minutes
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation */}
-            <div style={{
-              marginTop: '20px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '10px'
-            }}>
-              <button 
-                disabled
-                style={{
-                  padding: '12px',
-                  background: '#333',
-                  color: '#999',
-                  border: '1px solid #222',
-                  borderRadius: '6px',
-                  fontSize: '13px',
-                  cursor: 'not-allowed',
-                  fontWeight: '700'
-                }}
-              >
-                ← Previous Day
-              </button>
-              <a href="/onboarding/day-2" style={{
-                padding: '12px',
-                background: '#222',
-                color: '#c8ff00',
-                border: '1px solid #333',
-                borderRadius: '6px',
-                fontSize: '13px',
-                textDecoration: 'none',
-                textAlign: 'center',
-                fontWeight: '700'
-              }}>
-                Next Day →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Completion Button */}
-        {!completed ? (
-          <button 
-            onClick={handleComplete}
-            style={{
-              width: '100%',
-              padding: '16px',
-              background: '#c8ff00',
-              color: '#0a0a0a',
-              border: 'none',
-              fontSize: '16px',
-              fontWeight: '700',
-              cursor: 'pointer',
-              borderRadius: '6px',
-              transition: 'all 0.3s'
-            }}
-          >
-            ✅ I've Completed Day 1 →
-          </button>
-        ) : (
-          <div style={{
-            padding: '20px',
-            background: '#0a0a0a',
-            border: '2px solid #c8ff00',
-            borderRadius: '6px',
-            color: '#c8ff00',
-            textAlign: 'center',
-            fontWeight: '700',
-            fontSize: '16px'
-          }}>
-            🎉 Day 1 Complete! Move to Day 2
-          </div>
-        )}
-
-        {/* Footer */}
-        <div style={{
-          marginTop: '60px',
-          paddingTop: '40px',
-          borderTop: '1px solid #222',
-          textAlign: 'center',
-          color: '#666',
-          fontSize: '14px'
-        }}>
-          <p style={{ marginBottom: '10px' }}>
-            Need help? Join our community on Discord
+          <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-4">
+            Create Your Wallet
+          </h1>
+          <p className="text-xl text-gray-700 leading-relaxed">
+            Your wallet is your identity on-chain. It's like a bank account, but you control it completely. No passwords, no banks, just you and your keys.
           </p>
-          <a href="https://discord.gg/web3farmyard" style={{
-            color: '#c8ff00',
-            textDecoration: 'none'
-          }}>
-            → Discord Community
-          </a>
         </div>
-      </div>
-    </main>
+
+        {/* Main Content */}
+        <div className="space-y-8 mb-12">
+          
+          {/* Step 1 */}
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-8 h-8 bg-blue-50 border-2 border-blue-500 text-blue-700 rounded-full flex items-center justify-center font-bold">
+                1
+              </div>
+              <div>
+                <h2 className="font-bold text-2xl text-[#0a0a0a] mb-2">Download Zerion Wallet</h2>
+                <p className="text-gray-700 mb-4">
+                  Zerion is a secure Web3 wallet for Ethereum and EVM chains. Use it to store testnet funds and interact with dApps.
+                </p>
+                <a
+                  href="https://link.zerion.io/referral?code=8ZXJE6VKK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all"
+                >
+                  Download Zerion Wallet
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 2 */}
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-8 h-8 bg-green-50 border-2 border-green-500 text-green-700 rounded-full flex items-center justify-center font-bold">
+                2
+              </div>
+              <div>
+                <h2 className="font-bold text-2xl text-[#0a0a0a] mb-2">Create a New Wallet</h2>
+                <p className="text-gray-700 mb-4">
+                  Open Zerion and follow the setup wizard. You'll get a 12-word recovery phrase - this is critical. Never share it with anyone.
+                </p>
+                <p className="text-sm text-gray-500 mb-4">
+                  <a
+                    href="https://www.web3farmyard.com/blog/step-by-step-beginner-guide-how-to-create-secure-your-first-crypto-wallet/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#1a6b00] hover:underline"
+                  >
+                    How to set up your wallet
+                  </a>
+                </p>
+                <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
+                  <p className="text-red-900 font-mono text-sm">
+                    ⚠️ <strong>CRITICAL:</strong> Save your 12-word seed phrase in a safe place. If you lose it, you lose access to your funds forever.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-8 h-8 bg-purple-50 border-2 border-purple-500 text-purple-700 rounded-full flex items-center justify-center font-bold">
+                3
+              </div>
+              <div>
+                <h2 className="font-bold text-2xl text-[#0a0a0a] mb-2">Verify Your Setup</h2>
+                <p className="text-gray-700 mb-4">
+                  Zerion will ask you to confirm your seed phrase. Write down the words in order and verify them correctly.
+                </p>
+                <p className="text-gray-700">
+                  Once confirmed, your wallet is live! You now have an Ethereum address you can receive crypto on.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Step 4 */}
+          <div className="bg-white border-2 border-gray-200 rounded-xl p-8">
+            <div className="flex items-start gap-4 mb-6">
+              <div className="flex-shrink-0 w-8 h-8 bg-yellow-50 border-2 border-yellow-500 text-yellow-700 rounded-full flex items-center justify-center font-bold">
+                4
+              </div>
+              <div>
+                <h2 className="font-bold text-2xl text-[#0a0a0a] mb-2">Get Testnet ETH</h2>
+                <p className="text-gray-700 mb-4">
+                  Get free Testnet tokens for practice. Go to the faucet, select chain e.g. Sepolia ETH, follow the onscreen prompt, share a tweet and copy the link when prompted to request tokens. Repeat for multiple chains — you are only allowed one request per chain every 24 hours. After request, the tokens take a little time to hit your wallet.
+                </p>
+                <a
+                  href="https://faucet.trade/sepolia-eth-faucet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition-all"
+                >
+                  Get Sepolia Testnet ETH
+                  <ArrowRight size={18} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Related Articles */}
+        <section className="mb-12">
+          <h2 className="font-serif text-2xl font-bold text-[#0a0a0a] mb-6 flex items-center gap-2">
+            <BookOpen size={24} />
+            Learn More
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="https://www.web3farmyard.com/blog/step-by-step-beginner-guide-how-to-create-secure-your-first-crypto-wallet/" target="_blank" rel="noopener noreferrer" className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-all block">
+              <h3 className="font-bold text-blue-900 mb-2">📚 Wallet Security Guide</h3>
+              <p className="text-sm text-blue-800">Learn how to keep your wallet safe from scams and hacks</p>
+            </a>
+            <Link href="/blog" className="bg-purple-50 border-2 border-purple-200 rounded-lg p-6 hover:bg-purple-100 transition-all">
+              <h3 className="font-bold text-purple-900 mb-2">🔑 Understanding Private Keys</h3>
+              <p className="text-sm text-purple-800">What are private keys and why they matter</p>
+            </Link>
+            <Link href="/blog" className="bg-green-50 border-2 border-green-200 rounded-lg p-6 hover:bg-green-100 transition-all">
+              <h3 className="font-bold text-green-900 mb-2">⛓️ Introduction to Blockchains</h3>
+              <p className="text-sm text-green-800">How blockchain technology works</p>
+            </Link>
+            <Link href="/toolkit" className="bg-orange-50 border-2 border-orange-200 rounded-lg p-6 hover:bg-orange-100 transition-all">
+              <h3 className="font-bold text-orange-900 mb-2">🌉 Multi-Chain Wallets</h3>
+              <p className="text-sm text-orange-800">Use your wallet on different blockchains</p>
+            </Link>
+          </div>
+        </section>
+
+        {/* Next Day CTA */}
+        <div className="bg-gradient-to-r from-[#f0f8e8] to-white rounded-2xl p-12 border-2 border-[#d0e8c0] text-center">
+          <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-4">
+            Done with Day 1?
+          </h2>
+          <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+            Great job! You now have a wallet and understand how to keep it safe. Tomorrow, we'll learn how to swap tokens and bridge between chains.
+          </p>
+          <Link
+            href="/onboarding/day-2"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all text-lg"
+          >
+            Continue to Day 2
+            <CheckCircle2 size={20} />
+          </Link>
+        </div>
+
+      </main>
+      <Footer />
+    </>
   )
 }

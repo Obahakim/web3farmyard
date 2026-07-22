@@ -4,7 +4,12 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { getAllChains, fmt, llamaLogo, toSlug } from '@/lib/defillama'
 import { generateShowroomMetadata } from '@/lib/metadata'
-import { generateDatasetSchema } from '@/lib/schema'
+import {
+  generateDatasetSchema,
+  generateOrganizationSchema,
+  generateWebPageSchema,
+  generateWebSiteSchema,
+} from '@/lib/schema'
 import ChainLogo from '@/components/ChainLogo'
 
 export const metadata: Metadata = generateShowroomMetadata()
@@ -21,14 +26,38 @@ export default async function ShowroomPage() {
     dateModified: new Date().toISOString().split('T')[0],
     creator: 'Web3Farmyard',
     keywords: ['DeFi', 'TVL', 'blockchain rankings', 'chain metrics'],
-  })
+  }, false)
+
+  const showroomSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      generateOrganizationSchema(),
+      generateWebSiteSchema({
+        url: 'https://www.web3farmyard.com',
+        name: 'Web3Farmyard',
+        description: 'Track 191+ blockchains by live TVL, protocol counts, and DeFi metrics.',
+        publisherId: 'https://www.web3farmyard.com/#organization',
+      }),
+      generateWebPageSchema({
+        id: 'https://www.web3farmyard.com/showroom#webpage',
+        url: 'https://www.web3farmyard.com/showroom',
+        name: 'Live DeFi Chain Rankings — Web3Farmyard',
+        description: 'Ranked blockchain TVL data with live DeFi metrics for 191+ chains.',
+        isPartOfId: 'https://www.web3farmyard.com/#website',
+        primaryImage: { url: 'https://www.web3farmyard.com/og-showroom.png', width: 1200, height: 630 },
+        datePublished: new Date().toISOString().split('T')[0],
+        dateModified: new Date().toISOString().split('T')[0],
+        inLanguage: 'en-US',
+      }, false),
+      datasetSchema,
+    ],
+  }
 
   return (
     <>
-      {/* ✅ Inject Dataset schema for data discovery */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(showroomSchema) }}
       />
 
       <Nav />
@@ -148,7 +177,6 @@ export default async function ShowroomPage() {
                   </div>
 
                   <div className="font-serif font-bold text-dark text-lg mb-2">{fmt(chain.tvl)}</div>
-
                   {chain.change_7d !== null && (
                     <div style={{ fontSize: 12, color: chain.change_7d > 0 ? '#1a6b00' : '#cc0000' }}>
                       {chain.change_7d > 0 ? '↑' : '↓'} {Math.abs(chain.change_7d).toFixed(2)}% (7d)

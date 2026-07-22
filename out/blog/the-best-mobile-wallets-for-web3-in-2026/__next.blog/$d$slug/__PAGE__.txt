@@ -1,0 +1,582 @@
+1:"$Sreact.fragment"
+3:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+4:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+d:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+11:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+2:T9fc,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026","name":"Web3Farmyard Blog","description":"Choosing the right wallet in 2026 is no longer just about storing crypto. The best Web3 wallets now compete on security, chain support, user experience, recover","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026#webpage","url":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026","name":"The Best Mobile Wallets for Web3 in 2026","description":"Choosing the right wallet in 2026 is no longer just about storing crypto. The best Web3 wallets now compete on security, chain support, user experience, recover","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"The Best Mobile Wallets for Web3 in 2026","description":"Choosing the right wallet in 2026 is no longer just about storing crypto. The best Web3 wallets now compete on security, chain support, user experience, recover","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-06-20T23:16:00","dateModified":"2026-06-20T23:16:01","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"The Best Mobile Wallets for Web3 in 2026","item":"https://www.web3farmyard.com/blog/the-best-mobile-wallets-for-web3-in-2026"}]}]}0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L3",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L4",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"The Best Mobile Wallets for Web3 in 2026"}],["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-06-20T23:16:00","children":["Published: ","June 20, 2026"]}],["$","time",null,{"dateTime":"2026-06-20T23:16:01","children":["Updated: ","June 20, 2026"]}]]}]]}],"$L5","$L6"]}],"$L7"]}],"$L8"],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"build-1784103503707"}
+b:T332e,
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/2be63bbd-311d-4017-91f6-0e69cdfa9c2c-1024x683.png" alt="The Best Mobile Wallets for Web3 in 2026">
+
+
+
+<p>Web3 in 2026 feels very different from the “easy money” era most people still fantasize about. Back then, people connected wallets to random protocols, clicked a few buttons, and suddenly woke up to four-figure airdrops. Crypto Twitter turned farming into a frenzy of sorts, flaunting wins. Nobody showed  the hundreds of dead projects that most times followed, wasted gas fees, drained wallets, fake links, and months of meaningless interactions sitting underneath those screenshots. Choosing the wrong wallet in 2026 can destroy months of effort. Especially if you are a low-capital, mobile-first user that is farming testnets daily, interacting with unknown ecosystems, or learning Web3 slowly. This article aims to break down the best mobile wallets for Web3 farming in 2026 from a realistic personal perspective. This is for people trying to navigate Web3 opportunities safely with little money. Below is also a breakdown of the best mobile wallets for web3 in 2026 according to my personal experience.</p>
+
+
+
+<p>Today, Web3 farming is not just about hype, it is also about survival. and your wallet sits at the center of everything. Your wallet is no longer just a crypto storage app. It is your Web3 identity, your farming workstation, your transaction history, your access card, your security perimeter and sometimes your entire financial future.</p>
+
+
+
+<hr>
+
+
+
+<h2>What Actually Makes a Wallet Good for Farming?</h2>
+
+
+
+<p>A normal crypto investor who trades spot positions; may only hold coins, swap occasionally, or store NFTs. For you however, a Web3 farmer, you do much more. you:</p>
+
+
+
+<ul>
+<li>tests new protocols,</li>
+
+
+
+<li>signs transactions daily,</li>
+
+
+
+<li>joins testnets,</li>
+
+
+
+<li>bridges assets,</li>
+
+
+
+<li>explores ecosystems,</li>
+
+
+
+<li>interacts with dApps constantly,</li>
+
+
+
+<li>manages multiple wallets.</li>
+</ul>
+
+
+
+<p>That changes a lot because as a farming wallet, you must survive chaos and chaos is exactly what Web3 becomes during bull cycles.</p>
+
+
+
+<hr>
+
+
+
+<h2>My Biggest Wallet Mistake </h2>
+
+
+
+<p>One of my earliest farming mistakes happened because I acted in convenience without caring about security.</p>
+
+
+
+<p>I used one wallet for farming, holding funds, random minting, testing new dApps, and storing long-term assets. Then one day I connected to a suspicious protocol from an airdrops thread circulating on X. The site looked real, The engagement looked real, The Discord looked real. The approval however was something totally different. A few minutes later, my assets disappeared. Not life-changing money. But it was all i had at the time. It was enough to hurt. Enough to teach the lesson permanently. That experience changed how I approach wallets/transactions entirely. I learnt to think of wallets like rooms inside an Otter’s nest; if one floods, the others should survive. That is the mindset you need to survive in 2026 because scammers are getting smarter</p>
+
+
+
+<hr>
+
+
+
+<h2>What to consider when choosing Mobile Wallets</h2>
+
+
+
+<h3>1. Security Not just Convenience</h3>
+
+
+
+<p>A beautiful interface means nothing if approvals are unclear, transactions are hidden and malicious contracts slip through.</p>
+
+
+
+<p>The best web3 wallets now include: transaction previews, scam warnings, approval visibility, biometric protection, hardware wallet integration, phishing detection. Good wallets add features to help reduce human mistakes because in Web3, most disasters begin as tiny mistakes.<br></p>
+
+
+
+<hr>
+
+
+
+<h3>2. Multi-Chain Support</h3>
+
+
+
+<p>Modern farming happens across:</p>
+
+
+
+
+
+<p>Solana,</p>
+
+
+
+<p>Base,</p>
+
+
+
+<p>Arbitrum,</p>
+
+
+
+<p>Ethereum,</p>
+
+
+
+<p>Sui,</p>
+
+
+
+<p>Aptos,</p>
+
+
+
+<p>Optimism,</p>
+
+
+
+<p>Avalanche,</p>
+
+
+
+<p>Monad ecosystems,</p>
+
+
+
+<p>Berachain ecosystems,</p>
+
+
+
+<p>and newer experimental chains.</p>
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/networks-682x1024.png" alt="EVM networks">
+
+
+
+
+<p>During swaps and bridges, switching between ecosystems should feel smooth and not frustrating. </p>
+
+
+
+<hr>
+
+
+
+<h3>3. Mobile Stability</h3>
+
+
+
+<p>This matters more than people admit. A farming wallet that crashes, disconnects, freezes during approvals, or breaks dApp connections, becomes dangerous. This is especially during NFT mints, bridge transactions, time based interactions, or volatile trading moments. You could for instance mistakenly eun a double transaction due to a wallet crash or because it froze after you signed transaction. I have lost money this way, so avoid wallets that crash constantly.</p>
+
+
+
+<hr>
+
+
+
+<h2>Recommended Mobile Wallets for Web3 in 2026</h2>
+
+
+
+<hr>
+
+
+
+<h2>1. <a href="https://rabby.io/">Rabby Wallet</a></h2>
+
+
+
+<p>Rabby became the favorite wallet of advanced farmers for one major reason; It treats every transaction like a potential threat. That does not sound paranoid, does it?…In Web3, paranoia is healthy.</p>
+
+
+
+<p>Unlike older wallets that simply ask users to “sign,” Rabby simulates transactions before approval. What this means is, you can often see token changes, suspicious approvals, hidden transfers, dangerous contract behavior. That feature alone saves user funds constantly.</p>
+
+
+
+<h3>Why Rabby for  Farmers</h3>
+
+
+
+<p>When you are farming with limited money, every mistake hurts more. A whale losing $100 barely notices but a small farmer like me losing $100 may disappear from farming entirely. That is where Rabby comes in. It helps reduce unnecessary risk, making it extremely valuable for many users.</p>
+
+
+
+<h3>Weaknesses</h3>
+
+
+
+<ul>
+<li>Slightly advanced for beginners</li>
+
+
+
+<li>Mostly EVM-focused</li>
+</ul>
+
+
+
+<p>Rabby should probably become your primary farming wallet when you start joining airdrops/testnets. Especially if you care about security.</p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/rabby-Ui-682x1024.png" alt="">
+
+
+
+<hr>
+
+
+
+<h2>2. <a href="https://www.zerion.io/">ZERION</a></h2>
+
+
+
+<p>Good Mobile Wallet for EVM/Solana Farming. Zerion feels incredibly smooth, Fast, Clean, Stable, Simple. That matters because Solana ecosystems move at terrifying speed. Airdrops appear suddenly. Meme coin cycles explode overnight.<br>Opportunities vanish quickly. But Zerion handles this environment beautifully.</p>
+
+
+
+<hr>
+
+
+
+<h4>Why Zerion for Beginners </h4>
+
+
+
+<p>Most beginner wallets feel confusing eventually. Zerion stays surprisingly intuitive even as features grow. The experience feels lightweight instead of overwhelming. For mobile-first users, this matters enormously since it has a built in browser that eliminates the need for a wallet extension in browser to farm airdrops</p>
+
+
+
+<hr>
+
+
+
+<h4>Security Features</h4>
+
+
+
+<p>Zerion improved massively over the years.  It now includes phishing detection, scam NFT filtering, suspicious transaction warnings, biometric protection, safer connection prompts. This helps beginners avoid common traps. Especially fake NFT and wallet drainer scams.</p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/zerio-homepage-682x1024.png" alt="Zerion home Ui">
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<h2>3. <a href="https://web3.okx.com/">OKX web3 Wallet</a></h2>
+
+
+
+<p>OKX is everywhere. Almost every EVM protocol supports it. That alone keeps it relevant. But OKX is also the wallet most beginners misuse. It is an essential wallet but not ideal as a “main everything wallet.” Use it Instead for compatibility, testnets, burner activity, experimental farming. Do not treat it your savings vault. Okx also has a built in browser for mobile users which is why it made it to this list </p>
+
+
+
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/06/okx-ui-682x1024.png" alt="pkx wallet ui">
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<h2>4. Backpack</h2>
+
+
+
+<p>Backpack feels less like a wallet and more like a Web3 operating system. Its architecture focuses heavily on modular functionality, ecosystem integration, identity systems, advanced app experiences. It is becoming popular for newer ecosystems. Especially among younger Web3 communities since after the launch of Monad</p>
+
+
+
+<hr>
+
+
+
+<h4>Why BackPack?</h4>
+
+
+
+<p>Backpack integrates deeply into emerging environments where reputation, engagement, and ecosystem participation matter increasingly. This is important because future airdrops may rely less on raw transactions and more on ecosystem identity. It is best for experimental ecosystem users, solana-native users and advanced users exploring newer protocols. For mobile users, it is also ideal since it contains built in browser and a dedicated dApps listing.</p>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<h4>Weaknesses</h4>
+
+
+
+<p>Compared to Rabby, security visibility feels weaker. Advanced transaction simulation is limited. That means you must stay personally careful for now until security is improved</p>
+
+
+
+<hr>
+
+
+
+<strong>DISCLAIMER</strong>:
+<p>These are not the only wallets used in web3. There are other wallets like metamask, TokenPocket (i have used this one myself), Coinbase wallet, Slush (for sui chains) and so on. I only chose the wallets i mentioned because they are the ones i felt less stress using and the ones i felt safe using. They are opinions i made on my own and should not be taken as a security or financial advice.</p>
+
+
+
+
+<h2>The Wallet Separation Strategy </h2>
+
+
+
+<p>Never farm with one wallet only. Instead create layers do that when one wallet is compromised, you don’t lose everything. Try this…</p>
+
+
+
+<table><thead><tr><th>Wallet Type</th><th>Purpose</th></tr></thead><tbody><tr><td>Savings/Holdings Wallet</td><td>Long-term holdings</td></tr><tr><td>Farming Wallet (mainnet)</td><td>Daily long term interactions. Reputation and history accumulation</td></tr><tr><td>Burner Wallet</td><td>Risky protocols</td></tr><tr><td>NFT Wallet</td><td>Minting and trading</td></tr><tr><td>Testnet Wallet</td><td>Experimental ecosystems</td></tr></tbody></table>
+
+
+
+<p>This structure can protect you from catastrophic loss as scams become more sophisticated.</p>
+
+
+
+<hr>
+
+
+
+<h2>The  Security Checklist</h2>
+
+
+
+<p>If you are farming  from your phone or PC, follow these rules carefully. Never Save Seed Phrases Digitally  Do not save  in:</p>
+
+
+
+<ul>
+<li>screenshots,</li>
+
+
+
+<li>Telegram,</li>
+
+
+
+<li>Notes apps,</li>
+
+
+
+<li>Google Drive,</li>
+
+
+
+<li>email drafts.</li>
+</ul>
+
+
+
+<p>Write them physically with pen and a notebook you can keep safe then Hide them properly.</p>
+
+
+
+<hr>
+
+
+
+<h3>Revoke Wallet Permissions Regularly</h3>
+
+
+
+<p>Old approvals can quickly become hidden traps. Especially after interacting with abandoned dApps, unknown protocols, experimental bridges. Some of these dApps stay dormant for so long and then a hacker comes along, finds a loophole and exploits it.</p>
+
+
+
+<hr>
+
+
+
+<h3>Avoid Emotional Farming</h3>
+
+
+
+<p>This is what destroys most people, especially beginners constantly. They see some people on the timeline flaunt their wins, then start recklessly connecting wallets everywhere. Fear of missing out becomes more dangerous than the market itself. Slow farming often survives longer than reckless emotional farming. Those wins are years of hard work where it is true and loads of lies when it isn’t true. It didn’t just happen overnight, everyone went through some low tides at some point in their web3 journey</p>
+
+
+
+<hr>
+
+
+
+<p>Your behavior matters more than flashy setups.</p>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<h3>Finally</h3>
+
+
+
+<p>Web3 farming in 2026 is no longer a gold rush filled with easy rewards. It is closer to digital survival. The people still succeeding are usually organized, patient, security-conscious, realistic, and careful with limited capital. That matters because as low-capital farmers we cannot afford repeated mistakes. Your wallet is not just an app. It is your onchain identity, defense system, transaction engine/ledger, and survival gear for your web3 journey. Choose wallets that help you navigate Web3 opportunities safely because in this ecosystem, surviving long enough is often what creates opportunity in the first place. Just survive, do not lose to the bears</p>
+
+
+
+<p>More Reads you might like:</p>
+
+
+
+<pre><code><a href="https://www.web3farmyard.com/blog/step-by-step-beginner-guide-how-to-create-secure-your-first-crypto-wallet/">Create and secure your crypto wallet </a>
+<a href="https://www.web3farmyard.com/blog/are-free-airdrops-dead-in-2026-heres-what-actually-changed/">Are free Airdrops dead?
+</a><a href="https://www.web3farmyard.com/blog/what-can-50-realistically-do-in-web3/">What can $50 realistically do in web3?
+</a><a href="https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto/">How to I dentify scam projects in crypto</a></code></pre>
+
+
+
+<p>If you are looking to onboard web3 but do not want to risk your funds, try web3 transactions on the testnet here.. <a href="https://web3farmyard.com">WEB3FARMYARD</a><br></p>
+
+
+
+<p>To download mentioned wallets and other web3 tools, go to <a href="https://www.web3farmyard.com/toolkit/">TOOLKIT</a></p>
+5:["$","div",null,{"className":"prose prose-lg max-w-none","children":["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$b"},"style":{"lineHeight":"1.8"}}]}]
+c:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          6:["$","style",null,{"children":"$c"}]
+7:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L4",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+8:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L4",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L4",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L4",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L4",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L4",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],"$Le","$Lf"]}],"$L10"]}]}]
+9:["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true}]
+a:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+e:["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}]
+f:["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]
+10:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+13:null

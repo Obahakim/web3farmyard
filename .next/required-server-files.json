@@ -4,7 +4,7 @@
     "env": {},
     "webpack": null,
     "typescript": {
-      "ignoreBuildErrors": false
+      "ignoreBuildErrors": true
     },
     "typedRoutes": false,
     "distDir": ".next",
@@ -20,7 +20,7 @@
       "jsx",
       "js"
     ],
-    "poweredByHeader": true,
+    "poweredByHeader": false,
     "compress": true,
     "images": {
       "deviceSizes": [
@@ -42,12 +42,10 @@
         256,
         384
       ],
-      "path": "/_next/image",
+      "path": "/_next/image/",
       "loader": "default",
       "loaderFile": "",
-      "domains": [
-        "http://web3farmyard.com/cms"
-      ],
+      "domains": [],
       "disableStaticImages": false,
       "minimumCacheTTL": 14400,
       "formats": [
@@ -65,7 +63,16 @@
           "search": ""
         }
       ],
-      "remotePatterns": [],
+      "remotePatterns": [
+        {
+          "protocol": "https",
+          "hostname": "**"
+        },
+        {
+          "protocol": "http",
+          "hostname": "**"
+        }
+      ],
       "qualities": [
         75
       ],
@@ -81,7 +88,7 @@
     },
     "basePath": "",
     "sassOptions": {},
-    "trailingSlash": false,
+    "trailingSlash": true,
     "i18n": null,
     "productionBrowserSourceMaps": false,
     "excludeDefaultMomentLocales": true,
@@ -97,7 +104,8 @@
     },
     "compiler": {},
     "expireTime": 31536000,
-    "staticPageGenerationTimeout": 60,
+    "staticPageGenerationTimeout": 180,
+    "output": "export",
     "modularizeImports": {
       "@mui/icons-material": {
         "transform": "@mui/icons-material/{{member}}"
@@ -223,6 +231,10 @@
       "turbopackInferModuleSideEffects": true,
       "turbopackPluginRuntimeStrategy": "childProcesses",
       "optimizePackageImports": [
+        "@chakra-ui/react",
+        "@emotion/react",
+        "@emotion/styled",
+        "framer-motion",
         "lucide-react",
         "date-fns",
         "lodash-es",

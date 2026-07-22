@@ -1,0 +1,434 @@
+1:"$Sreact.fragment"
+2:I[80541,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],""]
+3:I[51240,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+4:I[26408,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+5:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+6:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+16:I[94780,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default",1]
+:HL["/_next/static/chunks/0muh-4gixenj_.css","style"]
+:HL["https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","style"]
+0:{"P":null,"c":["","blog","the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0muh-4gixenj_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0pml_4hf5672_.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0og9d~5fcn7yp.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/07y7hs_98fxyn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","type":"image/svg+xml","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"preconnect","href":"https://api.llama.fi"}],["$","link",null,{"rel":"preconnect","href":"https://icons.llama.fi"}],["$","link",null,{"rel":"dns-prefetch","href":"https://lzanqqvvpwccrtprzxvu.supabase.co"}],["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-53RS0CQD48","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-53RS0CQD48');\n          "}]]}],["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","$L5",null,{}],["$","main",null,{"className":"max-w-[1100px] mx-auto px-7 py-24 text-center","children":[["$","div",null,{"style":{"fontSize":64,"marginBottom":16},"children":"💀"}],["$","h1",null,{"className":"font-serif text-4xl font-bold text-dark mb-4","children":"404 — Page Not Found"}],["$","p",null,{"className":"text-base mb-8","style":{"color":"#666"},"children":"This page is dead. Check the URL or head back to the Farmyard."}],["$","div",null,{"className":"flex gap-3 justify-center flex-wrap","children":[["$","$L6",null,{"href":"/","className":"btn-primary","children":"← HOME"}],["$","$L6",null,{"href":"/airdrops","className":"btn-outline","children":"🌾 AIRDROPS"}],["$","$L6",null,{"href":"/junkyard","className":"btn-outline","children":"☠️ JUNKYARD"}]]}]]}],["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],"$L7","$L8","$L9","$La"]}]]}],"$Lb","$Lc"]}],"$Ld","$Le"]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],"$Lf","$L10"]}]]}]]}],{"children":["$L11",{"children":["$L12",{"children":["$L13",{},null,false,null]},null,false,"$@14"]},null,false,"$@14"]},null,false,null],"$L15",false]],"m":"$undefined","G":["$16",["$L17"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"build-1784103503707"}
+18:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+19:I[49765,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+1b:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+1c:"$Sreact.suspense"
+1f:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"ViewportBoundary"]
+21:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"MetadataBoundary"]
+7:["$","$L6",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}]
+8:["$","$L6",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}]
+9:["$","$L6",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}]
+a:["$","$L6",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]
+b:["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L6",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}]
+c:["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]
+d:["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]]}]
+e:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+f:["$","$L19",null,{}]
+10:["$","$L2",null,{"id":"tawk-to","strategy":"lazyOnload","children":"\n            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();\n            (function () {\n              var s1 = document.createElement(\"script\"), s0 = document.getElementsByTagName(\"script\")[0];\n              s1.async = true;\n              s1.src = 'https://embed.tawk.to/6a4ab6c48a10cd1d4aadb564/default';\n              s1.charset = 'UTF-8';\n              s1.setAttribute('crossorigin', '*');\n              s0.parentNode.insertBefore(s1, s0);\n            })();\n          "}]
+11:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+12:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+13:["$","$1","c",{"children":["$L1a",[["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true,"nonce":"$undefined"}]],["$","$L1b",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]]}]
+1e:[]
+14:"$W1e"
+15:["$","$1","h",{"children":[null,["$","$L1f",null,{"children":"$L20"}],["$","div",null,{"hidden":true,"children":["$","$L21",null,{"children":["$","$1c",null,{"name":"Next.Metadata","children":"$L22"}]}]}],null]}]
+17:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0muh-4gixenj_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+20:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#c8ff00"}]]
+29:I[53959,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"IconMark"]
+23:Tae9,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this","name":"Web3Farmyard Blog","description":"Most airdrop farmers think rewards are purely about wallet activity; swaps, bridges, testnets. But there’s a hidden layer almost everyone ignores: Discord roles","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this#webpage","url":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this","name":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This)","description":"Most airdrop farmers think rewards are purely about wallet activity; swaps, bridges, testnets. But there’s a hidden layer almost everyone ignores: Discord roles","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This)","description":"Most airdrop farmers think rewards are purely about wallet activity; swaps, bridges, testnets. But there’s a hidden layer almost everyone ignores: Discord roles","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-05-10T15:20:48","dateModified":"2026-05-10T15:20:49","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This)","item":"https://www.web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this"}]}]}1a:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$23"}}],["$","$L5",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L6",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This)"}],"$L24"]}],"$L25","$L26"]}],"$L27"]}],"$L28"]
+1d:null
+22:[["$","title","0",{"children":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This) | Web3Farmyard"}],["$","meta","1",{"name":"description","content":"Most airdrop farmers think rewards are purely about wallet activity; swaps, bridges, testnets. But there’s a hidden layer almost everyone ignores: Discord roles"}],["$","link","2",{"rel":"author","href":"https://www.web3farmyard.com"}],["$","meta","3",{"name":"author","content":"Web3Farmyard"}],["$","meta","4",{"name":"keywords","content":"crypto airdrops,DeFi metrics,live TVL,crypto graveyard,rug pulls,blockchain data,web3 farming"}],["$","meta","5",{"name":"creator","content":"Web3Farmyard"}],["$","meta","6",{"name":"publisher","content":"Web3Farmyard"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-image-preview:large"}],["$","link","9",{"rel":"canonical","href":"https://www.web3farmyard.com/"}],["$","meta","10",{"property":"og:title","content":"The Economy of Discord Roles in Airdrops (Most Farmers Ignore This)"}],["$","meta","11",{"property":"og:description","content":"Most airdrop farmers think rewards are purely about wallet activity; swaps, bridges, testnets. But there’s a hidden layer almost everyone ignores: Discord roles"}],["$","meta","12",{"property":"og:url","content":"https://web3farmyard.com/blog/the-economy-of-discord-roles-in-airdrops-most-farmers-ignore-this/"}],["$","meta","13",{"property":"og:type","content":"article"}],["$","meta","14",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","15",{"name":"twitter:title","content":"Web3Farmyard"}],["$","meta","16",{"name":"twitter:description","content":"Live DeFi data, airdrops, and the crypto graveyard."}],["$","link","17",{"rel":"icon","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","$L29","18",{}]]
+24:["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-05-10T15:20:48","children":["Published: ","May 10, 2026"]}],["$","time",null,{"dateTime":"2026-05-10T15:20:49","children":["Updated: ","May 10, 2026"]}]]}]
+2a:T27b0,
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/05/Blue-and-Orange-Playful-Youtube-Banner--1024x576.png" alt="The hidden economy of discord roles in airdrop" title="The hidden economy of discord roles in airdrops">
+
+
+
+<p>If you’ve ever farmed airdrops long enough, you’ll notice something that doesn’t make sense at first. You and another guy… same testnets, same interactions, same effort. But when rewards start dropping, somehow his own is bigger. At first, it feels like bad luck. Or maybe he just got in earlier. But after a while, that explanation stops holding weight. Because it keeps happening. That is The hidden economy of discord roles in airdrops<br>That was where I found myself.</p>
+
+
+
+<p>I was doing everything “right” on paper. Swapping, bridging, interacting, checking boxes like a good farmer. My wallet looked active. Clean. Eligible. Yet I had this quiet feeling that I was missing something. Thought it was on-chain. But it’s Off-chain. It didn’t come as some big revelation. It was subtle.</p>
+
+
+
+<p>I started noticing certain names popping up again and again in project communities. Not just on Twitter, but inside Discord servers.</p>
+
+
+
+<p>They had tags beside their names, like:</p>
+
+
+
+<ul>
+<li><strong>OG</strong></li>
+
+
+
+<li><strong>Early</strong></li>
+
+
+
+<li><strong>Contributor</strong></li>
+
+
+
+<li><strong>Active</strong></li>
+</ul>
+
+
+
+<p>At first, I ignored it. Thought it was just for show.Until I saw people casually mention that roles affected allocations.That was when everything shifted.<br>Because it meant one thing:<br>Airdrops are not just about what your wallet does…<br>they’re also about how visible you are as a person.</p>
+
+
+
+<h3>The Hidden Economy Nobody Talks About</h3>
+
+
+
+<p>There’s a second layer to airdrops that most farmers don’t factor in (Call it what you want, but I see it as a hidden economy).</p>
+
+
+
+<ul>
+<li>Your wallet activity = proof you showed up</li>
+
+
+
+<li>Your Discord activity = proof you mattered</li>
+</ul>
+
+
+
+<p>Most people focus only on the first part. They treat airdrop farming like a checklist: “Interact, move on, repeat.” But projects are not blind. They’re watching for signals that tell them, “Is this person just farming us… or actually part of what we’re building?” And Discord is where that answer shows.</p>
+
+
+
+<h2>Why Discord Roles Actually Matter</h2>
+
+
+
+<p>From the outside, roles look like badges. But internally, they are filters. Projects use them to, Identify early supporters, track consistent participation, reward helpful community members, separate real users from bots.&nbsp; So when it’s time to allocate rewards, those roles quietly influence outcomes. Not always publicly. Not always equally. But enough to make a difference.</p>
+
+
+
+<p>Types of Roles You’ll See (not exactly how you’ll see them given but how they’re categorized)</p>
+
+
+
+<p>Let’s break it down from experience:</p>
+
+
+
+<p> OG / Early: These are people who joined before noise came in. Projects respect early belief. It signals conviction.</p>
+
+
+
+<p> Active / Regular: Not noise makers, not spammers. Just consistently present. These people show up daily. They’re familiar faces.</p>
+
+
+
+<p>Contributor: This is where things get interesting. Helping others. Answering questions. Sharing insights. These roles carry weight because they reduce workload for the team.</p>
+
+
+
+<p>Ambassador / Power Users: High visibility, strong presence. This is not always necessary, but very powerful if achieved.</p>
+
+
+
+<h3>Why Most Farmers Miss Getting Roles</h3>
+
+
+
+<p>Simple; They join Discord and mute it immediately. They see chatting as a distraction.<br>They think: “If I just do my transactions, I’m good.” So they farm like machines, while others farm like humans. And in a system built by humans… that difference matters. Let us use monad chain as an example. Many of the testnet users didn’t get rewarded (I was one of them) but most of the role holders on discord especially OG/early for good allocations. The same with Pharos; they rewarded discord users more. </p>
+
+
+
+<p><strong>What Actually Works (My Approach)</strong><br>I’m not the loudest person in Discord, and I don’t need to be, nor do you. But here’s what I’ve started doing:</p>
+
+
+
+<ul>
+<li>I check in daily, even if briefly</li>
+
+
+
+<li>I reply to real conversations, not just drop random messages</li>
+
+
+
+<li>I ask questions when I’m confused (this helps visibility more than you think)</li>
+
+
+
+<li>I help newcomers when I can</li>
+
+
+
+<li>I try to be early in smaller or new servers before they get crowded</li>
+</ul>
+
+
+
+<p>Nothing fancy, just consistent presence because over time, people start recognizing your name. And recognition is currency in this space.</p>
+
+
+
+<p>Want to know the truth about On-Chain vs Off-Chain?<br>If you strip everything down:</p>
+
+
+
+<ul>
+<li>On-chain activity qualifies you</li>
+
+
+
+<li>Off-chain activity amplifies you</li>
+</ul>
+
+
+
+<p>One gets your foot in the door. The other decides how you’re treated inside. Why will Projects Care About This?&nbsp; From their perspective, airdrops are not charity. They’re strategic.<br>They want to reward users who will stick around, people who contribute to growth, community members, not just extractors<br>So they look for signals beyond transactions, and Discord is one of the clearest ones. Because you can’t fake consistent presence easily.</p>
+
+
+
+<h2>Mistakes to Avoid</h2>
+
+
+
+<p>Let’s keep this real:</p>
+
+
+
+<ul>
+<li>Spamming messages will get you ignored or muted</li>
+
+
+
+<li>Only showing up during hype makes you look opportunistic</li>
+
+
+
+<li>Ignoring smaller projects means missing early positioning</li>
+
+
+
+<li>Staying silent keeps you invisible</li>
+</ul>
+
+
+
+<p>You don’t need to be everywhere but wherever you are, be present.</p>
+
+
+
+<p>How This Changed My Strategy<br>Before, I was just farming. Now, I’m positioning.<br>I still do my on-chain interactions. But I don’t stop there anymore. I show up, I engage, I exist beyond my wallet. Because I realized something important; Being eligible is not the same as being remembered.</p>
+
+
+
+<p>If you’re only farming on-chain, you’re doing half the work. The real game is not just interacting with protocols. It’s becoming someone they recognize when it matters.</p>
+
+
+
+<p>Follow the Journey</p>
+
+
+
+<p>If you’re starting from zero like me, you’ll understand this path.</p>
+
+
+
+<h2>Why Most Airdrop Farmers Stay Broke (And How I’m Trying to Escape It)</h2>
+
+
+
+<p>I won’t lie… this one pain me small to admit. I’ve been farming airdrops for a while. Doing testnets, interacting, keeping up with threads, trying not to miss opportunities. But one day, I had to ask myself one simple question:</p>
+
+
+
+<p>Why am I still broke?</p>
+
+
+
+<p>Because if we’re being honest, a lot of us are active in Web3… but nothing is really changing.</p>
+
+
+
+<p>Wake up, check Twitter (X).<br>You see one thread: <em>“Don’t miss this airdrop.”</em><br>You rush go interact. Another one drops. You jump again. Before you know it, your day is full. But your wallet? Still looking at you like nothing happened. At some point I realized something, I was working… but I wasn’t progressing. E be like say I dey run race, but na treadmill.</p>
+
+
+
+<p>The problem is not that airdrops don’t pay. We’ve seen people win.The real problem is how most of us are approaching it. Including me.</p>
+
+
+
+<h3>1. Farming Without Structure</h3>
+
+
+
+<p>At first, I was just jumping from one project to another. Anything wey trend, I go enter.<br>No plan, No system, No tracking. Just vibes and WiFi. It felt productive… but it wasn’t efficient.</p>
+
+
+
+<p>2. Ignoring Positioning<br>This one changed everything for me. I used to think “As long as my wallet is active, I’m good.”<br>I didn’t know that Discord activity, Twitter presence, community engagement… all these things matter. Some people are not just farming.<br>They are visible, They show up, They engage,They get noticed.<br>Meanwhile, I was just another wallet address.</p>
+
+
+
+<p>3. Chasing Hype Instead of Timing<br>This one is very common. You see a project trending… thousands of people already inside, you still go farm am. By the time rewards come, everything don dilute. You go still get something… but it’s dust.<br>4. Inconsistency<br>Some days, I go hard. 10 projects, Full energy.<br>Next few days? Nothing.No rhythm, no consistency. And in this game, consistency quietly beats intensity.</p>
+
+
+
+<p>5. No Personal contribution to the space **<br>I realized that if I don’t build something for myself, I’m always depending on luck.<br>So I started building. Writing. Documenting. Sharing what I’m learning. Not because I know everything… but because I’m figuring things out.</p>
+
+
+
+<p>And that itself has value.</p>
+
+
+
+<h2>The Shift</h2>
+
+
+
+<p>I&nbsp; stopped treating airdrops like random opportunities and started treating it like a system. Now I think in layers. Right now, I’m:</p>
+
+
+
+<ul>
+<li>Farming (on-chain) → still important</li>
+
+
+
+<li>Positioning (Discord, Twitter) → now intentional</li>
+
+
+
+<li>Building (an onboarding platform) → long-term play</li>
+</ul>
+
+
+
+<p>No be only to show up… you gats show say you dey useful to the space. Onboard Normies in your area if you can (Introduce them to <a href="https://web3farmyard.com">Web3farmyard</a> for easy onboarding). Talk about web3 or build if u can. <br>One thing I had to accept; Being busy is not the same as making progress. That line alone should change how you move.</p>
+
+
+
+<p>My Final Take<br>Airdrops still pay but not for everyone and not in the same way. If you keep approaching it randomly, results will also be random. But if you start treating it like a system…</p>
+
+
+
+<p>Things begin to change.</p>
+
+
+
+<p>Slowly, but surely<br><br><br>Read more: <a href="https://www.web3farmyard.com/blog/how-to-position-for-airdrops-in-2026/">How to position for airdrops 2026</a><br>                            <a href="https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto/">How to Identify scam projects in Crypto</a></p>
+25:["$","div",null,{"className":"prose prose-lg max-w-none","children":["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$2a"},"style":{"lineHeight":"1.8"}}]}]
+2b:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          26:["$","style",null,{"children":"$2b"}]
+27:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L6",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+28:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L6",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L6",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L6",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L6",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L6",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:0:props:children:0:props:iconNode","className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:1:props:children:0:props:iconNode","className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:2:props:children:0:props:iconNode","className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:3:props:children:0:props:iconNode","className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]]}],"$L2c"]}]}]
+2c:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]

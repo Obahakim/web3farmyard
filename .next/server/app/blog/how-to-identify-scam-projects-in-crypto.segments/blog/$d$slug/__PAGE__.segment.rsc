@@ -1,13 +1,16 @@
 1:"$Sreact.fragment"
-2:I[63135,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0on68mh3m_gy6.js","/_next/static/chunks/08wkd.v2n9wh..js"],"default"]
-9:I[66450,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
-a:"$Sreact.suspense"
-3:T2675,
-<figure class="wp-block-image size-large"><img decoding="async" src="https://web3farmyard.com/cms/wp-content/uploads/2026/04/AZ216Z-9Gtyg35c1Gw9eLA-AZ216Z-9PwgjwiCMBFYgfw-1024x584.jpg" alt="How to identify Scam crypto projects" class="wp-image-55" title="Shows the danger of falling victim of crypto scams"/></figure>
+3:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+4:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+d:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+11:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+12:"$Sreact.suspense"
+2:T9bd,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","name":"Web3Farmyard Blog","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto#webpage","url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","name":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-04-22T16:33:30","dateModified":"2026-05-09T14:10:53","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","item":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto"}]}]}0:{"rsc":["$","$1","c",{"children":[[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$2"}}],["$","$L3",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L4",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-04-22T16:33:30","children":["Published: ","April 22, 2026"]}],["$","time",null,{"dateTime":"2026-05-09T14:10:53","children":["Updated: ","May 9, 2026"]}]]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none","children":"$L5"}],"$L6"]}],"$L7"]}],"$L8"],["$L9"],"$La"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"build-1784103503707"}
+b:T244d,
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/04/Farm-Themed-Crypto-Scam-Awareness-Banner-1024x576.png" alt="How to identify Scam crypto projects" title="Shows the danger of falling victim of crypto scams">
 
 
 
-<h2 class="wp-block-heading">How to Identify Scam Crypto Projects: A Beginner-Friendly Guide</h2>
+<h2>How to Identify Scam Crypto Projects: A Beginner-Friendly Guide</h2>
 
 
 
@@ -67,7 +70,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol class="wp-block-list">
+<ol>
 <li>Unrealistic Profit Promises</li>
 </ol>
 
@@ -81,7 +84,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   “100x guaranteed”
+<pre><code>•   “100x guaranteed”
 •   “Daily passive income forever”
 •   “Turn $100 into $10,000 fast”</code></pre>
 
@@ -107,7 +110,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Is there a visible team?
+<pre><code>•   Is there a visible team?
 •   Do founders have history in tech or crypto?
 •   Can their claims be verified?
 •   Are LinkedIn profiles real? (If they don’t have LinkedIn verify X(formerly Twitter) accounts)</code></pre>
@@ -118,7 +121,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="3" class="wp-block-list">
+<ol>
 <li>Poor or Copied Website</li>
 </ol>
 
@@ -132,7 +135,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Broken links
+<pre><code>•   Broken links
 •   Grammar mistakes
 •   Impressive trendy, overused words or phrases that sound impressive but doesn’t clear meaning or real substance. 
 •   Stolen images; if they don’t care about creating their own images, how can they be real serious?
@@ -140,7 +143,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="4" class="wp-block-list">
+<ol>
 <li>No Clear Use Case<br>What does this project actually do?</li>
 </ol>
 
@@ -154,7 +157,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="5" class="wp-block-list">
+<ol>
 <li>Suspicious Tokenomics</li>
 </ol>
 
@@ -164,7 +167,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Team owns most of supply
+<pre><code>•   Team owns most of supply
 •   Tiny public allocation
 •   No lockups for insiders
 •   Massive future unlocks
@@ -176,7 +179,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="6" class="wp-block-list">
+<ol>
 <li>Fake Community Hype</li>
 </ol>
 
@@ -186,7 +189,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Thousands of followers but little real engagement
+<pre><code>•   Thousands of followers but little real engagement
 •   Comments like “Great project!”
 •   Constant shilling with no real substance/meaningful message 
 •   Telegram groups full of bots
@@ -195,7 +198,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="7" class="wp-block-list">
+<ol>
 <li>Pressure to Buy Immediately<br>Guess what scammers love as much as they love lying? Scammers love countdown clocks. “Last chance”, “Buy now before listing”, “Only 10 minutes left”, “You’ll regret missing this”</li>
 </ol>
 
@@ -205,7 +208,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="8" class="wp-block-list">
+<ol>
 <li>No Security Audit or Transparency<br>For DeFi projects especially, smart contract risk matters. You need to check whether the project shares:Audit reports, Open-source code, their security practices, Risk disclosures.</li>
 </ol>
 
@@ -215,7 +218,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="9" class="wp-block-list">
+<ol>
 <li>Influencers Pushing It Aggressively</li>
 </ol>
 
@@ -225,7 +228,7 @@ a:"$Sreact.suspense"
 
 
 
-<ol start="10" class="wp-block-list">
+<ol>
 <li>Withdrawal Problems<br>If users can deposit easily but struggle to withdraw, this is a major danger sign.</li>
 </ol>
 
@@ -235,7 +238,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Frozen funds
+<pre><code>•   Frozen funds
 •   Delayed withdrawals
 •   Endless verification requests
 •   Extra fees to release funds</code></pre>
@@ -334,7 +337,7 @@ a:"$Sreact.suspense"
 
 
 
-<pre class="wp-block-code"><code>•   Never invest money you cannot lose
+<pre><code>•   Never invest money you cannot lose
 •   Never share seed phrase
 •   Double-check URLs
 •   Use separate wallet for risky experiments
@@ -357,10 +360,121 @@ a:"$Sreact.suspense"
 
 
 <p>Just take it easy; Slow down. Verify claims. Ask simple questions. If something feels engineered to trigger greed, that feeling is worth listening to. Personally, my own instincts has saved me a lot of times. Just don’t be judgmental, follow specific rules. And in crypto, avoiding one disaster can matter more than catching one moonbag<br><br><br>Go to our <a href="https://web3farmyard.com/junkyard">JunkYard</a>, the first graveyard for (dead) crypto projects, to see how many millions have been lost and where/how.<br></p>
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"style":{"minHeight":"100vh","background":"#0a0a0a","color":"#fff","padding":"40px 20px"},"children":[["$","$L2",null,{"slug":"how-to-identify-scam-projects-in-crypto","title":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","div",null,{"style":{"maxWidth":"800px","margin":"0 auto"},"children":[["$","a",null,{"href":"/blog","style":{"color":"#c8ff00","textDecoration":"none","marginBottom":"20px","display":"inline-block"},"children":"← Back to Blog"}],["$","article",null,{"style":{"marginTop":"30px"},"children":[["$","h1",null,{"style":{"fontSize":"42px","marginBottom":"10px","lineHeight":"1.2"},"children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","div",null,{"style":{"color":"#666","marginBottom":"40px","fontSize":"14px","display":"flex","gap":"20px"},"children":[["$","span",null,{"children":["📅 ","22/04/2026"]}],"$undefined"]}],"$undefined",["$","div",null,{"style":{"background":"#111","padding":"30px","borderRadius":"8px","lineHeight":"1.8","color":"#ccc"},"children":["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$3"}}]}],"$L4","$L5"]}]]}]]}],["$L6","$L7"],"$L8"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"8YmuduzIGD989aL5xqRl2"}
-4:["$","div",null,{"style":{"marginTop":"40px","padding":"20px","background":"#111","borderRadius":"8px","textAlign":"center"},"children":[["$","p",null,{"style":{"marginBottom":"15px","color":"#ccc"},"children":"Ready to start your Web3 journey?"}],["$","a",null,{"href":"/onboarding/day-1","style":{"display":"inline-block","padding":"12px 24px","background":"#c8ff00","color":"#0a0a0a","textDecoration":"none","fontWeight":"bold","borderRadius":"4px","cursor":"pointer","transition":"all 0.3s"},"children":"Start the Onboarding →"}]]}]
-5:["$","div",null,{"style":{"marginTop":"60px","paddingTop":"40px","borderTop":"1px solid #222","display":"flex","justifyContent":"space-between","gap":"20px"},"children":[["$","a",null,{"href":"/blog","style":{"color":"#c8ff00","textDecoration":"none","padding":"10px 16px","border":"1px solid #333","borderRadius":"4px","transition":"all 0.3s"},"children":"← All Articles"}],["$","a",null,{"href":"/airdrops","style":{"color":"#c8ff00","textDecoration":"none","padding":"10px 16px","border":"1px solid #333","borderRadius":"4px","transition":"all 0.3s"},"children":"View Airdrops →"}]]}]
-6:["$","script","script-0",{"src":"/_next/static/chunks/0on68mh3m_gy6.js","async":true}]
-7:["$","script","script-1",{"src":"/_next/static/chunks/08wkd.v2n9wh..js","async":true}]
-8:["$","$L9",null,{"children":["$","$a",null,{"name":"Next.MetadataOutlet","children":"$@b"}]}]
-b:null
+5:["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$b"},"style":{"lineHeight":"1.8"}}]
+c:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          6:["$","style",null,{"children":"$c"}]
+7:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L4",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+8:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L4",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L4",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L4",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L4",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L4",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L4",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$Ld",null,{"iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],"$Le","$Lf"]}],"$L10"]}]}]
+9:["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true}]
+a:["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]
+e:["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}]
+f:["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]
+10:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+13:null

@@ -22,6 +22,7 @@
 /* ── BASE ─────────────────────────────────────────────────────────────────── */
 html { scroll-behavior: smooth; }
 body {
+  margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
@@ -29,6 +30,13 @@ body {
   overflow-x: hidden;
 }
 *, *::before, *::after { box-sizing: border-box; }
+img, picture, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+}
+button, input, textarea, select {
+  font: inherit;
+}
 ::-webkit-scrollbar { width: 5px; height: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }

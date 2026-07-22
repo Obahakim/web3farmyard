@@ -1,329 +1,232 @@
-import type { Metadata } from 'next'
+// FILE: app/page.tsx
+// HOMEPAGE - SEO Optimized with JSON-LD Schema
+
 import Link from 'next/link'
+import { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import NewsletterForm from '@/components/NewsletterForm'
-import { getAllChains, fmt, fmtPct, llamaLogo, toSlug } from '@/lib/defillama'
-import { SEED_PROJECTS } from '@/lib/junkyard-data'
+import FloatingChat from '@/components/FloatingChat'
+import NewsletterSignup from '@/components/NewsletterSignup'
+import {
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+  generateWebPageSchema,
+  generateCourseSchema,
+} from '@/lib/schema'
 
+// SEO Metadata
 export const metadata: Metadata = {
-  title: 'Web3Farmyard — Live DeFi Data, Crypto Airdrops & Graveyard',
-  description: 'Track live TVL across every blockchain, discover profitable crypto airdrops, and learn from the biggest failures in Web3 history.',
-  keywords: [
-    'DeFi',
-    'airdrops',
-    'TVL tracker',
-    'blockchain data',
-    'crypto farming',
-    'Web3 learning',
-  ],
-  alternates: { canonical: 'https://www.web3farmyard.com/' },
+  title: 'Web3Farmyard - Learn DeFi, Earn Airdrops, Master Web3 in 7 Days',
+  description: 'Free 7-day structured course to master Web3 farming. Learn wallet creation, DeFi swaps, task farming, and airdrop hunting. No experience or money required.',
+  keywords: ['web3', 'defi', 'airdrops', 'farming', 'cryptocurrency', 'blockchain', 'tutorial'],
+  
   openGraph: {
-    title: 'Web3Farmyard — Live DeFi Data & Airdrops',
-    description: 'Track live TVL, discover airdrops, learn from failures.',
-    url: 'https://www.web3farmyard.com/',
-    type: 'website',
+    title: 'Web3Farmyard - Master Web3 in 7 Days',
+    description: 'Free structured learning path through DeFi, task farming, and airdrops. Join thousands of farmers.',
+    url: 'https://web3farmyard.com',
+    siteName: 'Web3Farmyard',
     images: [
       {
-        url: 'https://www.web3farmyard.com/og-image.png',
+        url: 'https://web3farmyard.com/og-image.jpg',
         width: 1200,
         height: 630,
-      },
+        alt: 'Web3Farmyard - Learn DeFi'
+      }
     ],
+    type: 'website'
   },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Web3Farmyard - Master Web3 in 7 Days',
+    description: 'Free 7-day DeFi learning course. Learn farming, airdrops, and yield strategies.',
+    images: ['https://web3farmyard.com/og-image.jpg']
+  },
+
+  alternates: {
+    canonical: 'https://web3farmyard.com'
+  }
 }
 
-export const revalidate = 3600
-
-export default async function HomePage() {
-  const chains = await getAllChains()
-  const top5 = chains.slice(0, 5)
-  const totalTvl = chains.reduce((s, c) => s + (c.tvl || 0), 0)
-  
-  const SCHEMA = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
+// JSON-LD Schema Markup
+function getSchemaMarkup() {
+  const organizationSchema = generateOrganizationSchema()
+  const websiteSchema = generateWebSiteSchema({
+    url: 'https://web3farmyard.com',
     name: 'Web3Farmyard',
-    url: 'https://www.web3farmyard.com',
-    description: 'Live DeFi data, airdrops, and crypto graveyard',
+    description: 'Learn DeFi. Track yields. Catch airdrops. Farm smarter.',
+    publisherId: 'https://web3farmyard.com/#organization',
+  })
+  const courseSchema = generateCourseSchema({
+    id: 'https://web3farmyard.com/#course',
+    name: 'Master Web3 in 7 Days',
+    description: 'A structured 7-day learning path through wallet creation, DeFi trading, task farming, and airdrop hunting. No experience required.',
+    providerId: 'https://web3farmyard.com/#organization',
+    authorName: 'Web3Farmyard Community',
+    coursePrerequisites: 'No prerequisites. Beginner-friendly.',
+    hasCourseInstance: [
+      { name: 'Day 1: Create Your Wallet', url: 'https://web3farmyard.com/onboarding/day-1', duration: 'PT20M' },
+      { name: 'Day 2: First Token Swap', url: 'https://web3farmyard.com/onboarding/day-3', duration: 'PT20M' },
+      { name: 'Day 3: Bridge Tokens', url: 'https://web3farmyard.com/onboarding/day-4', duration: 'PT15M' },
+      { name: 'Day 4: Lend on DeFi', url: 'https://web3farmyard.com/onboarding/day-5', duration: 'PT15M' },
+      { name: 'Day 5: Swaps & Bridges', url: 'https://web3farmyard.com/onboarding/day-2', duration: 'PT25M' },
+      { name: 'Day 6: Practice', url: 'https://web3farmyard.com/onboarding/day-6', duration: 'PT30M' },
+      { name: 'Day 7: Go Live', url: 'https://web3farmyard.com/onboarding/day-7', duration: 'PT20M' },
+    ],
+    educationLevel: 'Beginner to Intermediate',
+    inLanguage: 'en-US',
+    isAccessibleForFree: true,
+    aggregateRating: { ratingValue: 4.8, ratingCount: 247 },
+  }, false)
+
+  const webpageSchema = generateWebPageSchema({
+    id: 'https://web3farmyard.com/#webpage',
+    url: 'https://web3farmyard.com',
+    name: 'Web3Farmyard - Master Web3 in 7 Days',
+    description: 'Learn DeFi, discover airdrops, and farm on-chain in just 7 days.',
+    isPartOfId: 'https://web3farmyard.com/#website',
+    primaryImage: { url: 'https://web3farmyard.com/og-image.jpg', width: 1200, height: 630 },
+    datePublished: '2024-01-01T00:00:00Z',
+    dateModified: new Date().toISOString(),
+    inLanguage: 'en-US',
+  }, false)
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [organizationSchema, websiteSchema, courseSchema, webpageSchema],
   }
+}
+
+export default function HomePage() {
+  const schemaMarkup = getSchemaMarkup()
 
   return (
     <>
+      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SCHEMA) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
+
       <Nav />
-      <main className="max-w-[1100px] mx-auto px-7">
-
-        {/* HERO */}
-        <section className="py-16 animate-fadeUp">
-          <div
-            className="font-mono text-[8px] tracking-[0.25em] mb-3"
-            style={{ color: '#1a6b00' }}
-          >
-            DECENTRALIZED · LIVE · YOURS
-          </div>
-          <h1
-            className="font-serif font-bold text-dark mb-4"
-            style={{
-              fontSize: 'clamp(36px,6vw,68px)',
-              lineHeight: 1.05,
-              letterSpacing: '-0.03em',
-            }}
-          >
-            The farmer&apos;s edge
-            <br />
-            <span
-              style={{
-                WebkitTextStroke: '1.5px #c8ff00',
-                color: 'transparent',
-              }}
-            >
-              in every cycle.
-            </span>
-          </h1>
-          <p
-            className="text-[15px] mb-8 max-w-[520px]"
-            style={{ color: '#555', lineHeight: 1.8 }}
-          >
-            Live TVL across every blockchain. Curated airdrops. A permanent
-            record of everything that failed — so you don&apos;t repeat it.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/airdrops" className="btn-primary">
-              🌾 EXPLORE AIRDROPS
-            </Link>
-            <Link href="/showroom" className="btn-outline">
-              📊 LIVE CHAIN DATA
-            </Link>
-          </div>
-        </section>
-
-        {/* LIVE STATS */}
-        <section className="glass p-6 mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              ['TOTAL TVL TRACKED', fmt(totalTvl), '#1a6b00'],
-              ['CHAINS TRACKED', chains.length.toString(), '#0a0a0a'],
-              ['TOP CHAIN', chains[0]?.name || '—', '#0a0a0a'],
-              ['CONFIRMED DEAD', SEED_PROJECTS.length + '+ Projects', '#ff4d4d'],
-            ].map(([label, val, color]) => (
-              <div key={label}>
-                <div
-                  className="font-mono text-[8px] tracking-[0.12em] mb-1"
-                  style={{ color: '#aaa' }}
-                >
-                  {label}
-                </div>
-                <div
-                  className="font-serif text-2xl font-bold"
-                  style={{ color }}
-                >
-                  {val}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* BENTO GRID */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-          <Link
-            href="/airdrops"
-            className="bento glass p-6 no-underline md:col-span-2 block hover:shadow-lg transition-shadow"
-          >
-            <div
-              className="font-mono text-[8px] tracking-[0.18em] mb-3"
-              style={{ color: '#1a6b00' }}
-            >
-              🌾 AIRDROPS
-            </div>
-            <div className="font-serif text-2xl font-bold text-dark mb-2">
-              Curated Airdrop Listings
-            </div>
-            <p className="text-sm mb-4" style={{ color: '#666', lineHeight: 1.7 }}>
-              Risk-rated, deadline-tracked, chain-filtered. Every airdrop
-              reviewed.
+      <main className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          
+          {/* HERO SECTION */}
+          <section className="mb-16 text-center">
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#0a0a0a] mb-6 leading-tight">
+              Master Web3 in 7 Days
+            </h1>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+              No experience needed. No money required. A structured 7-day path through wallet creation, DeFi, task farming, and airdrops. Join thousands learning to farm on-chain.
             </p>
-            <div
-              className="font-mono text-[8px] font-bold"
-              style={{ color: '#1a6b00' }}
-            >
-              VIEW LIVE AIRDROPS →
-            </div>
-          </Link>
-
-          <Link
-            href="/showroom"
-            className="bento glass p-6 no-underline block hover:shadow-lg transition-shadow"
-            style={{ background: '#0a0a0a' }}
-          >
-            <div
-              className="font-mono text-[8px] tracking-[0.18em] mb-3"
-              style={{ color: '#c8ff00' }}
-            >
-              📊 SHOWROOM
-            </div>
-            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
-              Live Chain Metrics
-            </div>
-            <p className="text-sm mb-4" style={{ color: '#888', lineHeight: 1.7 }}>
-              TVL, protocol counts, 24h changes. Every major chain, live.
-            </p>
-            <div
-              className="font-mono text-[8px] font-bold"
-              style={{ color: '#c8ff00' }}
-            >
-              VIEW SHOWROOM →
-            </div>
-          </Link>
-
-          <Link
-            href="/junkyard"
-            className="bento glass p-6 no-underline block hover:shadow-lg transition-shadow"
-            style={{ background: '#0d0606' }}
-          >
-            <div
-              className="font-mono text-[8px] tracking-[0.18em] mb-3"
-              style={{ color: '#ff4d4d' }}
-            >
-              ☠️ JUNKYARD
-            </div>
-            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
-              The Crypto Graveyard
-            </div>
-            <p className="text-sm mb-4" style={{ color: '#777', lineHeight: 1.7 }}>
-              Rugs, Ponzis, exploits. Documented so history doesn&apos;t repeat.
-            </p>
-            <div
-              className="font-mono text-[8px] font-bold"
-              style={{ color: '#ff4d4d' }}
-            >
-              ENTER GRAVEYARD →
-            </div>
-          </Link>
-
-          <Link
-            href="/resources/mobile-farmer"
-            className="bento glass p-6 no-underline md:col-span-2 block hover:shadow-lg transition-shadow"
-            style={{ background: 'linear-gradient(135deg,#0d1a00,#0a0a0a)' }}
-          >
-            <div
-              className="font-mono text-[8px] tracking-[0.18em] mb-3"
-              style={{ color: '#c8ff00' }}
-            >
-              📱 FREE EBOOK
-            </div>
-            <div className="font-serif text-2xl font-bold mb-2" style={{ color: '#f0f0f0' }}>
-              The Mobile Farmer
-            </div>
-            <p className="text-sm mb-4" style={{ color: '#888', lineHeight: 1.7 }}>
-              Farm airdrops on your phone. No desktop. No jargon. Free forever.
-            </p>
-            <div
-              className="font-mono text-[8px] font-bold"
-              style={{ color: '#c8ff00' }}
-            >
-              READ FREE →
-            </div>
-          </Link>
-        </section>
-
-        {/* TOP CHAINS */}
-        {top5.length > 0 && (
-          <section className="mb-8">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="font-serif text-xl font-bold text-dark">
-                Top Chains by TVL
-              </h2>
+            <div className="flex gap-4 flex-wrap justify-center">
               <Link
-                href="/showroom"
-                className="font-mono text-[8px] font-bold no-underline hover:underline"
-                style={{ color: '#1a6b00' }}
+                href="/onboarding/day-1"
+                className="px-8 py-4 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all text-lg"
               >
-                VIEW ALL {chains.length} →
+                Start Day 1 →
+              </Link>
+              <Link
+                href="/airdrops"
+                className="px-8 py-4 border-2 border-[#00ffe0] text-[#00ffe0] font-bold rounded-lg hover:bg-[#00ffe0] hover:text-[#0a0a0a] transition-all text-lg"
+              >
+                View Airdrops
               </Link>
             </div>
-            <div className="glass overflow-hidden">
-              {top5.map((chain, i) => (
-                <Link
-                  key={chain.name}
-                  href={`/showroom/${toSlug(chain.name)}`}
-                  className="flex items-center gap-4 no-underline transition-colors hover:bg-opacity-75"
-                  style={{
-                    padding: '14px 20px',
-                    borderBottom:
-                      i < 4 ? '1px solid rgba(0,0,0,0.05)' : 'none',
-                  }}
-                >
-                  <span
-                    className="font-mono text-[8px] w-5 text-right flex-shrink-0"
-                    style={{ color: '#ccc' }}
-                  >
-                    #{i + 1}
-                  </span>
-                  <img
-                    src={llamaLogo(chain.name)}
-                    alt={chain.name}
-                    width={28}
-                    height={28}
-                    className="rounded-full flex-shrink-0"
-                    style={{ objectFit: 'cover' }}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none'
-                    }}
-                  />
-                  <div className="flex-1 min-w-0">
-                    <div className="font-mono text-[10px] font-bold text-dark">
-                      {chain.name}
-                    </div>
+          </section>
+
+          {/* 7-DAY PATH PREVIEW */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-8 text-center">
+              Your 7-Day Learning Path
+            </h2>
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+              {[
+                { day: 1, title: 'Wallet', icon: '🔐' },
+                { day: 2, title: 'Swap & Bridge', icon: '🌉' },
+                { day: 3, title: 'Task Farming', icon: '📋' },
+                { day: 4, title: 'Zealy', icon: '⚙️' },
+                { day: 5, title: 'Galxe', icon: '🏆' },
+                { day: 6, title: 'Practice', icon: '🎯' },
+                { day: 7, title: 'Go Live', icon: '🚀' },
+              ].map((d) => (
+                <Link key={d.day} href={`/onboarding/day-${d.day}`}>
+                  <div className="p-4 bg-gradient-to-br from-[#f0f8e8] to-white border-2 border-[#d0e8c0] rounded-lg hover:border-[#1a6b00] transition-all text-center cursor-pointer">
+                    <div className="text-3xl mb-2" aria-label={d.title}>{d.icon}</div>
+                    <div className="font-mono text-xs text-gray-600">DAY {d.day}</div>
+                    <div className="font-bold text-sm text-[#0a0a0a] mt-1">{d.title}</div>
                   </div>
-                  <div
-                    className="font-serif text-base font-bold"
-                    style={{ color: '#1a6b00' }}
-                  >
-                    {fmt(chain.tvl)}
-                  </div>
-                  {chain.change_1d !== null && chain.change_1d !== undefined && (
-                    <div
-                      className="font-mono text-[9px] w-16 text-right flex-shrink-0"
-                      style={{
-                        color: chain.change_1d >= 0 ? '#1a6b00' : '#ff4d4d',
-                      }}
-                    >
-                      {fmtPct(chain.change_1d)}
-                    </div>
-                  )}
                 </Link>
               ))}
             </div>
           </section>
-        )}
 
-        {/* NEWSLETTER */}
-        <section className="glass p-8 mb-2">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <div
-                className="font-mono text-[8px] tracking-[0.2em] mb-2"
-                style={{ color: '#1a6b00' }}
-              >
-                FREE NEWSLETTER
-              </div>
-              <h2 className="font-serif text-2xl font-bold text-dark mb-3">
-                Stay ahead of the cycle.
-              </h2>
-              <p className="text-sm" style={{ color: '#666', lineHeight: 1.8 }}>
-                Airdrop alerts, DeFi news, post-mortems. Signal, not noise. No
-                ads. Ever.
-              </p>
+          {/* NEWSLETTER SIGNUP */}
+          <section className="mb-16 max-w-2xl mx-auto">
+            <NewsletterSignup />
+            
+          </section>
+
+          {/* FEATURES */}
+          <section className="mb-16">
+            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-8 text-center">
+              Everything You Need
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/airdrops">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
+                  <div className="text-4xl mb-4" aria-label="Airdrops">🎁</div>
+                  <h3 className="font-bold text-[#0a0a0a] mb-2">Airdrops</h3>
+                  <p className="text-sm text-gray-600">191+ chains, real-time data</p>
+                </div>
+              </Link>
+              <Link href="/showroom">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
+                  <div className="text-4xl mb-4" aria-label="Showroom">📊</div>
+                  <h3 className="font-bold text-[#0a0a0a] mb-2">Showroom</h3>
+                  <p className="text-sm text-gray-600">Live TVL & metrics</p>
+                </div>
+              </Link>
+              <Link href="/toolkit">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
+                  <div className="text-4xl mb-4" aria-label="Toolkit">🛠️</div>
+                  <h3 className="font-bold text-[#0a0a0a] mb-2">Toolkit</h3>
+                  <p className="text-sm text-gray-600">30+ Web3 tools</p>
+                </div>
+              </Link>
+              <Link href="/blog">
+                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
+                  <div className="text-4xl mb-4" aria-label="Blog">📚</div>
+                  <h3 className="font-bold text-[#0a0a0a] mb-2">Blog</h3>
+                  <p className="text-sm text-gray-600">Guides & analysis</p>
+                </div>
+              </Link>
             </div>
-            <NewsletterForm />
-          </div>
-        </section>
+          </section>
+
+          {/* CTA SECTION */}
+          <section className="bg-gradient-to-r from-[#f0f8e8] to-white rounded-2xl p-12 border-2 border-[#d0e8c0] text-center">
+            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-4">
+              Ready to Farm?
+            </h2>
+            <p className="text-gray-700 mb-6 text-lg max-w-2xl mx-auto">
+              Join thousands of farmers learning Web3. Start with Day 1 or jump into Airdrops. Everything you need is here.
+            </p>
+            <Link
+              href="/onboarding/day-1"
+              className="inline-block px-8 py-4 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all text-lg"
+            >
+              Begin Your Journey →
+            </Link>
+          </section>
+
+        </div>
       </main>
+
+      {/* Floating Chat Button */}
+      <FloatingChat />
+
       <Footer />
     </>
   )

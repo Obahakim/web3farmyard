@@ -1,0 +1,10 @@
+{
+  "name": "@deepn/storage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "tsc -p tsconfig.json", "typecheck": "tsc -p tsconfig.json --noEmit", "lint": "tsc -p tsconfig.json --noEmit" },
+  "dependencies": { "@aws-sdk/client-s3": "^3.717.0", "@aws-sdk/s3-request-presigner": "^3.717.0", "@deepn/types": "workspace:*", "@deepn/errors": "workspace:*" },
+  "devDependencies": { "typescript": "^5.7.2" }
+}

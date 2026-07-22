@@ -6,12 +6,26 @@
   "basePath": "",
   "redirects": [
     {
-      "source": "/:path+/",
-      "destination": "/:path+",
+      "source": "/:file((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+)/",
+      "destination": "/:file",
+      "internal": true,
+      "priority": true,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ],
+      "statusCode": 308,
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$"
+    },
+    {
+      "source": "/:notfile((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+)",
+      "destination": "/:notfile/",
       "internal": true,
       "priority": true,
       "statusCode": 308,
-      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+      "regex": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$"
     }
   ],
   "headers": [],
@@ -85,6 +99,12 @@
       "namedRegex": "^/api/notify\\-new\\-post(?:/)?$"
     },
     {
+      "page": "/api/send-newsletter",
+      "regex": "^/api/send\\-newsletter(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/send\\-newsletter(?:/)?$"
+    },
+    {
       "page": "/api/send-welcome-email",
       "regex": "^/api/send\\-welcome\\-email(?:/)?$",
       "routeKeys": {},
@@ -95,6 +115,12 @@
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/hakim/dashboard",
+      "regex": "^/hakim/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hakim/dashboard(?:/)?$"
     },
     {
       "page": "/junkyard",
@@ -149,12 +175,6 @@
       "regex": "^/resources/mobile\\-farmer(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/resources/mobile\\-farmer(?:/)?$"
-    },
-    {
-      "page": "/robots.txt",
-      "regex": "^/robots\\.txt(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/robots\\.txt(?:/)?$"
     },
     {
       "page": "/showroom",

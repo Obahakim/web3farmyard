@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import './globals.css'
+import FloatingChat from '@/components/FloatingChat'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.web3farmyard.com'),
@@ -62,8 +64,40 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://api.llama.fi" />
         <link rel="preconnect" href="https://icons.llama.fi" />
         <link rel="dns-prefetch" href="https://lzanqqvvpwccrtprzxvu.supabase.co" />
+
+        {/* Google Analytics (GA4) — tracks the whole domain, unified with the /blog Measurement ID */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-53RS0CQD48"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-53RS0CQD48');
+          `}
+        </Script>
       </head>
-      <body>{children}</body>
+      <body>{children}
+  <FloatingChat />
+
+        {/* tawk.to live chat + visitor monitoring widget */}
+        <Script id="tawk-to" strategy="lazyOnload">
+          {`
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+              var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+              s1.async = true;
+              s1.src = 'https://embed.tawk.to/6a4ab6c48a10cd1d4aadb564/default';
+              s1.charset = 'UTF-8';
+              s1.setAttribute('crossorigin', '*');
+              s0.parentNode.insertBefore(s1, s0);
+            })();
+          `}
+        </Script>
+</body>
+
     </html>
   )
 }

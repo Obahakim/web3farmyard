@@ -1,4 +1,4 @@
-// Day 4: Bridge Tokens Between Chains
+// Day 4: Lend on DeFi
 
 'use client'
 
@@ -60,24 +60,25 @@ export default function Day4Page() {
           <div className="font-mono text-xs text-[#1a6b00]">🔥 {streak} day streak</div>
         </div>
 
-        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 4: Bridge Tokens</h1>
-        <p className="text-gray-600 mb-10">Move test tokens between different blockchains using a bridge.</p>
+        <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 4: Lend on DeFi</h1>
+        <p className="text-gray-600 mb-10">Earn interest by lending test tokens on Aave.</p>
 
         <div className="bg-white border border-gray-200 rounded-3xl p-8 mb-10">
-          <a href="https://testnet.brid.gg/base-sepolia" target="_blank" rel="noopener noreferrer" className="block w-full py-6 bg-[#1a6b00] text-white text-center rounded-3xl font-medium text-xl mb-6 hover:bg-[#0f4600] transition-all">
-            Open Test Bridge →
+          <a href="https://app.aave.com/?marketName=proto_sepolia_v3" target="_blank" rel="noopener noreferrer" className="block w-full py-6 bg-[#1a6b00] text-white text-center rounded-3xl font-medium text-xl mb-6 hover:bg-[#0f4600] transition-all">
+            Open Aave Testnet →
           </a>
           <div className="bg-yellow-50 border border-yellow-200 p-5 rounded-2xl text-sm space-y-3">
-            <p><strong>What you'll do:</strong></p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>Connect your wallet to the bridge</li>
-              <li>Select source chain: Sepolia</li>
-              <li>Select destination chain: Base Sepolia</li>
-              <li>Enter amount to bridge</li>
-              <li>Complete the transaction</li>
-              <li>Wait for confirmation on destination chain</li>
-            </ul>
-            <p className="mt-3"><strong>Why bridges matter:</strong> Airdrops happen on different chains. You need to know how to move assets around efficiently.</p>
+            <p><strong>How to lend on Aave:</strong></p>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700">
+              <li>Go to Settings (top right) and enable <strong>Testnets</strong></li>
+              <li>Make sure you're on <strong>Sepolia</strong> network</li>
+              <li>Connect your wallet</li>
+              <li>Click "Supply" and choose a test token (ETH, USDC, DAI)</li>
+              <li>Enter amount to lend</li>
+              <li>Approve the transaction</li>
+              <li>Complete the supply</li>
+            </ol>
+            <p className="mt-3"><strong>What happens:</strong> Your tokens earn APY (Annual Percentage Yield). This teaches you how lending protocols work, which is crucial for advanced airdrop farming.</p>
           </div>
         </div>
 

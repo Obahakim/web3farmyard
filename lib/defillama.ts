@@ -5,7 +5,7 @@ const LLAMA_COINS = 'https://coins.llama.fi'
 
 export async function getAllChains(): Promise<Chain[]> {
   try {
-    const res = await fetch(`${LLAMA}/v2/chains`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${LLAMA}/protocols`, { next: { revalidate: 3600 } })
     if (!res.ok) throw new Error(`DeFiLlama error: ${res.status}`)
     const data: Chain[] = await res.json()
     return data

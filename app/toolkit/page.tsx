@@ -4,6 +4,12 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 import { trackToolkitUse } from '@/lib/analytics-complete'
+import {
+  generateOrganizationSchema,
+  generateWebPageSchema,
+  generateWebSiteSchema,
+  generateItemListSchema,
+} from '@/lib/schema'
 
 const handleToolUse = (toolName: string) => {
   trackToolkitUse(toolName)
@@ -75,9 +81,37 @@ export default function ToolkitPage() {
   const essentialTools = tools.filter(t => t.isEssential)
   const otherTools = tools.filter(t => !t.isEssential)
   const categories = ['Wallet', 'DEX', 'Lending', 'Bridge', 'Analytics', 'Security'] as const
+  const toolkitSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      generateOrganizationSchema(),
+      generateWebSiteSchema({
+        url: 'https://www.web3farmyard.com/toolkit',
+        name: 'Web3 Toolkit — Web3Farmyard',
+        description: 'Curated Web3 tools for airdrops, wallets, bridges, analytics, and security.',
+        publisherId: 'https://www.web3farmyard.com/#organization',
+      }),
+      generateWebPageSchema({
+        id: 'https://www.web3farmyard.com/toolkit#webpage',
+        url: 'https://www.web3farmyard.com/toolkit',
+        name: 'Web3 Toolkit — Essential Crypto Tools | Web3Farmyard',
+        description: 'Essential wallets, DEXs, bridges, analytics, and security tools for Web3 farmers.',
+        isPartOfId: 'https://www.web3farmyard.com/#website',
+        inLanguage: 'en-US',
+      }, false),
+      generateItemListSchema(tools.map(tool => ({
+        name: tool.name,
+        url: tool.url,
+      })), false),
+    ],
+  }
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolkitSchema) }}
+      />
       <Nav />
 
       <main className="max-w-7xl mx-auto px-6 py-12">

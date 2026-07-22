@@ -5,7 +5,12 @@ import JunkyardClient from './JunkyardClient'
 import { getJunkyard } from '@/lib/supabase'
 import { SEED_PROJECTS, SEED_CHAINS } from '@/lib/junkyard-data'
 import { generateJunkyardMetadata } from '@/lib/metadata'
-import { generateFAQPageSchema } from '@/lib/schema'
+import {
+  generateFAQPageSchema,
+  generateOrganizationSchema,
+  generateWebPageSchema,
+  generateWebSiteSchema,
+} from '@/lib/schema'
 import Link from 'next/link'
 
 export const metadata: Metadata = generateJunkyardMetadata()
@@ -35,12 +40,50 @@ export default async function JunkyardPage() {
     },
   ])
 
+  const junkyardSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      generateOrganizationSchema(),
+      generateWebSiteSchema({
+        url: 'https://www.web3farmyard.com/junkyard',
+        name: 'The Crypto Graveyard — Web3Farmyard',
+        description: 'A permanent archive of crypto rug pulls, exploits, Ponzi schemes, and failed projects.',
+        publisherId: 'https://www.web3farmyard.com/#organization',
+      }),
+      generateWebPageSchema({
+        id: 'https://www.web3farmyard.com/junkyard#webpage',
+        url: 'https://www.web3farmyard.com/junkyard',
+        name: 'The Crypto Graveyard — Every Major Rug Pull, Ponzi & Collapse',
+        description: 'Explore a permanent record of crypto failures, scams, and collapse stories with lessons for Web3 farmers.',
+        isPartOfId: 'https://www.web3farmyard.com/#website',
+        primaryImage: { url: 'https://www.web3farmyard.com/og-junkyard.png', width: 1200, height: 630 },
+        inLanguage: 'en-US',
+      }, false),
+      generateFAQPageSchema([
+        {
+          question: 'How do I identify a scam crypto project before it rugs?',
+          answer:
+            'Check the team: if the developers are anonymous or have no track record, that is a major red flag. Verify the smart contract on Etherscan or equivalent — look for unverified code or suspicious patterns. Check the tokenomics: does the team hold a massive supply? Can they dump on you? Use tools like Token Sniffer or RugDoc to scan for honeypots. Look at the community: are they using high-pressure tactics or FOMO language? Legitimate projects explain their value prop clearly.',
+        },
+        {
+          question: 'What are the most common rug pull warning signs?',
+          answer:
+            'Guaranteed returns or yields that seem too good (especially 10%+ APY from unknown protocols). Developers who are unnamed or refuse to show their identity. Token supply concentrated in founder wallets. Liquidity pool is small relative to market cap (easy to exit). Contract is not verified on the blockchain explorer. The whitepaper is vague or stolen from another project. The project launched during a bull run with zero working product. If you see these signs, run.',
+        },
+        {
+          question: 'Should I trust projects backed by venture capital?',
+          answer:
+            'Venture backing is helpful but not a guarantee. Venture capitalists can be fooled or complicit. Luna, FTX, and Celsius all had major VC backing and still collapsed. However, VC backing does mean the project went through some due diligence. The key is: a VC backing does not replace your own research. Always assume VCs are looking for returns, not necessarily long-term safety. Do your own diligence regardless of backing.',
+        },
+      ], false),
+    ],
+  }
+
   return (
     <>
-      {/* ✅ Inject FAQPage schema for featured snippets */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(junkyardSchema) }}
       />
 
       <Nav />

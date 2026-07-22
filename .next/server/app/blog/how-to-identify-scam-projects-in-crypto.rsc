@@ -1,37 +1,47 @@
 1:"$Sreact.fragment"
-2:I[51240,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
-3:I[26408,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
-4:I[69548,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0xv8ybntgn6~6.js"],"default"]
-5:I[4735,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0xv8ybntgn6~6.js"],""]
-e:I[94780,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default",1]
-:HL["/_next/static/chunks/16o._r84.teo2.css","style"]
+2:I[80541,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],""]
+3:I[51240,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+4:I[26408,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+5:I[69548,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+6:I[4735,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],""]
+16:I[94780,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default",1]
+:HL["/_next/static/chunks/0muh-4gixenj_.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","style"]
-0:{"P":null,"c":["","blog","how-to-identify-scam-projects-in-crypto"],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","how-to-identify-scam-projects-in-crypto","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0bes0m.245o1q.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/07y7hs_98fxyn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","type":"image/svg+xml","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"preconnect","href":"https://api.llama.fi"}],["$","link",null,{"rel":"preconnect","href":"https://icons.llama.fi"}],["$","link",null,{"rel":"dns-prefetch","href":"https://lzanqqvvpwccrtprzxvu.supabase.co"}]]}],["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","$L4",null,{}],["$","main",null,{"className":"max-w-[1100px] mx-auto px-7 py-24 text-center","children":[["$","div",null,{"style":{"fontSize":64,"marginBottom":16},"children":"💀"}],["$","h1",null,{"className":"font-serif text-4xl font-bold text-dark mb-4","children":"404 — Page Not Found"}],["$","p",null,{"className":"text-base mb-8","style":{"color":"#666"},"children":"This page is dead. Check the URL or head back to the Farmyard."}],["$","div",null,{"className":"flex gap-3 justify-center flex-wrap","children":[["$","$L5",null,{"href":"/","className":"btn-primary","children":"← HOME"}],["$","$L5",null,{"href":"/airdrops","className":"btn-outline","children":"🌾 AIRDROPS"}],["$","$L5",null,{"href":"/junkyard","className":"btn-outline","children":"☠️ JUNKYARD"}]]}]]}],["$","footer",null,{"className":"bg-[#0a0a0a] border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-7xl mx-auto px-6 py-16","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-[#1a6b00] mb-4","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Learn Web3, find airdrops, farm profitably. A guide for beginners."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Platform"}],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":["$","$L5",null,{"href":"/","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Home"}]}],["$","li",null,{"children":["$","$L5",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Onboarding"}]}],["$","li",null,{"children":["$","$L5",null,{"href":"/toolkit","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Toolkit"}]}],["$","li",null,{"children":["$","$L5",null,{"href":"/airdrops","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Airdrops"}]}],["$","li",null,{"children":["$","$L5",null,{"href":"/blog","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Blog"}]}],["$","li",null,{"children":["$","$L5",null,{"href":"/junkyard","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Junkyard"}]}]]}]]}],"$L6","$L7"]}],"$L8"]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["$L9",{"children":["$La",{"children":["$Lb",{},null,false,null]},null,false,"$@c"]},null,false,"$@c"]},null,false,null],"$Ld",false]],"m":"$undefined","G":["$e",["$Lf"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"8YmuduzIGD989aL5xqRl2"}
-11:I[66450,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
-12:"$Sreact.suspense"
-15:I[66450,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"ViewportBoundary"]
-17:I[66450,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"MetadataBoundary"]
-6:["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Resources"}],["$","ul",null,{"className":"space-y-2 text-sm","children":[["$","li",null,{"children":["$","a",null,{"href":"https://metamask.io","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"MetaMask"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://uniswap.org","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Uniswap"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://aave.com","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Aave"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://galxe.com","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Galxe"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://taskon.xyz","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"TaskOn"}]}],["$","li",null,{"children":["$","a",null,{"href":"https://zealy.io","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition","children":"Zealy"}]}]]}]]}]
-7:["$","div",null,{"children":[["$","h4",null,{"className":"font-bold text-white mb-4","children":"Follow Us"}],["$","ul",null,{"className":"space-y-3 text-sm","children":[["$","li",null,{"children":["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":[["$","span",null,{"children":"𝕏 Twitter"}],["$","span",null,{"className":"text-xs text-gray-600","children":"@web3farmyard"}]]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://tiktok.com/@web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":[["$","span",null,{"children":"🎵 TikTok"}],["$","span",null,{"className":"text-xs text-gray-600","children":"@web3farmyard"}]]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://discord.gg/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":["$","span",null,{"children":"🎮 Discord"}]}]}],["$","li",null,{"children":["$","a",null,{"href":"https://t.me/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-400 hover:text-[#1a6b00] transition flex items-center gap-2","children":["$","span",null,{"children":"💬 Telegram"}]}]}]]}]]}]
-8:["$","div",null,{"className":"border-t border-gray-800 pt-8","children":["$","div",null,{"className":"flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-sm","children":"© 2024 Web3Farmyard. Not financial advice. DYOR (Do Your Own Research)."}],["$","div",null,{"className":"flex gap-6 text-sm","children":[["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Twitter"}],["$","a",null,{"href":"https://tiktok.com/@web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"TikTok"}],["$","a",null,{"href":"https://discord.gg/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Discord"}],["$","a",null,{"href":"https://t.me/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"text-gray-500 hover:text-[#1a6b00] transition","children":"Telegram"}]]}]]}]}]
-9:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
-a:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
-b:["$","$1","c",{"children":["$L10",[["$","script","script-0",{"src":"/_next/static/chunks/0on68mh3m_gy6.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/08wkd.v2n9wh..js","async":true,"nonce":"$undefined"}]],["$","$L11",null,{"children":["$","$12",null,{"name":"Next.MetadataOutlet","children":"$@13"}]}]]}]
-14:[]
-c:"$W14"
-d:["$","$1","h",{"children":[null,["$","$L15",null,{"children":"$L16"}],["$","div",null,{"hidden":true,"children":["$","$L17",null,{"children":["$","$12",null,{"name":"Next.Metadata","children":"$L18"}]}]}],null]}]
-f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
-16:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#c8ff00"}]]
-19:I[53959,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js"],"IconMark"]
-13:null
-18:[["$","title","0",{"children":"Web3Farmyard — Live DeFi Data, Airdrops & Crypto Graveyard"}],["$","meta","1",{"name":"description","content":"Live DeFi chain metrics, curated crypto airdrops, and the most comprehensive record of failed Web3 projects. Your edge in the next cycle."}],["$","link","2",{"rel":"author","href":"https://www.web3farmyard.com"}],["$","meta","3",{"name":"author","content":"Web3Farmyard"}],["$","meta","4",{"name":"keywords","content":"crypto airdrops,DeFi metrics,live TVL,crypto graveyard,rug pulls,blockchain data,web3 farming"}],["$","meta","5",{"name":"creator","content":"Web3Farmyard"}],["$","meta","6",{"name":"publisher","content":"Web3Farmyard"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-image-preview:large"}],["$","link","9",{"rel":"canonical","href":"https://www.web3farmyard.com"}],["$","meta","10",{"property":"og:title","content":"Web3Farmyard — Live DeFi Data, Airdrops & Crypto Graveyard"}],["$","meta","11",{"property":"og:description","content":"Live DeFi chain metrics, curated crypto airdrops, and the most comprehensive record of failed Web3 projects."}],["$","meta","12",{"property":"og:url","content":"https://www.web3farmyard.com"}],["$","meta","13",{"property":"og:site_name","content":"Web3Farmyard"}],["$","meta","14",{"property":"og:locale","content":"en_US"}],["$","meta","15",{"property":"og:image","content":"https://www.web3farmyard.com/og-default.png"}],["$","meta","16",{"property":"og:image:width","content":"1200"}],["$","meta","17",{"property":"og:image:height","content":"630"}],["$","meta","18",{"property":"og:type","content":"website"}],["$","meta","19",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","20",{"name":"twitter:title","content":"Web3Farmyard"}],["$","meta","21",{"name":"twitter:description","content":"Live DeFi data, airdrops, and the crypto graveyard."}],["$","meta","22",{"name":"twitter:image","content":"https://www.web3farmyard.com/og-default.png"}],["$","meta","23",{"name":"twitter:image:width","content":"1200"}],["$","meta","24",{"name":"twitter:image:height","content":"630"}],["$","link","25",{"rel":"icon","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","$L19","26",{}]]
-1a:I[63135,["/_next/static/chunks/0bes0m.245o1q.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0on68mh3m_gy6.js","/_next/static/chunks/08wkd.v2n9wh..js"],"default"]
-1b:T2675,
-<figure class="wp-block-image size-large"><img decoding="async" src="https://web3farmyard.com/cms/wp-content/uploads/2026/04/AZ216Z-9Gtyg35c1Gw9eLA-AZ216Z-9PwgjwiCMBFYgfw-1024x584.jpg" alt="How to identify Scam crypto projects" class="wp-image-55" title="Shows the danger of falling victim of crypto scams"/></figure>
+0:{"P":null,"c":["","blog","how-to-identify-scam-projects-in-crypto",""],"q":"","i":false,"f":[[["",{"children":["blog",{"children":[["slug","how-to-identify-scam-projects-in-crypto","d",null],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",16],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0muh-4gixenj_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/0pml_4hf5672_.js","async":true,"nonce":"$undefined"}],["$","script","script-1",{"src":"/_next/static/chunks/0og9d~5fcn7yp.js","async":true,"nonce":"$undefined"}],["$","script","script-2",{"src":"/_next/static/chunks/07y7hs_98fxyn.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"icon","type":"image/svg+xml","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"preconnect","href":"https://api.llama.fi"}],["$","link",null,{"rel":"preconnect","href":"https://icons.llama.fi"}],["$","link",null,{"rel":"dns-prefetch","href":"https://lzanqqvvpwccrtprzxvu.supabase.co"}],["$","$L2",null,{"src":"https://www.googletagmanager.com/gtag/js?id=G-53RS0CQD48","strategy":"afterInteractive"}],["$","$L2",null,{"id":"google-analytics","strategy":"afterInteractive","children":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-53RS0CQD48');\n          "}]]}],["$","body",null,{"children":[["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","$L5",null,{}],["$","main",null,{"className":"max-w-[1100px] mx-auto px-7 py-24 text-center","children":[["$","div",null,{"style":{"fontSize":64,"marginBottom":16},"children":"💀"}],["$","h1",null,{"className":"font-serif text-4xl font-bold text-dark mb-4","children":"404 — Page Not Found"}],["$","p",null,{"className":"text-base mb-8","style":{"color":"#666"},"children":"This page is dead. Check the URL or head back to the Farmyard."}],["$","div",null,{"className":"flex gap-3 justify-center flex-wrap","children":[["$","$L6",null,{"href":"/","className":"btn-primary","children":"← HOME"}],["$","$L6",null,{"href":"/airdrops","className":"btn-outline","children":"🌾 AIRDROPS"}],["$","$L6",null,{"href":"/junkyard","className":"btn-outline","children":"☠️ JUNKYARD"}]]}]]}],["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],"$L7","$L8","$L9","$La"]}]]}],"$Lb","$Lc"]}],"$Ld","$Le"]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],"$Lf","$L10"]}]]}]]}],{"children":["$L11",{"children":["$L12",{"children":["$L13",{},null,false,null]},null,false,"$@14"]},null,false,"$@14"]},null,false,null],"$L15",false]],"m":"$undefined","G":["$16",["$L17"]],"S":true,"h":null,"s":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"build-1784103503707"}
+18:I[47374,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js","/_next/static/chunks/0rsko6puy-r_e.js"],"default"]
+19:I[49765,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"default"]
+1b:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"OutletBoundary"]
+1c:"$Sreact.suspense"
+1f:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"ViewportBoundary"]
+21:I[66450,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"MetadataBoundary"]
+7:["$","$L6",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}]
+8:["$","$L6",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}]
+9:["$","$L6",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}]
+a:["$","$L6",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]
+b:["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L6",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}]
+c:["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["circle",{"cx":"18","cy":"5","r":"3","key":"gq8acd"}],["circle",{"cx":"6","cy":"12","r":"3","key":"w7nqdw"}],["circle",{"cx":"18","cy":"19","r":"3","key":"1xt0gg"}],["line",{"x1":"8.59","x2":"15.42","y1":"13.51","y2":"17.49","key":"47mynk"}],["line",{"x1":"15.41","x2":"8.59","y1":"6.51","y2":"10.49","key":"1n3mei"}]],"className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z","key":"1xq2db"}]],"className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"m16 18 6-6-6-6","key":"eg8j8"}],["path",{"d":"m8 6-6 6 6 6","key":"ppft3o"}]],"className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":[["path",{"d":"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7","key":"132q7q"}],["rect",{"x":"2","y":"4","width":"20","height":"16","rx":"2","key":"izxlao"}]],"className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]
+d:["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]]}]
+e:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]
+f:["$","$L19",null,{}]
+10:["$","$L2",null,{"id":"tawk-to","strategy":"lazyOnload","children":"\n            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();\n            (function () {\n              var s1 = document.createElement(\"script\"), s0 = document.getElementsByTagName(\"script\")[0];\n              s1.async = true;\n              s1.src = 'https://embed.tawk.to/6a4ab6c48a10cd1d4aadb564/default';\n              s1.charset = 'UTF-8';\n              s1.setAttribute('crossorigin', '*');\n              s0.parentNode.insertBefore(s1, s0);\n            })();\n          "}]
+11:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+12:["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+13:["$","$1","c",{"children":["$L1a",[["$","script","script-0",{"src":"/_next/static/chunks/0rsko6puy-r_e.js","async":true,"nonce":"$undefined"}]],["$","$L1b",null,{"children":["$","$1c",null,{"name":"Next.MetadataOutlet","children":"$@1d"}]}]]}]
+1e:[]
+14:"$W1e"
+15:["$","$1","h",{"children":[null,["$","$L1f",null,{"children":"$L20"}],["$","div",null,{"hidden":true,"children":["$","$L21",null,{"children":["$","$1c",null,{"name":"Next.Metadata","children":"$L22"}]}]}],null]}]
+17:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0muh-4gixenj_.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]
+20:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#c8ff00"}]]
+28:I[53959,["/_next/static/chunks/0pml_4hf5672_.js","/_next/static/chunks/0og9d~5fcn7yp.js","/_next/static/chunks/07y7hs_98fxyn.js"],"IconMark"]
+23:T9bd,{"@context":"https://schema.org","@graph":[{"@context":"https://schema.org","@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com","logo":"https://www.web3farmyard.com/logo.png","description":"Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard","sameAs":["https://twitter.com/web3farmyard","https://discord.gg/web3farmyard"],"contactPoint":{"@type":"ContactPoint","email":"support@web3farmyard.com","contactType":"Customer Support"}},{"@context":"https://schema.org","@type":"WebSite","url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","name":"Web3Farmyard Blog","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","publisher":{"@type":"Organization","@id":"https://www.web3farmyard.com/#organization"}},{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto#webpage","url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","name":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","isPartOf":{"@id":"https://www.web3farmyard.com/#website"},"inLanguage":"en-US"},{"@type":"BlogPosting","headline":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","description":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n","image":"https://www.web3farmyard.com/og-image.png","datePublished":"2026-04-22T16:33:30","dateModified":"2026-05-09T14:10:53","author":{"@type":"Organization","name":"Web3Farmyard"},"publisher":{"@type":"Organization","name":"Web3Farmyard","url":"https://www.web3farmyard.com"},"url":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto#webpage"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.web3farmyard.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.web3farmyard.com/blog"},{"@type":"ListItem","position":3,"name":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","item":"https://www.web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto"}]}]}1a:[["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$23"}}],["$","$L5",null,{}],["$","main",null,{"className":"max-w-4xl mx-auto px-6 py-12","children":[["$","$L6",null,{"href":"/blog","className":"inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors","children":"← Back to Blog"}],["$","article",null,{"className":"mb-12","children":[["$","header",null,{"className":"mb-8","children":[["$","h1",null,{"className":"font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight","children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","div",null,{"className":"flex flex-wrap gap-6 text-sm text-gray-600 font-mono","children":[["$","time",null,{"dateTime":"2026-04-22T16:33:30","children":["Published: ","April 22, 2026"]}],["$","time",null,{"dateTime":"2026-05-09T14:10:53","children":["Updated: ","May 9, 2026"]}]]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none","children":"$L24"}],"$L25"]}],"$L26"]}],"$L27"]
+1d:null
+22:[["$","title","0",{"children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO | Web3Farmyard"}],["$","meta","1",{"name":"description","content":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n"}],["$","link","2",{"rel":"author","href":"https://www.web3farmyard.com"}],["$","meta","3",{"name":"author","content":"Web3Farmyard"}],["$","meta","4",{"name":"keywords","content":"crypto airdrops,DeFi metrics,live TVL,crypto graveyard,rug pulls,blockchain data,web3 farming"}],["$","meta","5",{"name":"creator","content":"Web3Farmyard"}],["$","meta","6",{"name":"publisher","content":"Web3Farmyard"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-image-preview:large"}],["$","link","9",{"rel":"canonical","href":"https://www.web3farmyard.com/"}],["$","meta","10",{"property":"og:title","content":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","meta","11",{"property":"og:description","content":"A comprehensive guide to help beginners identify and avoid falling for scam projects and being victims of bad actors in the blockchain space\n"}],["$","meta","12",{"property":"og:url","content":"https://web3farmyard.com/blog/how-to-identify-scam-projects-in-crypto/"}],["$","meta","13",{"property":"og:type","content":"article"}],["$","meta","14",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","15",{"name":"twitter:title","content":"Web3Farmyard"}],["$","meta","16",{"name":"twitter:description","content":"Live DeFi data, airdrops, and the crypto graveyard."}],["$","link","17",{"rel":"icon","href":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzBhMGEwYSIvPjxyZWN0IHg9IjkiIHk9IjE0IiB3aWR0aD0iMTMiIGhlaWdodD0iNyIgcng9IjEiIGZpbGw9IiNjOGZmMDAiLz48cmVjdCB4PSIxNiIgeT0iMTAiIHdpZHRoPSI3IiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjYzhmZjAwIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSIyMiIgcj0iNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzhmZjAwIiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjIyIiByPSIyIiBmaWxsPSIjYzhmZjAwIi8+PC9zdmc+"}],["$","$L28","18",{}]]
+29:T244d,
+<img src="https://web3farmyard.com/cms/wp-content/uploads/2026/04/Farm-Themed-Crypto-Scam-Awareness-Banner-1024x576.png" alt="How to identify Scam crypto projects" title="Shows the danger of falling victim of crypto scams">
 
 
 
-<h2 class="wp-block-heading">How to Identify Scam Crypto Projects: A Beginner-Friendly Guide</h2>
+<h2>How to Identify Scam Crypto Projects: A Beginner-Friendly Guide</h2>
 
 
 
@@ -91,7 +101,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol class="wp-block-list">
+<ol>
 <li>Unrealistic Profit Promises</li>
 </ol>
 
@@ -105,7 +115,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   “100x guaranteed”
+<pre><code>•   “100x guaranteed”
 •   “Daily passive income forever”
 •   “Turn $100 into $10,000 fast”</code></pre>
 
@@ -131,7 +141,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Is there a visible team?
+<pre><code>•   Is there a visible team?
 •   Do founders have history in tech or crypto?
 •   Can their claims be verified?
 •   Are LinkedIn profiles real? (If they don’t have LinkedIn verify X(formerly Twitter) accounts)</code></pre>
@@ -142,7 +152,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="3" class="wp-block-list">
+<ol>
 <li>Poor or Copied Website</li>
 </ol>
 
@@ -156,7 +166,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Broken links
+<pre><code>•   Broken links
 •   Grammar mistakes
 •   Impressive trendy, overused words or phrases that sound impressive but doesn’t clear meaning or real substance. 
 •   Stolen images; if they don’t care about creating their own images, how can they be real serious?
@@ -164,7 +174,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="4" class="wp-block-list">
+<ol>
 <li>No Clear Use Case<br>What does this project actually do?</li>
 </ol>
 
@@ -178,7 +188,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="5" class="wp-block-list">
+<ol>
 <li>Suspicious Tokenomics</li>
 </ol>
 
@@ -188,7 +198,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Team owns most of supply
+<pre><code>•   Team owns most of supply
 •   Tiny public allocation
 •   No lockups for insiders
 •   Massive future unlocks
@@ -200,7 +210,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="6" class="wp-block-list">
+<ol>
 <li>Fake Community Hype</li>
 </ol>
 
@@ -210,7 +220,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Thousands of followers but little real engagement
+<pre><code>•   Thousands of followers but little real engagement
 •   Comments like “Great project!”
 •   Constant shilling with no real substance/meaningful message 
 •   Telegram groups full of bots
@@ -219,7 +229,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="7" class="wp-block-list">
+<ol>
 <li>Pressure to Buy Immediately<br>Guess what scammers love as much as they love lying? Scammers love countdown clocks. “Last chance”, “Buy now before listing”, “Only 10 minutes left”, “You’ll regret missing this”</li>
 </ol>
 
@@ -229,7 +239,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="8" class="wp-block-list">
+<ol>
 <li>No Security Audit or Transparency<br>For DeFi projects especially, smart contract risk matters. You need to check whether the project shares:Audit reports, Open-source code, their security practices, Risk disclosures.</li>
 </ol>
 
@@ -239,7 +249,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="9" class="wp-block-list">
+<ol>
 <li>Influencers Pushing It Aggressively</li>
 </ol>
 
@@ -249,7 +259,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<ol start="10" class="wp-block-list">
+<ol>
 <li>Withdrawal Problems<br>If users can deposit easily but struggle to withdraw, this is a major danger sign.</li>
 </ol>
 
@@ -259,7 +269,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Frozen funds
+<pre><code>•   Frozen funds
 •   Delayed withdrawals
 •   Endless verification requests
 •   Extra fees to release funds</code></pre>
@@ -358,7 +368,7 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 
-<pre class="wp-block-code"><code>•   Never invest money you cannot lose
+<pre><code>•   Never invest money you cannot lose
 •   Never share seed phrase
 •   Double-check URLs
 •   Use separate wallet for risky experiments
@@ -381,6 +391,116 @@ f:["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/16o._r84.teo2
 
 
 <p>Just take it easy; Slow down. Verify claims. Ask simple questions. If something feels engineered to trigger greed, that feeling is worth listening to. Personally, my own instincts has saved me a lot of times. Just don’t be judgmental, follow specific rules. And in crypto, avoiding one disaster can matter more than catching one moonbag<br><br><br>Go to our <a href="https://web3farmyard.com/junkyard">JunkYard</a>, the first graveyard for (dead) crypto projects, to see how many millions have been lost and where/how.<br></p>
-10:["$","main",null,{"style":{"minHeight":"100vh","background":"#0a0a0a","color":"#fff","padding":"40px 20px"},"children":[["$","$L1a",null,{"slug":"how-to-identify-scam-projects-in-crypto","title":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO","author":"$undefined","category":"$undefined"}],["$","div",null,{"style":{"maxWidth":"800px","margin":"0 auto"},"children":[["$","a",null,{"href":"/blog","style":{"color":"#c8ff00","textDecoration":"none","marginBottom":"20px","display":"inline-block"},"children":"← Back to Blog"}],["$","article",null,{"style":{"marginTop":"30px"},"children":[["$","h1",null,{"style":{"fontSize":"42px","marginBottom":"10px","lineHeight":"1.2"},"children":"HOW TO IDENTIFY SCAM PROJECTS IN CRYPTO"}],["$","div",null,{"style":{"color":"#666","marginBottom":"40px","fontSize":"14px","display":"flex","gap":"20px"},"children":[["$","span",null,{"children":["📅 ","22/04/2026"]}],"$undefined"]}],"$undefined",["$","div",null,{"style":{"background":"#111","padding":"30px","borderRadius":"8px","lineHeight":"1.8","color":"#ccc"},"children":["$","div",null,{"dangerouslySetInnerHTML":{"__html":"$1b"}}]}],"$L1c","$L1d"]}]]}]]}]
-1c:["$","div",null,{"style":{"marginTop":"40px","padding":"20px","background":"#111","borderRadius":"8px","textAlign":"center"},"children":[["$","p",null,{"style":{"marginBottom":"15px","color":"#ccc"},"children":"Ready to start your Web3 journey?"}],["$","a",null,{"href":"/onboarding/day-1","style":{"display":"inline-block","padding":"12px 24px","background":"#c8ff00","color":"#0a0a0a","textDecoration":"none","fontWeight":"bold","borderRadius":"4px","cursor":"pointer","transition":"all 0.3s"},"children":"Start the Onboarding →"}]]}]
-1d:["$","div",null,{"style":{"marginTop":"60px","paddingTop":"40px","borderTop":"1px solid #222","display":"flex","justifyContent":"space-between","gap":"20px"},"children":[["$","a",null,{"href":"/blog","style":{"color":"#c8ff00","textDecoration":"none","padding":"10px 16px","border":"1px solid #333","borderRadius":"4px","transition":"all 0.3s"},"children":"← All Articles"}],["$","a",null,{"href":"/airdrops","style":{"color":"#c8ff00","textDecoration":"none","padding":"10px 16px","border":"1px solid #333","borderRadius":"4px","transition":"all 0.3s"},"children":"View Airdrops →"}]]}]
+24:["$","div",null,{"className":"blog-content space-y-6","dangerouslySetInnerHTML":{"__html":"$29"},"style":{"lineHeight":"1.8"}}]
+2a:Tad4,
+            .blog-content p {
+              margin-bottom: 1.5rem;
+              color: #333;
+              line-height: 1.8;
+            }
+            
+            .blog-content h2, .blog-content h3, .blog-content h4 {
+              margin-top: 2rem;
+              margin-bottom: 1rem;
+              color: #0a0a0a;
+              font-weight: bold;
+            }
+
+            .blog-content h2 {
+              font-size: 1.75rem;
+              border-bottom: 2px solid #1a6b00;
+              padding-bottom: 0.5rem;
+            }
+
+            .blog-content h3 {
+              font-size: 1.5rem;
+            }
+
+            .blog-content h4 {
+              font-size: 1.25rem;
+            }
+
+            .blog-content ul, .blog-content ol {
+              margin: 1.5rem 0;
+              padding-left: 2rem;
+            }
+
+            .blog-content li {
+              margin-bottom: 0.5rem;
+              color: #333;
+            }
+
+            .blog-content blockquote {
+              border-left: 4px solid #1a6b00;
+              padding-left: 1rem;
+              margin: 1.5rem 0;
+              font-style: italic;
+              color: #666;
+            }
+
+            .blog-content a {
+              color: #1a6b00;
+              text-decoration: underline;
+              font-weight: 500;
+            }
+
+            .blog-content a:hover {
+              color: #134f00;
+            }
+
+            .blog-content code {
+              background: #f5f5f5;
+              padding: 0.2rem 0.4rem;
+              border-radius: 4px;
+              font-family: 'Courier New', monospace;
+              color: #d63384;
+            }
+
+            .blog-content pre {
+              background: #f5f5f5;
+              padding: 1rem;
+              border-radius: 8px;
+              overflow-x: auto;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content pre code {
+              background: none;
+              padding: 0;
+              color: #0a0a0a;
+            }
+
+            .blog-content table {
+              border-collapse: collapse;
+              width: 100%;
+              margin: 1.5rem 0;
+              border: 1px solid #ddd;
+            }
+
+            .blog-content th, .blog-content td {
+              border: 1px solid #ddd;
+              padding: 0.75rem;
+              text-align: left;
+            }
+
+            .blog-content th {
+              background: #f5f5f5;
+              font-weight: bold;
+            }
+
+            .blog-content img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 8px;
+              margin: 1.5rem 0;
+            }
+
+            .blog-content hr {
+              border: none;
+              border-top: 2px solid #e0e0e0;
+              margin: 2rem 0;
+            }
+          25:["$","style",null,{"children":"$2a"}]
+26:["$","div",null,{"className":"border-t-2 border-gray-200 pt-8","children":["$","$L6",null,{"href":"/blog","className":"inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all","children":"← Back to Blog"}]}]
+27:["$","footer",null,{"className":"bg-[#0a0a0a] text-white border-t border-gray-800 mt-20","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-12","children":[["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-4 gap-12 mb-12","children":[["$","div",null,{"children":[["$","h3",null,{"className":"font-serif text-2xl font-bold mb-4 text-[#c8ff00]","children":"Web3Farmyard"}],["$","p",null,{"className":"text-gray-400 text-sm leading-relaxed","children":"Your guide to farming airdrops, yield, and opportunities in Web3."}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"PLATFORM"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Home"}],["$","$L6",null,{"href":"/blog","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Blog"}],["$","$L6",null,{"href":"/airdrops","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Airdrops"}],["$","$L6",null,{"href":"/toolkit","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Toolkit"}],["$","$L6",null,{"href":"/showroom","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Showroom"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"RESOURCES"}],["$","nav",null,{"className":"space-y-3","children":[["$","$L6",null,{"href":"/onboarding/day-1","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Onboarding"}],["$","$L6",null,{"href":"/resources/mobile-farmer","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Mobile Farmer"}],["$","a",null,{"href":"#","className":"text-gray-400 hover:text-white text-sm transition-colors","children":"Docs"}]]}]]}],["$","div",null,{"children":[["$","h4",null,{"className":"font-mono text-sm font-bold text-[#00ffe0] mb-4 tracking-wider","children":"CONTACT US"}],["$","div",null,{"className":"flex flex-col gap-3","children":[["$","a",null,{"href":"https://discord.gg/qqaafeErX","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:0:props:children:0:props:iconNode","className":"lucide-share2 lucide-share-2","size":18}],["$","span",null,{"className":"text-sm","children":"Discord"}]]}],["$","a",null,{"href":"https://twitter.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:1:props:children:0:props:iconNode","className":"lucide-zap","size":18}],["$","span",null,{"className":"text-sm","children":"Twitter"}]]}],["$","a",null,{"href":"https://github.com/web3farmyard","target":"_blank","rel":"noopener noreferrer","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:2:props:children:0:props:iconNode","className":"lucide-code","size":18}],["$","span",null,{"className":"text-sm","children":"GitHub"}]]}],["$","a",null,{"href":"mailto:hello@web3farmyard.com","className":"flex items-center gap-2 text-gray-400 hover:text-[#00ffe0] transition-colors","children":[["$","$L18",null,{"ref":"$undefined","iconNode":"$c:props:children:1:props:children:3:props:children:0:props:iconNode","className":"lucide-mail","size":18}],["$","span",null,{"className":"text-sm","children":"Email"}]]}]]}]]}]]}],["$","div",null,{"className":"bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12","children":[["$","h3",null,{"className":"font-serif text-2xl font-bold text-white mb-3","children":"Join Our Community"}],["$","p",null,{"className":"text-gray-400 mb-6","children":"Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox."}],["$","div",null,{"className":"flex flex-col sm:flex-row gap-3","children":[["$","input",null,{"type":"email","placeholder":"Your email","className":"flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"}],["$","button",null,{"className":"px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm","children":"Subscribe"}]]}]]}],"$L2b"]}]}]
+2b:["$","div",null,{"className":"border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4","children":[["$","p",null,{"className":"text-gray-500 text-xs font-mono","children":"© 2026 Web3Farmyard. All rights reserved."}],["$","div",null,{"className":"flex gap-6","children":[["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Privacy Policy"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Terms of Service"}],["$","a",null,{"href":"#","className":"text-gray-500 hover:text-gray-400 text-xs transition-colors","children":"Disclaimer"}]]}]]}]

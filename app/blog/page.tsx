@@ -1,60 +1,235 @@
-'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import type { Metadata } from 'next'
 
-export default function BlogList() {
-  const [posts, setPosts] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
+import {
+  generateOrganizationSchema,
+  generateWebPageSchema,
+  generateWebSiteSchema,
+  generateItemListSchema,
+} from '@/lib/schema'
 
-  useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const res = await fetch('https://yoursite.wordpress.com/wp-json/wp/v2/posts?per_page=50')
-        if (res.ok) {
-          const data = await res.json()
-          setPosts(data)
-        }
-      } catch (err) {
-        console.error('Error fetching posts:', err)
-      } finally {
-        setLoading(false)
+interface BlogPost {
+  id: number
+  slug: string
+  title: {
+    rendered: string
+  }
+  excerpt: {
+    rendered: string
+  }
+  date: string
+}
+
+export const metadata: Metadata = {
+  title:
+    'Web3Farmyard Blog - DeFi Guides, Airdrop Alerts & Farming Strategies',
+
+  description:
+    'Read practical guides on DeFi strategies, airdrop hunting, wallet security, and Web3 farming tips.',
+
+  openGraph: {
+    title: 'Web3Farmyard Blog',
+
+    description:
+      'Practical guides, DeFi strategies, and airdrop tips for Web3 farmers.',
+
+    url: 'https://web3farmyard.com/blog/',
+
+    type: 'website'
+  }
+}
+
+function stripHtml(html: string): string {
+  if (!html) {
+    return ''
+  }
+
+  return html
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .trim()
+    .substring(0, 200)
+}
+
+async function getBlogPosts(): Promise<BlogPost[]> {
+  try {
+    const response = await fetch(
+      'https://web3farmyard.com/cms/wp-json/wp/v2/posts?per_page=100&_fields=id,slug,title,excerpt,date',
+      {
+        headers: {
+          Accept: 'application/json'
+        },
+
+       next: {
+  revalidate: 3600
+}
       }
-    }
-    fetchPosts()
-  }, [])
+    )
 
-  if (loading) return <div style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading posts...</div>
+    if (!response.ok) {
+      console.error(
+        'Failed fetching posts:',
+        response.status
+      )
+
+      return []
+    }
+
+    const posts =
+      (await response.json()) as BlogPost[]
+
+    const cleanedPosts = posts.filter(
+      function (post) {
+        return (
+          Boolean(post.id) &&
+          Boolean(post.slug) &&
+          Boolean(post.title) &&
+          Boolean(post.title.rendered)
+        )
+      }
+    )
+
+    cleanedPosts.sort(function (a, b) {
+      return (
+        new Date(b.date).getTime() -
+        new Date(a.date).getTime()
+      )
+    })
+
+    console.log(
+      'Loaded posts:',
+      cleanedPosts.length
+    )
+
+    return cleanedPosts
+  } catch (error) {
+    console.error(
+      'Error fetching posts:',
+      error
+    )
+
+    return []
+  }
+}
+
+export default async function BlogPage() {
+  const posts = await getBlogPosts()
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      generateOrganizationSchema(),
+      generateWebSiteSchema({
+        url: 'https://www.web3farmyard.com/blog',
+        name: 'Web3Farmyard Blog',
+        description: 'Practical Web3 guides, airdrop updates, and farming strategies for beginners.',
+        publisherId: 'https://www.web3farmyard.com/#organization',
+      }),
+      generateWebPageSchema({
+        id: 'https://www.web3farmyard.com/blog#webpage',
+        url: 'https://www.web3farmyard.com/blog',
+        name: 'Web3Farmyard Blog — DeFi Guides & Airdrop Strategies',
+        description: 'Read practical guides on DeFi strategies, airdrop hunting, wallet security, and Web3 farming tips.',
+        isPartOfId: 'https://www.web3farmyard.com/#website',
+        inLanguage: 'en-US',
+      }, false),
+      generateItemListSchema(posts.map(post => ({
+        name: post.title.rendered.replace(/<[^>]*>/g, ''),
+        url: `https://www.web3farmyard.com/blog/${post.slug}`,
+      })), false),
+    ],
+  }
 
   return (
-    <main style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff', padding: '40px 20px' }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '42px', marginBottom: '40px' }}>📝 Web3 Blog</h1>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <Nav />
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
-          {posts.map((post: any) => (
-            <Link key={post.id} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-              <div style={{ background: '#111', padding: '24px', borderRadius: '8px', cursor: 'pointer', transition: 'all 0.3s' }}>
-                <h2 style={{ color: '#c8ff00', marginBottom: '10px', fontSize: '18px' }}>
-                  {post.title.rendered}
-                </h2>
-                <p style={{ color: '#999', marginBottom: '10px', fontSize: '14px' }}>
-                  {post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 100)}...
-                </p>
-                <div style={{ color: '#666', fontSize: '12px' }}>
-                  {new Date(post.date).toLocaleDateString()}
-                </div>
-              </div>
-            </Link>
-          ))}
+      <main className="max-w-4xl mx-auto px-6 py-12">
+        <div className="mb-12">
+          <h1 className="font-serif text-5xl font-bold mb-4 text-[#0a0a0a]">
+            Web3Farmyard Blog
+          </h1>
+
+          <p className="text-lg text-gray-600">
+            Practical guides, airdrop alerts,
+            DeFi strategies, and wallet
+            security tips.
+          </p>
         </div>
 
-        {posts.length === 0 && (
-          <div style={{ textAlign: 'center', color: '#666', paddingTop: '60px' }}>
-            No posts found
+        {posts.length > 0 ? (
+          <div className="grid gap-8 md:grid-cols-2">
+            {posts.map(function (post) {
+              return (
+                <article
+                  key={post.id}
+                  className="border-2 border-gray-200 rounded-xl overflow-hidden hover:border-[#1a6b00] transition-all"
+                >
+                  <div className="p-6">
+                    <h2 className="font-serif text-xl font-bold mb-3">
+                      <Link
+                        href={
+                          '/blog/' + post.slug
+                        }
+                        className="hover:text-[#1a6b00]"
+                      >
+                        {stripHtml(
+                          post.title.rendered
+                        )}
+                      </Link>
+                    </h2>
+
+                    <p className="text-gray-600 text-sm mb-4">
+                      {stripHtml(
+                        post.excerpt.rendered
+                      )}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <time className="text-xs text-gray-500">
+                        {new Date(
+                          post.date
+                        ).toLocaleDateString(
+                          'en-US',
+                          {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                          }
+                        )}
+                      </time>
+
+                      <Link
+                        href={
+                          '/blog/' + post.slug
+                        }
+                        className="text-[#1a6b00] font-bold text-sm"
+                      >
+                        Read →
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
+          </div>
+        ) : (
+          <div className="text-center py-20">
+            <p>No posts found.</p>
           </div>
         )}
-      </div>
-    </main>
+      </main>
+
+      <Footer />
+    </>
   )
 }

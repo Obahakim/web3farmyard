@@ -87,7 +87,7 @@ export default function MobileFarmerPage() {
               ))}
             </div>
             <div className="flex gap-3 flex-wrap">
-              <a href="/uploads/mobile-farmer-web3farmyard.pdf" download className="btn-primary">📖 DOWNLOAD FREE PDF</a>
+              <a href="/uploads/mobile-farmer-web3farmyard.pdf" download="mobile-farmer-web3farmyard.pdf" className="btn-primary">📖 DOWNLOAD FREE PDF</a>
               <Link href="/airdrops" className="btn-outline">🌾 VIEW LIVE AIRDROPS</Link>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default function MobileFarmerPage() {
           <div style={{ fontSize:48, marginBottom:16 }}>📱</div>
           <h2 className="font-serif text-2xl font-bold text-dark mb-3">Download Free — No Email Required</h2>
           <p className="text-sm max-w-lg mx-auto mb-6" style={{ color:'#666', lineHeight:1.7 }}>No signup wall. No email gate. Click download, get the PDF. If you find it useful, share it with someone who needs it.</p>
-          <a href="/uploads/mobile-farmer-web3farmyard.pdf" download className="btn-primary text-[11px] py-4 px-10">
+          <a href="/uploads/mobile-farmer-web3farmyard.pdf" download="mobile-farmer-web3farmyard.pdf" className="btn-primary text-[11px] py-4 px-10">
             ⬇ DOWNLOAD THE MOBILE FARMER — FREE
           </a>
           <p className="font-mono text-[8px] mt-4 tracking-[0.1em]" style={{ color:'#bbb' }}>PDF · FREE · ALWAYS WILL BE</p>

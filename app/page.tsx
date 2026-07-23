@@ -134,6 +134,15 @@ export default function HomePage() {
                 View Airdrops
               </Link>
             </div>
+            <div className="mt-6 flex justify-center">
+              <Link
+                href="/resources"
+                className="inline-flex items-center gap-3 rounded-2xl border-2 border-[#1a6b00] bg-[#f0f8e8] px-6 py-4 text-[#0a0a0a] font-semibold hover:bg-white transition-all"
+              >
+                <span className="text-xl">📘</span>
+                <span>Web3 on Mobile: Free Ebook</span>
+              </Link>
+            </div>
           </section>
 
           {/* 7-DAY PATH PREVIEW */}

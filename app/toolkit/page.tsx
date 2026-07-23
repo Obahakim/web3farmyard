@@ -28,6 +28,7 @@ interface Tool {
   url: string
   isEssential: boolean
   emoji: string
+  logo?: string
 }
 
 const tools: Tool[] = [
@@ -41,6 +42,8 @@ const tools: Tool[] = [
   { id: 'twitter', name: 'X (Twitter)', category: 'Social', description: 'Your gateway to the Web3 community. Follow projects and build network.', url: 'https://twitter.com', isEssential: true, emoji: '𝕏' },
   { id: 'telegram', name: 'Telegram', category: 'Social', description: 'Connect with Web3 communities, get updates, and make friends.', url: 'https://telegram.org', isEssential: true, emoji: '💬' },
   { id: 'discord', name: 'Discord', category: 'Social', description: 'Join project communities, chat with builders, and stay informed.', url: 'https://discord.com', isEssential: true, emoji: '🎮' },
+  { id: 'chain-org', name: 'Chain.org', category: 'Analytics', description: 'Discover chains, ecosystems, and network insights in one place.', url: 'https://chain.org', isEssential: true, emoji: '⛓️', logo: 'https://www.google.com/s2/favicons?domain=chain.org' },
+  { id: 'faucet-drip', name: 'Faucet Drip', category: 'Airdrop', description: 'Claim testnet tokens and practice onchain actions safely.', url: 'https://faucet.drip', isEssential: true, emoji: '🚰', logo: 'https://www.google.com/s2/favicons?domain=faucet.drip' },
 
   // === ADDITIONAL WALLETS ===
   { id: 'trust-wallet', name: 'Trust Wallet', category: 'Wallet', description: 'Best mobile wallet. Official Binance wallet for on-the-go farming.', url: 'https://trustwallet.com', isEssential: false, emoji: '👛' },
@@ -74,7 +77,7 @@ const tools: Tool[] = [
   // === SECURITY ===
   { id: 'token-sniffer', name: 'Token Sniffer', category: 'Security', description: 'Scan tokens for scams and honeypots before buying.', url: 'https://tokensniffer.com', isEssential: false, emoji: '🚨' },
   { id: 'rug-checker', name: 'Rug Checker', category: 'Security', description: 'Detect malicious contracts and protect your wallet.', url: 'https://rugchecker.com', isEssential: false, emoji: '🛡️' },
-  { id: 'revoke', name: 'Revoke.cash', category: 'Security', description: 'Revoke malicious token approvals and protect your wallet.', url: 'https://revoke.cash', isEssential: false, emoji: '⛔' },
+  { id: 'revoke', name: 'Revoke.cash', category: 'Security', description: 'Revoke malicious token approvals and protect your wallet.', url: 'https://revoke.cash', isEssential: true, emoji: '⛔', logo: 'https://www.google.com/s2/favicons?domain=revoke.cash' },
 ]
 
 export default function ToolkitPage() {
@@ -155,7 +158,13 @@ export default function ToolkitPage() {
                     className="group bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-[#c8ff00]/30 hover:border-[#c8ff00] rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
                   >
                     <div className="flex items-start gap-4">
-                      <div className="text-4xl flex-shrink-0">{tool.emoji}</div>
+                      <div className="text-4xl flex-shrink-0">
+                        {tool.logo ? (
+                          <img src={tool.logo} alt={`${tool.name} logo`} className="w-10 h-10 rounded-md object-contain bg-white/90 p-1" />
+                        ) : (
+                          <span>{tool.emoji}</span>
+                        )}
+                      </div>
                       <div className="flex-1">
                         <h3 className="font-serif font-bold text-white text-lg group-hover:text-[#c8ff00] transition-colors">
                           {tool.name}

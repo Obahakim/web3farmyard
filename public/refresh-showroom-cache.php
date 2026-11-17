@@ -152,11 +152,13 @@ try {
     $baseRequests = [
         'chains' => SHOWROOM_API . '/v2/chains',
         'dexOverview' => SHOWROOM_API . '/overview/dexs?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true',
+        'nftOverview' => SHOWROOM_API . '/overview/nft-volume?excludeTotalDataChart=true&excludeTotalDataChartBreakdown=true',
     ];
     [$baseResponses, $baseErrors] = fetchJsonBatch($baseRequests, 2);
-    if ($baseErrors !== []) {
+    if (isset($baseErrors['chains']) || isset($baseErrors['dexOverview'])) {
         throw new RuntimeException('Could not load the DeFiLlama chain list or DEX overview.');
     }
+    $nftFailureCount = isset($baseErrors['nftOverview']) ? 1 : 0;
 
     $chains = [];
     foreach ($baseResponses['chains'] as $chain) {
@@ -177,6 +179,7 @@ try {
             'change_7d' => null,
             'change_1m' => null,
             'dexVolume24h' => null,
+            'nftVolume24h' => null,
             'tokenSymbol' => isset($chain['tokenSymbol']) ? (string) $chain['tokenSymbol'] : null,
             'chainId' => isset($chain['chainId']) && is_numeric($chain['chainId']) ? (int) $chain['chainId'] : null,
             'gecko_id' => isset($chain['gecko_id']) ? (string) $chain['gecko_id'] : null,
@@ -198,6 +201,38 @@ try {
         $key = strtolower($name);
         if (isset($chains[$key])) {
             $volumeKeys[$key] = $name;
+        }
+    }
+
+    $nftProtocols = $baseResponses['nftOverview']['protocols'] ?? null;
+    if (!is_array($nftProtocols)) {
+        $nftFailureCount++;
+    } else {
+        foreach ($nftProtocols as $nftProtocol) {
+            if (
+                !is_array($nftProtocol) ||
+                ($nftProtocol['category'] ?? null) !== 'Chain' ||
+                !isset($nftProtocol['name']) ||
+                !is_string($nftProtocol['name']) ||
+                !isset($nftProtocol['total24h']) ||
+                !is_numeric($nftProtocol['total24h'])
+            ) {
+                continue;
+            }
+
+            $chainKey = strtolower(trim($nftProtocol['name']));
+            if (!isset($chains[$chainKey]) && isset($nftProtocol['chains']) && is_array($nftProtocol['chains'])) {
+                foreach ($nftProtocol['chains'] as $alias) {
+                    if (is_string($alias) && isset($chains[strtolower(trim($alias))])) {
+                        $chainKey = strtolower(trim($alias));
+                        break;
+                    }
+                }
+            }
+
+            if (isset($chains[$chainKey])) {
+                $chains[$chainKey]['nftVolume24h'] = (float) $nftProtocol['total24h'];
+            }
         }
     }
 
@@ -268,7 +303,7 @@ try {
 
     $snapshot = [
         'updatedAt' => gmdate(DATE_ATOM),
-        'partialFailures' => $historyFailureCount + $volumeFailureCount,
+        'partialFailures' => $nftFailureCount + $historyFailureCount + $volumeFailureCount,
         'chains' => $chainList,
     ];
     $json = json_encode($snapshot, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);

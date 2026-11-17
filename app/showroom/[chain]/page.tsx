@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const content = getChainContent(foundChain.name) || generateGenericDescription(foundChain)
 
   return {
-    title: `${foundChain.name} Blockchain — TVL & DEX Volume`,
-    description: `Daily TVL, TVL-change, and DEX-volume metrics for ${foundChain.name}.`,
+    title: `${foundChain.name} Blockchain — TVL, DEX & NFT Volume`,
+    description: `Daily TVL, TVL-change, DEX-volume, and NFT-volume metrics for ${foundChain.name}.`,
     alternates: { canonical: `https://www.web3farmyard.com/showroom/${chain}` },
   }
 }

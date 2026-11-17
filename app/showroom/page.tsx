@@ -18,13 +18,13 @@ export default async function ShowroomPage() {
   const chains = await getAllChains()
 
   const datasetSchema = generateDatasetSchema({
-    name: 'DeFi Chain TVL and DEX Volume Rankings',
-    description: 'DeFi chains ranked by TVL and 24-hour DEX trading volume, with 24-hour TVL changes',
+    name: 'DeFi Chain TVL, DEX Volume, and NFT Volume Rankings',
+    description: 'DeFi chains ranked by TVL, 24-hour DEX trading volume, and 24-hour NFT trading volume',
     url: 'https://www.web3farmyard.com/showroom',
     datePublished: new Date().toISOString().split('T')[0],
     dateModified: new Date().toISOString().split('T')[0],
     creator: 'Web3Farmyard',
-    keywords: ['DeFi', 'TVL', 'DEX volume', 'blockchain rankings', 'chain metrics'],
+    keywords: ['DeFi', 'TVL', 'DEX volume', 'NFT volume', 'blockchain rankings', 'chain metrics'],
   }, false)
 
   const showroomSchema = {
@@ -34,14 +34,14 @@ export default async function ShowroomPage() {
       generateWebSiteSchema({
         url: 'https://www.web3farmyard.com',
         name: 'Web3Farmyard',
-        description: 'Track DeFi chains by TVL and 24-hour DEX trading volume.',
+        description: 'Track DeFi chains by TVL, 24-hour DEX volume, and 24-hour NFT trading volume.',
         publisherId: 'https://www.web3farmyard.com/#organization',
       }),
       generateWebPageSchema({
         id: 'https://www.web3farmyard.com/showroom#webpage',
         url: 'https://www.web3farmyard.com/showroom',
         name: 'DeFi Chain Rankings — Web3Farmyard',
-        description: 'DeFi chains ranked by TVL and 24-hour DEX trading volume, with 24-hour TVL changes.',
+        description: 'DeFi chains ranked by TVL, 24-hour DEX volume, and 24-hour NFT trading volume.',
         isPartOfId: 'https://www.web3farmyard.com/#website',
         primaryImage: { url: 'https://www.web3farmyard.com/og-showroom.png', width: 1200, height: 630 },
         datePublished: new Date().toISOString().split('T')[0],
@@ -65,7 +65,7 @@ export default async function ShowroomPage() {
       <div style={{ overflow: 'hidden', background: '#060606', padding: '7px 0', borderBottom: '3px solid #1a6b00' }}>
         <div style={{ display: 'flex', animation: 'ticker 40s linear infinite', whiteSpace: 'nowrap' }}>
           <span className="font-mono text-[10px] tracking-[0.15em]" style={{ color: '#1a6b00', paddingRight: 48 }}>
-            DEFI LLAMA DATA · DAILY SNAPSHOT · TVL · 24H TVL CHANGE · 24H DEX VOLUME ·
+            DEFI LLAMA DATA · DAILY SNAPSHOT · TVL · 24H TVL CHANGE · 24H DEX VOLUME · 24H NFT VOLUME ·
           </span>
         </div>
       </div>
@@ -80,14 +80,14 @@ export default async function ShowroomPage() {
             Every chain. Every metric. Refreshed daily.
           </h1>
           <p className="text-sm max-w-lg mb-8" style={{ color: '#555', lineHeight: 1.8 }}>
-            Explore DeFiLlama chains ranked by total value locked and 24-hour DEX trading volume, with 24-hour TVL changes shown. Data is refreshed once daily.
+            Explore DeFiLlama chains ranked by total value locked, 24-hour DEX volume, and 24-hour NFT trading volume. TVL change is also shown. Data is refreshed once daily.
           </p>
 
           {/* Stats Bar */}
           <div className="flex gap-4 flex-wrap mb-8">
             {[
               { label: 'CHAINS TRACKED', val: chains.length, color: '#1a6b00' },
-              { label: 'RANKING MODES', val: '02', color: '#0a0a0a' },
+              { label: 'RANKING MODES', val: '03', color: '#0a0a0a' },
               { label: 'UPDATE CADENCE', val: '24 HOURS', color: '#666' },
               { label: 'DATA SOURCE', val: 'DEFILLAMA', color: '#1a6b00' },
             ].map(s => (
@@ -152,6 +152,9 @@ export default async function ShowroomPage() {
           </p>
           <p className="text-sm" style={{ color: '#555', lineHeight: 1.8 }}>
             This data is sourced from <strong>DeFiLlama</strong>, which tracks {chains.length} chains and thousands of protocols. TVL changes as users deposit and withdraw from lending protocols, liquidity pools, and yield aggregators. The Showroom snapshot is refreshed once daily.
+          </p>
+          <p className="text-sm mt-4" style={{ color: '#555', lineHeight: 1.8 }}>
+            NFT-volume rankings include only chains for which DeFiLlama reports NFT trading data.
           </p>
         </section>
       </main>

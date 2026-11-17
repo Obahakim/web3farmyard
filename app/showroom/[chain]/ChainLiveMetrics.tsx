@@ -17,6 +17,7 @@ interface SnapshotChain {
   change_7d?: number | null
   change_1m?: number | null
   dexVolume24h?: number | null
+  nftVolume24h?: number | null
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -35,7 +36,8 @@ function isSnapshotChain(value: unknown): value is SnapshotChain {
     isOptionalNumber(value.change_1d) &&
     isOptionalNumber(value.change_7d) &&
     isOptionalNumber(value.change_1m) &&
-    isOptionalNumber(value.dexVolume24h)
+    isOptionalNumber(value.dexVolume24h) &&
+    isOptionalNumber(value.nftVolume24h)
 }
 
 function formatNumber(num: number | null): string {
@@ -70,6 +72,7 @@ export default function ChainLiveMetrics({
   const [change7d, setChange7d] = useState(initialChange7d)
   const [change1m, setChange1m] = useState(initialChange1m)
   const [dexVolume, setDexVolume] = useState<number | null>(null)
+  const [nftVolume, setNftVolume] = useState<number | null>(null)
   const [updatedAt, setUpdatedAt] = useState<string | null>(null)
   const [snapshotError, setSnapshotError] = useState(false)
   const [currentRank, setCurrentRank] = useState(rank)
@@ -103,6 +106,7 @@ export default function ChainLiveMetrics({
         setChange7d(chain.change_7d ?? null)
         setChange1m(chain.change_1m ?? null)
         setDexVolume(typeof chain.dexVolume24h === 'number' ? chain.dexVolume24h : null)
+        setNftVolume(typeof chain.nftVolume24h === 'number' ? chain.nftVolume24h : null)
         setUpdatedAt(data.updatedAt)
         setCurrentRank([...snapshotChains]
           .sort((a, b) => b.tvl - a.tvl)
@@ -122,7 +126,7 @@ export default function ChainLiveMetrics({
 
   return (
     <section className="mb-8">
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-4">
         {/* Rank */}
         <div className="glass p-5">
           <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
@@ -178,6 +182,13 @@ export default function ChainLiveMetrics({
             24H DEX VOLUME
           </div>
           <div className="font-serif font-bold text-dark text-2xl">{formatNumber(dexVolume)}</div>
+        </div>
+
+        <div className="glass p-5">
+          <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
+            24H NFT VOLUME
+          </div>
+          <div className="font-serif font-bold text-dark text-2xl">{formatNumber(nftVolume)}</div>
         </div>
       </div>
 

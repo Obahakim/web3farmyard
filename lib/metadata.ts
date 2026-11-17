@@ -59,14 +59,15 @@ export function generateChainMetadata(
  */
 export function generateShowroomMetadata(): Metadata {
   return {
-    title: 'DeFi Chain Rankings — TVL & DEX Volume | Web3Farmyard',
+    title: 'DeFi Chain Rankings — TVL, DEX & NFT Volume | Web3Farmyard',
     description:
-      'Track DeFi chains ranked by total value locked and 24-hour DEX trading volume, with 24-hour TVL changes. Daily snapshot data from DeFiLlama.',
+      'Track DeFi chains ranked by total value locked, 24-hour DEX volume, and 24-hour NFT trading volume. Daily snapshot data from DeFiLlama.',
     keywords: [
       'DeFi rankings',
       'TVL tracker',
       'blockchain rankings',
       'DeFi metrics',
+      'NFT trading volume',
       'Ethereum TVL',
       'Solana TVL',
       'chain comparison',
@@ -77,7 +78,7 @@ export function generateShowroomMetadata(): Metadata {
     openGraph: {
       type: 'website',
       title: 'DeFi Chain Rankings | Web3Farmyard',
-      description: 'Track DeFi chains by TVL and 24-hour DEX trading volume, with 24-hour TVL changes',
+      description: 'Track DeFi chains by TVL, 24-hour DEX volume, and 24-hour NFT trading volume',
       url: 'https://www.web3farmyard.com/showroom',
       images: [
         {

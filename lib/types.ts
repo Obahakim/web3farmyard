@@ -6,6 +6,7 @@ export interface Chain {
   change_1m?: number | null
   protocols?: number | null
   dexVolume24h?: number | null
+  nftVolume24h?: number | null
   tokenSymbol?: string | null
   chainId?: number | null
   gecko_id?: string | null

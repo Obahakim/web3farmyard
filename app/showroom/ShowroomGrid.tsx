@@ -36,6 +36,7 @@ function isChain(value: unknown): value is Chain {
     isOptionalNumber(value.change_7d) &&
     isOptionalNumber(value.change_1m) &&
     isOptionalNumber(value.dexVolume24h) &&
+    isOptionalNumber(value.nftVolume24h) &&
     isOptionalNumber(value.chainId) &&
     isOptionalString(value.tokenSymbol) &&
     isOptionalString(value.gecko_id)
@@ -54,7 +55,7 @@ function isSnapshot(value: unknown): value is ShowroomSnapshot {
 
 export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props) {
   const [chains, setChains] = useState<Chain[]>(initialChains)
-  const [mode, setMode] = useState<'tvl' | 'volume'>('tvl')
+  const [mode, setMode] = useState<'tvl' | 'dexVolume' | 'nftVolume'>('tvl')
   const [lastUpdate, setLastUpdate] = useState(initialUpdatedAt)
   const [hasSnapshot, setHasSnapshot] = useState(false)
   const [loadError, setLoadError] = useState(false)
@@ -94,10 +95,16 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
 
   const sorted = mode === 'tvl'
     ? [...chains].sort((a, b) => (b.tvl || 0) - (a.tvl || 0))
-    : [...chains]
-      .filter(chain => chain.dexVolume24h !== null && chain.dexVolume24h !== undefined)
-      .sort((a, b) => (b.dexVolume24h || 0) - (a.dexVolume24h || 0))
+    : mode === 'dexVolume'
+      ? [...chains]
+        .filter(chain => chain.dexVolume24h !== null && chain.dexVolume24h !== undefined)
+        .sort((a, b) => (b.dexVolume24h || 0) - (a.dexVolume24h || 0))
+      : [...chains]
+        .filter(chain => chain.nftVolume24h !== null && chain.nftVolume24h !== undefined)
+        .sort((a, b) => (b.nftVolume24h || 0) - (a.nftVolume24h || 0))
   const ranked = sorted.slice(0, 50)
+  const hasDexVolumes = chains.some(chain => typeof chain.dexVolume24h === 'number')
+  const hasNftVolumes = chains.some(chain => typeof chain.nftVolume24h === 'number')
   const snapshotIsStale = hasSnapshot && Date.now() - Date.parse(lastUpdate) > 24 * 60 * 60 * 1000
 
   return (
@@ -108,19 +115,26 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
           TOP {ranked.length} OF {sorted.length} CHAINS · DATA AS OF {new Date(lastUpdate).toLocaleString('en-US', { timeZone: 'UTC' })} UTC
         </div>
         <div className="flex flex-wrap gap-1" style={{ background: '#1a1a1a', borderRadius: 8, overflow: 'hidden' }}>
-          {(['tvl', 'volume'] as const).map(m => (
+          {(['tvl', 'dexVolume', 'nftVolume'] as const).map(m => (
             <button
               key={m}
               onClick={() => setMode(m)}
-              disabled={m !== 'tvl' && !hasSnapshot}
+              disabled={
+                (m === 'dexVolume' && (!hasSnapshot || !hasDexVolumes)) ||
+                (m === 'nftVolume' && (!hasSnapshot || !hasNftVolumes))
+              }
               className="font-mono text-[9px] font-bold px-4 py-2 border-none cursor-pointer transition-all"
               style={{
                 background: mode === m ? '#c8ff00' : '#0d0d0d',
                 color: mode === m ? '#0a0a0a' : '#888',
-                opacity: m !== 'tvl' && !hasSnapshot ? 0.5 : 1,
+                opacity:
+                  (m === 'dexVolume' && (!hasSnapshot || !hasDexVolumes)) ||
+                  (m === 'nftVolume' && (!hasSnapshot || !hasNftVolumes))
+                    ? 0.5
+                    : 1,
               }}
             >
-              {m === 'tvl' ? 'BY TVL' : 'BY 24H DEX VOLUME'}
+              {m === 'tvl' ? 'BY TVL' : m === 'dexVolume' ? 'BY 24H DEX VOLUME' : 'BY 24H NFT VOLUME'}
             </button>
           ))}
         </div>
@@ -139,6 +153,11 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
       {snapshotIsStale && (
         <p role="status" className="mb-4 text-sm text-amber-700">
           This snapshot is over 24 hours old. Check that the Hostinger cron task is running.
+        </p>
+      )}
+      {hasSnapshot && !hasNftVolumes && (
+        <p role="status" className="mb-4 text-sm text-amber-700">
+          NFT volume is not available in this snapshot yet. Run the updated daily refresh to populate it.
         </p>
       )}
 
@@ -198,10 +217,12 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
               </div>
 
               <div className="font-serif font-bold text-dark" style={{ fontSize: 13 }}>
-                {mode === 'volume' ? fmt(chain.dexVolume24h) : fmt(chain.tvl)}
+                {mode === 'tvl'
+                  ? fmt(chain.tvl)
+                  : fmt(mode === 'dexVolume' ? chain.dexVolume24h : chain.nftVolume24h)}
               </div>
               <div className="font-mono text-[7px] text-gray-400">
-                {mode === 'volume' ? '24H DEX VOLUME' : 'TVL'}
+                {mode === 'tvl' ? 'TVL' : mode === 'dexVolume' ? '24H DEX VOLUME' : '24H NFT VOLUME'}
               </div>
 
               <div className="font-mono font-bold" style={{ fontSize: 8, color: pctColor }}>

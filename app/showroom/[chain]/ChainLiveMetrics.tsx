@@ -7,22 +7,43 @@ interface Props {
   initialChange1d: number | null
   initialChange7d: number | null
   initialChange1m: number | null
-  initialProtocols: number | null
   rank: number
 }
 
-function formatNumber(num: number): string {
+interface SnapshotChain {
+  name: string
+  tvl: number
+  change_1d?: number | null
+  change_7d?: number | null
+  change_1m?: number | null
+  dexVolume24h?: number | null
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null
+}
+
+function isOptionalNumber(value: unknown): boolean {
+  return value === undefined || value === null || (typeof value === 'number' && Number.isFinite(value))
+}
+
+function isSnapshotChain(value: unknown): value is SnapshotChain {
+  return isRecord(value) &&
+    typeof value.name === 'string' &&
+    typeof value.tvl === 'number' &&
+    Number.isFinite(value.tvl) &&
+    isOptionalNumber(value.change_1d) &&
+    isOptionalNumber(value.change_7d) &&
+    isOptionalNumber(value.change_1m) &&
+    isOptionalNumber(value.dexVolume24h)
+}
+
+function formatNumber(num: number | null): string {
+  if (num === null || !Number.isFinite(num)) return '—'
   if (num >= 1e9) return `$${(num / 1e9).toFixed(2)}B`
   if (num >= 1e6) return `$${(num / 1e6).toFixed(2)}M`
   if (num >= 1e3) return `$${(num / 1e3).toFixed(2)}K`
   return `$${num.toFixed(2)}`
-}
-
-function formatChange(change: number | null): string {
-  if (change === null || change === undefined) return '—'
-  if (change === 0) return '—'
-  const sign = change > 0 ? '+' : ''
-  return `${sign}${change.toFixed(2)}%`
 }
 
 function ChangeIndicator({ change }: { change: number | null }) {
@@ -42,31 +63,72 @@ export default function ChainLiveMetrics({
   initialChange1d,
   initialChange7d,
   initialChange1m,
-  initialProtocols,
   rank,
 }: Props) {
   const [tvl, setTvl] = useState(initialTvl)
   const [change1d, setChange1d] = useState(initialChange1d)
   const [change7d, setChange7d] = useState(initialChange7d)
   const [change1m, setChange1m] = useState(initialChange1m)
-  const [protocols, setProtocols] = useState(initialProtocols)
-  const [loading, setLoading] = useState(false)
+  const [dexVolume, setDexVolume] = useState<number | null>(null)
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null)
+  const [snapshotError, setSnapshotError] = useState(false)
+  const [currentRank, setCurrentRank] = useState(rank)
 
-  // Optionally fetch fresh data client-side
   useEffect(() => {
-    // You can add a fetch here if you have a /api/chain/[name] endpoint
-    // For now, we'll just use the initial data
+    let active = true
+
+    const refresh = async () => {
+      try {
+        const response = await fetch('/showroom-data.php', { cache: 'no-store' })
+        if (!response.ok) throw new Error(`Showroom data request failed: ${response.status}`)
+
+        const data: unknown = await response.json()
+        if (
+          !isRecord(data) ||
+          !Array.isArray(data.chains) ||
+          !data.chains.every(isSnapshotChain) ||
+          typeof data.updatedAt !== 'string' ||
+          !Number.isFinite(Date.parse(data.updatedAt))
+        ) {
+          throw new Error('Showroom data response had an invalid shape')
+        }
+
+        const snapshotChains: SnapshotChain[] = data.chains
+        const chain = snapshotChains.find(item => item.name === chainName)
+        if (!active) return
+        if (!chain) throw new Error(`Chain "${chainName}" was not found in the daily snapshot`)
+
+        setTvl(chain.tvl)
+        setChange1d(chain.change_1d ?? null)
+        setChange7d(chain.change_7d ?? null)
+        setChange1m(chain.change_1m ?? null)
+        setDexVolume(typeof chain.dexVolume24h === 'number' ? chain.dexVolume24h : null)
+        setUpdatedAt(data.updatedAt)
+        setCurrentRank([...snapshotChains]
+          .sort((a, b) => b.tvl - a.tvl)
+          .findIndex(item => item.name === chainName) + 1)
+        setSnapshotError(false)
+      } catch (error) {
+        console.error('Unable to load daily chain metrics:', error)
+        if (active) setSnapshotError(true)
+      }
+    }
+
+    void refresh()
+    return () => {
+      active = false
+    }
   }, [chainName])
 
   return (
     <section className="mb-8">
-      <div className="grid gap-4 md:grid-cols-5">
+      <div className="grid gap-4 md:grid-cols-3">
         {/* Rank */}
         <div className="glass p-5">
           <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
             RANK
           </div>
-          <div className="font-serif text-3xl font-bold text-dark">#{rank}</div>
+          <div className="font-serif text-3xl font-bold text-dark">#{currentRank}</div>
         </div>
 
         {/* TVL */}
@@ -85,7 +147,7 @@ export default function ChainLiveMetrics({
         {/* 24H Change */}
         <div className="glass p-5">
           <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
-            24H CHANGE
+            24H TVL CHANGE
           </div>
           <div className="font-mono font-bold text-lg">
             <ChangeIndicator change={change1d} />
@@ -95,26 +157,34 @@ export default function ChainLiveMetrics({
         {/* 7D Change */}
         <div className="glass p-5">
           <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
-            7D CHANGE
+            7D TVL CHANGE
           </div>
           <div className="font-mono font-bold text-lg">
             <ChangeIndicator change={change7d} />
           </div>
         </div>
 
-        {/* Active Protocols */}
         <div className="glass p-5">
           <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
-            ACTIVE PROTOCOLS
+            30D TVL CHANGE
           </div>
-          <div className="font-serif text-3xl font-bold text-dark">
-            {protocols !== null && protocols !== undefined ? protocols : '—'}
+          <div className="font-mono font-bold text-lg">
+            <ChangeIndicator change={change1m} />
           </div>
+        </div>
+
+        <div className="glass p-5">
+          <div className="font-mono text-[8px] tracking-widest mb-3" style={{ color: '#999' }}>
+            24H DEX VOLUME
+          </div>
+          <div className="font-serif font-bold text-dark text-2xl">{formatNumber(dexVolume)}</div>
         </div>
       </div>
 
       {/* Data source attribution */}
       <div style={{ textAlign: 'right', marginTop: 12, fontSize: 11, color: '#999' }}>
+        {snapshotError && <span role="status">Daily snapshot unavailable; metrics may be build-time values. </span>}
+        {updatedAt && <span>Snapshot: {new Date(updatedAt).toLocaleString('en-US', { timeZone: 'UTC' })} UTC · </span>}
         <a
           href={`https://defillama.com/chain/${chainName}`}
           target="_blank"

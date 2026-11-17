@@ -19,13 +19,13 @@ export function generateChainMetadata(
   const metaDescription = `${chainName} blockchain — Rank #${rank} with ${chainTvl} in DeFi. ${firstSentence}`
 
   return {
-    title: `${chainName} Blockchain — Live TVL & DeFi Data | Web3Farmyard`,
+    title: `${chainName} Blockchain — TVL & DeFi Data | Web3Farmyard`,
     description: metaDescription,
     keywords: [
       `${chainName} blockchain`,
       `${chainName} TVL`,
       'DeFi data',
-      'live chain metrics',
+      'daily chain metrics',
       chainContent.category.toLowerCase(),
     ],
     alternates: {
@@ -33,7 +33,7 @@ export function generateChainMetadata(
     },
     openGraph: {
       type: 'website',
-      title: `${chainName} Blockchain — Live Data | Web3Farmyard`,
+      title: `${chainName} Blockchain — Daily Data | Web3Farmyard`,
       description: metaDescription,
       url: `https://www.web3farmyard.com/showroom/${slug}`,
       images: [
@@ -59,9 +59,9 @@ export function generateChainMetadata(
  */
 export function generateShowroomMetadata(): Metadata {
   return {
-    title: 'Live DeFi Chain Rankings — 191 Blockchains, Real-Time TVL | Web3Farmyard',
+    title: 'DeFi Chain Rankings — TVL & DEX Volume | Web3Farmyard',
     description:
-      'Track 191+ blockchains ranked by total value locked. Real-time DeFi metrics, protocol counts, and 24h/7d changes for every major chain. Data from DeFiLlama.',
+      'Track DeFi chains ranked by total value locked and 24-hour DEX trading volume, with 24-hour TVL changes. Daily snapshot data from DeFiLlama.',
     keywords: [
       'DeFi rankings',
       'TVL tracker',
@@ -76,8 +76,8 @@ export function generateShowroomMetadata(): Metadata {
     },
     openGraph: {
       type: 'website',
-      title: 'Live DeFi Chain Rankings | Web3Farmyard',
-      description: 'Track all 191 blockchains by real-time TVL, protocols, and DeFi activity',
+      title: 'DeFi Chain Rankings | Web3Farmyard',
+      description: 'Track DeFi chains by TVL and 24-hour DEX trading volume, with 24-hour TVL changes',
       url: 'https://www.web3farmyard.com/showroom',
       images: [
         {

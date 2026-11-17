@@ -323,7 +323,7 @@ export function getChainContent(name: string): ChainContent | null {
   return chains[key] || chains[altKey] || chains[name.toLowerCase()] || null
 }
 
-export function generateGenericDescription(chain: { name: string; tvl: number; protocols: number | null }): ChainContent {
+export function generateGenericDescription(chain: { name: string; tvl: number; protocols?: number | null }): ChainContent {
   const tvlStr = chain.tvl > 1e9
     ? `$${(chain.tvl / 1e9).toFixed(1)}B`
     : `$${(chain.tvl / 1e6).toFixed(0)}M`
@@ -337,7 +337,7 @@ export function generateGenericDescription(chain: { name: string; tvl: number; p
     highlights: [
       `${tvlStr} total value locked`,
       chain.protocols ? `${chain.protocols} active protocols` : 'Active DeFi ecosystem',
-      'Live metrics tracked by DeFiLlama',
+      'Daily metrics tracked by DeFiLlama',
     ],
     website: `https://${chain.name.toLowerCase().replace(/\s+/g, '')}.com`,
     explorer: 'See official documentation',

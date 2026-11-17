@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const content = getChainContent(foundChain.name) || generateGenericDescription(foundChain)
 
   return {
-    title: `${foundChain.name} Blockchain — Live TVL & DeFi Data`,
-    description: `Live TVL, protocol count, and complete analysis for ${foundChain.name}.`,
+    title: `${foundChain.name} Blockchain — TVL & DEX Volume`,
+    description: `Daily TVL, TVL-change, and DEX-volume metrics for ${foundChain.name}.`,
     alternates: { canonical: `https://www.web3farmyard.com/showroom/${chain}` },
   }
 }
@@ -84,10 +84,9 @@ export default async function ChainDetailPage({ params }: Props) {
         <ChainLiveMetrics 
           chainName={foundChain.name} 
           initialTvl={foundChain.tvl}
-          initialChange1d={foundChain.change_1d} 
-          initialChange7d={foundChain.change_7d}
-          initialChange1m={foundChain.change_1m} 
-          initialProtocols={foundChain.protocols}
+          initialChange1d={foundChain.change_1d ?? null}
+          initialChange7d={foundChain.change_7d ?? null}
+          initialChange1m={foundChain.change_1m ?? null}
           rank={rank} 
         />
 

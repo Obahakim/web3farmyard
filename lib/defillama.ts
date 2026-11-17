@@ -4,16 +4,23 @@ const LLAMA = 'https://api.llama.fi'
 const LLAMA_COINS = 'https://coins.llama.fi'
 
 export async function getAllChains(): Promise<Chain[]> {
-  try {
-    const res = await fetch(`${LLAMA}/protocols`, { next: { revalidate: 3600 } })
-    if (!res.ok) throw new Error(`DeFiLlama error: ${res.status}`)
-    const data: Chain[] = await res.json()
-    return data
-      .filter(c => c.tvl && c.tvl > 500_000)
-      .sort((a, b) => b.tvl - a.tvl)
-  } catch {
-    return []
-  }
+  const res = await fetch(`${LLAMA}/v2/chains`, { next: { revalidate: 86400 } })
+  if (!res.ok) throw new Error(`DeFiLlama chains error: ${res.status}`)
+
+  const data: unknown = await res.json()
+  if (!Array.isArray(data)) throw new Error('DeFiLlama chains response was not a list')
+
+  return data
+    .filter((chain): chain is Chain =>
+      typeof chain === 'object' &&
+      chain !== null &&
+      'name' in chain &&
+      typeof chain.name === 'string' &&
+      'tvl' in chain &&
+      typeof chain.tvl === 'number' &&
+      Number.isFinite(chain.tvl)
+    )
+    .sort((a, b) => b.tvl - a.tvl)
 }
 
 export async function getChainBySlug(slug: string): Promise<Chain | null> {

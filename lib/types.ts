@@ -1,13 +1,14 @@
 export interface Chain {
   name: string
   tvl: number
-  change_1d: number | null
-  change_7d: number | null
-  change_1m: number | null
-  protocols: number | null
-  tokenSymbol?: string
-  chainId?: number
-  gecko_id?: string
+  change_1d?: number | null
+  change_7d?: number | null
+  change_1m?: number | null
+  protocols?: number | null
+  dexVolume24h?: number | null
+  tokenSymbol?: string | null
+  chainId?: number | null
+  gecko_id?: string | null
   cmcId?: string
 }
 

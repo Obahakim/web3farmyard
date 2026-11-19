@@ -11,17 +11,22 @@ npm install
 npm run build
 ```
 
-4. The `out/` folder is generated — this is your website
-5. Also copy into the `out/` folder:
-   - `api-proxy.php` (copied into `out/` automatically by the build script)
-   - `uploads/` folder (ebook PDF)
+4. The `out/` folder is generated — this is your website.
+5. Back up the Supabase project before making database changes. The production security migration is maintained in `supabase/migrations/` and has already been applied to the connected production project; do not copy SQL files into the public `out/` folder.
+6. Keep the existing Hostinger PHP files, Showroom cron/data endpoint files, and `uploads/` folder that the site needs. In particular, preserve the Showroom cron and data endpoint files in `public_html/`.
 
-Database SQL belongs in `supabase/migrations/` and is applied through Supabase, not copied into the static website. The security migration in that folder has already been applied to the connected production project.
+The secure RLS rules intentionally prevent the public Supabase key from reading subscriber emails or changing protected records. Admin operations and public newsletter signup are handled by the PHP proxy using server-side credentials; do not restore direct browser access to private tables or the retired public signup RPC.
 
 ## Upload to Hostinger
 
 Upload the ENTIRE contents of `out/` to `public_html/`.
-The `.htaccess` file is included automatically in the build.
+The `.htaccess` file is included automatically in the build. The build script also copies `api-proxy.php` into `out/api-proxy.php`.
+
+## Deploying from GitHub with Hostinger
+
+The root `next.config.js` sets `output: 'export'`, so this project deploys as static files. Hostinger's Git deployment can be used if its build step runs `npm ci` and `npm run build`, then publishes the **contents of `out/`** to `public_html/` (not the repository source tree). Preserve the existing PHP proxy, Showroom cron/data files, and uploaded assets during deployment; do not let deployment delete those server-side files.
+
+Static export does not run Next.js API route handlers or a Next.js server. The PHP proxy provides the required server-side endpoints on Hostinger. Configure its private secrets file outside `public_html` by following [the Hostinger API proxy setup guide](docs/security/hostinger-api-proxy-setup.md). Never copy the private secrets file into `out/` or commit it.
 
 ## Showroom daily snapshot
 
@@ -81,12 +86,13 @@ Each daily refresh makes up to about 408 requests to DeFiLlama (one chain list, 
 
 ## Hostinger API proxy secrets
 
-After uploading the static export, configure the private PHP secrets file outside `public_html`. Follow [`docs/security/hostinger-api-proxy-setup.md`](docs/security/hostinger-api-proxy-setup.md). Do not copy the private secrets file into `out/` or commit it. The proxy requires the Supabase secret key, rotated Resend key, a new admin password, a session secret, and an unsubscribe secret. The Anthropic key is required only for the AI proxy action.
+After uploading the static export, configure the private PHP secrets file outside `public_html`. Follow [the setup guide](docs/security/hostinger-api-proxy-setup.md). The proxy requires the Supabase secret key, rotated Resend key, a new admin password, a session secret, and an unsubscribe secret. The Anthropic key is required only for the AI proxy action. Never commit or send these values in chat.
 
 ## Environment Variables
 
 Create `.env.local` in the project root:
-```
+
+```env
 NEXT_PUBLIC_SUPA_URL=https://lzanqqvvpwccrtprzxvu.supabase.co
 NEXT_PUBLIC_SUPA_KEY=sb_publishable_L9yp9YHqL9vfSkJKTFKaoA_NhqV4dbA
 ```
@@ -94,7 +100,7 @@ NEXT_PUBLIC_SUPA_KEY=sb_publishable_L9yp9YHqL9vfSkJKTFKaoA_NhqV4dbA
 ## What This Generates
 
 - `/` — Homepage
-- `/airdrops/` — Airdrop listings  
+- `/airdrops/` — Airdrop listings
 - `/showroom/` — Top-50 TVL, DEX-volume, and NFT-volume rankings, with 24-hour TVL-change data
 - `/showroom/[chain]/` — Individual page for every DeFiLlama-tracked chain (~400 pages)
 - `/junkyard/` — Dead projects grid
@@ -104,6 +110,7 @@ NEXT_PUBLIC_SUPA_KEY=sb_publishable_L9yp9YHqL9vfSkJKTFKaoA_NhqV4dbA
 - `/robots.txt` — Proper crawl rules
 
 ## PageSpeed Expectations
+
 - Desktop: 90-95
 - Mobile: 80-88
 - No render-blocking resources (Babel is gone)

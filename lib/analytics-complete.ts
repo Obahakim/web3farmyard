@@ -47,7 +47,7 @@ export async function trackEvent(event: AnalyticsEvent) {
 
   // Try to send to backend
   try {
-    await fetch('/api/analytics', {
+    await fetch('/api-proxy.php?action=analytics', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(event),

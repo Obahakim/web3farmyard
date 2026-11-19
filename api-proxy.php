@@ -71,7 +71,7 @@ if (strlen($SESSION_SECRET) < 32 || strlen($UNSUBSCRIBE_SECRET) < 32) {
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $action = (string)($_GET['action'] ?? '');
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
-rateLimit($ip, $action === 'subscribe' ? 3 : (in_array($action, ['admin-login', 'claude'], true) ? 5 : 30), $action === 'subscribe' ? 3600 : 60);
+rateLimit($ip, $action === 'subscribe' ? 3 : (in_array($action, ['admin-login', 'claude'], true) ? 5 : ($action === 'analytics' ? 60 : 30)), $action === 'subscribe' ? 3600 : 60);
 
 ini_set('session.use_strict_mode', '1');
 session_name('w3f_admin_' . substr(hash('sha256', $SESSION_SECRET), 0, 8));
@@ -137,6 +137,12 @@ switch ($action) {
         requireSameOrigin($allowedOrigins);
         if ($method !== 'GET') requireCsrf();
         adminData($SUPABASE_URL, $SUPABASE_KEY, $method);
+        exit;
+
+    case 'analytics':
+        requireMethod('POST');
+        requireSameOrigin($allowedOrigins);
+        trackAnalytics($SUPABASE_URL, $SUPABASE_KEY, $ip);
         exit;
 
     case 'admin-newsletter':
@@ -394,6 +400,29 @@ function resendSend(string $key, string $email, string $subject, string $html): 
     curl_close($ch);
     return $response !== false && $status >= 200 && $status < 300;
 }
+
+function trackAnalytics(string $base, string $key, string $ip): void {
+    $body = readJson();
+    $eventType = trim((string)($body['event_type'] ?? $body['event'] ?? ''));
+    $page = trim((string)($body['page'] ?? ''));
+    if (!preg_match('/^[a-zA-Z0-9_.:-]{1,80}$/', $eventType)) fail(400, 'Invalid analytics event type.');
+    if ($page === '' || strlen($page) > 2048) fail(400, 'Invalid analytics page.');
+    $duration = $body['duration_ms'] ?? $body['duration'] ?? null;
+    if ($duration !== null && (!is_numeric($duration) || (int)$duration < 0 || (int)$duration > 3600000)) fail(400, 'Invalid duration.');
+    $metadata = is_array($body['metadata'] ?? null) ? $body['metadata'] : [];
+    unset($metadata['email'], $metadata['user_email'], $metadata['userEmail']);
+    $metadataJson = json_encode($metadata, JSON_UNESCAPED_SLASHES);
+    if ($metadataJson === false || strlen($metadataJson) > 10000) fail(400, 'Analytics metadata is too large.');
+    supabaseRequest($base, $key, 'POST', 'analytics_events', [
+        'event_type' => $eventType,
+        'page' => $page,
+        'metadata' => $metadata,
+        'duration_ms' => $duration === null ? null : (int)$duration,
+        'timestamp' => gmdate('c'),
+    ]);
+    echo json_encode(['success' => true]);
+}
+
 function sendNewsletter(string $base, string $key, string $resendKey, string $unsubscribeSecret): void {
     $body = readJson();
     $subject = trim((string)($body['subject'] ?? ''));

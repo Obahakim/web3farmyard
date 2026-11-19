@@ -134,8 +134,10 @@ switch ($action) {
 
     case 'admin-data':
         requireAdmin();
-        requireSameOrigin($allowedOrigins);
-        if ($method !== 'GET') requireCsrf();
+        if ($method !== 'GET') {
+            requireSameOrigin($allowedOrigins);
+            requireCsrf();
+        }
         adminData($SUPABASE_URL, $SUPABASE_KEY, $method);
         exit;
 

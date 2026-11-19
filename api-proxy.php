@@ -436,15 +436,21 @@ function sendNewsletter(string $base, string $key, string $resendKey, string $un
     $topic = (string)($body['topic'] ?? 'all');
     if ($subject === '' || strlen($subject) > 200 || trim($content) === '' || strlen($content) > 100000) fail(400, 'Subject and content are required and must be within limits.');
     if ($topic !== 'all' && !preg_match('/^[a-z0-9_-]{1,40}$/', $topic)) fail(400, 'Invalid topic.');
-    $recipients = [];
-    $offset = 0;
-    do {
-        $page = supabaseRequest($base, $key, 'GET', 'subscribers?subscribed=eq.true&select=email,farmer_name,topics&limit=500&offset=' . $offset);
-        $batch = is_array($page['data']) ? $page['data'] : [];
-        $recipients = array_merge($recipients, $batch);
-        $offset += count($batch);
-    } while (count($batch) === 500);
-    if ($topic !== 'all') $recipients = array_values(array_filter($recipients, static fn($s) => is_array($s['topics'] ?? null) && in_array($topic, $s['topics'], true)));
+    // Keep the send audience identical to the dashboard's displayed audience:
+    // newest 500 active subscribers, using the same ordering and limit as admin-data.
+    $audience = supabaseRequest(
+        $base,
+        $key,
+        'GET',
+        'subscribers?subscribed=eq.true&select=email,farmer_name,topics&order=created_at.desc&limit=500'
+    );
+    $recipients = is_array($audience['data']) ? $audience['data'] : [];
+    if ($topic !== 'all') {
+        $recipients = array_values(array_filter(
+            $recipients,
+            static fn($s) => is_array($s['topics'] ?? null) && in_array($topic, $s['topics'], true)
+        ));
+    }
     if (!$recipients) {
         echo json_encode(['successCount' => 0, 'failureCount' => 0, 'total' => 0, 'message' => 'No subscribers match this audience.']);
         return;

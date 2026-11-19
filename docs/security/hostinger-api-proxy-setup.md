@@ -9,7 +9,7 @@ Do not place this file inside `public_html`, the repository, or the Next.js `pub
 The proxy looks by default for:
 
 ```
-/home/<account>/domains/web3farmyard.com/private/web3farmyard-secrets.php
+/home/<account>/domains/web3farmyard.com/secrets/web3farmyard-secrets.php
 ```
 
 That is a sibling of `public_html`. If your Hostinger directory layout differs, set the server environment variable `W3F_CONFIG_PATH` to the absolute path of the private file.

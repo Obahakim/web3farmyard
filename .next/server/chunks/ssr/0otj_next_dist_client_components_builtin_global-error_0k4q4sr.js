@@ -1,3 +1,0 @@
-module.exports=[44047,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(62442);a.n(d("[project]/Documents/web3farmyard/w3f-next/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},10132,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(62442);a.n(d("[project]/Documents/web3farmyard/w3f-next/node_modules/next/dist/client/components/builtin/global-error.js"))},75975,a=>{"use strict";a.i(44047);var b=a.i(10132);a.n(b)},75548,a=>{a.n(a.i(75975))}];
-
-//# sourceMappingURL=0otj_next_dist_client_components_builtin_global-error_0k4q4sr.js.map

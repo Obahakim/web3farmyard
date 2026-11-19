@@ -19,5 +19,6 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - run: php -l api-proxy.php
       - run: npx tsc --noEmit
       - run: npm run build

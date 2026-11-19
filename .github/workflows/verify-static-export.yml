@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: web3farmyard-security-${{ github.ref }}
+  group: web3farmyard-security-${{ github.ref }}-${{ github.actor }}
   cancel-in-progress: true
 
 jobs:

@@ -24,7 +24,7 @@ export function trackPageView(page: string, metadata?: Record<string, any>) {
   }
   
   // Send to analytics backend (Supabase or analytics table)
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
@@ -45,7 +45,7 @@ export function trackTimeOnPage(page: string, durationMs: number) {
     duration: durationMs,
   }
 
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
@@ -65,7 +65,7 @@ export function trackOnboardingProgress(day: number, status: 'started' | 'comple
     metadata: { day },
   }
 
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
@@ -85,7 +85,7 @@ export function trackDownload(fileName: string, fileType: string) {
     metadata: { fileName, fileType },
   }
 
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
@@ -105,7 +105,7 @@ export function trackNewsletterSignup(email: string) {
     metadata: { email },
   }
 
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),
@@ -125,7 +125,7 @@ export function trackEvent(page: string, eventName: string, metadata?: Record<st
     metadata,
   }
 
-  fetch('/api/analytics', {
+  fetch('/api-proxy.php?action=analytics', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(event),

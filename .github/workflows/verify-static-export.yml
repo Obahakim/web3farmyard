@@ -1,0 +1,55 @@
+name: Verify static export
+
+on:
+  push:
+    branches: [security/server-side-admin-access]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: web3farmyard-security-${{ github.ref }}-${{ github.actor }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SUPA_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPA_KEY: sb_publishable_placeholder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm install --package-lock-only --ignore-scripts
+      - run: npm ci
+      - name: Apply compatible security updates
+        run: npm audit fix || true
+      - name: Remove tracked build output
+        run: rm -rf .next
+      - name: Persist patched lockfile
+        if: github.event_name == 'push'
+        run: |
+          if ! git diff --quiet -- package-lock.json || ! git diff --quiet -- .next; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git add -A .next
+            git commit -m "chore: patch vulnerable dependency versions"
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase FETCH_HEAD
+            git push origin HEAD:"refs/heads/$GITHUB_REF_NAME"
+          fi
+      - name: Inspect remaining dependency advisories
+        run: |
+          npm audit --json > npm-audit.json || true
+          node -e "const r=require('./npm-audit.json'); console.log(JSON.stringify({metadata:r.metadata?.vulnerabilities, advisories:Object.values(r.vulnerabilities||{}).map(v=>({name:v.name,severity:v.severity,isDirect:v.isDirect,fixAvailable:v.fixAvailable,via:v.via.map(x=>typeof x==='string'?x:{title:x.title,url:x.url,range:x.range})}))}, null, 2))"
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: php -l api-proxy.php
+      - run: npx tsc --noEmit
+      - run: npm run build

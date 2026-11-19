@@ -48,20 +48,11 @@ export async function subscribeEmail(email: string, topics: string[] = ['defi', 
   return res.json()
 }
 
-export async function saveOnboardingProgress(email: string, streak: number, completedDays: number[]) {
-  const res = await fetch('/api-proxy.php?action=save-progress', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      email,
-      streak,
-      completed_days: completedDays,
-      last_updated: new Date().toISOString()
-    }),
-  })
-  return res.json()
+export async function saveOnboardingProgress(_email: string, _streak: number, _completedDays: number[]) {
+  // Progress is already persisted in browser localStorage by the onboarding pages.
+  // Do not accept unauthenticated writes keyed only by an email address.
+  return { success: true, persisted: false, storage: 'local' as const }
 }
-
 // ============================================
 // SUBMISSION FUNCTIONS
 // ============================================
@@ -301,4 +292,49 @@ export async function getAllSubscribers() {
   }
 }
 
-// Database schema and RLS policies are maintained in SUPABASE_RUN_THIS.sql.
+// ============================================
+// DATABASE SCHEMA (Run once in Supabase SQL)
+// ============================================
+/*
+
+-- Create farmer_profiles table
+CREATE TABLE IF NOT EXISTS farmer_profiles (
+  id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  email text UNIQUE NOT NULL,
+  farmer_name text NOT NULL,
+  profile_image_url text,
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_farmer_profiles_email ON farmer_profiles(email);
+CREATE INDEX IF NOT EXISTS idx_farmer_profiles_updated_at ON farmer_profiles(updated_at);
+
+ALTER TABLE farmer_profiles ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow public profile creation"
+  ON farmer_profiles FOR ALL USING (true) WITH CHECK (true);
+
+-- Create subscribers table
+CREATE TABLE IF NOT EXISTS subscribers (
+  id bigint PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  email text UNIQUE NOT NULL,
+  farmer_name text,
+  subscribed boolean DEFAULT true,
+  subscribed_at timestamptz DEFAULT now(),
+  unsubscribed_at timestamptz,
+  last_email_sent timestamptz,
+  created_at timestamptz DEFAULT now(),
+  updated_at timestamptz DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_subscribers_email ON subscribers(email);
+CREATE INDEX IF NOT EXISTS idx_subscribers_subscribed ON subscribers(subscribed);
+CREATE INDEX IF NOT EXISTS idx_subscribers_created_at ON subscribers(created_at);
+
+ALTER TABLE subscribers ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow public subscriptions"
+  ON subscribers FOR ALL USING (true) WITH CHECK (true);
+
+*/

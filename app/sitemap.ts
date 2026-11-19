@@ -11,16 +11,6 @@ interface BlogPost {
   date: string
 }
 
-function getSitemapDate(value: string, fallback: string): string {
-  const match = /^(\d{4}-\d{2}-\d{2})(?:T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})?)?$/.exec(value)
-  if (!match) return fallback
-
-  const date = new Date(`${match[1]}T00:00:00.000Z`)
-  return Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== match[1]
-    ? fallback
-    : match[1]
-}
-
 async function getBlogPosts(): Promise<BlogPost[]> {
   const WP_URL = 'https://deepskyblue-beaver-138558.hostingersite.com/cms'
   
@@ -137,7 +127,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Dynamic blog posts
   const blogPostUrls: MetadataRoute.Sitemap = blogPosts.map(post => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: getSitemapDate(post.date, currentDate),
+    lastModified: post.date || currentDate,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }))

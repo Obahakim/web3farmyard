@@ -13,7 +13,7 @@ npm run build
 
 4. The `out/` folder is generated — this is your website
 5. Also copy into the `out/` folder:
-   - `api-proxy.php` (from the repository root; the hardened server-side proxy)
+   - `api-proxy.php` (copied into `out/` automatically by the build script)
    - `uploads/` folder (ebook PDF)
 
 Database SQL belongs in `supabase/migrations/` and is applied through Supabase, not copied into the static website. The security migration in that folder has already been applied to the connected production project.

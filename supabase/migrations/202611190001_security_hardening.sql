@@ -80,6 +80,10 @@ ALTER TABLE public.newsletter_sends ENABLE ROW LEVEL SECURITY;
 REVOKE ALL PRIVILEGES ON FUNCTION public.subscribe_newsletter(text, text)
   FROM PUBLIC, anon, authenticated;
 
+-- Internal trigger/event functions are not callable through the public API.
+REVOKE ALL PRIVILEGES ON FUNCTION public.pgrst_watch() FROM PUBLIC, anon, authenticated;
+REVOKE ALL PRIVILEGES ON FUNCTION public.set_updated_at() FROM PUBLIC, anon, authenticated;
+
 -- Pin function search paths to avoid search_path hijacking.
 ALTER FUNCTION public.pgrst_watch() SET search_path = pg_catalog;
 ALTER FUNCTION public.set_updated_at() SET search_path = pg_catalog;

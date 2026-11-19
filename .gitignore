@@ -1,41 +1,15 @@
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
 node_modules/
+.pnpm-store/
 .next/
-.env.local
-.DS_Store
+out/
 dist/
 build/
-*.log
-.vercel
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-node_modules
-.pnpm-store
-.next
-dist
-.turbo
+.turbo/
+.vercel/
 .env
 .env.*
 !.env.example
-coverage
+coverage/
+local-storage/
 .DS_Store
-local-storage
 *.log
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs

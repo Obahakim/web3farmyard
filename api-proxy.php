@@ -65,7 +65,7 @@ $UNSUBSCRIBE_SECRET = $config['unsubscribe_secret'];
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $action = (string)($_GET['action'] ?? '');
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
-rateLimit($ip, $action === 'subscribe' ? 3 : 30, $action === 'subscribe' ? 3600 : 60);
+rateLimit($ip, $action === 'subscribe' ? 3 : (in_array($action, ['admin-login', 'claude'], true) ? 5 : 30), $action === 'subscribe' ? 3600 : 60);
 
 $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
 ini_set('session.use_strict_mode', '1');
@@ -139,7 +139,7 @@ switch ($action) {
         requireAdmin();
         requireSameOrigin($allowedOrigins);
         requireCsrf();
-        sendNewsletter($SUPABASE_URL, $SUPABASE_KEY, $RESEND_KEY);
+        sendNewsletter($SUPABASE_URL, $SUPABASE_KEY, $RESEND_KEY, $UNSUBSCRIBE_SECRET);
         exit;
 
     case 'subscribe':
@@ -391,7 +391,7 @@ function resendSend(string $key, string $email, string $subject, string $html): 
     curl_close($ch);
     return $response !== false && $status >= 200 && $status < 300;
 }
-function sendNewsletter(string $base, string $key, string $resendKey): void {
+function sendNewsletter(string $base, string $key, string $resendKey, string $unsubscribeSecret): void {
     $body = readJson();
     $subject = trim((string)($body['subject'] ?? ''));
     $content = (string)($body['content'] ?? '');
@@ -409,7 +409,10 @@ function sendNewsletter(string $base, string $key, string $resendKey): void {
     $failure = 0;
     foreach ($recipients as $recipient) {
         $name = htmlspecialchars((string)($recipient['farmer_name'] ?? 'Web3 learner'), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-        $html = '<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f5f5;padding:24px"><main style="max-width:640px;margin:auto;background:#fff;padding:32px"><h2>Hello ' . $name . ',</h2><div style="line-height:1.7;color:#333">' . $content . '</div><hr><p style="font-size:12px;color:#777">You receive this because you subscribed to Web3Farmyard. <a href="https://web3farmyard.com">Visit the site</a>.</p></main></body></html>';
+        $recipientEmail = strtolower((string)$recipient['email']);
+        $unsubscribeToken = hash_hmac('sha256', $recipientEmail, $unsubscribeSecret);
+        $unsubscribeUrl = 'https://web3farmyard.com/api-proxy.php?action=unsubscribe&email=' . rawurlencode($recipientEmail) . '&token=' . $unsubscribeToken;
+        $html = '<!doctype html><html><body style="font-family:Arial,sans-serif;background:#f5f5f5;padding:24px"><main style="max-width:640px;margin:auto;background:#fff;padding:32px"><h2>Hello ' . $name . ',</h2><div style="line-height:1.7;color:#333">' . $content . '</div><hr><p style="font-size:12px;color:#777">You receive this because you subscribed to Web3Farmyard. <a href="https://web3farmyard.com">Visit the site</a> · <a href="' . htmlspecialchars($unsubscribeUrl, ENT_QUOTES, 'UTF-8') . '">Unsubscribe</a>.</p></main></body></html>';
         if (resendSend($resendKey, (string)$recipient['email'], $subject, $html)) $success++; else $failure++;
         usleep(120000);
     }
@@ -421,7 +424,7 @@ function sendNewsletter(string $base, string $key, string $resendKey): void {
         'status' => $failure === 0 ? 'sent' : 'partial',
         'sent_at' => gmdate('c'),
     ]);
-    echo json_encode(['successCount' => $success, 'failureCount' => $failure, 'total' => count($recipients), 'failureCount' => $failure, 'message' => 'Newsletter processing completed.']);
+    echo json_encode(['successCount' => $success, 'failureCount' => $failure, 'total' => count($recipients), 'message' => 'Newsletter processing completed.']);
 }
 function proxyJson(string $url, array $payload, array $headers): void {
     $ch = curl_init($url);

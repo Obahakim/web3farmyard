@@ -35,6 +35,7 @@ function Dashboard() {
     const [password, setPassword] = useState("");
     const [authError, setAuthError] = useState("");
     const [authBusy, setAuthBusy] = useState(false);
+    const [overview, setOverview] = useState({ airdrops: [] as Airdrop[], subscribers: [] as Subscriber[], users: [] as Subscriber[] });
 
     useEffect(() => {
         let active = true;
@@ -53,6 +54,19 @@ function Dashboard() {
             .catch(() => { if (active) setAuthState("signedOut"); });
         return () => { active = false; };
     }, []);
+
+    useEffect(() => {
+        if (authState !== "signedIn") return;
+        let active = true;
+        Promise.all([
+            adminGet<Airdrop[]>("airdrops", 500),
+            adminGet<Subscriber[]>("subscribers", 500),
+            adminGet<Subscriber[]>("farmer_profiles", 500),
+        ]).then(([airdrops, subscribers, users]) => {
+            if (active) setOverview({ airdrops: airdrops || [], subscribers: subscribers || [], users: users || [] });
+        }).catch(error => console.error("Dashboard overview load failed:", error));
+        return () => { active = false; };
+    }, [authState]);
 
     async function handleLogin(event: FormEvent) {
         event.preventDefault();
@@ -117,7 +131,7 @@ function Dashboard() {
                 <button onClick={handleLogout} style={{ background: "transparent", border: "1px solid #333", color: "#aaa", padding: "7px 14px", fontFamily: "monospace", fontSize: "9px", cursor: "pointer" }}>LOG OUT</button>
             </div>
             <main style={{ maxWidth: "1100px", margin: "0 auto", padding: "36px" }}>
-                <StatsBar posts={[]} users={[]} airdrops={[]} subscribers={[]} />
+                <StatsBar posts={[]} users={overview.users} airdrops={overview.airdrops} subscribers={overview.subscribers} />
                 <TabBar active={tab} onChange={setTab} />
                 {tab === "airdrops" && <AirdropsTab />}
                 {tab === "newsletter" && <NewsletterSendTab />}
@@ -135,10 +149,10 @@ interface StatsBarProps {
     subscribers: any[];
 }
 
-function StatsBar({airdrops, subscribers }: StatsBarProps) {
+function StatsBar({airdrops, subscribers, users }: StatsBarProps) {
     return (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "1px", background: "#434343", marginBottom: "32px" }}>
-            {[ ["AIRDROPS", airdrops.length, "#00ffe0"], ["SUBSCRIBERS", subscribers.length, "#c8ff00"]].map(([l, v, c]) => (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "1px", background: "#434343", marginBottom: "32px" }}>
+            {[ ["AIRDROPS", airdrops.length, "#00ffe0"], ["SUBSCRIBERS", subscribers.length, "#c8ff00"], ["FARMER PROFILES", users.length, "#d7caca"]].map(([l, v, c]) => (
                 <div key={l.toString()} style={{ background: "#0a0a0a", padding: "14px 18px" }}>
                     <div style={{ fontFamily: "mono", fontSize: "8px", color: "d7caca", letterSpacing: "0.12em", marginBottom: "4px" }}>{l}</div>
                     <div style={{ fontFamily: "serif", fontSize: "22px", fontWeight: "700", color: c.toString() }}>{v}</div>

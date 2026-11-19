@@ -50,14 +50,15 @@ if (!is_array($config)) {
     fail(500, 'Server configuration is invalid.');
 }
 
-$required = ['supabase_url', 'supabase_service_role_key', 'resend_api_key', 'session_secret', 'unsubscribe_secret'];
+$required = ['supabase_url', 'resend_api_key', 'session_secret', 'unsubscribe_secret'];
 foreach ($required as $key) {
     if (empty($config[$key]) || !is_string($config[$key])) {
         fail(500, 'A required server secret is not configured.');
     }
 }
 $SUPABASE_URL = rtrim($config['supabase_url'], '/');
-$SUPABASE_KEY = $config['supabase_service_role_key'];
+$SUPABASE_KEY = (string)($config['supabase_secret_key'] ?? $config['supabase_service_role_key'] ?? '');
+if ($SUPABASE_KEY === '') fail(500, 'A Supabase server secret key is not configured.');
 $RESEND_KEY = $config['resend_api_key'];
 $SESSION_SECRET = $config['session_secret'];
 $UNSUBSCRIBE_SECRET = $config['unsubscribe_secret'];
@@ -243,12 +244,15 @@ function rateLimit(string $ip, int $limit, int $window): void {
 }
 function supabaseRequest(string $base, string $key, string $method, string $path, ?array $body = null, array $extraHeaders = []): array {
     $ch = curl_init($base . '/rest/v1/' . ltrim($path, '/'));
-    $headers = array_merge([
+    $headers = [
         'apikey: ' . $key,
-        'Authorization: Bearer ' . $key,
         'Content-Type: application/json',
         'Accept: application/json',
-    ], $extraHeaders);
+    ];
+    // New sb_secret_* keys are opaque API keys, not JWTs. Only legacy
+    // service_role JWTs belong in Authorization: Bearer.
+    if (str_starts_with($key, 'eyJ')) $headers[] = 'Authorization: Bearer ' . $key;
+    $headers = array_merge($headers, $extraHeaders);
     curl_setopt_array($ch, [
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST => $method,

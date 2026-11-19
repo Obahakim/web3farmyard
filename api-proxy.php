@@ -41,7 +41,7 @@ if ($origin !== '') {
     header('Access-Control-Allow-Credentials: true');
 }
 
-$configPath = getenv('W3F_CONFIG_PATH') ?: dirname(__DIR__) . '/private/web3farmyard-secrets.php';
+$configPath = getenv('W3F_CONFIG_PATH') ?: dirname(__DIR__) . '/secrets/web3farmyard-secrets.php';
 if (!is_file($configPath) || !is_readable($configPath)) {
     fail(500, 'Server configuration is missing.');
 }

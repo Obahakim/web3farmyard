@@ -13,7 +13,7 @@ npm run build
 
 4. The `out/` folder is generated — this is your website
 5. Also copy into the `out/` folder:
-   - `api-proxy.php` (from your existing Hostinger files)
+   - `api-proxy.php` (from the repository root; the hardened server-side proxy)
    - `uploads/` folder (ebook PDF)
    - `SUPABASE_RUN_THIS.sql` (run in Supabase SQL Editor first)
 
@@ -78,7 +78,7 @@ If the timestamp does not update, check the cron's latest output, the PHP cURL e
 
 Each daily refresh makes up to about 408 requests to DeFiLlama (one chain list, one DEX overview, one NFT-volume overview, DEX volume per supported chain, and historical TVL for chains appearing in either top-50 ranking). Requests run in batches of six with a 15-second timeout; with current chain counts, even repeated timeouts should keep the refresh under about 18 minutes. Typical runs should be shorter, subject to Hostinger’s execution limits. If the cron fails, the last successful snapshot remains in place and the page shows its timestamp.
 
-## Environment Variables
+## Hostinger API proxy secrets\n\nAfter uploading the static export, configure the private PHP secrets file outside `public_html`. Follow [`docs/security/hostinger-api-proxy-setup.md`](docs/security/hostinger-api-proxy-setup.md). Do not copy the private secrets file into `out/` or commit it. The proxy requires the Supabase service-role key, rotated Resend key, a new admin password, a session secret, and an unsubscribe secret. The Anthropic key is required only for the AI proxy action.\n\n## Environment Variables
 
 Create `.env.local` in the project root:
 ```

@@ -61,3 +61,10 @@ export function adminSendNewsletter<T>(body: { subject: string; content: string;
     body: JSON.stringify(body),
   })
 }
+
+export function adminLogout(): Promise<{ authenticated: false }> {
+  return request('admin-logout', {
+    method: 'POST',
+    body: JSON.stringify({}),
+  })
+}

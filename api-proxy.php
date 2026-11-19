@@ -91,7 +91,7 @@ switch ($action) {
         requireSameOrigin($allowedOrigins);
         $body = readJson();
         $password = (string)($body['password'] ?? '');
-                $passwordValid = false;
+        $passwordValid = false;
         if (isset($config['admin_password_hash']) && is_string($config['admin_password_hash'])) {
             $passwordValid = password_verify($password, $config['admin_password_hash']);
         } elseif (isset($config['admin_password']) && is_string($config['admin_password'])) {

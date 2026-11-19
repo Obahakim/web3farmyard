@@ -1,6 +1,6 @@
 # Hostinger API proxy security setup
 
-The site is deployed as a static export. Copy the repository-root `api-proxy.php` into the generated `out/` folder before uploading the contents of `out/` to Hostinger `public_html/`.
+The site is deployed as a static export. The build script automatically copies the repository-root `api-proxy.php` into `out/api-proxy.php`. Upload the contents of `out/` to Hostinger `public_html/`.
 
 ## 1. Create a private secrets file
 
@@ -45,7 +45,7 @@ Use either `admin_password_hash` (recommended) or `admin_password`, not both. Ne
 ## 3. Deployment
 
 1. Build the static site.
-2. Copy `api-proxy.php` into the root of `out/`.
+2. Confirm `out/api-proxy.php` exists; the build copies it automatically.
 3. Upload the contents of `out/` to `public_html/`.
 4. Upload the private secrets file to the private path above.
 5. Open `https://www.web3farmyard.com/api-proxy.php?action=admin-session`. A JSON response with `authenticated:false` and HTTP 401 is expected when logged out. A PHP error or 500 means the config path/values need attention.

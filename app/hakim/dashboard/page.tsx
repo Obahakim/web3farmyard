@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { adminGet, adminPost, adminPatch, adminDelete, adminSendNewsletter, adminLogout, setAdminCsrfToken } from "@/lib/admin-api";
 
 interface Airdrop {
@@ -54,7 +54,7 @@ function Dashboard() {
         return () => { active = false; };
     }, []);
 
-    async function handleLogin(event: React.FormEvent) {
+    async function handleLogin(event: FormEvent) {
         event.preventDefault();
         setAuthBusy(true);
         setAuthError("");
@@ -479,7 +479,7 @@ function SubscribersTab({ isuser }: { isuser: boolean }) {
                                             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "4px" }}>
                                                 {(s.topics || []).map(t => <span key={t} style={{ fontFamily: "mono", fontSize: "8px", color: "#c8ff00", border: "1px solid #c8ff00", padding: "1px 7px", letterSpacing: "0.08em" }}>{t}</span>)}
                                             </div>
-                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {new Date(s.created_at).toLocaleDateString()}</div>
+                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {(s.created_at ? new Date(s.created_at).toLocaleDateString() : '')}</div>
                                         </div>
                                     </div>
                                 ))}

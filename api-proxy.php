@@ -61,13 +61,18 @@ $SUPABASE_KEY = $config['supabase_service_role_key'];
 $RESEND_KEY = $config['resend_api_key'];
 $SESSION_SECRET = $config['session_secret'];
 $UNSUBSCRIBE_SECRET = $config['unsubscribe_secret'];
+if ((!isset($config['admin_password_hash']) || !is_string($config['admin_password_hash'])) && (!isset($config['admin_password']) || !is_string($config['admin_password']))) {
+    fail(500, 'An admin password or password hash is not configured.');
+}
+if (strlen($SESSION_SECRET) < 32 || strlen($UNSUBSCRIBE_SECRET) < 32) {
+    fail(500, 'Session and unsubscribe secrets must each be at least 32 characters.');
+}
 
 $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $action = (string)($_GET['action'] ?? '');
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 rateLimit($ip, $action === 'subscribe' ? 3 : (in_array($action, ['admin-login', 'claude'], true) ? 5 : 30), $action === 'subscribe' ? 3600 : 60);
 
-$secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
 ini_set('session.use_strict_mode', '1');
 session_name('w3f_admin_' . substr(hash('sha256', $SESSION_SECRET), 0, 8));
 session_set_cookie_params([

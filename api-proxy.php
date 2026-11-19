@@ -50,7 +50,7 @@ if (!is_array($config)) {
     fail(500, 'Server configuration is invalid.');
 }
 
-$required = ['supabase_url', 'supabase_service_role_key', 'resend_api_key', 'admin_password_hash', 'session_secret', 'unsubscribe_secret'];
+$required = ['supabase_url', 'supabase_service_role_key', 'resend_api_key', 'session_secret', 'unsubscribe_secret'];
 foreach ($required as $key) {
     if (empty($config[$key]) || !is_string($config[$key])) {
         fail(500, 'A required server secret is not configured.');
@@ -86,7 +86,13 @@ switch ($action) {
         requireSameOrigin($allowedOrigins);
         $body = readJson();
         $password = (string)($body['password'] ?? '');
-        if ($password === '' || strlen($password) > 1024 || !password_verify($password, $config['admin_password_hash'])) {
+                $passwordValid = false;
+        if (isset($config['admin_password_hash']) && is_string($config['admin_password_hash'])) {
+            $passwordValid = password_verify($password, $config['admin_password_hash']);
+        } elseif (isset($config['admin_password']) && is_string($config['admin_password'])) {
+            $passwordValid = hash_equals($config['admin_password'], $password);
+        }
+        if ($password === '' || strlen($password) > 1024 || !$passwordValid) {
             usleep(350000);
             fail(401, 'Invalid admin credentials.');
         }
@@ -268,7 +274,7 @@ function adminData(string $base, string $key, string $method): void {
         if (!preg_match('/^[0-9]{1,20}$/', $id)) fail(400, 'Invalid record id.');
         $query[] = 'id=eq.' . rawurlencode($id);
     }
-    if ($table === 'subscribers' && $method === 'GET') $query[] = 'subscribed=eq.true';
+    
     if (isset($_GET['status']) && $table === 'airdrops') {
         $status = (string)$_GET['status'];
         if (!in_array($status, ['live', 'pending', 'draft', 'completed', 'expired'], true)) fail(400, 'Invalid status.');

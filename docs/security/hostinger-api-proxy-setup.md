@@ -20,7 +20,7 @@ Create the file with this structure:
 <?php
 return [
     'supabase_url' => 'https://YOUR_PROJECT_REF.supabase.co',
-    'supabase_service_role_key' => 'YOUR_ROTATED_SUPABASE_SERVICE_ROLE_KEY',
+    'supabase_secret_key' => 'YOUR_SUPABASE_SECRET_KEY',
     'resend_api_key' => 'YOUR_ROTATED_RESEND_API_KEY',
     'anthropic_api_key' => 'YOUR_ROTATED_ANTHROPIC_API_KEY',
     'admin_password_hash' => 'OPTIONAL_PASSWORD_HASH',
@@ -36,7 +36,7 @@ Use either `admin_password_hash` (recommended) or `admin_password`, not both. Ne
 
 ## 2. Secret handling
 
-- Supabase service-role key: server-side only. Never prefix it with `NEXT_PUBLIC_`.
+- Supabase secret key (`sb_secret_...`): server-side only. Never prefix it with `NEXT_PUBLIC_`. The proxy sends this as the `apikey` header; it does not treat the opaque key as a JWT. A legacy service_role JWT can be supplied under `supabase_service_role_key` if needed.
 - Resend and Anthropic keys: use newly rotated values.
 - Admin password: replace the old dashboard password. Do not reuse the old password.
 - Session and unsubscribe secrets: generate two different random values. Do not reuse API keys for either.

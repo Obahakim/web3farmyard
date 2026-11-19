@@ -356,8 +356,6 @@ function subscribePublic(string $base, string $key, string $resendKey, string $u
     } else {
         $payload['topics'] = is_array($body['topics'] ?? null) ? array_slice(array_values(array_filter($body['topics'], 'is_string')), 0, 20) : [];
         $payload['frequency'] = in_array(($body['frequency'] ?? 'weekly'), ['daily','weekly','monthly'], true) ? $body['frequency'] : 'weekly';
-        $payload['source'] = 'web';
-        $payload['ip_hash'] = hash('sha256', $ip);
         $payload['created_at'] = gmdate('c');
         supabaseRequest($base, $key, 'POST', 'subscribers', $payload);
     }

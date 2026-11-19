@@ -81,7 +81,7 @@ Each daily refresh makes up to about 408 requests to DeFiLlama (one chain list, 
 
 ## Hostinger API proxy secrets
 
-After uploading the static export, configure the private PHP secrets file outside `public_html`. Follow [`docs/security/hostinger-api-proxy-setup.md`](docs/security/hostinger-api-proxy-setup.md). Do not copy the private secrets file into `out/` or commit it. The proxy requires the Supabase service-role key, rotated Resend key, a new admin password, a session secret, and an unsubscribe secret. The Anthropic key is required only for the AI proxy action.
+After uploading the static export, configure the private PHP secrets file outside `public_html`. Follow [`docs/security/hostinger-api-proxy-setup.md`](docs/security/hostinger-api-proxy-setup.md). Do not copy the private secrets file into `out/` or commit it. The proxy requires the Supabase secret key, rotated Resend key, a new admin password, a session secret, and an unsubscribe secret. The Anthropic key is required only for the AI proxy action.
 
 ## Environment Variables
 

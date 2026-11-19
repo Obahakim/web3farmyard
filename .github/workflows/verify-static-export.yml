@@ -19,6 +19,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
       - run: php -l api-proxy.php
       - run: npx tsc --noEmit
       - run: npm run build

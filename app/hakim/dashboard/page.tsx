@@ -476,10 +476,11 @@ function SubscribersTab({ isuser }: { isuser: boolean }) {
                                     <div key={s.id} style={{ background: "#0a0a0a", padding: "14px 18px", display: "flex", alignItems: "center", gap: "14px", flexWrap: "wrap" }}>
                                         <div style={{ flex: 1 }}>
                                             <div style={{ fontFamily: "mono", fontSize: "11px", color: "#e0e0e0", marginBottom: "5px" }}>{s.farmer_name}</div>
+                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: s.subscribed ? "#c8ff00" : "#ff7777", letterSpacing: "0.1em", marginBottom: "5px" }}>{s.subscribed ? "ACTIVE SUBSCRIBER" : "UNSUBSCRIBED"}</div>
                                             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "4px" }}>
                                                 {(s.topics || []).map(t => <span key={t} style={{ fontFamily: "mono", fontSize: "8px", color: "#c8ff00", border: "1px solid #c8ff00", padding: "1px 7px", letterSpacing: "0.08em" }}>{t}</span>)}
                                             </div>
-                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {(s.created_at ? new Date(s.created_at).toLocaleDateString() : '')}</div>
+                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {(s.created_at ? (s.created_at ? new Date(s.created_at).toLocaleDateString() : '—') : '')}</div>
                                         </div>
                                     </div>
                                 ))}
@@ -501,9 +502,9 @@ function SubscribersTab({ isuser }: { isuser: boolean }) {
                                             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap", marginBottom: "4px" }}>
                                                 {(s.topics || []).map(t => <span key={t} style={{ fontFamily: "mono", fontSize: "8px", color: "#c8ff00", border: "1px solid #c8ff00", padding: "1px 7px", letterSpacing: "0.08em" }}>{t}</span>)}
                                             </div>
-                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {new Date(s.created_at).toLocaleDateString()}</div>
+                                            <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.1em" }}>{s.frequency} · {(s.created_at ? new Date(s.created_at).toLocaleDateString() : '—')}</div>
                                         </div>
-                                            <button onClick={() => handleRemove(s.id)} style={{ background: "transparent", color: "#ff4d4d", border: "1px solid #ff4d4d", padding: "4px 10px", fontFamily: "mono", fontSize: "8px", cursor: "pointer" }}>❌ REMOVE</button>
+                                            {s.subscribed && <button onClick={() => handleRemove(s.id)} style={{ background: "transparent", color: "#ff4d4d", border: "1px solid #ff4d4d", padding: "4px 10px", fontFamily: "mono", fontSize: "8px", cursor: "pointer" }}>UNSUBSCRIBE</button>}
                                     </div>
                                 ))}
                             </div>

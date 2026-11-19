@@ -1,11 +1,7 @@
-// FILE: app/page.tsx
-// HOMEPAGE - SEO Optimized with JSON-LD Schema
-
 import Link from 'next/link'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import FloatingChat from '@/components/FloatingChat'
 import NewsletterSignup from '@/components/NewsletterSignup'
 import {
   generateOrganizationSchema,
@@ -14,76 +10,76 @@ import {
   generateCourseSchema,
 } from '@/lib/schema'
 
-// SEO Metadata
 export const metadata: Metadata = {
-  title: 'Web3Farmyard - Learn DeFi, Earn Airdrops, Master Web3 in 7 Days',
-  description: 'Free 7-day structured course to master Web3 farming. Learn wallet creation, DeFi swaps, task farming, and airdrop hunting. No experience or money required.',
-  keywords: ['web3', 'defi', 'airdrops', 'farming', 'cryptocurrency', 'blockchain', 'tutorial'],
-  
+  title: 'Web3Farmyard — Learn to Navigate Web3 in 7 Simple Steps',
+  description: 'A beginner-friendly Web3 onboarding platform with seven clear steps, practical guides, DeFi rankings, airdrop information, and tools for exploring the ecosystem.',
+  keywords: ['Web3', 'beginner guides', 'DeFi', 'crypto education', 'blockchain', 'airdrops', 'wallet safety'],
   openGraph: {
-    title: 'Web3Farmyard - Master Web3 in 7 Days',
-    description: 'Free structured learning path through DeFi, task farming, and airdrops. Join thousands of farmers.',
+    title: 'Web3Farmyard — Learn to Navigate Web3 in 7 Simple Steps',
+    description: 'Start with the Web3 basics, explore market data, and find clear guides for your next step.',
     url: 'https://web3farmyard.com',
     siteName: 'Web3Farmyard',
-    images: [
-      {
-        url: 'https://web3farmyard.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Web3Farmyard - Learn DeFi'
-      }
-    ],
-    type: 'website'
+    images: [{
+      url: 'https://web3farmyard.com/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Learn to navigate Web3 with Web3Farmyard',
+    }],
+    type: 'website',
   },
-
   twitter: {
     card: 'summary_large_image',
-    title: 'Web3Farmyard - Master Web3 in 7 Days',
-    description: 'Free 7-day DeFi learning course. Learn farming, airdrops, and yield strategies.',
-    images: ['https://web3farmyard.com/og-image.jpg']
+    title: 'Web3Farmyard — Learn Web3 in 7 Simple Steps',
+    description: 'Beginner-friendly lessons, practical guides, market data, and tools for exploring Web3.',
+    images: ['https://web3farmyard.com/og-image.jpg'],
   },
-
-  alternates: {
-    canonical: 'https://web3farmyard.com'
-  }
+  alternates: { canonical: 'https://web3farmyard.com' },
 }
 
-// JSON-LD Schema Markup
+const learningPath = [
+  { day: 1, title: 'Set up your wallet', description: 'Create a wallet and learn the basics of keeping it secure.' },
+  { day: 2, title: 'Make your first swap', description: 'See how token swaps work and what to check before confirming.' },
+  { day: 3, title: 'Explore blockchain bridges', description: 'Learn how assets move between different networks.' },
+  { day: 4, title: 'Understand DeFi lending', description: 'Explore lending, supplying assets, and how interest works.' },
+  { day: 5, title: 'Practice advanced DeFi', description: 'Build on swaps, bridges, and lending with more confidence.' },
+  { day: 6, title: 'Try an on-chain quest', description: 'Follow a guided quest and understand on-chain activity.' },
+  { day: 7, title: 'Plan your next steps', description: 'Review what you learned and keep exploring at your own pace.' },
+]
+
 function getSchemaMarkup() {
   const organizationSchema = generateOrganizationSchema()
   const websiteSchema = generateWebSiteSchema({
     url: 'https://web3farmyard.com',
     name: 'Web3Farmyard',
-    description: 'Learn DeFi. Track yields. Catch airdrops. Farm smarter.',
+    description: 'A Web3 onboarding and information hub with beginner lessons, practical guides, market data, and tools.',
     publisherId: 'https://web3farmyard.com/#organization',
   })
   const courseSchema = generateCourseSchema({
     id: 'https://web3farmyard.com/#course',
-    name: 'Master Web3 in 7 Days',
-    description: 'A structured 7-day learning path through wallet creation, DeFi trading, task farming, and airdrop hunting. No experience required.',
+    name: 'Learn to Navigate Web3 in 7 Simple Steps',
+    description: 'A beginner-friendly path through wallet setup, token swaps, blockchain bridges, DeFi lending, on-chain quests, and next steps.',
     providerId: 'https://web3farmyard.com/#organization',
     authorName: 'Web3Farmyard Community',
     coursePrerequisites: 'No prerequisites. Beginner-friendly.',
     hasCourseInstance: [
-      { name: 'Day 1: Create Your Wallet', url: 'https://web3farmyard.com/onboarding/day-1', duration: 'PT20M' },
-      { name: 'Day 2: First Token Swap', url: 'https://web3farmyard.com/onboarding/day-3', duration: 'PT20M' },
-      { name: 'Day 3: Bridge Tokens', url: 'https://web3farmyard.com/onboarding/day-4', duration: 'PT15M' },
-      { name: 'Day 4: Lend on DeFi', url: 'https://web3farmyard.com/onboarding/day-5', duration: 'PT15M' },
-      { name: 'Day 5: Swaps & Bridges', url: 'https://web3farmyard.com/onboarding/day-2', duration: 'PT25M' },
-      { name: 'Day 6: Practice', url: 'https://web3farmyard.com/onboarding/day-6', duration: 'PT30M' },
-      { name: 'Day 7: Go Live', url: 'https://web3farmyard.com/onboarding/day-7', duration: 'PT20M' },
+      { name: 'Day 1: Set Up Your Wallet', url: 'https://web3farmyard.com/onboarding/day-1', duration: 'PT20M' },
+      { name: 'Day 2: Make Your First Swap', url: 'https://web3farmyard.com/onboarding/day-2', duration: 'PT20M' },
+      { name: 'Day 3: Explore Blockchain Bridges', url: 'https://web3farmyard.com/onboarding/day-3', duration: 'PT15M' },
+      { name: 'Day 4: Understand DeFi Lending', url: 'https://web3farmyard.com/onboarding/day-4', duration: 'PT15M' },
+      { name: 'Day 5: Practice Advanced DeFi', url: 'https://web3farmyard.com/onboarding/day-5', duration: 'PT25M' },
+      { name: 'Day 6: Try an On-Chain Quest', url: 'https://web3farmyard.com/onboarding/day-6', duration: 'PT30M' },
+      { name: 'Day 7: Plan Your Next Steps', url: 'https://web3farmyard.com/onboarding/day-7', duration: 'PT20M' },
     ],
     educationLevel: 'Beginner to Intermediate',
     inLanguage: 'en-US',
     isAccessibleForFree: true,
     aggregateRating: { ratingValue: 4.8, ratingCount: 247 },
   }, false)
-
   const webpageSchema = generateWebPageSchema({
     id: 'https://web3farmyard.com/#webpage',
     url: 'https://web3farmyard.com',
-    name: 'Web3Farmyard - Master Web3 in 7 Days',
-    description: 'Learn DeFi, discover airdrops, and farm on-chain in just 7 days.',
+    name: 'Learn to Navigate Web3 in 7 Simple Steps — Web3Farmyard',
+    description: 'A beginner-friendly Web3 onboarding platform and information hub.',
     isPartOfId: 'https://web3farmyard.com/#website',
     primaryImage: { url: 'https://web3farmyard.com/og-image.jpg', width: 1200, height: 630 },
     datePublished: '2024-01-01T00:00:00Z',
@@ -102,140 +98,142 @@ export default function HomePage() {
 
   return (
     <>
-      {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-
       <Nav />
-      <main className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          
-          {/* HERO SECTION */}
-          <section className="mb-16 text-center">
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-[#0a0a0a] mb-6 leading-tight">
-              Master Web3 in 7 Days
-            </h1>
-            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
-              No experience needed. No money required. A structured 7-day path through wallet creation, DeFi, task farming, and airdrops. Join thousands learning to farm on-chain.
-            </p>
-            <div className="flex gap-4 flex-wrap justify-center">
-              <Link
-                href="/onboarding/day-1"
-                className="px-8 py-4 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all text-lg"
-              >
-                Start Day 1 →
-              </Link>
-              <Link
-                href="/airdrops"
-                className="px-8 py-4 border-2 border-[#00ffe0] text-[#00ffe0] font-bold rounded-lg hover:bg-[#00ffe0] hover:text-[#0a0a0a] transition-all text-lg"
-              >
-                View Airdrops
-              </Link>
+
+      <main className="home-page">
+        <div className="home-shell">
+          <section className="home-hero" aria-labelledby="home-title">
+            <div className="home-hero-glow" aria-hidden="true" />
+            <div className="home-hero-layout">
+              <div className="home-hero-copy">
+                <span className="home-eyebrow"><span /> YOUR WEB3 STARTING POINT</span>
+                <h1 id="home-title">Learn to navigate <em>Web3</em> in 7 simple steps.</h1>
+                <p>
+                  A clear path through wallets, DeFi, and on-chain basics—plus the guides and
+                  market data to help you keep exploring.
+                </p>
+                <div className="home-hero-actions">
+                  <Link href="#join-now" className="home-primary-button">
+                    Join Now <span aria-hidden="true">↗</span>
+                  </Link>
+                  <Link href="#learning-path" className="home-text-button">
+                    Explore the 7 steps <span aria-hidden="true">↓</span>
+                  </Link>
+                </div>
+                <div className="home-hero-note">
+                  <span aria-hidden="true">✦</span> Beginner-friendly. Learn at your own pace.
+                </div>
+              </div>
+
+              <nav className="home-floating-cards" aria-label="Explore Web3Farmyard">
+                <div className="home-ranking-card">
+                  <div className="home-card-heading">
+                    <span>EXPLORE THE MARKETS</span>
+                    <span className="home-card-live"><i /> DAILY DATA</span>
+                  </div>
+                  <Link href="/showroom/#rank-tvl" className="home-ranking-link">
+                    <span className="home-ranking-icon">TVL</span>
+                    <span><strong>DeFi chains by TVL</strong><small>Compare total value locked</small></span>
+                    <span className="home-card-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                  <Link href="/showroom/#rank-dex" className="home-ranking-link">
+                    <span className="home-ranking-icon">DEX</span>
+                    <span><strong>DEX volume · 24h</strong><small>See trading activity by chain</small></span>
+                    <span className="home-card-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                  <Link href="/showroom/#rank-nft" className="home-ranking-link">
+                    <span className="home-ranking-icon">NFT</span>
+                    <span><strong>NFT volume · 24h</strong><small>Explore NFT markets by chain</small></span>
+                    <span className="home-card-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                </div>
+
+                <Link href="/blog/what-is-tvl-in-cryptocurrency-blockchain" className="home-float-card home-guide-card">
+                  <span className="home-float-card-label">START WITH A GUIDE <span aria-hidden="true">↗</span></span>
+                  <strong>What is TVL?</strong>
+                  <small>A simple guide to a key DeFi metric.</small>
+                </Link>
+                <Link href="/blog/how-to-position-for-airdrops-in-2026" className="home-float-card home-guide-card">
+                  <span className="home-float-card-label">WEB3 EXPLAINER <span aria-hidden="true">↗</span></span>
+                  <strong>Explore airdrops</strong>
+                  <small>Learn the basics and assess opportunities.</small>
+                </Link>
+                <Link href="/airdrops" className="home-float-card home-destination-card">
+                  <span className="home-destination-icon">✳</span>
+                  <span><strong>Airdrops</strong><small>Curated opportunities</small></span>
+                  <span className="home-card-arrow" aria-hidden="true">↗</span>
+                </Link>
+                <Link href="/toolkit" className="home-float-card home-destination-card">
+                  <span className="home-destination-icon">⌘</span>
+                  <span><strong>Web3 Toolkit</strong><small>Useful tools and resources</small></span>
+                  <span className="home-card-arrow" aria-hidden="true">↗</span>
+                </Link>
+              </nav>
             </div>
-            <div className="mt-6 flex justify-center">
-              <Link
-                href="/resources"
-                className="inline-flex items-center gap-3 rounded-2xl border-2 border-[#1a6b00] bg-[#f0f8e8] px-6 py-4 text-[#0a0a0a] font-semibold hover:bg-white transition-all"
-              >
-                <span className="text-xl">📘</span>
-                <span>Web3 on Mobile: Free Ebook</span>
-              </Link>
+            <div className="home-hero-footer">
+              <span>LEARN THE BASICS</span><i /> <span>EXPLORE THE ECOSYSTEM</span><i /> <span>MAKE INFORMED CHOICES</span>
             </div>
           </section>
 
-          {/* 7-DAY PATH PREVIEW */}
-          <section className="mb-16">
-            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-8 text-center">
-              Your 7-Day Learning Path
-            </h2>
-            <div className="grid grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
-              {[
-                { day: 1, title: 'Wallet', icon: '🔐' },
-                { day: 2, title: 'Swap & Bridge', icon: '🌉' },
-                { day: 3, title: 'Task Farming', icon: '📋' },
-                { day: 4, title: 'Zealy', icon: '⚙️' },
-                { day: 5, title: 'Galxe', icon: '🏆' },
-                { day: 6, title: 'Practice', icon: '🎯' },
-                { day: 7, title: 'Go Live', icon: '🚀' },
-              ].map((d) => (
-                <Link key={d.day} href={`/onboarding/day-${d.day}`}>
-                  <div className="p-4 bg-gradient-to-br from-[#f0f8e8] to-white border-2 border-[#d0e8c0] rounded-lg hover:border-[#1a6b00] transition-all text-center cursor-pointer">
-                    <div className="text-3xl mb-2" aria-label={d.title}>{d.icon}</div>
-                    <div className="font-mono text-xs text-gray-600">DAY {d.day}</div>
-                    <div className="font-bold text-sm text-[#0a0a0a] mt-1">{d.title}</div>
-                  </div>
+          <section className="home-path-section" id="learning-path" aria-labelledby="path-title">
+            <div className="home-section-heading">
+              <span className="home-section-kicker">A SIMPLE PLACE TO START</span>
+              <h2 id="path-title">Web3, one step at a time.</h2>
+              <p>Seven short lessons to help you understand the tools and ideas behind Web3.</p>
+            </div>
+            <div className="home-step-grid">
+              {learningPath.map(step => (
+                <Link key={step.day} href={`/onboarding/day-${step.day}`} className="home-step-card">
+                  <span className="home-step-number">0{step.day}</span>
+                  <span className="home-step-day">DAY {step.day}</span>
+                  <strong>{step.title}</strong>
+                  <p>{step.description}</p>
+                  <span className="home-step-arrow" aria-hidden="true">↗</span>
                 </Link>
               ))}
             </div>
-          </section>
-
-          {/* NEWSLETTER SIGNUP */}
-          <section className="mb-16 max-w-2xl mx-auto">
-            <NewsletterSignup />
-            
-          </section>
-
-          {/* FEATURES */}
-          <section className="mb-16">
-            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-8 text-center">
-              Everything You Need
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Link href="/airdrops">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4" aria-label="Airdrops">🎁</div>
-                  <h3 className="font-bold text-[#0a0a0a] mb-2">Airdrops</h3>
-                  <p className="text-sm text-gray-600">191+ chains, real-time data</p>
-                </div>
-              </Link>
-              <Link href="/showroom">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4" aria-label="Showroom">📊</div>
-                  <h3 className="font-bold text-[#0a0a0a] mb-2">Showroom</h3>
-                  <p className="text-sm text-gray-600">Live TVL & metrics</p>
-                </div>
-              </Link>
-              <Link href="/toolkit">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4" aria-label="Toolkit">🛠️</div>
-                  <h3 className="font-bold text-[#0a0a0a] mb-2">Toolkit</h3>
-                  <p className="text-sm text-gray-600">30+ Web3 tools</p>
-                </div>
-              </Link>
-              <Link href="/blog">
-                <div className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-[#00ffe0] transition-all cursor-pointer h-full">
-                  <div className="text-4xl mb-4" aria-label="Blog">📚</div>
-                  <h3 className="font-bold text-[#0a0a0a] mb-2">Blog</h3>
-                  <p className="text-sm text-gray-600">Guides & analysis</p>
-                </div>
+            <div className="home-section-action">
+              <Link href="/onboarding/day-1" className="home-outline-button">
+                Start with step one <span aria-hidden="true">→</span>
               </Link>
             </div>
           </section>
 
-          {/* CTA SECTION */}
-          <section className="bg-gradient-to-r from-[#f0f8e8] to-white rounded-2xl p-12 border-2 border-[#d0e8c0] text-center">
-            <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-4">
-              Ready to Farm?
-            </h2>
-            <p className="text-gray-700 mb-6 text-lg max-w-2xl mx-auto">
-              Join thousands of farmers learning Web3. Start with Day 1 or jump into Airdrops. Everything you need is here.
-            </p>
-            <Link
-              href="/onboarding/day-1"
-              className="inline-block px-8 py-4 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all text-lg"
-            >
-              Begin Your Journey →
-            </Link>
+          <section className="home-hub-section" id="about" aria-labelledby="hub-title">
+            <div className="home-section-heading">
+              <span className="home-section-kicker">MORE THAN A LEARNING PATH</span>
+              <h2 id="hub-title">One hub. Many ways to explore.</h2>
+              <p>Find practical explainers, useful tools, market data, and context for the wider ecosystem.</p>
+            </div>
+            <div className="home-hub-grid">
+              <Link href="/blog" className="home-hub-card">
+                <span className="home-hub-icon">01</span><span className="home-hub-label">LEARN</span>
+                <strong>Guides &amp; articles</strong><p>Clear explainers for Web3 concepts and tools.</p><span className="home-card-arrow" aria-hidden="true">↗</span>
+              </Link>
+              <Link href="/showroom" className="home-hub-card">
+                <span className="home-hub-icon">02</span><span className="home-hub-label">COMPARE</span>
+                <strong>Chain rankings</strong><p>Explore TVL, DEX volume, and NFT activity.</p><span className="home-card-arrow" aria-hidden="true">↗</span>
+              </Link>
+              <Link href="/airdrops" className="home-hub-card">
+                <span className="home-hub-icon">03</span><span className="home-hub-label">DISCOVER</span>
+                <strong>Airdrops</strong><p>Review curated opportunities and project details.</p><span className="home-card-arrow" aria-hidden="true">↗</span>
+              </Link>
+              <Link href="/toolkit" className="home-hub-card">
+                <span className="home-hub-icon">04</span><span className="home-hub-label">USE</span>
+                <strong>Web3 toolkit</strong><p>Find wallets, analytics, bridges, and safety tools.</p><span className="home-card-arrow" aria-hidden="true">↗</span>
+              </Link>
+            </div>
           </section>
 
+          <div className="home-newsletter-wrap" id="join-now">
+            <NewsletterSignup />
+          </div>
         </div>
       </main>
-
-      {/* Floating Chat Button */}
-      <FloatingChat />
-
       <Footer />
     </>
   )

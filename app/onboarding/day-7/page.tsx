@@ -61,7 +61,7 @@ export default function Day7Page() {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="font-serif text-6xl font-bold text-[#0a0a0a] mb-4">🎉 Congratulations, {username || 'Farmer'}!</h1>
+          <h1 className="font-serif text-6xl font-bold text-[#0a0a0a] mb-4">🎉 Congratulations, {username || 'Learner'}!</h1>
           <p className="text-xl text-gray-600 mb-8">You have completed the full 7-day Web3Farmyard onboarding cycle.</p>
 
           <div className="bg-gradient-to-br from-[#1a6b00]/10 to-[#c8ff00]/10 border-2 border-[#1a6b00] rounded-2xl p-8 mb-8">
@@ -97,10 +97,10 @@ export default function Day7Page() {
           <div className="bg-blue-50 border-2 border-blue-200 rounded-2xl p-8 mb-8">
             <h3 className="font-bold text-blue-900 mb-3 text-lg">What's Next?</h3>
             <p className="text-gray-700 mb-6">
-              You now have a real on-chain footprint and verified activity across multiple protocols. This is exactly what airdrops look for. You're ready to claim.
+              You now understand the basics of wallets, DeFi, and on-chain activity. Keep exploring projects and tools, and make informed decisions as you go.
             </p>
             <p className="text-gray-700 font-medium">
-              Go to the Airdrops page and start farming. Pick 1-2 active airdrops and complete the tasks. Combine what you learned in Days 1-6 with airdrop opportunities.
+              Explore the Airdrops page to learn about current opportunities. Review each project carefully and use what you learned in the first six steps.
             </p>
           </div>
         </div>
@@ -126,8 +126,8 @@ export default function Day7Page() {
               🛠️ Explore Full Toolkit
             </Link>
             <div className="text-center text-gray-600 mt-8">
-              <p className="font-serif text-2xl text-[#0a0a0a] mb-2">WAGMI 🌾</p>
-              <p className="text-sm">Stay consistent. Keep learning. Your farming journey has just begun.</p>
+              <p className="font-serif text-2xl text-[#0a0a0a] mb-2">Nice work!</p>
+              <p className="text-sm">Stay curious. Keep learning. Your Web3 journey is just beginning.</p>
             </div>
           </div>
         )}

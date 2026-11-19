@@ -17,7 +17,7 @@ export default function Footer() {
               Web3Farmyard
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Your guide to farming airdrops, yield, and opportunities in Web3.
+              A beginner-friendly guide to Web3, with practical learning, market data, and useful resources.
             </p>
           </div>
 
@@ -52,10 +52,10 @@ export default function Footer() {
             </h4>
             <nav className="space-y-3">
               <Link href="/onboarding/day-1" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Onboarding
+                7-Day Learning Path
               </Link>
-              <Link href="/resources/mobile-farmer" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Mobile Farmer
+              <Link href="/showroom" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Chain Rankings
               </Link>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Docs
@@ -108,24 +108,14 @@ export default function Footer() {
 
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 mb-12">
-          <h3 className="font-serif text-2xl font-bold text-white mb-3">
-            Join Our Community
-          </h3>
-          <p className="text-gray-400 mb-6">
-            Get weekly airdrops, strategies, and Web3 opportunities delivered to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="flex-1 px-4 py-3 bg-black border border-gray-700 text-white rounded-lg font-mono text-sm focus:outline-none focus:border-[#c8ff00]"
-            />
-            <button className="px-6 py-3 bg-[#c8ff00] hover:bg-[#b8dd00] text-black font-bold rounded-lg transition-all font-mono text-sm">
-              Subscribe
-            </button>
+        <div className="footer-join">
+          <div>
+            <h3 className="font-serif text-2xl font-bold text-white mb-2">Keep learning with us.</h3>
+            <p className="text-gray-400">Get new guides and Web3 insights in your inbox.</p>
           </div>
+          <Link href="/#join-now" className="footer-join-button">
+            Join Now <span aria-hidden="true">↗</span>
+          </Link>
         </div>
 
         {/* Bottom */}

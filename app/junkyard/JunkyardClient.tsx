@@ -24,11 +24,11 @@ interface Props { initialItems: Item[] }
 
 // ── Constants ─────────────────────────────────────────────────────────────
 const CAUSE_THEME: Record<string, { bg: string; border: string; text: string; sub: string; label: string }> = {
-  rug:       { bg: '#180000', border: '#ff4d4d', text: '#fff', sub: '#ffaaaa', label: 'RUG PULL'  },
-  ponzi:     { bg: '#180d00', border: '#ff9f00', text: '#fff', sub: '#ffd080', label: 'PONZI'     },
-  exploit:   { bg: '#001818', border: '#00ffe0', text: '#fff', sub: '#80ffee', label: 'EXPLOIT'   },
-  abandoned: { bg: '#0f0f0f', border: '#777777', text: '#fff', sub: '#aaaaaa', label: 'ABANDONED' },
-  collapse:  { bg: '#180d00', border: '#ff9f00', text: '#fff', sub: '#ffd080', label: 'COLLAPSE'  },
+  rug:       { bg: '#fff3f1', border: '#d66c61', text: '#49251f', sub: '#9b514b', label: 'RUG PULL'  },
+  ponzi:     { bg: '#fff8e9', border: '#d89225', text: '#553a0b', sub: '#9c6a14', label: 'PONZI'     },
+  exploit:   { bg: '#eef8f3', border: '#479d83', text: '#183f35', sub: '#437a6c', label: 'EXPLOIT'   },
+  abandoned: { bg: '#f2f4ef', border: '#a5afa1', text: '#374237', sub: '#717b6d', label: 'ABANDONED' },
+  collapse:  { bg: '#fff8e9', border: '#d89225', text: '#553a0b', sub: '#9c6a14', label: 'COLLAPSE'  },
 }
 
 // Slugs that have dedicated pre-rendered detail pages in /junkyard/[project]
@@ -65,7 +65,7 @@ function Tombstone({ item, delay, onSelect }: { item: Item; delay: number; onSel
       {/* Logo */}
       <div style={{
         width: 76, height: 76, borderRadius: 12,
-        background: 'rgba(255,255,255,0.07)', border: `1px solid ${t.border}55`,
+        background: 'rgba(255,255,255,0.8)', border: `1px solid ${t.border}55`,
         display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
       }}>
         {item.logo ? (
@@ -122,8 +122,8 @@ function Tombstone({ item, delay, onSelect }: { item: Item; delay: number; onSel
 // ── Chain card ────────────────────────────────────────────────────────────
 function ChainCard({ item, onSelect }: { item: Item; onSelect: (item: Item) => void }) {
   const slug      = String(item.id).startsWith('seed-') ? String(item.id).replace('seed-', '') : toSlug(item.name)
-  const catColors: Record<string, string> = { exploit: '#cc0000', rug: '#dc2626', collapse: '#d97706', abandoned: '#888' }
-  const c = catColors[item.cause_of_death] || '#888'
+  const catColors: Record<string, string> = { exploit: '#479d83', rug: '#d66c61', collapse: '#d89225', abandoned: '#8b9687', ponzi: '#d89225' }
+  const c = catColors[item.cause_of_death] || '#8b9687'
 
   return (
     <div
@@ -201,7 +201,7 @@ export default function JunkyardClient({ initialItems }: Props) {
           <div className="flex gap-2 flex-wrap">
             {filters.map(f => (
               <button key={f} onClick={() => setFilter(f)} className="filter-btn"
-                style={{ background: filter === f ? '#0a0a0a' : 'transparent', color: filter === f ? '#c8ff00' : '#555', borderColor: filter === f ? '#0a0a0a' : 'rgba(0,0,0,0.12)' }}>
+                style={{ background: filter === f ? '#183522' : 'transparent', color: filter === f ? '#c8f17a' : '#526357', borderColor: filter === f ? '#183522' : '#dce5d8' }}>
                 {f === 'all' ? 'ALL' : f.toUpperCase()}
               </button>
             ))}
@@ -209,11 +209,11 @@ export default function JunkyardClient({ initialItems }: Props) {
           <div className="flex gap-5">
             <div>
               <div className="font-mono text-[8px]" style={{ color: '#888' }}>CONFIRMED DEAD</div>
-              <div className="font-serif text-xl font-bold" style={{ color: '#cc0000' }}>{projects.length}</div>
+              <div className="font-serif text-xl font-bold" style={{ color: '#547a3d' }}>{projects.length}</div>
             </div>
             <div>
               <div className="font-mono text-[8px]" style={{ color: '#888' }}>VALUE LOST</div>
-              <div className="font-serif text-xl font-bold" style={{ color: '#ff9f00' }}>BILLIONS</div>
+              <div className="font-serif text-xl font-bold" style={{ color: '#738166' }}>BILLIONS</div>
             </div>
           </div>
         </div>
@@ -263,7 +263,7 @@ export default function JunkyardClient({ initialItems }: Props) {
 
         {/* Submit form */}
         <div className="mb-12">
-          <button onClick={() => setShowForm(v => !v)} className="btn-outline" style={{ borderColor: '#ff4d4d', color: '#cc0000' }}>
+          <button onClick={() => setShowForm(v => !v)} className="btn-outline" style={{ borderColor: '#ccddc1', color: '#294d31' }}>
             ☠ REPORT A DEAD PROJECT
           </button>
           {showForm && (
@@ -311,7 +311,7 @@ export default function JunkyardClient({ initialItems }: Props) {
                     <div className="flex gap-2 flex-wrap">
                       {['rug', 'ponzi', 'exploit', 'collapse', 'abandoned'].map(c => (
                         <button key={c} onClick={() => setForm(p => ({ ...p, cause_of_death: c }))} className="filter-btn"
-                          style={{ background: form.cause_of_death === c ? '#0a0a0a' : 'transparent', color: form.cause_of_death === c ? '#c8ff00' : '#555', borderColor: form.cause_of_death === c ? '#0a0a0a' : 'rgba(0,0,0,0.12)' }}>
+                          style={{ background: form.cause_of_death === c ? '#183522' : 'transparent', color: form.cause_of_death === c ? '#c8f17a' : '#526357', borderColor: form.cause_of_death === c ? '#183522' : '#dce5d8' }}>
                           {c.toUpperCase()}
                         </button>
                       ))}
@@ -365,7 +365,7 @@ export default function JunkyardClient({ initialItems }: Props) {
             {/* Stats grid */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }}>
               {([['PEAK PRICE', selectedItem.peak_price], ['PEAK TVL', selectedItem.peak_tvl], ['CHAIN', selectedItem.chain], ['DATE OF DEATH', selectedItem.date_of_death]] as [string, string][]).map(([label, value]) => value ? (
-                <div key={label} style={{ background: '#f8f8f8', borderRadius: 10, padding: '12px 14px' }}>
+                <div key={label} style={{ background: '#f4f7f1', borderRadius: 10, padding: '12px 14px' }}>
                   <div style={{ fontFamily: "'Space Mono',monospace", fontSize: 7, color: '#aaa', letterSpacing: '0.12em', marginBottom: 4 }}>{label}</div>
                   <div style={{ fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: 15, color: '#0a0a0a' }}>{value}</div>
                 </div>
@@ -374,7 +374,7 @@ export default function JunkyardClient({ initialItems }: Props) {
 
             {/* Obituary */}
             {selectedItem.obituary && (
-              <div style={{ background: '#f8f8f8', borderRadius: 12, padding: 18, marginBottom: 20 }}>
+              <div style={{ background: '#f4f7f1', borderRadius: 12, padding: 18, marginBottom: 20 }}>
                 <h3 style={{ fontFamily: "'Playfair Display',serif", fontWeight: 700, fontSize: 16, color: '#0a0a0a', marginBottom: 8 }}>What happened?</h3>
                 <p style={{ fontSize: 13, color: '#444', lineHeight: 1.8, margin: 0 }}>{selectedItem.obituary}</p>
               </div>

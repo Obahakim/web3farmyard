@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { getAllChains } from '@/lib/defillama'
@@ -61,103 +60,59 @@ export default async function ShowroomPage() {
 
       <Nav />
 
-      {/* Ticker */}
-      <div style={{ overflow: 'hidden', background: '#060606', padding: '7px 0', borderBottom: '3px solid #1a6b00' }}>
-        <div style={{ display: 'flex', animation: 'ticker 40s linear infinite', whiteSpace: 'nowrap' }}>
-          <span className="font-mono text-[10px] tracking-[0.15em]" style={{ color: '#1a6b00', paddingRight: 48 }}>
-            DEFI LLAMA DATA · DAILY SNAPSHOT · TVL · 24H TVL CHANGE · 24H DEX VOLUME · 24H NFT VOLUME ·
-          </span>
+      <div className="showroom-page">
+        <div className="showroom-ticker">
+          <div className="showroom-ticker-track">
+            <span>DEFI LLAMA · DAILY SNAPSHOT · TVL · 24H TVL CHANGE · 24H DEX VOLUME · 24H NFT VOLUME</span>
+            <span aria-hidden="true">DEFI LLAMA · DAILY SNAPSHOT · TVL · 24H TVL CHANGE · 24H DEX VOLUME · 24H NFT VOLUME</span>
+          </div>
         </div>
+
+        <main className="showroom-content">
+          <section className="showroom-hero">
+            <div>
+              <div className="showroom-kicker">MARKET DATA <span> / </span> CHAIN INDEX</div>
+              <h1>Chain market overview</h1>
+              <p>
+                Compare blockchain ecosystems by total value locked, decentralized exchange activity,
+                and NFT trading volume.
+              </p>
+            </div>
+            <div className="showroom-update-card">
+              <span className="showroom-update-dot" aria-hidden="true" />
+              <div>
+                <span>UPDATE CYCLE</span>
+                <strong>Every 24 hours</strong>
+              </div>
+            </div>
+          </section>
+
+          <section className="showroom-panel" aria-labelledby="showroom-rankings-heading">
+            <div className="showroom-panel-heading">
+              <div>
+                <span>MARKET OVERVIEW</span>
+                <h2 id="showroom-rankings-heading">Top chains</h2>
+              </div>
+              <p>{chains.length} networks indexed · 50 results per ranking</p>
+            </div>
+            <ShowroomGrid initialChains={chains} initialUpdatedAt={new Date().toISOString()} />
+          </section>
+
+          <section className="showroom-about">
+            <span>ABOUT THE DATA</span>
+            <h2>One place to compare chain activity.</h2>
+            <p>
+              Total value locked (TVL) measures assets deposited in DeFi protocols. DEX and NFT
+              volumes show reported trading activity over 24 hours. Data is sourced from DeFiLlama
+              and the Showroom snapshot refreshes once daily.
+            </p>
+            <p>
+              NFT rankings include only chains with reported NFT trading data. TVL change is shown
+              alongside each chain where available.
+            </p>
+          </section>
+        </main>
       </div>
-
-      <main className="max-w-[1100px] mx-auto px-7">
-        {/* Hero Section */}
-        <section className="py-12 animate-fadeUp">
-          <div className="font-mono text-[8px] tracking-[0.25em] mb-3 inline-block px-3 py-[3px] rounded-full" style={{ background: '#0d1a00', color: '#c8ff00' }}>
-            📊 DAILY CHAIN DATA
-          </div>
-          <h1 className="font-serif font-bold text-dark mb-3" style={{ fontSize: 'clamp(28px,5vw,52px)', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-            Every chain. Every metric. Refreshed daily.
-          </h1>
-          <p className="text-sm max-w-lg mb-8" style={{ color: '#555', lineHeight: 1.8 }}>
-            Explore DeFiLlama chains ranked by total value locked, 24-hour DEX volume, and 24-hour NFT trading volume. TVL change is also shown. Data is refreshed once daily.
-          </p>
-
-          {/* Stats Bar */}
-          <div className="flex gap-4 flex-wrap mb-8">
-            {[
-              { label: 'CHAINS TRACKED', val: chains.length, color: '#1a6b00' },
-              { label: 'RANKING MODES', val: '03', color: '#0a0a0a' },
-              { label: 'UPDATE CADENCE', val: '24 HOURS', color: '#666' },
-              { label: 'DATA SOURCE', val: 'DEFILLAMA', color: '#1a6b00' },
-            ].map(s => (
-              <div key={s.label} className="glass px-4 py-3">
-                <div className="font-mono text-[7px] tracking-[0.12em] mb-1" style={{ color: '#888' }}>
-                  {s.label}
-                </div>
-                <div className="font-serif font-bold" style={{ color: s.color, fontSize: typeof s.val === 'number' ? 16 : 14 }}>
-                  {s.val}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ✅ Blog Links Section */}
-        <section className="grid gap-4 md:grid-cols-2 mb-8">
-          <Link
-            href="/blog/how-to-position-for-airdrops-in-2026"
-            className="glass p-5 hover:bg-white/5 transition-all"
-            style={{ borderLeft: '3px solid #1a6b00' }}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-serif font-bold text-dark mb-2">📖 How to Position for Airdrops in 2026</h3>
-                <p className="text-sm" style={{ color: '#555' }}>
-                  Learn the strategies to maximize your airdrop farming while minimizing risk.
-                </p>
-              </div>
-              <div style={{ fontSize: 24, marginLeft: 12 }}>→</div>
-            </div>
-          </Link>
-          <Link
-            href="/blog/what-is-tvl-in-cryptocurrency-blockchain"
-            className="glass p-5 hover:bg-white/5 transition-all"
-            style={{ borderLeft: '3px solid #1a6b00' }}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="font-serif font-bold text-dark mb-2">📖 What is TVL? A Beginner's Guide</h3>
-                <p className="text-sm" style={{ color: '#555' }}>
-                  Understand the #1 metric for tracking DeFi health and blockchain adoption.
-                </p>
-              </div>
-              <div style={{ fontSize: 24, marginLeft: 12 }}>→</div>
-            </div>
-          </Link>
-        </section>
-
-        <section className="glass p-6 mb-12">
-          <h2 className="font-serif font-bold text-dark mb-6 text-lg">
-            CHAIN RANKINGS
-          </h2>
-          <ShowroomGrid initialChains={chains} initialUpdatedAt={new Date().toISOString()} />
-        </section>
-
-        {/* About Section */}
-        <section className="glass p-6 mb-12">
-          <h2 className="font-serif text-xl font-bold text-dark mb-4">About This Data</h2>
-          <p className="text-sm mb-4" style={{ color: '#555', lineHeight: 1.8 }}>
-            <strong>Total Value Locked (TVL)</strong> measures the total amount of cryptocurrency deposited into DeFi protocols on a given blockchain. It is the primary metric used to assess the health and adoption of a blockchain ecosystem.
-          </p>
-          <p className="text-sm" style={{ color: '#555', lineHeight: 1.8 }}>
-            This data is sourced from <strong>DeFiLlama</strong>, which tracks {chains.length} chains and thousands of protocols. TVL changes as users deposit and withdraw from lending protocols, liquidity pools, and yield aggregators. The Showroom snapshot is refreshed once daily.
-          </p>
-          <p className="text-sm mt-4" style={{ color: '#555', lineHeight: 1.8 }}>
-            NFT-volume rankings include only chains for which DeFiLlama reports NFT trading data.
-          </p>
-        </section>
-      </main>
 
       <Footer />
     </>

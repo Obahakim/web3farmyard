@@ -78,7 +78,7 @@ export default function Day4Page() {
               <li>Approve the transaction</li>
               <li>Complete the supply</li>
             </ol>
-            <p className="mt-3"><strong>What happens:</strong> Your tokens earn APY (Annual Percentage Yield). This teaches you how lending protocols work, which is crucial for advanced airdrop farming.</p>
+            <p className="mt-3"><strong>What happens:</strong> Your tokens earn APY (Annual Percentage Yield). This teaches you how lending protocols work, a core concept in decentralized finance.</p>
           </div>
         </div>
 

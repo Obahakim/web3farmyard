@@ -19,7 +19,7 @@ export default function FloatingChat() {
   const [messages, setMessages] = useState<ChatMessage[]>([])
   const [newMessage, setNewMessage] = useState('')
   const [loading, setLoading] = useState(true)
-  const [userName, setUserName] = useState('Farmer')
+  const [userName, setUserName] = useState('Web3 learner')
   
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPA_URL!,
@@ -83,7 +83,7 @@ export default function FloatingChat() {
         .insert({
           author: userName,
           message: newMessage,
-          avatar: '🌾'
+          avatar: '🌐'
         })
 
       if (error) {
@@ -116,15 +116,15 @@ export default function FloatingChat() {
         className={`fixed bottom-6 right-6 w-14 h-14 rounded-full shadow-lg transition-all z-40 flex items-center justify-center font-bold text-white ${
           isOpen 
             ? 'bg-red-500 hover:bg-red-600' 
-            : 'bg-[#00ffe0] hover:bg-[#00ccb3]'
+            : 'bg-[#c8f17a] hover:bg-[#b9e768]'
         }`}
-        title="Open farmers chat"
+        title="Open Web3 community chat"
       >
         {isOpen ? (
           <X size={24} className="text-white" />
         ) : (
           <>
-            <MessageSquare size={24} className="text-[#0a0a0a]" />
+            <MessageSquare size={24} className="text-[#18371f]" />
             {messages.length > 0 && (
               <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {messages.length > 99 ? '99+' : messages.length}
@@ -136,11 +136,11 @@ export default function FloatingChat() {
 
       {/* Chat Panel */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 w-96 bg-white rounded-xl shadow-2xl border-2 border-[#00ffe0] z-40 flex flex-col h-[600px] animate-in fade-in slide-in-from-bottom-4">
+        <div className="fixed bottom-24 right-6 w-96 bg-white rounded-xl shadow-2xl border-2 border-[#c8f17a] z-40 flex flex-col h-[600px] animate-in fade-in slide-in-from-bottom-4">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-[#0a0a0a] to-[#1a1a1a] text-white p-4 rounded-t-lg">
-            <h3 className="font-bold font-mono">🌾 Farmers Chatroom</h3>
+            <h3 className="font-bold font-mono">Web3 Community Chat</h3>
             <p className="text-xs text-gray-300 mt-1">
               {loading ? 'Loading messages...' : `${messages.length} messages • Live updates`}
             </p>
@@ -156,12 +156,12 @@ export default function FloatingChat() {
               <div className="flex items-center justify-center h-full text-gray-500 text-center">
                 <div>
                   <p className="font-mono text-sm mb-2">Be the first to chat!</p>
-                  <p className="text-xs">Share your strategies and help fellow farmers.</p>
+                  <p className="text-xs">Share what you’re learning and help others explore Web3.</p>
                 </div>
               </div>
             ) : (
               messages.map((msg) => (
-                <div key={msg.id} className="bg-white rounded-lg p-3 border border-gray-200 hover:border-[#00ffe0] transition-colors">
+                <div key={msg.id} className="bg-white rounded-lg p-3 border border-gray-200 hover:border-[#c8f17a] transition-colors">
                   <div className="flex items-start gap-2 mb-2">
                     <span className="text-xl">{msg.avatar || '👨'}</span>
                     <div className="flex-1 min-w-0">
@@ -188,7 +188,7 @@ export default function FloatingChat() {
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
               maxLength={20}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:outline-none focus:border-[#00ffe0]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs focus:outline-none focus:border-[#c8f17a]"
             />
             
             {/* Message Input */}
@@ -200,18 +200,18 @@ export default function FloatingChat() {
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 maxLength={200}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#00ffe0]"
+                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#c8f17a]"
               />
               <button
                 onClick={handleSendMessage}
                 disabled={!newMessage.trim()}
-                className="bg-[#00ffe0] hover:bg-[#00ccb3] disabled:bg-gray-300 text-[#0a0a0a] font-bold p-2 rounded-lg transition-all"
+                className="bg-[#c8f17a] hover:bg-[#b9e768] disabled:bg-gray-300 text-[#18371f] font-bold p-2 rounded-lg transition-all"
               >
                 <Send size={18} />
               </button>
             </div>
             <p className="text-xs text-gray-500 font-mono">
-              💡 Real farmers, real strategies. No spam.
+              💡 Learn together. Keep it helpful and respectful.
             </p>
           </div>
 

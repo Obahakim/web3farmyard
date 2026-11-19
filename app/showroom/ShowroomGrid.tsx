@@ -60,6 +60,19 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
   const [hasSnapshot, setHasSnapshot] = useState(false)
   const [loadError, setLoadError] = useState(false)
   const [partialFailures, setPartialFailures] = useState(0)
+  const isDevelopment = process.env.NODE_ENV === 'development'
+
+  useEffect(() => {
+    const syncModeFromHash = () => {
+      if (window.location.hash === '#rank-tvl') setMode('tvl')
+      if (window.location.hash === '#rank-dex') setMode('dexVolume')
+      if (window.location.hash === '#rank-nft') setMode('nftVolume')
+    }
+
+    syncModeFromHash()
+    window.addEventListener('hashchange', syncModeFromHash)
+    return () => window.removeEventListener('hashchange', syncModeFromHash)
+  }, [])
 
   useEffect(() => {
     let active = true
@@ -103,134 +116,173 @@ export default function ShowroomGrid({ initialChains, initialUpdatedAt }: Props)
         .filter(chain => chain.nftVolume24h !== null && chain.nftVolume24h !== undefined)
         .sort((a, b) => (b.nftVolume24h || 0) - (a.nftVolume24h || 0))
   const ranked = sorted.slice(0, 50)
-  const hasDexVolumes = chains.some(chain => typeof chain.dexVolume24h === 'number')
   const hasNftVolumes = chains.some(chain => typeof chain.nftVolume24h === 'number')
   const snapshotIsStale = hasSnapshot && Date.now() - Date.parse(lastUpdate) > 24 * 60 * 60 * 1000
+  const dexVolumeChains = chains.filter(chain =>
+    typeof chain.dexVolume24h === 'number' && Number.isFinite(chain.dexVolume24h)
+  )
+  const nftVolumeChains = chains.filter(chain =>
+    typeof chain.nftVolume24h === 'number' && Number.isFinite(chain.nftVolume24h)
+  )
+  const totalDexVolume = dexVolumeChains.reduce((total, chain) => total + (chain.dexVolume24h ?? 0), 0)
+  const totalNftVolume = nftVolumeChains.reduce((total, chain) => total + (chain.nftVolume24h ?? 0), 0)
+  const volumeDetail = (count: number) => {
+    if (!hasSnapshot) {
+      if (!isDevelopment) return ''
+      return loadError ? 'Daily snapshot unavailable' : 'Waiting for daily snapshot'
+    }
+    if (count === 0) return isDevelopment ? 'No reported volume in snapshot' : ''
+    return `Across ${count} reporting ${count === 1 ? 'chain' : 'chains'}`
+  }
+  const volumeValue = (total: number, count: number) =>
+    !hasSnapshot || count === 0 ? '—' : total === 0 ? '$0.00' : fmt(total)
 
   return (
-    <div>
-      {/* Controls */}
-      <div className="flex items-center justify-between mb-4 flex-wrap gap-3">
-        <div className="font-mono text-[8px] tracking-[0.15em]" style={{ color: '#888' }}>
-          TOP {ranked.length} OF {sorted.length} CHAINS · DATA AS OF {new Date(lastUpdate).toLocaleString('en-US', { timeZone: 'UTC' })} UTC
+    <div className="showroom-ranking">
+      <div className="showroom-bento" aria-label="24-hour volume and recommended guides">
+        <article className="showroom-bento-card showroom-bento-dex">
+          <div className="showroom-bento-label">
+            <span>TOTAL DEX VOLUME · 24H</span>
+            <span className="showroom-bento-marker" aria-hidden="true">↗</span>
+          </div>
+          <strong className="showroom-bento-value">{volumeValue(totalDexVolume, dexVolumeChains.length)}</strong>
+          <p>{volumeDetail(dexVolumeChains.length)}</p>
+        </article>
+
+        <article className="showroom-bento-card showroom-bento-nft">
+          <div className="showroom-bento-label">
+            <span>TOTAL NFT VOLUME · 24H</span>
+            <span className="showroom-bento-marker" aria-hidden="true">✦</span>
+          </div>
+          <strong className="showroom-bento-value">{volumeValue(totalNftVolume, nftVolumeChains.length)}</strong>
+          <p>{volumeDetail(nftVolumeChains.length)}</p>
+        </article>
+
+        <Link href="/blog/how-to-position-for-airdrops-in-2026" className="showroom-bento-card showroom-bento-guide">
+          <span className="showroom-bento-label">FIELD GUIDE <span aria-hidden="true">↗</span></span>
+          <strong>How to Position for Airdrops in 2026</strong>
+          <p>Strategies to maximize airdrop opportunities while managing risk.</p>
+        </Link>
+
+        <Link href="/blog/what-is-tvl-in-cryptocurrency-blockchain" className="showroom-bento-card showroom-bento-guide showroom-bento-guide-wide">
+          <span className="showroom-bento-label">METRIC GUIDE <span aria-hidden="true">↗</span></span>
+          <strong>What is TVL?</strong>
+          <p>Understand a core measure of DeFi activity and blockchain adoption.</p>
+        </Link>
+      </div>
+
+      <div className="showroom-controls">
+        <div className="showroom-result-count">
+          <strong>TOP {ranked.length} OF {sorted.length}</strong>
+          <span>DATA AS OF {new Date(lastUpdate).toLocaleString('en-US', { timeZone: 'UTC' })} UTC</span>
         </div>
-        <div className="flex flex-wrap gap-1" style={{ background: '#1a1a1a', borderRadius: 8, overflow: 'hidden' }}>
+        <div className="showroom-mode-switch" role="group" aria-label="Choose ranking metric">
           {(['tvl', 'dexVolume', 'nftVolume'] as const).map(m => (
             <button
               key={m}
+              id={m === 'tvl' ? 'rank-tvl' : m === 'dexVolume' ? 'rank-dex' : 'rank-nft'}
+              type="button"
               onClick={() => setMode(m)}
-              disabled={
-                (m === 'dexVolume' && (!hasSnapshot || !hasDexVolumes)) ||
-                (m === 'nftVolume' && (!hasSnapshot || !hasNftVolumes))
-              }
-              className="font-mono text-[9px] font-bold px-4 py-2 border-none cursor-pointer transition-all"
+              aria-pressed={mode === m}
+              className="showroom-mode-button"
               style={{
-                background: mode === m ? '#c8ff00' : '#0d0d0d',
-                color: mode === m ? '#0a0a0a' : '#888',
-                opacity:
-                  (m === 'dexVolume' && (!hasSnapshot || !hasDexVolumes)) ||
-                  (m === 'nftVolume' && (!hasSnapshot || !hasNftVolumes))
-                    ? 0.5
-                    : 1,
+                background: mode === m ? '#c8ff00' : 'transparent',
+                color: mode === m ? '#0a0d11' : '#a6adbb',
               }}
             >
-              {m === 'tvl' ? 'BY TVL' : m === 'dexVolume' ? 'BY 24H DEX VOLUME' : 'BY 24H NFT VOLUME'}
+              {m === 'tvl' ? 'TVL' : m === 'dexVolume' ? 'DEX VOL 24H' : 'NFT VOL 24H'}
             </button>
           ))}
         </div>
       </div>
 
-      {loadError && (
-        <p role="status" className="mb-4 text-sm text-red-700">
+      {isDevelopment && loadError && (
+        <p role="status" className="showroom-data-message showroom-data-error">
           Daily chain metrics are unavailable. Showing the build-time TVL snapshot.
+          {' '}Next.js dev does not execute the Hostinger PHP snapshot endpoint.
         </p>
       )}
-      {partialFailures > 0 && (
-        <p role="status" className="mb-4 text-sm text-amber-700">
+      {isDevelopment && partialFailures > 0 && (
+        <p role="status" className="showroom-data-message showroom-data-warning">
           Some daily chain metrics could not be refreshed ({partialFailures} upstream requests).
         </p>
       )}
-      {snapshotIsStale && (
-        <p role="status" className="mb-4 text-sm text-amber-700">
+      {isDevelopment && snapshotIsStale && (
+        <p role="status" className="showroom-data-message showroom-data-warning">
           This snapshot is over 24 hours old. Check that the Hostinger cron task is running.
         </p>
       )}
-      {hasSnapshot && !hasNftVolumes && (
-        <p role="status" className="mb-4 text-sm text-amber-700">
+      {isDevelopment && hasSnapshot && !hasNftVolumes && (
+        <p role="status" className="showroom-data-message showroom-data-warning">
           NFT volume is not available in this snapshot yet. Run the updated daily refresh to populate it.
         </p>
       )}
+      {isDevelopment && mode !== 'tvl' && ranked.length === 0 && (
+        <p role="status" className="showroom-data-message showroom-data-warning">
+          No 24-hour {mode === 'dexVolume' ? 'DEX' : 'NFT'} volume data is available in this snapshot.
+        </p>
+      )}
 
-      {/* Grid */}
-      <div
-        className="glass overflow-hidden mb-8"
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(110px,1fr))', gap: '2px', background: '#e8e8ea', borderRadius: 16 }}
-      >
-        {ranked.map((chain, i) => {
-          const pct = chain.change_1d
-          const pctColor = pct === null || pct === undefined ? '#888' : pct > 0 ? '#1a6b00' : '#cc0000'
-          const pctStr = pct === null || pct === undefined ? '—' : fmtPct(pct)
-          const slug = toSlug(chain.name)
-          const logoSrc = chain.gecko_id
-            ? `https://icons.llama.fi/${chain.gecko_id}.jpg`
-            : llamaLogo(chain.name)
+      <div className="showroom-table-wrap">
+        <table className="showroom-table">
+          <thead>
+            <tr>
+              <th scope="col">RANK</th>
+              <th scope="col">CHAIN</th>
+              <th scope="col">{mode === 'tvl' ? 'TOTAL VALUE LOCKED' : mode === 'dexVolume' ? 'DEX VOLUME · 24H' : 'NFT VOLUME · 24H'}</th>
+              <th scope="col">TVL CHANGE · 24H</th>
+            </tr>
+          </thead>
+          <tbody>
+            {ranked.map((chain, i) => {
+              const pct = chain.change_1d
+              const pctColor = pct === null || pct === undefined ? '#8992a2' : pct > 0 ? '#75d99b' : '#ff8585'
+              const pctStr = pct === null || pct === undefined ? '—' : fmtPct(pct)
+              const slug = toSlug(chain.name)
+              const logoSrc = chain.gecko_id
+                ? `https://icons.llama.fi/${chain.gecko_id}.jpg`
+                : llamaLogo(chain.name)
 
-          return (
-            <Link
-              key={chain.name}
-              href={`/showroom/${slug}`}
-              className="no-underline bento"
-              style={{ background: '#fff', padding: '12px 10px', display: 'block' }}
-            >
-              {/* Logo */}
-              <div
-                className="mb-2 rounded-lg overflow-hidden flex items-center justify-center"
-                style={{ width: 36, height: 36, background: '#f0f0f0' }}
-              >
-                <img
-                  src={logoSrc}
-                  alt={chain.name}
-                  width={36} height={36}
-                  style={{ objectFit: 'contain', padding: 4 }}
-                  onError={e => {
-                    const img = e.target as HTMLImageElement
-                    const fallback = document.createElement('span')
-                    fallback.style.fontFamily = "'Space Mono',monospace"
-                    fallback.style.fontSize = '11px'
-                    fallback.style.fontWeight = '700'
-                    fallback.style.color = '#666'
-                    fallback.textContent = initials(chain.name)
-                    img.replaceWith(fallback)
-                  }}
-                />
-              </div>
-
-              {/* Rank */}
-              <div className="font-mono text-[7px] mb-1" style={{ color: '#bbb' }}>#{i + 1}</div>
-
-              {/* Name */}
-              <div
-                className="font-bold text-dark mb-1"
-                style={{ fontSize: 11, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
-              >
-                {chain.name}
-              </div>
-
-              <div className="font-serif font-bold text-dark" style={{ fontSize: 13 }}>
-                {mode === 'tvl'
-                  ? fmt(chain.tvl)
-                  : fmt(mode === 'dexVolume' ? chain.dexVolume24h : chain.nftVolume24h)}
-              </div>
-              <div className="font-mono text-[7px] text-gray-400">
-                {mode === 'tvl' ? 'TVL' : mode === 'dexVolume' ? '24H DEX VOLUME' : '24H NFT VOLUME'}
-              </div>
-
-              <div className="font-mono font-bold" style={{ fontSize: 8, color: pctColor }}>
-                {pctStr} (24h TVL)
-              </div>
-            </Link>
-          )
-        })}
+              return (
+                <tr key={chain.name}>
+                  <td className="showroom-rank">#{i + 1}</td>
+                  <td>
+                    <Link href={`/showroom/${slug}`} className="showroom-chain-link">
+                      <span className="showroom-chain-logo">
+                        <img
+                          src={logoSrc}
+                          alt=""
+                          width={32}
+                          height={32}
+                          onError={e => {
+                            const img = e.target as HTMLImageElement
+                            const fallback = document.createElement('span')
+                            fallback.textContent = initials(chain.name)
+                            img.replaceWith(fallback)
+                          }}
+                        />
+                      </span>
+                      <span className="showroom-chain-name">
+                        <strong>{chain.name}</strong>
+                        {chain.tokenSymbol && <small>{chain.tokenSymbol}</small>}
+                      </span>
+                    </Link>
+                  </td>
+                  <td className="showroom-metric-value">
+                    {mode === 'tvl'
+                      ? fmt(chain.tvl)
+                      : fmt(mode === 'dexVolume' ? chain.dexVolume24h : chain.nftVolume24h)}
+                  </td>
+                  <td>
+                    <span className="showroom-change" style={{ color: pctColor }}>
+                      {pctStr}
+                    </span>
+                  </td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
       </div>
     </div>
   )

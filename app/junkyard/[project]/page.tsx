@@ -33,15 +33,15 @@ export default async function ProjectPage({ params }: Props) {
     <>
       <Nav />
 
-      <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
-        <div className="max-w-[1100px] mx-auto px-7 py-8">
+      <main className="theme-page junkyard-detail-page">
+        <div className="theme-page-shell junkyard-detail-shell">
           
           {/* Breadcrumb */}
           <nav className="mb-6">
             <ol className="flex gap-2 font-mono text-[9px] flex-wrap" style={{ listStyle: 'none', color: '#999' }}>
               <li><Link href="/" style={{ color: '#1a6b00' }}>Home</Link></li>
               <li>/</li>
-              <li><Link href="/junkyard" style={{ color: '#cc0000' }}>Junkyard</Link></li>
+              <li><Link href="/junkyard" style={{ color: '#547a3d' }}>Junkyard</Link></li>
               <li>/</li>
               <li>{detail.fullName}</li>
             </ol>
@@ -86,7 +86,7 @@ export default async function ProjectPage({ params }: Props) {
             <Link href="/junkyard" className="btn-outline">← Back to Junkyard</Link>
           </div>
         </div>
-      </div>
+      </main>
 
       <Footer />
     </>

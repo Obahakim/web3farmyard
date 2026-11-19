@@ -49,7 +49,7 @@ export async function subscribeNewsletter(
     }
 
     if (farmerName && farmerName.trim().length > 100) {
-      return { success: false, message: 'Farmer name is too long' }
+      return { success: false, message: 'Username is too long' }
     }
 
     // Check if already subscribed
@@ -141,7 +141,7 @@ async function sendWelcomeEmail(email: string, farmerName?: string | null) {
       return
     }
 
-    const displayName = farmerName || 'Farmer'
+    const displayName = farmerName || 'Web3 learner'
 
     await resend.emails.send({
       from: 'Web3Farmyard <noreply@web3farmyard.com>',
@@ -162,16 +162,16 @@ async function sendWelcomeEmail(email: string, farmerName?: string | null) {
           </head>
           <body>
             <div class="container">
-              <h1>Welcome to Web3Farmyard, ${displayName}! 🌾</h1>
+              <h1>Welcome to Web3Farmyard, ${displayName}!</h1>
               
-              <p>You're now part of a growing community of farmers learning DeFi, discovering airdrops, and building wealth on-chain.</p>
+              <p>You're now part of a community exploring Web3 through beginner-friendly lessons, practical guides, and ecosystem insights.</p>
               
               <h2 style="color: #0a0a0a; font-size: 18px; margin-top: 30px;">Here's what you get:</h2>
               <ul>
-                <li>Weekly airdrop alerts & opportunities</li>
-                <li>DeFi strategies from experienced farmers</li>
-                <li>Live chain metrics & yield updates</li>
-                <li>Community insights & risk analysis</li>
+                <li>New Web3 guides and explainers</li>
+                <li>DeFi chain metrics and market snapshots</li>
+                <li>Wallet and tool safety resources</li>
+                <li>Curated ecosystem updates</li>
               </ul>
               
               <p><strong>Start your journey:</strong></p>
@@ -186,7 +186,7 @@ async function sendWelcomeEmail(email: string, farmerName?: string | null) {
               
               <p>Questions? Reply to this email. We read everything.</p>
               
-              <p>Happy farming,<br><strong>Web3Farmyard Team</strong></p>
+              <p>Happy exploring,<br><strong>Web3Farmyard Team</strong></p>
               
               <div class="footer">
                 <p>You're receiving this because you subscribed to Web3Farmyard newsletter.</p>

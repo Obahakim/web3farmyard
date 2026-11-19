@@ -17,7 +17,7 @@ const handleToolUse = (toolName: string) => {
 
 export const metadata: Metadata = {
   title: 'Web3 Toolkit | Web3Farmyard',
-  description: 'Essential tools for Web3 farmers. Wallets, DEXs, airdrops, security tools, and more.',
+  description: 'Explore wallets, DEXs, airdrop platforms, security resources, analytics, and other useful Web3 tools.',
 }
 
 interface Tool {
@@ -46,7 +46,7 @@ const tools: Tool[] = [
   { id: 'faucet-drip', name: 'Faucet Drip', category: 'Airdrop', description: 'Claim testnet tokens and practice onchain actions safely.', url: 'https://faucet.drip', isEssential: true, emoji: '🚰', logo: 'https://www.google.com/s2/favicons?domain=faucet.drip' },
 
   // === ADDITIONAL WALLETS ===
-  { id: 'trust-wallet', name: 'Trust Wallet', category: 'Wallet', description: 'Best mobile wallet. Official Binance wallet for on-the-go farming.', url: 'https://trustwallet.com', isEssential: false, emoji: '👛' },
+  { id: 'trust-wallet', name: 'Trust Wallet', category: 'Wallet', description: 'A mobile wallet for managing digital assets across multiple networks.', url: 'https://trustwallet.com', isEssential: false, emoji: '👛' },
   { id: 'phantom', name: 'Phantom', category: 'Wallet', description: 'Best Solana wallet. Lightning-fast transactions and airdrops.', url: 'https://phantom.app', isEssential: false, emoji: '👻' },
   { id: 'rabby', name: 'Rabby Wallet', category: 'Wallet', description: 'Smart wallet that detects scams across 50+ chains automatically.', url: 'https://rabby.io', isEssential: false, emoji: '🐰' },
   { id: 'ledger', name: 'Ledger Live', category: 'Wallet', description: 'Hardware wallet for maximum security. For long-term holding.', url: 'https://ledger.com', isEssential: false, emoji: '🔐' },
@@ -67,7 +67,7 @@ const tools: Tool[] = [
   // === BRIDGES ===
   { id: 'stargate', name: 'Stargate Finance', category: 'Bridge', description: 'Best cross-chain bridge. Fast and reliable.', url: 'https://stargate.finance', isEssential: false, emoji: '🌉' },
   { id: 'across', name: 'Across Protocol', category: 'Bridge', description: 'Fast bridge between Ethereum and L2s with low fees.', url: 'https://across.to', isEssential: false, emoji: '🌊' },
-  { id: 'lido', name: 'Lido', category: 'Bridge', description: 'Bridge staked ETH across chains for yield farming.', url: 'https://lido.fi', isEssential: false, emoji: '🫗' },
+  { id: 'lido', name: 'Lido', category: 'Bridge', description: 'Explore liquid staking and track staked ETH across Ethereum apps.', url: 'https://lido.fi', isEssential: false, emoji: '🫗' },
 
   // === ANALYTICS & RESEARCH ===
   { id: 'etherscan', name: 'Etherscan', category: 'Analytics', description: 'Ethereum blockchain explorer. See all transactions and contracts.', url: 'https://etherscan.io', isEssential: false, emoji: '🔍' },
@@ -98,7 +98,7 @@ export default function ToolkitPage() {
         id: 'https://www.web3farmyard.com/toolkit#webpage',
         url: 'https://www.web3farmyard.com/toolkit',
         name: 'Web3 Toolkit — Essential Crypto Tools | Web3Farmyard',
-        description: 'Essential wallets, DEXs, bridges, analytics, and security tools for Web3 farmers.',
+        description: 'A curated collection of wallets, DEXs, bridges, analytics, and security tools for exploring Web3.',
         isPartOfId: 'https://www.web3farmyard.com/#website',
         inLanguage: 'en-US',
       }, false),
@@ -127,7 +127,7 @@ export default function ToolkitPage() {
             Your Web3 Arsenal
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Everything a farmer needs to start safe, research smart, and farm profitably. All tools curated, tested, and linked.
+            A curated collection of tools for exploring Web3, researching projects, and managing your digital assets more safely.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ export default function ToolkitPage() {
               </div>
 
               <p className="text-[#c8ff00]/90 text-lg mb-12 max-w-3xl leading-relaxed">
-                Start with these 9 tools. Master them during your 7-day onboarding. These are the foundation every Web3 farmer needs.
+                Start with these essential tools as you follow the 7-day onboarding path and learn the Web3 basics.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
@@ -206,7 +206,7 @@ export default function ToolkitPage() {
             },
             {
               title: '✓ Thoroughly Tested',
-              desc: 'All tools used by thousands of farmers. Proven reliable and safe.',
+              desc: 'Useful tools for exploring Web3, researching projects, and managing digital assets.',
             },
             {
               title: '✓ Continuously Updated',
@@ -279,7 +279,7 @@ export default function ToolkitPage() {
 
         {/* CTA Section */}
         <section className="bg-[#f0f8e8] border-2 border-[#1a6b00] rounded-3xl p-12 text-center mt-20">
-          <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-4">Ready to Start Farming?</h2>
+          <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-4">Ready to Explore Web3?</h2>
           <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
             These tools are your foundation. Master the Beginner's Essential Pack in your first 7 days, then gradually expand to the full toolkit as you grow.
           </p>
@@ -313,7 +313,7 @@ export default function ToolkitPage() {
             </Link>
             <Link href="/airdrops" className="border-2 border-[#1a6b00] rounded-xl p-6 hover:bg-[#f0f8e8] transition-colors">
               <h3 className="font-serif font-bold text-[#1a6b00] mb-2">🌾 Active Airdrops</h3>
-              <p className="text-sm text-gray-600">Start farming with verified, safe airdrops</p>
+              <p className="text-sm text-gray-600">Review curated opportunities and project details</p>
             </Link>
           </div>
         </section>

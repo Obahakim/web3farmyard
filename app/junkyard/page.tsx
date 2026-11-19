@@ -54,7 +54,7 @@ export default async function JunkyardPage() {
         id: 'https://www.web3farmyard.com/junkyard#webpage',
         url: 'https://www.web3farmyard.com/junkyard',
         name: 'The Crypto Graveyard — Every Major Rug Pull, Ponzi & Collapse',
-        description: 'Explore a permanent record of crypto failures, scams, and collapse stories with lessons for Web3 farmers.',
+        description: 'Explore a permanent record of crypto failures, scams, and collapse stories with lessons for Web3 users.',
         isPartOfId: 'https://www.web3farmyard.com/#website',
         primaryImage: { url: 'https://www.web3farmyard.com/og-junkyard.png', width: 1200, height: 630 },
         inLanguage: 'en-US',
@@ -88,39 +88,36 @@ export default async function JunkyardPage() {
 
       <Nav />
 
-      <div style={{ overflow: 'hidden', background: '#060606', padding: '7px 0', borderBottom: '3px solid #ff4d4d' }}>
-        <div style={{ display: 'flex', animation: 'ticker 32s linear infinite', whiteSpace: 'nowrap' }}>
+      <div className="junkyard-page">
+      <div className="junkyard-ticker">
+        <div className="junkyard-ticker-track">
           {['RIP LUNA/UST', 'RIP FTX', 'RIP BITCONNECT', 'RIP SQUID GAME TOKEN', 'RIP SAFEMOON', 'RIP IRON FINANCE', 'RIP TERRA CLASSIC', 'THEY WARNED YOU', 'RIP LUNA/UST', 'RIP FTX', 'RIP BITCONNECT', 'RIP SQUID GAME TOKEN', 'RIP SAFEMOON', 'RIP IRON FINANCE'].map((t, i) => (
-            <span key={i} className="font-mono text-[10px] tracking-[0.15em]" style={{ color: t.startsWith('RIP') ? '#cc0000' : '#555', paddingRight: 48 }}>
+            <span key={i}>
               {t}
             </span>
           ))}
         </div>
       </div>
 
-      <main className="max-w-[1100px] mx-auto px-7">
-        <section className="py-12 animate-fadeUp">
-          <div className="font-mono text-[8px] tracking-[0.25em] mb-3 animate-flicker" style={{ color: '#cc0000' }}>
-            ☠️ THE JUNKYARD
-          </div>
-          <h1 className="font-serif font-bold text-dark mb-4" style={{ fontSize: 'clamp(32px,5vw,58px)', lineHeight: 1.05, letterSpacing: '-0.03em' }}>
+      <main className="theme-page-shell junkyard-shell">
+        <section className="theme-page-hero junkyard-hero animate-fadeUp">
+          <span className="theme-page-eyebrow">☠ THE JUNKYARD</span>
+          <h1>
             They promised moonshots.
             <br />
-            <span style={{ WebkitTextStroke: '1px #ff4d4d', color: 'transparent' }}>
+            <span>
               They delivered dust.
             </span>
           </h1>
-          <p className="text-[15px] max-w-xl mb-6" style={{ color: '#555', lineHeight: 1.8 }}>
+          <p>
             A permanent record of crypto's worst failures. Rugs, ponzis, exploits, abandoned projects and dead chains. Preserved so history doesn't have to repeat itself — though it probably will.
           </p>
-          <div className="glass p-4" style={{ background: '#0d0606', border: 'none', borderLeft: '3px solid #ff4d4d' }}>
-            <p className="font-mono text-[10px]" style={{ color: '#5a2a2a', lineHeight: 1.8 }}>
-              ⚠ <strong style={{ color: '#ff7a7a' }}>IMPORTANT:</strong> This page exists purely for historical record and education. None of these projects are listed as investments. If someone is trying to sell you a token from this list — run.
-            </p>
+          <div className="junkyard-note">
+            <strong>IMPORTANT:</strong> This page exists for historical record and education. None of these projects are investment recommendations. If someone tries to sell you a token from this list, be cautious.
           </div>
         </section>
 
-        <section className="glass p-5 mb-8">
+        <section className="theme-page-card p-5 mb-8">
           <h2 className="font-serif font-bold text-dark mb-2 text-lg">The Crypto Graveyard</h2>
           <p className="text-sm" style={{ color: '#555', lineHeight: 1.8 }}>
             Explore documented crypto failures including <strong>rug pulls</strong>, <strong>Ponzi schemes</strong>, <strong>smart contract exploits</strong>, and <strong>collapsed ecosystems</strong>. Each entry includes its cause of death, peak values, and lessons learned.
@@ -132,7 +129,7 @@ export default async function JunkyardPage() {
           <Link
             href="/blog/how-to-identify-scam-projects-in-crypto"
             className="glass p-5 hover:bg-white/5 transition-all"
-            style={{ borderLeft: '3px solid #ff4d4d' }}
+            style={{ borderLeft: '3px solid #8bad72' }}
           >
             <div className="flex items-center justify-between">
               <div>
@@ -178,6 +175,7 @@ export default async function JunkyardPage() {
           </div>
         </section>
       </main>
+      </div>
 
       <Footer />
     </>

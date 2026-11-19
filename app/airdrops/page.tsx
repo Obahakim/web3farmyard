@@ -116,15 +116,17 @@ export default function AirdropsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(airdropsSchema) }}
       />
       <Nav />
-      <main className="max-w-7xl mx-auto px-6 py-12">
-        <div className="mb-12">
-          <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-4">
+      <main className="theme-page airdrops-page">
+        <div className="theme-page-shell">
+          <header className="theme-page-hero">
+            <span className="theme-page-eyebrow">PROJECT DISCOVERY</span>
+            <h1>
             Airdrops
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Fresh Web3 opportunities. Earn tokens by completing simple tasks.
-          </p>
-        </div>
+            </h1>
+            <p>
+              Explore curated opportunities with project details and risk context. Always do your own research.
+            </p>
+          </header>
 
         {loading && (
           <div className="text-center py-20">
@@ -145,7 +147,7 @@ export default function AirdropsPage() {
         )}
 
         {!loading && airdrops.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-[220px] gap-5">
+          <div className="airdrops-grid grid grid-cols-1 md:grid-cols-4 md:auto-rows-[220px] gap-5">
             {airdrops.map((airdrop, index) => {
               const risk = airdrop.risk || 'low'
               return (
@@ -332,6 +334,7 @@ export default function AirdropsPage() {
             ← Back to Home
           </Link>
         </div>
+        </div>
       </main>
       <Footer />
 
@@ -367,7 +370,7 @@ export default function AirdropsPage() {
         }
 
         .bento-flip-front {
-          background-color: #0a0a0a;
+          background-color: #102d1c;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
@@ -377,7 +380,7 @@ export default function AirdropsPage() {
         .bento-front-fallback {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, #0a0a0a 0%, #1a2f0a 100%);
+          background: linear-gradient(135deg, #102d1c 0%, #294b30 100%);
           z-index: 0;
         }
 
@@ -411,7 +414,7 @@ export default function AirdropsPage() {
         }
 
         .bento-reward-box {
-          background: #f0f8e8;
+          background: #edf4e8;
           border-radius: 8px;
           padding: 10px 12px;
         }
@@ -424,7 +427,7 @@ export default function AirdropsPage() {
           font-weight: 700;
           font-size: 13px;
           padding: 10px 14px;
-          border-radius: 8px;
+          border-radius: 999px;
           margin-top: 12px;
           transition: opacity 0.15s ease;
         }

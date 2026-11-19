@@ -24,17 +24,16 @@ interface BlogPost {
 }
 
 export const metadata: Metadata = {
-  title:
-    'Web3Farmyard Blog - DeFi Guides, Airdrop Alerts & Farming Strategies',
+  title: 'Web3Farmyard Blog — Web3, DeFi, and Airdrops',
 
   description:
-    'Read practical guides on DeFi strategies, airdrop hunting, wallet security, and Web3 farming tips.',
+    'Read practical explainers on Web3, DeFi, airdrops, wallet security, and blockchain technology.',
 
   openGraph: {
     title: 'Web3Farmyard Blog',
 
     description:
-      'Practical guides, DeFi strategies, and airdrop tips for Web3 farmers.',
+      'Practical guides and explainers for exploring Web3, DeFi, and blockchain tools.',
 
     url: 'https://web3farmyard.com/blog/',
 
@@ -127,14 +126,14 @@ export default async function BlogPage() {
       generateWebSiteSchema({
         url: 'https://www.web3farmyard.com/blog',
         name: 'Web3Farmyard Blog',
-        description: 'Practical Web3 guides, airdrop updates, and farming strategies for beginners.',
+        description: 'Practical Web3 guides, airdrop updates, and explainers for beginners.',
         publisherId: 'https://www.web3farmyard.com/#organization',
       }),
       generateWebPageSchema({
         id: 'https://www.web3farmyard.com/blog#webpage',
         url: 'https://www.web3farmyard.com/blog',
         name: 'Web3Farmyard Blog — DeFi Guides & Airdrop Strategies',
-        description: 'Read practical guides on DeFi strategies, airdrop hunting, wallet security, and Web3 farming tips.',
+        description: 'Read practical guides on DeFi, airdrops, wallet security, and blockchain technology.',
         isPartOfId: 'https://www.web3farmyard.com/#website',
         inLanguage: 'en-US',
       }, false),
@@ -153,80 +152,63 @@ export default async function BlogPage() {
       />
       <Nav />
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        <div className="mb-12">
-          <h1 className="font-serif text-5xl font-bold mb-4 text-[#0a0a0a]">
+      <main className="theme-page blog-page">
+        <div className="theme-page-shell">
+          <header className="theme-page-hero">
+            <span className="theme-page-eyebrow">THE WEB3 JOURNAL</span>
+            <h1>
             Web3Farmyard Blog
-          </h1>
+            </h1>
 
-          <p className="text-lg text-gray-600">
-            Practical guides, airdrop alerts,
-            DeFi strategies, and wallet
-            security tips.
-          </p>
-        </div>
+            <p>
+              Practical explainers, market context, and security insights to help you navigate Web3.
+            </p>
+          </header>
 
-        {posts.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2">
-            {posts.map(function (post) {
-              return (
-                <article
-                  key={post.id}
-                  className="border-2 border-gray-200 rounded-xl overflow-hidden hover:border-[#1a6b00] transition-all"
-                >
-                  <div className="p-6">
-                    <h2 className="font-serif text-xl font-bold mb-3">
-                      <Link
-                        href={
-                          '/blog/' + post.slug
-                        }
-                        className="hover:text-[#1a6b00]"
-                      >
-                        {stripHtml(
-                          post.title.rendered
-                        )}
+          {posts.length > 0 ? (
+            <div className="grid gap-4 md:grid-cols-2">
+              {posts.map(function (post) {
+                return (
+                  <article
+                    key={post.id}
+                    className="theme-page-card blog-post-card"
+                  >
+                    <h2 className="font-semibold text-xl mb-3">
+                      <Link href={'/blog/' + post.slug}>
+                        {stripHtml(post.title.rendered)}
                       </Link>
                     </h2>
 
-                    <p className="text-gray-600 text-sm mb-4">
-                      {stripHtml(
-                        post.excerpt.rendered
-                      )}
+                    <p className="text-sm mb-5">
+                      {stripHtml(post.excerpt.rendered)}
                     </p>
 
-                    <div className="flex items-center justify-between">
-                      <time className="text-xs text-gray-500">
-                        {new Date(
-                          post.date
-                        ).toLocaleDateString(
-                          'en-US',
-                          {
-                            year: 'numeric',
-                            month: 'short',
-                            day: 'numeric'
-                          }
-                        )}
+                    <div className="flex items-center justify-between gap-4">
+                      <time className="text-xs">
+                        {new Date(post.date).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                        })}
                       </time>
 
                       <Link
-                        href={
-                          '/blog/' + post.slug
-                        }
-                        className="text-[#1a6b00] font-bold text-sm"
+                        href={'/blog/' + post.slug}
+                        className="text-sm font-bold text-[#547a3d]"
                       >
                         Read →
                       </Link>
                     </div>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
-        ) : (
-          <div className="text-center py-20">
-            <p>No posts found.</p>
-          </div>
-        )}
+                  </article>
+                )
+              })}
+            </div>
+          ) : (
+            <div className="theme-page-card p-10 text-center">
+              <p className="text-sm text-[#69766b]">No posts found.</p>
+            </div>
+          )}
+        </div>
       </main>
 
       <Footer />

@@ -54,7 +54,7 @@ export default function AirdropsClient({ initialAirdrops }: AirdropsClientProps)
             Active Airdrops
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            Real-time airdrop opportunities. Curated and risk-rated. Pick one and start farming.
+            Explore curated airdrop opportunities with project details and risk context. Always do your own research.
           </p>
 
           {/* Search & Filter */}
@@ -154,7 +154,7 @@ export default function AirdropsClient({ initialAirdrops }: AirdropsClientProps)
         {/* Additional Resources */}
         <div className="mt-16 pt-12 border-t border-gray-200">
           <h2 className="font-serif text-2xl font-bold text-[#0a0a0a] mb-6">
-            Learn How to Farm Safely
+            Learn How to Evaluate Opportunities
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Link
@@ -163,7 +163,7 @@ export default function AirdropsClient({ initialAirdrops }: AirdropsClientProps)
             >
               <h3 className="font-bold text-blue-900 mb-2">📖 Security Guide</h3>
               <p className="text-blue-800 text-sm">
-                Learn how to identify scams, protect your wallet, and farm safely.
+                Learn how to identify scams, protect your wallet, and research projects before interacting.
               </p>
             </Link>
             <Link

@@ -24,32 +24,34 @@ function isValidEmail(email: string): boolean {
   return emailRegex.test(email) && email.length < 255
 }
 
-// Security: Sanitize farmer name
-function sanitizeFarmerName(name: string): string {
+function sanitizeUsername(name: string): string {
   return name
     .trim()
-    .substring(0, 100)
+    .substring(0, 40)
     .replace(/[<>]/g, '')
 }
 
 async function subscribeNewsletter(
   email: string,
-  farmerName?: string
+  username: string
 ): Promise<SubscribeResult> {
   try {
-    // Validate inputs
     if (!email) {
       return { success: false, message: 'Email is required' }
     }
+    if (!username.trim()) {
+      return { success: false, message: 'Please choose a username' }
+    }
 
     const cleanEmail = email.trim().toLowerCase()
+    const cleanUsername = sanitizeUsername(username)
 
     if (!isValidEmail(cleanEmail)) {
       return { success: false, message: 'Please enter a valid email' }
     }
 
-    if (farmerName && farmerName.trim().length > 100) {
-      return { success: false, message: 'Farmer name is too long' }
+    if (cleanUsername.length < 2) {
+      return { success: false, message: 'Username must be at least 2 characters' }
     }
 
     // Check if already subscribed
@@ -80,7 +82,7 @@ async function subscribeNewsletter(
           subscribed: true,
           subscribed_at: new Date().toISOString(),
           unsubscribed_at: null,
-          farmer_name: farmerName ? sanitizeFarmerName(farmerName) : existing.farmer_name,
+          farmer_name: cleanUsername,
           updated_at: new Date().toISOString()
         })
         .eq('id', existing.id)
@@ -88,7 +90,7 @@ async function subscribeNewsletter(
       if (updateError) throw updateError
 
       // Send welcome email via API route
-      await sendWelcomeEmailViaAPI(cleanEmail, farmerName || existing.farmer_name)
+      await sendWelcomeEmailViaAPI(cleanEmail, cleanUsername)
 
       return {
         success: true,
@@ -102,7 +104,7 @@ async function subscribeNewsletter(
       .insert([
         {
           email: cleanEmail,
-          farmer_name: farmerName ? sanitizeFarmerName(farmerName) : null,
+          farmer_name: cleanUsername,
           subscribed: true,
           subscribed_at: new Date().toISOString(),
           created_at: new Date().toISOString(),
@@ -121,7 +123,7 @@ async function subscribeNewsletter(
     }
 
     // Send welcome email via API route
-    await sendWelcomeEmailViaAPI(cleanEmail, farmerName)
+    await sendWelcomeEmailViaAPI(cleanEmail, cleanUsername)
 
     return {
       success: true,
@@ -137,10 +139,8 @@ async function subscribeNewsletter(
 }
 
 // Call API route to send email (keeps Resend key secure)
-async function sendWelcomeEmailViaAPI(email: string, farmerName?: string | null) {
+async function sendWelcomeEmailViaAPI(email: string, username: string) {
   try {
-    const displayName = farmerName || 'Farmer'
-
     const response = await fetch('/api/send-welcome-email', {
       method: 'POST',
       headers: {
@@ -148,7 +148,7 @@ async function sendWelcomeEmailViaAPI(email: string, farmerName?: string | null)
       },
       body: JSON.stringify({
         email,
-        farmerName: displayName
+        farmerName: username
       })
     })
 
@@ -164,7 +164,7 @@ async function sendWelcomeEmailViaAPI(email: string, farmerName?: string | null)
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState('')
-  const [farmerName, setFarmerName] = useState('')
+  const [username, setUsername] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -176,18 +176,22 @@ export default function NewsletterSignup() {
       setErrorMessage('Please enter your email')
       return
     }
+    if (!username.trim()) {
+      setErrorMessage('Please choose a username')
+      return
+    }
 
     setIsLoading(true)
     setErrorMessage('')
     setSuccessMessage('')
 
     try {
-      const result = await subscribeNewsletter(email, farmerName)
+      const result = await subscribeNewsletter(email, username)
 
       if (result.success) {
         setSuccessMessage(result.message)
         setEmail('')
-        setFarmerName('')
+        setUsername('')
 
         // Clear success message after 5 seconds
         setTimeout(() => setSuccessMessage(''), 5000)
@@ -203,79 +207,80 @@ export default function NewsletterSignup() {
   }
 
   return (
-    <section className="bg-gradient-to-br from-[#f0f8e8] to-white rounded-2xl p-8 md:p-12 border-2 border-[#d0e8c0]">
+    <section className="newsletter-signup" aria-labelledby="newsletter-title">
       {/* Header */}
-      <div className="mb-8">
-        <h2 className="font-serif text-3xl font-bold text-[#0a0a0a] mb-2">
-          Welcome to Web3Farmyard
+      <div className="newsletter-heading">
+        <span className="home-section-kicker">STAY CURIOUS</span>
+        <h2 id="newsletter-title">
+          Get the next step in your inbox.
         </h2>
-        <p className="text-gray-700 font-mono text-sm">
-          Learn DeFi. Track yields. Catch airdrops. Farm smarter.
+        <p>
+          Join the Web3Farmyard newsletter for new guides, ecosystem insights, and market updates.
         </p>
       </div>
 
       {/* Form */}
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="newsletter-form">
         {/* Email Input */}
         <div>
-          <label className="block text-sm font-bold text-[#0a0a0a] mb-2 font-mono">
-            Email Address (Required)
+          <label htmlFor="newsletter-username">
+            Username
           </label>
           <input
+            id="newsletter-username"
+            name="username"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="Your username"
+            autoComplete="username"
+            disabled={isLoading}
+            maxLength={40}
+            minLength={2}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="newsletter-email">
+            Email address
+          </label>
+          <input
+            id="newsletter-email"
+            name="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
+            autoComplete="email"
             disabled={isLoading}
-            className="w-full px-4 py-3 border-2 border-[#d0e8c0] rounded-lg focus:outline-none focus:border-[#1a6b00] text-[#0a0a0a] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             required
           />
         </div>
 
-        {/* Farmer Name Input */}
-        <div>
-          <label className="block text-sm font-bold text-[#0a0a0a] mb-2 font-mono">
-            Your Farmer Name (Optional)
-          </label>
-          <input
-            type="text"
-            value={farmerName}
-            onChange={(e) => setFarmerName(e.target.value)}
-            placeholder="e.g., moonglove, defi_wizard"
-            disabled={isLoading}
-            className="w-full px-4 py-3 border-2 border-[#d0e8c0] rounded-lg focus:outline-none focus:border-[#1a6b00] text-[#0a0a0a] disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            maxLength={100}
-          />
-          <p className="text-xs text-gray-600 mt-1 font-mono">
-            This is how you'll appear in the community (if you choose to post)
-          </p>
-        </div>
-
-        {/* Subscribe Button */}
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-all flex items-center justify-center gap-2 mt-6"
+          className="newsletter-submit"
         >
           {isLoading ? (
             <>
               <Loader size={18} className="animate-spin" />
-              Subscribing...
+              Joining...
             </>
           ) : (
-            '🌾 Join the Farm'
+            <>Join Now <span aria-hidden="true">↗</span></>
           )}
         </button>
 
         {/* Terms */}
-        <p className="text-xs text-gray-600 text-center font-mono">
+        <p className="newsletter-terms">
           No spam. Unsubscribe anytime. Your email is safe with us.
         </p>
       </form>
 
       {/* Success Message */}
       {successMessage && (
-        <div className="mt-6 bg-green-50 border-2 border-green-300 rounded-lg p-4 flex gap-3">
+        <div className="newsletter-message newsletter-success" role="status">
           <CheckCircle2 className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
           <div>
             <p className="text-sm font-bold text-green-900">Success!</p>
@@ -286,7 +291,7 @@ export default function NewsletterSignup() {
 
       {/* Error Message */}
       {errorMessage && (
-        <div className="mt-6 bg-red-50 border-2 border-red-300 rounded-lg p-4 flex gap-3">
+        <div className="newsletter-message newsletter-error" role="alert">
           <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
           <div>
             <p className="text-sm font-bold text-red-900">Oops!</p>
@@ -296,9 +301,9 @@ export default function NewsletterSignup() {
       )}
 
       {/* Info Box */}
-      <div className="mt-8 bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
-        <p className="text-sm text-blue-900 font-mono">
-          <strong>What happens next?</strong> We'll send a welcome email to your inbox with resources to start farming. Then weekly insights on yields, airdrops, and DeFi strategies.
+      <div className="newsletter-note">
+        <p>
+          <strong>What happens next?</strong> We’ll send a welcome note and occasional updates with new resources and Web3 insights.
         </p>
       </div>
     </section>

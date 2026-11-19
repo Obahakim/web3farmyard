@@ -52,7 +52,8 @@ export default async function ChainDetailPage({ params }: Props) {
     <>
       <Nav />
 
-      <main className="max-w-[1100px] mx-auto px-7 pb-16">
+      <main className="theme-page showroom-detail-page">
+      <div className="theme-page-shell showroom-detail-shell">
         {/* Breadcrumb */}
         <nav className="pt-6 pb-2">
           <ol className="flex gap-2 font-mono text-[9px] flex-wrap" style={{color:'#aaa'}}>
@@ -101,6 +102,7 @@ export default async function ChainDetailPage({ params }: Props) {
           <Link href="/toolkit" className="btn-primary">🛠️ Open Web3 Toolkit</Link>
           <Link href="/airdrops" className="btn-outline">🌾 View Airdrops</Link>
         </div>
+      </div>
       </main>
 
       <Footer />

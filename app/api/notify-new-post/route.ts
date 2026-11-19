@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
     const emailHTML = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: linear-gradient(135deg, #1a6b00 0%, #0f4600 100%); padding: 20px; border-radius: 10px; text-align: center;">
-          <h1 style="color: white; margin: 0;">🌾 Web3Farmyard</h1>
+          <h1 style="color: white; margin: 0;">Web3Farmyard</h1>
           <p style="color: #c8ff00; margin: 10px 0;">New Article Published</p>
         </div>
         
@@ -61,7 +61,7 @@ export async function POST(request: NextRequest) {
           }
           
           <p style="color: #333; font-size: 1.1em; line-height: 1.6;">
-            ${excerpt || 'Check out our latest article on Web3 farming strategies and insights.'}
+            ${excerpt || 'Check out our latest Web3 guide and ecosystem insights.'}
           </p>
           
           <div style="text-align: center; margin: 30px 0;">

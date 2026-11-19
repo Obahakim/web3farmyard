@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
               </head>
               <body>
                 <div class="container">
-                  <h1>Hey ${subscriber.farmer_name || 'Farmer'}!</h1>
+                  <h1>Hey ${subscriber.farmer_name || 'Web3 learner'}!</h1>
                   <div class="content">
                     ${content}
                   </div>

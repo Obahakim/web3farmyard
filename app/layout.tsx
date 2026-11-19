@@ -6,11 +6,11 @@ import FloatingChat from '@/components/FloatingChat'
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.web3farmyard.com'),
   title: {
-    default: 'Web3Farmyard — Live DeFi Data, Airdrops & Crypto Graveyard',
+    default: 'Web3Farmyard — Web3 Learning, Guides & Market Data',
     template: '%s | Web3Farmyard',
   },
-  description: 'Live DeFi chain metrics, curated crypto airdrops, and the most comprehensive record of failed Web3 projects. Your edge in the next cycle.',
-  keywords: ['crypto airdrops', 'DeFi metrics', 'live TVL', 'crypto graveyard', 'rug pulls', 'blockchain data', 'web3 farming'],
+  description: 'A beginner-friendly Web3 onboarding platform with practical guides, DeFi chain rankings, curated airdrop information, and useful tools.',
+  keywords: ['Web3 learning', 'crypto education', 'DeFi metrics', 'live TVL', 'blockchain guides', 'wallet safety'],
   authors: [{ name: 'Web3Farmyard', url: 'https://www.web3farmyard.com' }],
   creator: 'Web3Farmyard',
   publisher: 'Web3Farmyard',
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.web3farmyard.com',
     siteName: 'Web3Farmyard',
-    title: 'Web3Farmyard — Live DeFi Data, Airdrops & Crypto Graveyard',
-    description: 'Live DeFi chain metrics, curated crypto airdrops, and the most comprehensive record of failed Web3 projects.',
+    title: 'Web3Farmyard — Web3 Learning, Guides & Market Data',
+    description: 'Beginner-friendly Web3 lessons, practical guides, DeFi chain rankings, and useful tools.',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Web3Farmyard',
-    description: 'Live DeFi data, airdrops, and the crypto graveyard.',
+    description: 'Beginner-friendly Web3 lessons, practical guides, and market data.',
   },
   robots: {
     index: true,

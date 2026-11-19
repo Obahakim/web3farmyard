@@ -107,7 +107,7 @@ export function generateAirdropPageMetadata(): Metadata {
       'how to claim airdrops',
       'airdrop guide',
       'low risk airdrops',
-      'airdrop farming',
+      'airdrop safety',
     ],
     alternates: {
       canonical: 'https://www.web3farmyard.com/airdrops',
@@ -169,9 +169,9 @@ export function generateJunkyardMetadata(): Metadata {
  */
 export function generateToolkitMetadata(): Metadata {
   return {
-    title: 'Web3 Toolkit — 30+ Essential Tools for Crypto Farming | Web3Farmyard',
+    title: 'Web3 Toolkit — Essential Tools for Exploring Web3 | Web3Farmyard',
     description:
-      'Curated Web3 tools: wallets, DEXs, bridges, lending protocols, analytics, and airdrop platforms. Everything beginners need to start farming safely.',
+      'Curated Web3 tools: wallets, DEXs, bridges, lending protocols, analytics, security resources, and airdrop platforms.',
     keywords: [
       'web3 tools',
       'crypto wallets',
@@ -186,7 +186,7 @@ export function generateToolkitMetadata(): Metadata {
     openGraph: {
       type: 'website',
       title: 'Web3 Toolkit | Web3Farmyard',
-      description: 'Complete toolkit for Web3 farmers with 30+ verified tools',
+      description: 'A practical toolkit of Web3 wallets, DeFi, analytics, and security tools.',
       url: 'https://www.web3farmyard.com/toolkit',
     },
   }
@@ -197,23 +197,23 @@ export function generateToolkitMetadata(): Metadata {
  */
 export function generateOnboardingMetadata(day: number): Metadata {
   const titles: Record<number, string> = {
-    1: 'Day 1: Create Your Wallet & Claim Testnet ETH',
-    2: 'Day 2: Master Swaps, Bridges & Lending',
-    3: 'Day 3: Task Farming & Building Your Network',
-    4: 'Day 4: Zealy Quests & Community Engagement',
-    5: 'Day 5: Galxe Credentials & Web3 Socials',
-    6: 'Day 6: Practice & Advanced Learning',
-    7: 'Day 7: Graduation & Start Airdrop Farming',
+    1: 'Day 1: Set Up Your Wallet',
+    2: 'Day 2: Make Your First Token Swap',
+    3: 'Day 3: Explore Blockchain Bridges',
+    4: 'Day 4: Understand DeFi Lending',
+    5: 'Day 5: Practice Advanced DeFi',
+    6: 'Day 6: Try an On-Chain Quest',
+    7: 'Day 7: Review & Plan Your Next Steps',
   }
 
   const descriptions: Record<number, string> = {
-    1: 'Learn to create a secure MetaMask wallet, copy your address safely, and claim free testnet ETH to practice with. No real money needed.',
-    2: 'Execute real swaps, bridges, and lending transactions on Uniswap, Stargate, and Aave. Understand approvals and security.',
-    3: 'Join TaskOn, create social accounts, and start earning points and token rewards from completing tasks.',
-    4: 'Complete Zealy XP quests, understand the gamification system, and build your on-chain reputation.',
-    5: 'Set up Galxe for on-chain credentials, create your X (Twitter) presence, and network in Web3 communities.',
-    6: 'Practice swaps, bridges, and lending again. Read advanced blog articles and explore the full toolkit.',
-    7: 'Congratulations! You now have the skills to identify and claim airdrops safely. Start farming.',
+    1: 'Create a wallet, learn how to protect its recovery phrase, and understand the basics of signing in to Web3.',
+    2: 'Learn how token swaps work, review transaction details, and understand network fees.',
+    3: 'Explore how blockchain bridges move assets between networks and what to consider before using one.',
+    4: 'Use a testnet to explore lending protocols and understand how supplying assets and interest work.',
+    5: 'Build on your knowledge of swaps, bridges, and lending through guided practice.',
+    6: 'Complete a guided on-chain quest and learn how to review the activity it creates.',
+    7: 'Review the seven lessons and find safe, useful ways to continue exploring Web3.',
   }
 
   return {
@@ -243,25 +243,24 @@ export function generateOnboardingMetadata(day: number): Metadata {
  */
 export function generateHomepageMetadata(): Metadata {
   return {
-    title: 'Web3Farmyard | DeFi Learning, Airdrop Tracker & Crypto Graveyard – Earn While You Learn',
+    title: 'Web3Farmyard — Learn to Navigate Web3 in 7 Simple Steps',
     description:
-      'Start your first Web3 farming cycle. Learn DeFi, track live chain data, evaluate airdrops safely, and explore the crypto graveyard. Real on-chain experience for beginners.',
+      'A beginner-friendly Web3 onboarding platform with seven clear steps, practical guides, DeFi rankings, airdrop information, and useful tools.',
     keywords: [
       'Web3 learning',
       'DeFi beginner',
       'crypto tutorial',
       'airdrop tracker',
       'blockchain education',
-      'earn crypto',
-      'crypto farming',
+      'crypto education',
     ],
     alternates: {
       canonical: 'https://www.web3farmyard.com',
     },
     openGraph: {
       type: 'website',
-      title: 'Web3Farmyard | Learn DeFi & Earn While You Learn',
-      description: 'Your guide to DeFi, airdrops, and blockchain security',
+      title: 'Web3Farmyard — Learn Web3 in 7 Simple Steps',
+      description: 'Beginner-friendly lessons, practical guides, market data, and tools for exploring Web3.',
       url: 'https://www.web3farmyard.com',
       images: [
         {

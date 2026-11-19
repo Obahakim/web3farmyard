@@ -77,7 +77,7 @@ export function generateOrganizationSchema(includeContext = true) {
     'name': 'Web3Farmyard',
     'url': 'https://www.web3farmyard.com',
     'logo': 'https://www.web3farmyard.com/logo.png',
-    'description': 'Learn DeFi, farm airdrops, and explore live blockchain data with Web3Farmyard',
+    'description': 'A Web3 onboarding and information hub with beginner lessons, practical guides, market data, and tools.',
     'sameAs': [
       'https://twitter.com/web3farmyard',
       'https://discord.gg/web3farmyard',

@@ -163,20 +163,20 @@ export default async function BlogPostPage({ params }: PageProps) {
     return (
       <>
         <Nav />
-        <main className="max-w-4xl mx-auto px-6 py-12">
-          <div className="text-center py-20">
-            <h1 className="font-serif text-4xl font-bold text-[#0a0a0a] mb-4">
+        <main className="theme-page">
+          <div className="theme-page-shell">
+            <section className="theme-page-hero text-center">
+              <span className="theme-page-eyebrow">THE WEB3 JOURNAL</span>
+              <h1>
               Post Not Found
-            </h1>
-            <p className="text-gray-600 mb-8">
-              This blog post does not exist or has been removed.
-            </p>
-            <Link
-              href="/blog"
-              className="inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all"
-            >
-              ← Back to Blog
-            </Link>
+              </h1>
+              <p className="mx-auto mb-8">
+                This blog post does not exist or has been removed.
+              </p>
+              <Link href="/blog" className="home-primary-button">
+                ← Back to Blog
+              </Link>
+            </section>
           </div>
         </main>
         <Footer />
@@ -232,22 +232,19 @@ export default async function BlogPostPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
       />
       <Nav />
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-[#1a6b00] font-bold text-sm hover:text-[#134f00] mb-8 transition-colors"
-        >
-          ← Back to Blog
-        </Link>
+      <main className="theme-page blog-article-page">
+        <div className="theme-page-shell">
+          <Link href="/blog" className="theme-page-back">
+            ← Back to Blog
+          </Link>
 
-        <article className="mb-12">
-          <header className="mb-8">
-            <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-4 leading-tight">
+          <article className="theme-page-card blog-article-card mb-12">
+          <header className="blog-article-header mb-8">
+            <h1 className="font-semibold text-4xl md:text-5xl mb-4 leading-tight">
               {title}
             </h1>
             
-            <div className="flex flex-wrap gap-6 text-sm text-gray-600 font-mono">
+            <div className="flex flex-wrap gap-6 text-sm text-[#69766b] font-mono">
               <time dateTime={post.date}>
                 Published: {publishDate.toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -389,13 +386,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           `}</style>
         </article>
 
-        <div className="border-t-2 border-gray-200 pt-8">
-          <Link
-            href="/blog"
-            className="inline-block px-6 py-3 bg-[#1a6b00] hover:bg-[#134f00] text-white font-bold rounded-lg transition-all"
-          >
-            ← Back to Blog
-          </Link>
+          <div className="border-t border-[#e1e8dc] pt-8">
+            <Link href="/blog" className="home-primary-button">
+              ← Back to Blog
+            </Link>
+          </div>
         </div>
 
       </main>

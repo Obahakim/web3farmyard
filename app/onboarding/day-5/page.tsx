@@ -61,7 +61,7 @@ export default function Day5Page() {
         </div>
 
         <h1 className="font-serif text-5xl font-bold text-[#0a0a0a] mb-2">Day 5: Advanced Swaps, Bridges & Lending</h1>
-        <p className="text-gray-600 mb-10">Earn interest by lending test tokens on Aave.</p>
+        <p className="text-gray-600 mb-10">Practice advanced DeFi interactions with test tokens on Aave.</p>
 
         <div className="bg-white border border-gray-200 rounded-3xl p-8 mb-10">
           <a href="https://app.aave.com/?marketName=proto_sepolia_v3" target="_blank" rel="noopener noreferrer" className="block w-full py-6 bg-[#1a6b00] text-white text-center rounded-3xl font-medium text-xl mb-6 hover:bg-[#0f4600] transition-all">
@@ -78,7 +78,7 @@ export default function Day5Page() {
               <li>Approve the transaction</li>
               <li>Complete the supply</li>
             </ol>
-            <p className="mt-3"><strong>What happens:</strong> Your tokens earn APY (Annual Percentage Yield). This teaches you how lending protocols work, which is crucial for advanced airdrop farming.</p>
+            <p className="mt-3"><strong>What happens:</strong> Your tokens earn APY (Annual Percentage Yield). This teaches you how lending protocols work, a core concept in decentralized finance.</p>
           </div>
         </div>
 

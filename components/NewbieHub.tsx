@@ -60,14 +60,14 @@ export default function NewbieHub() {
           className="px-[18px] py-[10px] text-xs"
           style={{ color: '#666', lineHeight: 1.6, borderBottom: '1px solid rgba(0,0,0,0.06)' }}
         >
-          Everything a beginner needs to start farming airdrops safely — for free.
+          A clear place to begin learning the Web3 basics — for free.
         </p>
 
         {/* Resources */}
         <div className="p-[14px] flex flex-col gap-[10px]">
           {/* Ebook */}
           <Link
-            href="/resources/mobile-farmer"
+            href="/onboarding/day-1"
             className="no-underline block rounded-xl p-[14px] transition-all hover:shadow-md"
             style={{ background: '#f8f8f6', border: '1px solid rgba(0,0,0,0.06)' }}
           >
@@ -78,17 +78,17 @@ export default function NewbieHub() {
               >📱</div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <span className="font-serif text-[13px] font-bold text-dark">The Mobile Farmer</span>
+                  <span className="font-serif text-[13px] font-bold text-dark">7-Day Learning Path</span>
                   <span
                     className="font-mono text-[7px] px-2 py-[2px] rounded-full whitespace-nowrap"
                     style={{ background: '#dcfce7', color: '#166534' }}
-                  >FREE EBOOK</span>
+                  >FREE COURSE</span>
                 </div>
                 <p className="text-[11px]" style={{ color: '#666', lineHeight: 1.5, margin: 0 }}>
-                  Farm crypto airdrops using only your mobile. Step-by-step, no jargon.
+                  Learn about wallets, DeFi, and on-chain basics one step at a time.
                 </p>
                 <div className="font-mono text-[8px] font-bold mt-[6px]" style={{ color: '#1a6b00' }}>
-                  READ &amp; DOWNLOAD FREE →
+                  START LEARNING →
                 </div>
               </div>
             </div>

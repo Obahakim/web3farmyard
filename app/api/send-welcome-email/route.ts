@@ -19,18 +19,27 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (!farmerName || typeof farmerName !== 'string') {
+    if (typeof farmerName !== 'string' || farmerName.trim().length < 2 || farmerName.trim().length > 40) {
       return NextResponse.json(
-        { error: 'Invalid farmer name' },
+        { error: 'Invalid username' },
         { status: 400 }
       )
     }
+    const username = farmerName.trim().replace(/[\r\n]/g, '')
+    const htmlEscapes: Record<string, string> = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    }
+    const safeUsername = username.replace(/[&<>"']/g, character => htmlEscapes[character])
 
     // Send email via Resend
     const response = await resend.emails.send({
       from: 'Web3Farmyard <noreply@web3farmyard.com>',
       to: email,
-      subject: 'Welcome to Web3Farmyard, ' + farmerName + '!',
+      subject: 'Welcome to Web3Farmyard, ' + username + '!',
       html: `
         <!DOCTYPE html>
         <html>
@@ -55,16 +64,16 @@ export async function POST(request: NextRequest) {
           </head>
           <body>
             <div class="container">
-              <h1>Welcome to Web3Farmyard, ${farmerName}! 🌾</h1>
+              <h1>Welcome to Web3Farmyard, ${safeUsername}!</h1>
               
-              <p>You're now part of a growing community of farmers learning DeFi, discovering airdrops, and building wealth on-chain.</p>
+              <p>You're now part of a community exploring Web3 through beginner-friendly lessons, practical guides, and ecosystem insights.</p>
               
               <h2>Here's what you get:</h2>
               <ul>
-                <li>Weekly airdrop alerts & opportunities</li>
-                <li>DeFi strategies from experienced farmers</li>
-                <li>Live chain metrics & yield updates</li>
-                <li>Community insights & risk analysis</li>
+                <li>New Web3 guides and explainers</li>
+                <li>DeFi chain metrics and market snapshots</li>
+                <li>Wallet and tool safety resources</li>
+                <li>Curated ecosystem updates</li>
               </ul>
               
               <p><strong>Start your journey:</strong></p>
@@ -79,7 +88,7 @@ export async function POST(request: NextRequest) {
               
               <p>Questions? Reply to this email. We read everything.</p>
               
-              <p>Happy farming,<br><strong>Web3Farmyard Team</strong></p>
+              <p>Happy exploring,<br><strong>Web3Farmyard Team</strong></p>
               
               <div class="footer">
                 <p>You're receiving this because you subscribed to Web3Farmyard newsletter.</p>

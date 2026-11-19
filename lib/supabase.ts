@@ -48,20 +48,11 @@ export async function subscribeEmail(email: string, topics: string[] = ['defi', 
   return res.json()
 }
 
-export async function saveOnboardingProgress(email: string, streak: number, completedDays: number[]) {
-  const res = await fetch('/api-proxy.php?action=save-progress', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      email,
-      streak,
-      completed_days: completedDays,
-      last_updated: new Date().toISOString()
-    }),
-  })
-  return res.json()
+export async function saveOnboardingProgress(_email: string, _streak: number, _completedDays: number[]) {
+  // Progress is already persisted in browser localStorage by the onboarding pages.
+  // Do not accept unauthenticated writes keyed only by an email address.
+  return { success: true, persisted: false, storage: 'local' as const }
 }
-
 // ============================================
 // SUBMISSION FUNCTIONS
 // ============================================

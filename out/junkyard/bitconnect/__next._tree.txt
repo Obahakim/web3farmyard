@@ -1,3 +1,6 @@
-:HL["/_next/static/chunks/0muh-4gixenj_.css","style"]
+:HL["/_next/static/chunks/34wpay4wvz9jw.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"junkyard","param":null,"prefetchHints":0,"slots":{"children":{"name":"project","param":{"type":"d","key":"bitconnect","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"build-1784103503707"}
+3:[["children",{"s":"__PAGE__","h":160}]]
+2:[["children",{"s":{"n":"project","t":"d","k":"bitconnect","s":[]},"h":96,"c":"$Q3"}]]
+1:[["children",{"s":"junkyard","h":64,"c":"$Q2"}]]
+0:{"b":"build-1795055231175","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

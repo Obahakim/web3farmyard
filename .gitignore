@@ -1,41 +1,32 @@
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
+# Dependencies
 node_modules/
+.pnpm-store/
+.pnp
+.pnp.*
+
+# Next.js and static exports
 .next/
-.env.local
-.DS_Store
-dist/
+out/
+
+# Build output and caches
 build/
-*.log
-.vercel
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-node_modules
-.pnpm-store
-.next
-dist
-.turbo
-.env
-.env.*
+dist/
+.turbo/
+coverage/
+local-storage/
+
+# Local environment files (keep the example template)
+.env*
 !.env.example
-coverage
+
+# Deployment and editor files
+.vercel/
 .DS_Store
-local-storage
+*.pem
+
+# Logs and TypeScript build metadata
 *.log
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tsbuildinfo

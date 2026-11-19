@@ -54,75 +54,19 @@ async function subscribeNewsletter(
       return { success: false, message: 'Username must be at least 2 characters' }
     }
 
-    // Check if already subscribed
-    const { data: existing, error: selectError } = await supabase
-      .from('subscribers')
-      .select('id, subscribed, farmer_name')
-      .eq('email', cleanEmail)
-      .single()
+    const { data: subscriptionStatus, error } = await supabase.rpc('subscribe_newsletter', {
+      p_email: cleanEmail,
+      p_farmer_name: cleanUsername,
+    })
+    if (error) throw error
 
-    // Error could be "no rows" which is expected for new subscribers
-    if (selectError && selectError.code !== 'PGRST116') {
-      throw selectError
-    }
-
-    // If exists and subscribed
-    if (existing && existing.subscribed) {
+    if (subscriptionStatus === 'already_subscribed') {
       return {
         success: false,
         message: 'You are already subscribed! Check your email for the latest posts.'
       }
     }
 
-    // If exists but unsubscribed, reactivate
-    if (existing && !existing.subscribed) {
-      const { error: updateError } = await supabase
-        .from('subscribers')
-        .update({
-          subscribed: true,
-          subscribed_at: new Date().toISOString(),
-          unsubscribed_at: null,
-          farmer_name: cleanUsername,
-          updated_at: new Date().toISOString()
-        })
-        .eq('id', existing.id)
-
-      if (updateError) throw updateError
-
-      // Send welcome email via API route
-      await sendWelcomeEmailViaAPI(cleanEmail, cleanUsername)
-
-      return {
-        success: true,
-        message: 'Welcome back! Check your email for a welcome message.'
-      }
-    }
-
-    // New subscriber - insert into Supabase
-    const { error: insertError } = await supabase
-      .from('subscribers')
-      .insert([
-        {
-          email: cleanEmail,
-          farmer_name: cleanUsername,
-          subscribed: true,
-          subscribed_at: new Date().toISOString(),
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString()
-        }
-      ])
-
-    if (insertError) {
-      if (insertError.code === '23505') {
-        return {
-          success: false,
-          message: 'This email is already subscribed.'
-        }
-      }
-      throw insertError
-    }
-
-    // Send welcome email via API route
     await sendWelcomeEmailViaAPI(cleanEmail, cleanUsername)
 
     return {

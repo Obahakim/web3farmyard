@@ -12,15 +12,21 @@ npm run build
 ```
 
 4. The `out/` folder is generated — this is your website
-5. Also copy into the `out/` folder:
-   - `api-proxy.php` (from your existing Hostinger files)
-   - `uploads/` folder (ebook PDF)
-   - `SUPABASE_RUN_THIS.sql` (run in Supabase SQL Editor first)
+5. Back up the Supabase project, then open its **SQL Editor**, paste the contents of `SUPABASE_RUN_THIS.sql`, and run it. It keeps table rows, adds missing schema, and replaces RLS policies on the listed app tables. If duplicate subscriber/profile emails are found, it stops instead of deleting records. The script is for the database only; do not copy it into the public `out/` folder.
+6. Keep the existing Hostinger PHP files and `uploads/` folder that the site needs. In particular, keep the Showroom cron and data endpoint files in `public_html/`.
+
+The secure RLS rules intentionally prevent the public Supabase key from reading subscriber emails or changing published listings. The current admin dashboard and newsletter-sending routes make those direct queries, so those admin operations must be moved behind a protected server-side endpoint before they will work with this policy.
 
 ## Upload to Hostinger
 
 Upload the ENTIRE contents of `out/` to `public_html/`.
 The `.htaccess` file is included automatically in the build.
+
+## Deploying from GitHub with Hostinger
+
+The root `next.config.js` sets `output: 'export'`, so this project deploys as static files. Hostinger's Git deployment can be used if its build step runs `npm ci` and `npm run build`, then publishes the **contents of `out/`** to `public_html/` (not the repository source tree). Preserve the existing PHP proxy, Showroom cron/data files, and uploaded assets during deployment; do not let deployment delete those server-side files.
+
+Static export does not run Next.js API route handlers or a Next.js server. Endpoints such as the Resend email routes need a Node.js-capable deployment or equivalent server-side PHP endpoints; deploying the static `out/` alone will not make those routes available. Confirm what Hostinger's Git deployment overwrites before enabling automatic deploys.
 
 ## Showroom daily snapshot
 

@@ -15,7 +15,8 @@ npm run build
 5. Also copy into the `out/` folder:
    - `api-proxy.php` (from the repository root; the hardened server-side proxy)
    - `uploads/` folder (ebook PDF)
-   - `SUPABASE_RUN_THIS.sql` (run in Supabase SQL Editor first)
+
+Database SQL belongs in `supabase/migrations/` and is applied through Supabase, not copied into the static website. The security migration in that folder has already been applied to the connected production project.
 
 ## Upload to Hostinger
 

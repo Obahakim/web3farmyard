@@ -1,8 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-import { redirect } from "next/navigation";
-const db = createClient(process.env.NEXT_PUBLIC_SUPA_URL!, process.env.NEXT_PUBLIC_SUPA_KEY!)
+import { adminGet, adminPost, adminPatch, adminDelete, adminSendNewsletter, adminLogout, setAdminCsrfToken } from "@/lib/admin-api";
 
 interface Airdrop {
     id: string;
@@ -31,43 +29,100 @@ interface Subscriber {
 
 
 
- function Dashboard() {
-    const [loading, setLoading] = useState(false);
+function Dashboard() {
     const [tab, setTab] = useState("airdrops");
-    const [posts, setPosts] = useState([]);
+    const [authState, setAuthState] = useState<"checking" | "signedOut" | "signedIn">("checking");
+    const [password, setPassword] = useState("");
+    const [authError, setAuthError] = useState("");
+    const [authBusy, setAuthBusy] = useState(false);
 
+    useEffect(() => {
+        let active = true;
+        fetch("/api-proxy.php?action=admin-session", { credentials: "include", cache: "no-store" })
+            .then(async response => {
+                const result = await response.json().catch(() => ({}));
+                if (!active) return;
+                if (response.ok && result.authenticated && result.csrfToken) {
+                    setAdminCsrfToken(result.csrfToken);
+                    setAuthState("signedIn");
+                } else {
+                    setAdminCsrfToken(null);
+                    setAuthState("signedOut");
+                }
+            })
+            .catch(() => { if (active) setAuthState("signedOut"); });
+        return () => { active = false; };
+    }, []);
 
+    async function handleLogin(event: React.FormEvent) {
+        event.preventDefault();
+        setAuthBusy(true);
+        setAuthError("");
+        try {
+            const response = await fetch("/api-proxy.php?action=admin-login", {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ password }),
+            });
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok || !result.authenticated || !result.csrfToken) throw new Error(result.error || "Unable to sign in.");
+            setAdminCsrfToken(result.csrfToken);
+            setPassword("");
+            setAuthState("signedIn");
+        } catch (error) {
+            setAuthError(error instanceof Error ? error.message : "Unable to sign in.");
+        } finally {
+            setAuthBusy(false);
+        }
+    }
 
+    async function handleLogout() {
+        try { await adminLogout(); }
+        catch (error) { console.error("Admin logout failed:", error); }
+        finally {
+            setAdminCsrfToken(null);
+            setAuthState("signedOut");
+            setTab("airdrops");
+        }
+    }
 
+    if (authState === "checking") {
+        return <div style={{ minHeight: "100vh", background: "#0a0a0a", color: "#c8ff00", display: "grid", placeItems: "center", fontFamily: "monospace" }}>VERIFYING ADMIN SESSION...</div>;
+    }
+
+    if (authState === "signedOut") {
+        return (
+            <div style={{ minHeight: "100vh", background: "#0a0a0a", color: "#f0f0f0", display: "grid", placeItems: "center", padding: "24px" }}>
+                <form onSubmit={handleLogin} style={{ width: "100%", maxWidth: "380px", border: "1px solid #202020", background: "#0d0d0d", padding: "28px" }}>
+                    <div style={{ color: "#c8ff00", fontFamily: "monospace", fontSize: "10px", letterSpacing: ".18em", marginBottom: "12px" }}>WEB3FARMYARD / ADMIN</div>
+                    <h1 style={{ fontFamily: "serif", fontSize: "26px", marginBottom: "8px" }}>Dashboard access</h1>
+                    <p style={{ color: "#777", fontSize: "13px", marginBottom: "22px" }}>Sign in to manage the Farmyard.</p>
+                    <label htmlFor="admin-password" style={{ display: "block", color: "#888", fontFamily: "monospace", fontSize: "9px", marginBottom: "7px" }}>ADMIN PASSWORD</label>
+                    <input id="admin-password" type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required style={{ width: "100%", boxSizing: "border-box", background: "#080808", border: "1px solid #292929", color: "#fff", padding: "12px", marginBottom: "14px" }} />
+                    {authError && <p role="alert" style={{ color: "#ff6565", fontSize: "12px", marginBottom: "14px" }}>{authError}</p>}
+                    <button type="submit" disabled={authBusy} style={{ width: "100%", background: "#c8ff00", color: "#080808", border: 0, padding: "12px", fontFamily: "monospace", fontWeight: 700, cursor: authBusy ? "wait" : "pointer" }}>{authBusy ? "VERIFYING..." : "SIGN IN"}</button>
+                </form>
+            </div>
+        );
+    }
 
     return (
         <div style={{ background: "#0a0a0a", minHeight: "100vh", color: "#f0f0f0" }}>
             <div style={{ borderBottom: "1px solid #111", padding: "16px 36px", display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, background: "rgba(10,10,10,0.97)", backdropFilter: "blur(12px)", zIndex: 100, flexWrap: "wrap", gap: "12px" }}>
                 <div style={{ display: "flex", alignItems: "baseline", gap: "14px" }}>
                     <div style={{ fontFamily: "serif", fontSize: "17px", fontWeight: "700", color: "#f0f0f0", letterSpacing: "-0.02em" }}>WEB3FARMYARD.COM</div>
-                    <div style={{ fontFamily: "mono", fontSize: "8px", color: "#2a2a2a", letterSpacing: "0.15em" }}>ADMIN . </div>
+                    <div style={{ fontFamily: "monospace", fontSize: "8px", color: "#777", letterSpacing: "0.15em" }}>ADMIN</div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-                    <button onClick={() => setLoggedIn(false)} style={{ background: "transparent", border: "1px solid #1e1e1e", color: "#3a3a3a", padding: "5px 12px", fontFamily: "mono", fontSize: "8px", cursor: "pointer" }}>LOG OUT</button>
-                </div>
+                <button onClick={handleLogout} style={{ background: "transparent", border: "1px solid #333", color: "#aaa", padding: "7px 14px", fontFamily: "monospace", fontSize: "9px", cursor: "pointer" }}>LOG OUT</button>
             </div>
-            <main style={{ maxWidth: "940px", margin: "0 auto", padding: "36px" }}>
-                {loading ? (
-                    <div style={{ fontFamily: "mono", fontSize: "10px", color: "#333", letterSpacing: "0.15em", padding: "60px 0", textAlign: "center" }}>
-                        LOADING FROM SUPABASE...
-                    </div>
-                ) : (
-                    <div>
-                        <StatsBar posts={[]} users={[]} airdrops={[]} subscribers={[]} />
-                        <TabBar active={tab} onChange={setTab} />
-                        {tab === "airdrops" && <AirdropsTab />}
-                        {tab === "newsletter" && <NewsletterSendTab />}
-                        {tab === "subscribers" && <SubscribersTab isuser={false} />}
-                        {tab === "users" && <SubscribersTab isuser={true} />}
-
-
-                    </div>
-                )}
+            <main style={{ maxWidth: "1100px", margin: "0 auto", padding: "36px" }}>
+                <StatsBar posts={[]} users={[]} airdrops={[]} subscribers={[]} />
+                <TabBar active={tab} onChange={setTab} />
+                {tab === "airdrops" && <AirdropsTab />}
+                {tab === "newsletter" && <NewsletterSendTab />}
+                {tab === "subscribers" && <SubscribersTab isuser={false} />}
+                {tab === "users" && <SubscribersTab isuser={true} />}
             </main>
         </div>
     );
@@ -117,16 +172,9 @@ function NewsletterSendTab() {
     const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
 
     useEffect(() => {
-        db.from("subscribers")
-            .select("id, email, farmer_name, topics, subscribed, created_at, frequency")
-            .eq("subscribed", true)
-            .then(({ data, error }) => {
-                if (error) {
-                    console.error("Failed to load subscribers for newsletter tab:", error);
-                    return;
-                }
-                if (data) setSubscribers(data as Subscriber[]);
-            })
+        adminGet<Subscriber[]>("subscribers", 500)
+            .then(data => setSubscribers((data || []).filter(s => s.subscribed)))
+            .catch(error => console.error("Failed to load subscribers for newsletter tab:", error))
     }, [])
 
     const NEWSLETTER_TOPICS_LIST = [
@@ -156,20 +204,18 @@ function NewsletterSendTab() {
         setSending(true);
         setStatus(`Sending to ${targeted.length} subscribers...`);
 
-        const response = await fetch('/api/send-newsletter/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                subject: subject,
-                content: `<p>${body}</p>`,
-            }),
-        });
-
-        if (response.status === 200) {
-            setSending(false)
-            setStatus('Hooray🎉 your newsletter has been sent')
+        try {
+            const safeBody = body.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>");
+            const result = await adminSendNewsletter<{ successCount: number; failureCount: number; total: number; message: string }>({
+                subject,
+                content: `<p>${safeBody}</p>`,
+                topic: selectedTopic,
+            });
+            setStatus(`✓ ${result.message} (${result.successCount}/${result.total})`);
+        } catch (error) {
+            setStatus(error instanceof Error ? error.message : "Newsletter send failed.");
+        } finally {
+            setSending(false);
         }
     }
 
@@ -245,11 +291,10 @@ function AirdropsTab() {
     const onUpdate = (a: Airdrop) => updateDrop(as => as.map(d => d.id === a.id ? a : d));
 
     useEffect(() => {
-        db.from("airdrops").select("*")
-            .then(({ data }) => {
-                setLoading(false)
-                if (data) updateDrop(data as Airdrop[])
-            })
+        adminGet<Airdrop[]>("airdrops", 500)
+            .then(data => updateDrop(data || []))
+            .catch(error => setListStatus(error instanceof Error ? error.message : "Failed to load airdrops."))
+            .finally(() => setLoading(false))
     }, [])
 
     async function handleAdd() {
@@ -258,10 +303,16 @@ function AirdropsTab() {
 
         if (editingId) {
             // Editing an existing listing
-            const { data, error } = await db.from("airdrops").update({ ...form }).eq("id", editingId).select().single();
+            try {
+                const rows = await adminPatch<Airdrop[]>("airdrops", editingId, { ...form });
+                const updated = Array.isArray(rows) ? rows[0] : rows;
+                if (updated) onUpdate(updated as Airdrop);
+            } catch (error) {
+                setSaving(false);
+                setListStatus(error instanceof Error ? error.message : "Update failed.");
+                return;
+            }
             setSaving(false);
-            if (error) { console.error("Update failed:", error); setListStatus("Update failed: " + error.message); return; }
-            if (data) onUpdate(data as Airdrop);
             setForm(emptyForm);
             setEditingId(null);
             setAdding(false); setListStatus("✓ Airdrop updated.");
@@ -270,10 +321,16 @@ function AirdropsTab() {
         }
 
         // Adding a brand new listing
-        const { data, error } = await db.from("airdrops").insert({ ...form, status: "live" }).select().single();
+        try {
+            const rows = await adminPost<Airdrop[]>("airdrops", { ...form, status: "live" });
+            const created = Array.isArray(rows) ? rows[0] : rows;
+            if (created) onAdd(created as Airdrop);
+        } catch (error) {
+            setSaving(false);
+            setListStatus(error instanceof Error ? error.message : "Save failed.");
+            return;
+        }
         setSaving(false);
-        if (error) { console.error("Insert failed:", error); setListStatus("Save failed: " + error.message); return; }
-        if (data) onAdd(data as Airdrop);
         setForm(emptyForm);
         setAdding(false); setListStatus("✓ Airdrop added.");
         setTimeout(() => setListStatus(""), 3000);
@@ -303,8 +360,12 @@ function AirdropsTab() {
     }
 
     async function handleRemove(id: string) {
-        await db.from("airdrops").delete().eq("id", id);
-        onRemove(id);
+        try {
+            await adminDelete("airdrops", id);
+            onRemove(id);
+        } catch (error) {
+            setListStatus(error instanceof Error ? error.message : "Delete failed.");
+        }
         if (editingId === id) handleCancel();
     }
 
@@ -388,14 +449,17 @@ function SubscribersTab({ isuser }: { isuser: boolean }) {
     const onRemove = (id: string) => setSubscribers(ss => ss.filter(s => s.id !== id));
 
     useEffect(() => {
-        db.from("subscribers").select("*")
-            .then(({ data }) => {
-                if (data) setSubscribers(data as Subscriber[]);
-            })
+        adminGet<Subscriber[]>(isuser ? "farmer_profiles" : "subscribers", 500)
+            .then(data => setSubscribers((data || []) as Subscriber[]))
+            .catch(error => console.error("Failed to load records:", error))
     }, [])
     async function handleRemove(id: string) {
-        await db.from("subscribers").delete().eq("id", id);
-        onRemove(id);
+        try {
+            await adminPatch("subscribers", id, { subscribed: false });
+            onRemove(id);
+        } catch (error) {
+            console.error("Unsubscribe failed:", error);
+        }
     }
     return (
         <>

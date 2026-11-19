@@ -1,13 +1,15 @@
 name: Verify static export
 
 on:
-  pull_request:
-    branches: [main]
   push:
     branches: [security/server-side-admin-access]
 
 permissions:
   contents: write
+
+concurrency:
+  group: web3farmyard-security-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   verify:
@@ -37,7 +39,9 @@ jobs:
             git add package-lock.json
             git add -A .next
             git commit -m "chore: patch vulnerable dependency versions"
-            git push
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase FETCH_HEAD
+            git push origin HEAD:"refs/heads/$GITHUB_REF_NAME"
           fi
       - name: Inspect remaining dependency advisories
         run: |

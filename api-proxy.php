@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     }
     header('Access-Control-Allow-Credentials: true');
     header('Access-Control-Allow-Methods: GET, POST, PATCH, DELETE, OPTIONS');
-    header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
+    header('Access-Control-Allow-Headers: Content-Type, X-Requested-With, X-W3F-CSRF');
     header('Access-Control-Max-Age: 600');
     http_response_code(204);
     exit;
@@ -68,7 +68,8 @@ $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 rateLimit($ip, $action === 'subscribe' ? 3 : 30, $action === 'subscribe' ? 3600 : 60);
 
 $secure = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off');
-session_name('w3f_admin_session');
+ini_set('session.use_strict_mode', '1');
+session_name('w3f_admin_' . substr(hash('sha256', $SESSION_SECRET), 0, 8));
 session_set_cookie_params([
     'lifetime' => 0,
     'path' => '/',
@@ -138,7 +139,7 @@ switch ($action) {
     case 'subscribe':
         requireMethod('POST');
         requireSameOrigin($allowedOrigins);
-        subscribePublic($SUPABASE_URL, $SUPABASE_KEY, $RESEND_KEY, $ip);
+        subscribePublic($SUPABASE_URL, $SUPABASE_KEY, $RESEND_KEY, $UNSUBSCRIBE_SECRET, $ip);
         exit;
 
     case 'unsubscribe':
@@ -277,7 +278,12 @@ function adminData(string $base, string $key, string $method): void {
     if ($method === 'GET') {
         $query[] = 'select=*';
         $query[] = 'limit=' . $limit;
-        if (in_array($table, ['airdrops','subscribers','farmer_profiles','user_progress','analytics_events','newsletter_sends'], true)) $query[] = 'order=created_at.desc';
+        $orderBy = [
+            'airdrops' => 'created_at', 'subscribers' => 'created_at',
+            'farmer_profiles' => 'updated_at', 'user_progress' => 'last_updated',
+            'analytics_events' => 'timestamp', 'newsletter_sends' => 'sent_at',
+        ][$table] ?? 'created_at';
+        $query[] = 'order=' . $orderBy . '.desc';
         $result = supabaseRequest($base, $key, 'GET', $table . '?' . implode('&', $query));
         echo $result['raw'];
         return;
@@ -315,7 +321,7 @@ function adminData(string $base, string $key, string $method): void {
         return;
     }
 }
-function subscribePublic(string $base, string $key, string $resendKey, string $ip): void {
+function subscribePublic(string $base, string $key, string $resendKey, string $unsubscribeSecret, string $ip): void {
     $body = readJson();
     $email = strtolower(trim((string)($body['email'] ?? '')));
     $name = trim(strip_tags((string)($body['farmerName'] ?? $body['farmer_name'] ?? '')));
@@ -350,7 +356,9 @@ function subscribePublic(string $base, string $key, string $resendKey, string $i
         supabaseRequest($base, $key, 'POST', 'subscribers', $payload);
     }
     $displayName = htmlspecialchars($name !== '' ? $name : 'Web3 learner', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
-    $welcome = '<html><body style="background:#080808;color:#d0d0d0;font-family:Georgia,serif;padding:40px"><div style="max-width:560px;margin:0 auto"><div style="font-family:monospace;font-size:10px;color:#c8ff00;letter-spacing:.2em;margin-bottom:12px">WEB3FARMYARD.COM</div><h1 style="font-size:22px;color:#f0f0f0">Welcome to the Farmyard, ' . $displayName . '.</h1><p style="color:#aaa;line-height:1.8">You will hear from us when there is something worth reading.</p><a href="https://web3farmyard.com" style="color:#c8ff00">Visit Web3Farmyard</a></div></body></html>';
+    $unsubscribeToken = hash_hmac('sha256', $email, $unsubscribeSecret);
+    $unsubscribeUrl = 'https://web3farmyard.com/api-proxy.php?action=unsubscribe&email=' . rawurlencode($email) . '&token=' . $unsubscribeToken;
+    $welcome = '<html><body style="background:#080808;color:#d0d0d0;font-family:Georgia,serif;padding:40px"><div style="max-width:560px;margin:0 auto"><div style="font-family:monospace;font-size:10px;color:#c8ff00;letter-spacing:.2em;margin-bottom:12px">WEB3FARMYARD.COM</div><h1 style="font-size:22px;color:#f0f0f0">Welcome to the Farmyard, ' . $displayName . '.</h1><p style="color:#aaa;line-height:1.8">You will hear from us when there is something worth reading.</p><a href="https://web3farmyard.com" style="color:#c8ff00">Visit Web3Farmyard</a><p style="margin-top:28px;font-size:12px"><a href="' . htmlspecialchars($unsubscribeUrl, ENT_QUOTES, 'UTF-8') . '" style="color:#888">Unsubscribe</a></p></div></body></html>';
     resendSend($resendKey, $email, 'Welcome to Web3Farmyard 🌾', $welcome);
     echo json_encode(['success' => true, 'message' => 'Welcome to Web3Farmyard.']);
 }

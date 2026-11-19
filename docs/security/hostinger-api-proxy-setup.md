@@ -23,10 +23,10 @@ return [
     'supabase_secret_key' => 'YOUR_SUPABASE_SECRET_KEY',
     'resend_api_key' => 'YOUR_ROTATED_RESEND_API_KEY',
     'anthropic_api_key' => 'YOUR_ROTATED_ANTHROPIC_API_KEY',
-    'admin_password_hash' => 'OPTIONAL_PASSWORD_HASH',
-    // If you cannot generate a PHP password hash yet, use admin_password temporarily.
+    'admin_password' => 'REPLACE_WITH_A_LONG_UNIQUE_PASSWORD',
+    // Recommended later: replace admin_password with a real password_hash() value.
+    // 'admin_password_hash' => 'PASTE_A_REAL_PASSWORD_HASH_HERE',
     // This file must remain outside public_html and readable only by your hosting account.
-    // 'admin_password' => 'A_LONG_UNIQUE_ADMIN_PASSWORD',
     'session_secret' => 'REPLACE_WITH_AT_LEAST_64_RANDOM_CHARACTERS',
     'unsubscribe_secret' => 'REPLACE_WITH_A_DIFFERENT_64_CHARACTER_RANDOM_SECRET',
 ];

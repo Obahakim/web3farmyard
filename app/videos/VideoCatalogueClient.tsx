@@ -56,7 +56,7 @@ export default function VideoCatalogueClient() {
     <header style={{ maxWidth: 850, marginBottom: 34 }}>
       <p style={kicker}>WEB3FARMYARD / LEARN BY WATCHING</p>
       <h1 style={heading}>Videos<span style={{ color: '#c8ff00' }}>.</span></h1>
-      <p style={copy}>Explore NFT tutorials, NFT marketplace walkthroughs, NFT minting guides, Web3 creator interviews and NFT live-streaming sessions. Search by topic or difficulty, then learn directly from the people building across Web3.</p>
+      <p style={copy}>Videos is Web3Farmyard’s curated video-learning library: a place to discover practical lessons, demonstrations and conversations from people building across Web3. Expect NFT tutorials, NFT marketplace walkthroughs, minting and collection explainers, creator interviews, recorded live streams and NFT live-streaming sessions. Each published video is reviewed in the admin library, described with an editorial summary, assigned a difficulty level and tagged with relevant search phrases. Search by a topic, creator or phrase, then filter by Beginner, Intermediate or Advanced to find a lesson that matches what you want to learn.</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 22 }}>
         <input aria-label="Search videos" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search NFTs, live streaming, marketplaces, creators…" style={searchField} />
         <select aria-label="Filter by difficulty" value={level} onChange={event => setLevel(event.target.value as typeof level)} style={searchField}>
@@ -65,6 +65,7 @@ export default function VideoCatalogueClient() {
       </div>
     </header>
     {error && <p role="alert" style={{ color: '#ff9292' }}>{error}</p>}
+    <section aria-label="Video topics" style={{ display: 'flex', flexWrap: 'wrap', gap: 8, margin: '0 0 28px' }}>{['NFT tutorials', 'NFT live streaming', 'NFT livestreams', 'NFT minting', 'NFT marketplaces', 'NFT collections', 'NFT gaming', 'NFT art', 'Web3 creators', 'Blockchain education'].map(topic => <span key={topic} style={levelTag}>{topic.toUpperCase()}</span>)}</section>
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, color: '#929292', font: '10px monospace', letterSpacing: '.1em' }}>
       <span>APPROVED VIDEOS</span><span>{visible.length} VIDEOS</span>
     </div>

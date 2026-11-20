@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
-import { adminGet, setAdminCsrfToken } from '@/lib/admin-api'
 
 type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced'
 interface VideoRecord {
@@ -51,7 +50,7 @@ export default function VideoCatalogueClient() {
     }).sort((a, b) => Number(b.is_featured) - Number(a.is_featured) || a.display_order - b.display_order)
   }, [videos, level, search])
 
-  if (loading) return <main style={shell}><p style={kicker}>WEB3FARMYARD / NFT & WEB3 VIDEO LIBRARY</p><h1 style={heading}>Loading the learning shelf…</h1></main>
+  if (loading) return <main style={shell}><p style={kicker}>WEB3FARMYARD / NFT & WEB3 VIDEO LIBRARY</p><h1 style={heading}>Loading videos…</h1></main>
 
   return <main style={shell}>
     <header style={{ maxWidth: 850, marginBottom: 34 }}>

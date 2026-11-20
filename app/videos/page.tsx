@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import VideoCatalogueClient from './VideoCatalogueClient'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'NFT Videos, Tutorials & Live Streaming Guides',
@@ -10,5 +12,9 @@ export const metadata: Metadata = {
 }
 
 export default function VideosPage() {
-  return <VideoCatalogueClient />
+  return <>
+    <Nav />
+    <VideoCatalogueClient />
+    <Footer />
+  </>
 }

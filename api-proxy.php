@@ -443,11 +443,13 @@ function cleanYouTubeVideoPayload(array $body, bool $required): array {
     } elseif ($required) $clean['categories'] = [];
     if (isset($body['tags'])) {
         if (!is_array($body['tags'])) fail(400, 'Search tags must be a list.');
-        $clean['tags'] = array_values(array_unique(array_filter(
-            array_map(static fn($v) => is_string($v) ? strtolower(trim($v)) : '', $body['tags']),
-            static fn($v) => $v !== '' && strlen($v) <= 50 && preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $v)
-        )));
-        if (count($clean['tags']) !== count($body['tags'])) fail(400, 'Search tags must use letters, numbers and hyphens only.');
+        $normalizedTags = array_map(static fn($v) => is_string($v) ? strtolower(trim($v)) : '', $body['tags']);
+        foreach ($normalizedTags as $tag) {
+            if ($tag === '' || strlen($tag) > 50 || !preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $tag)) {
+                fail(400, 'Search tags must use letters, numbers and hyphens only.');
+            }
+        }
+        $clean['tags'] = array_values(array_unique($normalizedTags));
         if (count($clean['tags']) > 20) fail(400, 'A video can have at most 20 search tags.');
     } elseif ($required) $clean['tags'] = [];
     if (isset($body['status'])) { if (!in_array($body['status'], ['draft','approved','rejected'], true)) fail(400, 'Invalid video status.'); $clean['status'] = $body['status']; }

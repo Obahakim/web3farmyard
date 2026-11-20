@@ -324,6 +324,11 @@ try {
         return $b['tvl'] <=> $a['tvl'];
     });
 
+    // Never replace a previously valid snapshot with an empty upstream response.
+    if ($chainList === []) {
+        throw new RuntimeException('DeFiLlama returned no usable chain data; the existing Showroom snapshot was preserved.');
+    }
+
     $snapshot = [
         'updatedAt' => gmdate(DATE_ATOM),
         'partialFailures' => $nftFailureCount + $historyFailureCount + $volumeFailureCount,

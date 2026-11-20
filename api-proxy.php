@@ -316,7 +316,7 @@ function adminData(string $base, string $key, string $method): void {
             'analytics_events' => 'timestamp', 'newsletter_sends' => 'sent_at',
             'youtube_videos' => 'display_order',
         ][$table] ?? 'created_at';
-        $query[] = 'order=' . $orderBy . '.desc';
+        $query[] = 'order=' . $orderBy . ($table === 'youtube_videos' ? '.asc' : '.desc');
         $result = supabaseRequest($base, $key, 'GET', $table . '?' . implode('&', $query));
         echo $result['raw'];
         return;

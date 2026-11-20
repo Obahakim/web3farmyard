@@ -140,10 +140,33 @@ try {
     }
 
     $force = in_array('--force', $argv ?? [], true);
-    clearstatcache(true, SHOWROOM_CACHE);
-    $cacheModifiedAt = is_file(SHOWROOM_CACHE) ? filemtime(SHOWROOM_CACHE) : false;
-    if (!$force && $cacheModifiedAt !== false && time() - $cacheModifiedAt < 86400) {
-        fwrite(STDOUT, "The Showroom snapshot is less than 24 hours old; no refresh needed.\n");
+
+    // Judge freshness from the snapshot's own update timestamp, not filemtime().
+    // Static deployments can replace the cache file and reset its filesystem timestamp.
+    $cacheIsFresh = false;
+    if (is_file(SHOWROOM_CACHE)) {
+        $cacheContents = file_get_contents(SHOWROOM_CACHE);
+        $cachedSnapshot = is_string($cacheContents) ? json_decode($cacheContents, true) : null;
+
+        if (
+            is_array($cachedSnapshot) &&
+            isset($cachedSnapshot['updatedAt']) &&
+            is_string($cachedSnapshot['updatedAt']) &&
+            isset($cachedSnapshot['chains']) &&
+            is_array($cachedSnapshot['chains']) &&
+            count($cachedSnapshot['chains']) > 0
+        ) {
+            $snapshotUpdatedAt = strtotime($cachedSnapshot['updatedAt']);
+            $now = time();
+
+            $cacheIsFresh = $snapshotUpdatedAt !== false
+                && $snapshotUpdatedAt <= ($now + 300)
+                && ($now - $snapshotUpdatedAt) < 86400;
+        }
+    }
+
+    if (!$force && $cacheIsFresh) {
+        fwrite(STDOUT, "The Showroom snapshot data is less than 24 hours old; no refresh needed.\n");
         flock($lockHandle, LOCK_UN);
         fclose($lockHandle);
         exit(0);

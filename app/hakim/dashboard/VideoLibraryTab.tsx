@@ -12,6 +12,7 @@ interface VideoRecord extends YouTubePreview {
   summary: string
   difficulty: Difficulty[]
   categories: string[]
+  tags: string[]
   status: VideoStatus
   is_featured: boolean
   display_order: number
@@ -36,6 +37,7 @@ export default function VideoLibraryTab() {
   const [summary, setSummary] = useState('')
   const [difficulty, setDifficulty] = useState<Difficulty[]>([])
   const [categories, setCategories] = useState('')
+  const [tags, setTags] = useState('')
   const [status, setStatus] = useState<VideoStatus>('draft')
   const [featured, setFeatured] = useState(false)
   const [order, setOrder] = useState('0')
@@ -73,6 +75,7 @@ export default function VideoLibraryTab() {
     setSummary('')
     setDifficulty([])
     setCategories('')
+    setTags('')
     setStatus('draft')
     setFeatured(false)
     setOrder('0')
@@ -115,6 +118,7 @@ export default function VideoLibraryTab() {
     setSummary(video.summary || '')
     setDifficulty(video.difficulty || [])
     setCategories((video.categories || []).join(', '))
+    setTags((video.tags || []).join(', '))
     setStatus(video.status)
     setFeatured(video.is_featured)
     setOrder(String(video.display_order ?? 0))
@@ -139,6 +143,7 @@ export default function VideoLibraryTab() {
       summary,
       difficulty,
       categories: categories.split(',').map(item => item.trim().toLowerCase().replace(/\s+/g, '-')).filter(Boolean),
+      tags: tags.split(',').map(item => item.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')).filter(Boolean).slice(0, 20),
       status,
       is_featured: featured,
       display_order: Math.max(0, Number(order) || 0),
@@ -247,6 +252,11 @@ export default function VideoLibraryTab() {
                 <label style={label}>ADMIN CATEGORIES · OPTIONAL / NOT PUBLIC YET</label>
                 <input value={categories} onChange={event => setCategories(event.target.value)} placeholder="e.g. DeFi, NFTs, Wallets" style={field} />
                 <div style={{ color: '#666', fontSize: 10, marginTop: 5 }}>Comma-separated. Stored for internal filtering only.</div>
+              </div>
+              <div>
+                <label style={label}>SEARCH TAGS · UP TO 20</label>
+                <input value={tags} onChange={event => setTags(event.target.value)} placeholder="e.g. nft-live-streaming, nft-marketplace, nft-minting" style={field} />
+                <div style={{ color: '#666', fontSize: 10, marginTop: 5 }}>Comma-separated search phrases. These appear on public video cards and are included in catalogue search. Use terms that accurately describe the lesson.</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 <div>

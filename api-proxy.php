@@ -156,6 +156,14 @@ switch ($action) {
         sendNewsletter($SUPABASE_URL, $SUPABASE_KEY, $RESEND_KEY, $UNSUBSCRIBE_SECRET);
         exit;
 
+    case 'youtube-preview':
+        requireMethod('POST');
+        requireAdmin();
+        requireSameOrigin($allowedOrigins);
+        requireCsrf();
+        previewYouTubeVideo();
+        exit;
+
     case 'subscribe':
         requireMethod('POST');
         requireSameOrigin($allowedOrigins);
@@ -283,6 +291,7 @@ function adminData(string $base, string $key, string $method): void {
         'user_progress' => ['GET' => true],
         'analytics_events' => ['GET' => true],
         'newsletter_sends' => ['GET' => true],
+        'youtube_videos' => ['GET' => true, 'POST' => true, 'PATCH' => true],
     ];
     if (!isset($allowed[$table][$method])) fail(403, 'This table/operation is not permitted.');
     $query = [];
@@ -305,6 +314,7 @@ function adminData(string $base, string $key, string $method): void {
             'airdrops' => 'created_at', 'subscribers' => 'created_at',
             'farmer_profiles' => 'updated_at', 'user_progress' => 'last_updated',
             'analytics_events' => 'timestamp', 'newsletter_sends' => 'sent_at',
+            'youtube_videos' => 'display_order',
         ][$table] ?? 'created_at';
         $query[] = 'order=' . $orderBy . '.desc';
         $result = supabaseRequest($base, $key, 'GET', $table . '?' . implode('&', $query));
@@ -313,25 +323,43 @@ function adminData(string $base, string $key, string $method): void {
     }
     $body = readJson();
     if ($method === 'POST') {
-        if ($table !== 'airdrops') fail(403, 'Insert not permitted.');
-        $fields = ['name','logo','reward_amount','task','chain','risk','deadline','url','image_url','topics','status'];
-        $clean = [];
-        foreach ($fields as $field) if (array_key_exists($field, $body)) $clean[$field] = $body[$field];
-        if (empty($clean['name']) || empty($clean['reward_amount'])) fail(400, 'Airdrop name and reward are required.');
-        $clean['status'] = 'live';
-        $result = supabaseRequest($base, $key, 'POST', 'airdrops?select=*', $clean, ['Prefer: return=representation']);
-        echo $result['raw'];
-        return;
+        if ($table === 'airdrops') {
+            $fields = ['name','logo','reward_amount','task','chain','risk','deadline','url','image_url','topics','status'];
+            $clean = [];
+            foreach ($fields as $field) if (array_key_exists($field, $body)) $clean[$field] = $body[$field];
+            if (empty($clean['name']) || empty($clean['reward_amount'])) fail(400, 'Airdrop name and reward are required.');
+            $clean['status'] = 'live';
+            $result = supabaseRequest($base, $key, 'POST', 'airdrops?select=*', $clean, ['Prefer: return=representation']);
+            echo $result['raw'];
+            return;
+        }
+        if ($table === 'youtube_videos') {
+            $clean = cleanYouTubeVideoPayload($body, true);
+            $duplicate = supabaseRequest($base, $key, 'GET', 'youtube_videos?youtube_video_id=eq.' . rawurlencode($clean['youtube_video_id']) . '&select=id&limit=1');
+            if (is_array($duplicate['data']) && count($duplicate['data'])) fail(409, 'This YouTube video has already been added.');
+            $result = supabaseRequest($base, $key, 'POST', 'youtube_videos?select=*', $clean, ['Prefer: return=representation']);
+            echo $result['raw'];
+            return;
+        }
+        fail(403, 'Insert not permitted.');
     }
     if ($method === 'PATCH') {
         if (!$query || !isset($_GET['id'])) fail(400, 'A record id is required.');
         if ($table === 'airdrops') {
             $fields = ['name','logo','reward_amount','task','chain','risk','deadline','url','image_url','topics','status'];
+            $clean = [];
+            foreach ($fields as $field) if (array_key_exists($field, $body)) $clean[$field] = $body[$field];
+        } elseif ($table === 'youtube_videos') {
+            $clean = cleanYouTubeVideoPayload($body, false);
+            if (isset($clean['youtube_video_id'])) {
+                $duplicate = supabaseRequest($base, $key, 'GET', 'youtube_videos?youtube_video_id=eq.' . rawurlencode($clean['youtube_video_id']) . '&id=neq.' . rawurlencode((string)$_GET['id']) . '&select=id&limit=1');
+                if (is_array($duplicate['data']) && count($duplicate['data'])) fail(409, 'This YouTube video has already been added.');
+            }
         } else {
             $fields = ['subscribed','topics','frequency','farmer_name'];
+            $clean = [];
+            foreach ($fields as $field) if (array_key_exists($field, $body)) $clean[$field] = $body[$field];
         }
-        $clean = [];
-        foreach ($fields as $field) if (array_key_exists($field, $body)) $clean[$field] = $body[$field];
         if (!$clean) fail(400, 'No permitted fields supplied.');
         $result = supabaseRequest($base, $key, 'PATCH', $table . '?' . implode('&', $query), $clean, ['Prefer: return=representation']);
         echo $result['raw'];
@@ -344,6 +372,66 @@ function adminData(string $base, string $key, string $method): void {
         return;
     }
 }
+
+function extractYouTubeVideoId(string $input): string {
+    $input = trim($input);
+    if (preg_match('/^[A-Za-z0-9_-]{11}$/', $input)) return $input;
+    $parts = parse_url($input);
+    if (!is_array($parts) || empty($parts['host'])) fail(400, 'Enter a valid YouTube URL or 11-character video ID.');
+    $host = strtolower((string)$parts['host']);
+    $allowedHosts = ['youtube.com', 'www.youtube.com', 'm.youtube.com', 'youtu.be', 'www.youtu.be', 'youtube-nocookie.com', 'www.youtube-nocookie.com'];
+    if (!in_array($host, $allowedHosts, true)) fail(400, 'Only YouTube video URLs are supported.');
+    $path = trim((string)($parts['path'] ?? ''), '/');
+    $id = '';
+    if ($host === 'youtu.be' || $host === 'www.youtu.be') $id = explode('/', $path)[0] ?? '';
+    elseif (preg_match('#^(?:embed|shorts|live)/([A-Za-z0-9_-]{11})$#', $path, $matches)) $id = $matches[1];
+    else { parse_str((string)($parts['query'] ?? ''), $query); $id = (string)($query['v'] ?? ''); }
+    if (!preg_match('/^[A-Za-z0-9_-]{11}$/', $id)) fail(400, 'The YouTube URL does not contain a valid video ID.');
+    return $id;
+}
+function previewYouTubeVideo(): void {
+    $body = readJson();
+    $videoId = extractYouTubeVideoId((string)($body['url'] ?? $body['video_id'] ?? ''));
+    $canonicalUrl = 'https://www.youtube.com/watch?v=' . rawurlencode($videoId);
+    $endpoint = 'https://www.youtube.com/oembed?url=' . rawurlencode($canonicalUrl) . '&format=json';
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 12, CURLOPT_CONNECTTIMEOUT => 5, CURLOPT_SSL_VERIFYPEER => true, CURLOPT_USERAGENT => 'Web3Farmyard/1.0 (+https://web3farmyard.com)']);
+    $response = curl_exec($ch); $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+    if ($response === false || $status !== 200) fail(422, 'YouTube could not return metadata. Check that the video is public or unlisted and the URL is correct.');
+    $metadata = json_decode((string)$response, true);
+    if (!is_array($metadata) || empty($metadata['title']) || empty($metadata['author_name']) || empty($metadata['thumbnail_url'])) fail(422, 'YouTube returned incomplete video metadata.');
+    echo json_encode(['video_id' => $videoId, 'youtube_url' => $canonicalUrl, 'title' => substr(strip_tags((string)$metadata['title']), 0, 300), 'channel_title' => substr(strip_tags((string)$metadata['author_name']), 0, 200), 'thumbnail_url' => filter_var((string)$metadata['thumbnail_url'], FILTER_VALIDATE_URL) ? (string)$metadata['thumbnail_url'] : ''], JSON_UNESCAPED_SLASHES);
+}
+function cleanYouTubeVideoPayload(array $body, bool $required): array {
+    $clean = [];
+    if (array_key_exists('youtube_video_id', $body)) { $id = extractYouTubeVideoId((string)$body['youtube_video_id']); $clean['youtube_video_id'] = $id; $clean['youtube_url'] = 'https://www.youtube.com/watch?v=' . rawurlencode($id); }
+    elseif ($required) fail(400, 'Preview a YouTube video before saving it.');
+    foreach (['title' => 300, 'channel_title' => 200, 'thumbnail_url' => 2048, 'summary' => 3000] as $field => $max) {
+        if (array_key_exists($field, $body)) { $value = trim(strip_tags((string)$body[$field])); if (strlen($value) > $max) fail(400, 'Video ' . $field . ' is too long.'); $clean[$field] = $value; }
+    }
+    if ($required && (empty($clean['title']) || empty($clean['channel_title']) || empty($clean['thumbnail_url']))) fail(400, 'Preview metadata is required before saving.');
+    if (isset($clean['thumbnail_url']) && !preg_match('#^https://(i\.ytimg\.com|img\.youtube\.com)/#', $clean['thumbnail_url'])) fail(400, 'Invalid YouTube thumbnail URL.');
+    if (isset($body['difficulty'])) {
+        if (!is_array($body['difficulty'])) fail(400, 'Difficulty must be a list.');
+        $allowed = ['Beginner','Intermediate','Advanced'];
+        $clean['difficulty'] = array_values(array_unique(array_filter($body['difficulty'], fn($v) => is_string($v) && in_array($v, $allowed, true))));
+        if (count($clean['difficulty']) !== count($body['difficulty'])) fail(400, 'Invalid difficulty selection.');
+    } elseif ($required) $clean['difficulty'] = [];
+    if (isset($body['categories'])) {
+        if (!is_array($body['categories'])) fail(400, 'Categories must be a list.');
+        $clean['categories'] = array_values(array_unique(array_filter($body['categories'], fn($v) => is_string($v) && preg_match('/^[a-z0-9_-]{1,40}$/', $v))));
+    } elseif ($required) $clean['categories'] = [];
+    if (isset($body['status'])) { if (!in_array($body['status'], ['draft','approved','rejected'], true)) fail(400, 'Invalid video status.'); $clean['status'] = $body['status']; }
+    elseif ($required) $clean['status'] = 'draft';
+    if (isset($body['is_featured'])) $clean['is_featured'] = (bool)$body['is_featured'];
+    elseif ($required) $clean['is_featured'] = false;
+    if (isset($body['display_order'])) $clean['display_order'] = max(0, min(100000, (int)$body['display_order']));
+    elseif ($required) $clean['display_order'] = 0;
+    if ($required || isset($clean['status'])) $clean['published_at'] = (($clean['status'] ?? 'draft') === 'approved') ? gmdate('c') : null;
+    $clean['updated_at'] = gmdate('c');
+    return $clean;
+}
+
 function subscribePublic(string $base, string $key, string $resendKey, string $unsubscribeSecret, string $ip): void {
     $body = readJson();
     $email = strtolower(trim((string)($body['email'] ?? '')));
@@ -379,7 +467,7 @@ function subscribePublic(string $base, string $key, string $resendKey, string $u
     $displayName = htmlspecialchars($name !== '' ? $name : 'Web3 learner', ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
     $unsubscribeToken = hash_hmac('sha256', $email, $unsubscribeSecret);
     $unsubscribeUrl = 'https://web3farmyard.com/api-proxy.php?action=unsubscribe&email=' . rawurlencode($email) . '&token=' . $unsubscribeToken;
-    $welcome = '<html><body style="background:#080808;color:#d0d0d0;font-family:Georgia,serif;padding:40px"><div style="max-width:560px;margin:0 auto"><div style="font-family:monospace;font-size:10px;color:#c8ff00;letter-spacing:.2em;margin-bottom:12px">WEB3FARMYARD.COM</div><h1 style="font-size:22px;color:#f0f0f0">Welcome to the Farmyard, ' . $displayName . '.</h1><p style="color:#aaa;line-height:1.8">You will hear from us when there is something worth reading.</p><a href="https://web3farmyard.com" style="color:#c8ff00">Visit Web3Farmyard</a><p style="margin-top:28px;font-size:12px"><a href="' . htmlspecialchars($unsubscribeUrl, ENT_QUOTES, 'UTF-8') . '" style="color:#888">Unsubscribe</a></p></div></body></html>';
+    $welcome = '<!doctype html><html><body style="margin:0;background:#080808;color:#d0d0d0;font-family:Georgia,serif;padding:32px 16px"><main style="max-width:600px;margin:0 auto;border:1px solid #222;background:#101010;padding:32px"><div style="font-family:monospace;font-size:10px;color:#c8ff00;letter-spacing:.2em;margin-bottom:16px">WEB3FARMYARD.COM</div><h1 style="font-size:28px;line-height:1.2;color:#f5f5f5;margin:0 0 18px">Welcome to the Farmyard, ' . $displayName . '.</h1><p style="color:#c8c8c8;line-height:1.8">You are now on the list. Web3 moves quickly, but useful knowledge should not feel confusing or out of reach. Our goal is to help you understand the tools, spot opportunities more carefully, and make better-informed decisions as you explore.</p><h2 style="font-size:17px;color:#f0f0f0;margin:26px 0 10px">A good place to start</h2><ul style="padding-left:20px;color:#b8b8b8;line-height:1.9"><li><a href="https://web3farmyard.com/airdrops/" style="color:#c8ff00">Airdrops</a> — explore projects and participation opportunities.</li><li><a href="https://web3farmyard.com/showroom/" style="color:#c8ff00">Showroom</a> — follow DeFi ecosystem activity and on-chain data.</li><li><a href="https://web3farmyard.com/junkyard/" style="color:#c8ff00">Junkyard</a> — learn from failed projects, risks and red flags.</li><li><a href="https://web3farmyard.com/toolkit/" style="color:#c8ff00">Toolkit</a> and <a href="https://web3farmyard.com/blog/" style="color:#c8ff00">Guides</a> — build your understanding one step at a time.</li></ul><p style="color:#b8b8b8;line-height:1.8">We will send occasional updates, practical guides and relevant ecosystem insights. We will aim for signal over noise; you can change your subscription preferences or unsubscribe at any time.</p><p style="margin:26px 0"><a href="https://web3farmyard.com/" style="display:inline-block;background:#c8ff00;color:#080808;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:13px 20px;border-radius:4px">EXPLORE WEB3FARMYARD</a></p><p style="margin-top:28px;padding-top:18px;border-top:1px solid #292929;font-size:12px;color:#777;line-height:1.7">You received this email because you subscribed to Web3Farmyard. <a href="' . htmlspecialchars($unsubscribeUrl, ENT_QUOTES, 'UTF-8') . '" style="color:#aaa">Unsubscribe</a>.</p></main></body></html>';
     resendSend($resendKey, $email, 'Welcome to Web3Farmyard 🌾', $welcome);
     echo json_encode(['success' => true, 'message' => 'Welcome to Web3Farmyard.']);
 }

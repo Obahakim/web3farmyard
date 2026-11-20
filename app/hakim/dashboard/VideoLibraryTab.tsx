@@ -7,6 +7,7 @@ type VideoStatus = 'draft' | 'approved' | 'rejected'
 type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced'
 
 interface VideoRecord extends YouTubePreview {
+  youtube_video_id: string
   id: string
   summary: string
   difficulty: Difficulty[]

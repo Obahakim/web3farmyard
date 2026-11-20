@@ -1,0 +1,34 @@
+name: Verify admin dashboard
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web3farmyard-dashboard-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_PUBLIC_SUPA_URL: https://example.supabase.co
+      NEXT_PUBLIC_SUPA_KEY: sb_publishable_placeholder
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+      - run: php -l api-proxy.php
+      - run: npx tsc --noEmit
+      - run: npm run build

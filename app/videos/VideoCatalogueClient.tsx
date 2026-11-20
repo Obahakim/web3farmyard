@@ -14,6 +14,7 @@ interface VideoRecord {
   thumbnail_url: string
   summary: string
   difficulty: Difficulty[]
+  tags: string[]
   status: 'draft' | 'approved' | 'rejected'
   is_featured: boolean
   display_order: number
@@ -26,26 +27,15 @@ export default function VideoCatalogueClient() {
   const [level, setLevel] = useState<typeof levels[number]>('All levels')
   const [search, setSearch] = useState('')
   const [loading, setLoading] = useState(true)
-  const [access, setAccess] = useState<'checking' | 'allowed' | 'denied'>('checking')
   const [error, setError] = useState('')
 
   useEffect(() => {
     let active = true
-    fetch('/api-proxy.php?action=admin-session', { credentials: 'include', cache: 'no-store' })
+    fetch('/api-proxy.php?action=public-videos', { cache: 'no-store' })
       .then(async response => {
-        const session = await response.json().catch(() => ({}))
-        if (!active) return
-        if (!response.ok || !session.authenticated || !session.csrfToken) {
-          setAccess('denied')
-          setLoading(false)
-          return
-        }
-        setAdminCsrfToken(session.csrfToken)
-        setAccess('allowed')
-        return adminGet<VideoRecord[]>('youtube_videos', 500)
-      })
-      .then(data => {
-        if (active && data) setVideos(data.filter(video => video.status === 'approved'))
+        if (!response.ok) throw new Error('The video catalogue is temporarily unavailable.')
+        const data = await response.json()
+        if (active) setVideos(Array.isArray(data) ? data : [])
       })
       .catch(err => { if (active) setError(err instanceof Error ? err.message : 'Unable to load the catalogue.') })
       .finally(() => { if (active) setLoading(false) })
@@ -56,21 +46,20 @@ export default function VideoCatalogueClient() {
     const term = search.trim().toLowerCase()
     return videos.filter(video => {
       const matchesLevel = level === 'All levels' || (video.difficulty || []).includes(level)
-      const matchesSearch = !term || [video.title, video.channel_title, video.summary].join(' ').toLowerCase().includes(term)
+      const matchesSearch = !term || [video.title, video.channel_title, video.summary, ...(video.tags || [])].join(' ').toLowerCase().includes(term)
       return matchesLevel && matchesSearch
     }).sort((a, b) => Number(b.is_featured) - Number(a.is_featured) || a.display_order - b.display_order)
   }, [videos, level, search])
 
-  if (access === 'checking' || loading) return <main style={shell}><p style={kicker}>WEB3FARMYARD / VIDEO LIBRARY</p><h1 style={heading}>Loading the learning shelf…</h1></main>
-  if (access === 'denied') return <main style={shell}><p style={kicker}>PRIVATE PREVIEW</p><h1 style={heading}>Video catalogue in development</h1><p style={copy}>This catalogue is not open to the public yet.</p><Link href="/hakim/dashboard/" style={button}>ADMIN SIGN IN</Link></main>
+  if (loading) return <main style={shell}><p style={kicker}>WEB3FARMYARD / NFT & WEB3 VIDEO LIBRARY</p><h1 style={heading}>Loading the learning shelf…</h1></main>
 
   return <main style={shell}>
     <header style={{ maxWidth: 850, marginBottom: 34 }}>
       <p style={kicker}>WEB3FARMYARD / LEARN BY WATCHING</p>
-      <h1 style={heading}>The Learning Shelf<span style={{ color: '#c8ff00' }}>.</span></h1>
-      <p style={copy}>Practical lessons from people building across Web3. Choose a topic, find your level and learn at your own pace.</p>
+      <h1 style={heading}>Videos<span style={{ color: '#c8ff00' }}>.</span></h1>
+      <p style={copy}>Explore NFT tutorials, NFT marketplace walkthroughs, NFT minting guides, Web3 creator interviews and NFT live-streaming sessions. Search by topic or difficulty, then learn directly from the people building across Web3.</p>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, marginTop: 22 }}>
-        <input aria-label="Search videos" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search lessons or creators…" style={searchField} />
+        <input aria-label="Search videos" value={search} onChange={event => setSearch(event.target.value)} placeholder="Search NFTs, live streaming, marketplaces, creators…" style={searchField} />
         <select aria-label="Filter by difficulty" value={level} onChange={event => setLevel(event.target.value as typeof level)} style={searchField}>
           {levels.map(item => <option key={item} value={item}>{item}</option>)}
         </select>
@@ -78,7 +67,7 @@ export default function VideoCatalogueClient() {
     </header>
     {error && <p role="alert" style={{ color: '#ff9292' }}>{error}</p>}
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16, color: '#929292', font: '10px monospace', letterSpacing: '.1em' }}>
-      <span>APPROVED LESSONS</span><span>{visible.length} VIDEOS</span>
+      <span>APPROVED VIDEOS</span><span>{visible.length} VIDEOS</span>
     </div>
     {visible.length === 0 ? <section style={empty}><strong style={{ color: '#eee', fontSize: 18 }}>The shelf is being stocked.</strong><p style={copy}>Approved lessons will appear here as they are published.</p></section> :
       <section style={grid}>
@@ -92,6 +81,7 @@ export default function VideoCatalogueClient() {
           <div style={{ padding: 17 }}>
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 10 }}>
               {(video.difficulty || []).map(item => <span key={item} style={levelTag}>{item.toUpperCase()}</span>)}
+              {(video.tags || []).slice(0, 4).map(tag => <span key={tag} style={levelTag}>#{tag.replace(/-/g, ' ')}</span>)}
             </div>
             <h2 style={cardTitle}>{video.title}</h2>
             <p style={creator}>{video.channel_title}</p>
@@ -101,7 +91,7 @@ export default function VideoCatalogueClient() {
         </Link>)}
       </section>
     }
-    <footer style={{ marginTop: 64, paddingTop: 20, borderTop: '1px solid #252525', color: '#666', font: '9px monospace', letterSpacing: '.1em' }}>WEB3FARMYARD · LEARN WITH INTENTION</footer>
+    <footer style={{ marginTop: 64, paddingTop: 20, borderTop: '1px solid #252525', color: '#666', font: '9px monospace', letterSpacing: '.1em' }}>WEB3FARMYARD · NFT EDUCATION · WEB3 VIDEO GUIDES · CREATOR STREAMS</footer>
   </main>
 }
 

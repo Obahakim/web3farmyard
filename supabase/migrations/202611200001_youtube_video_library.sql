@@ -23,5 +23,7 @@ CREATE INDEX IF NOT EXISTS youtube_videos_public_order_idx ON public.youtube_vid
 CREATE INDEX IF NOT EXISTS youtube_videos_status_idx ON public.youtube_videos (status, updated_at DESC);
 ALTER TABLE public.youtube_videos ENABLE ROW LEVEL SECURITY;
 REVOKE ALL PRIVILEGES ON TABLE public.youtube_videos FROM anon, authenticated, PUBLIC;
+REVOKE ALL PRIVILEGES ON SEQUENCE public.youtube_videos_id_seq FROM anon, authenticated, PUBLIC;
 GRANT ALL PRIVILEGES ON TABLE public.youtube_videos TO service_role;
+GRANT USAGE, SELECT ON SEQUENCE public.youtube_videos_id_seq TO service_role;
 COMMIT;

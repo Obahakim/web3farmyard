@@ -164,6 +164,18 @@ export default function VideoLibraryTab() {
     }
   }
 
+  async function deleteVideo(video: VideoRecord) {
+    if (!window.confirm('Permanently delete "' + video.title + '" from the video library?')) return
+    try {
+      await (await import('@/lib/admin-api')).adminDelete('youtube_videos', video.id)
+      setVideos(current => current.filter(item => item.id !== video.id))
+      if (editingId === video.id) resetForm()
+      setNotice('Video record deleted.')
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'Could not delete this video.')
+    }
+  }
+
   async function updateStatus(video: VideoRecord, next: VideoStatus) {
     try {
       const result = await adminPatch<VideoRecord[]>('youtube_videos', video.id, { status: next })
@@ -295,6 +307,7 @@ export default function VideoLibraryTab() {
                   {video.status !== 'approved' && <button type="button" style={primary} onClick={() => void updateStatus(video, 'approved')}>APPROVE</button>}
                   {video.status !== 'rejected' && <button type="button" style={button} onClick={() => void updateStatus(video, 'rejected')}>REJECT</button>}
                   {video.status !== 'draft' && <button type="button" style={button} onClick={() => void updateStatus(video, 'draft')}>SET DRAFT</button>}
+                  <button type="button" style={{ ...button, color: '#ff8585' }} onClick={() => void deleteVideo(video)}>DELETE</button>
                   <a href={video.youtube_url} target="_blank" rel="noreferrer" style={{ color: '#c8ff00', font: '700 9px monospace', textAlign: 'center', textDecoration: 'none' }}>WATCH ↗</a>
                 </div>
               </article>

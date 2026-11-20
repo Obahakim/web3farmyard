@@ -142,6 +142,11 @@ switch ($action) {
         adminData($SUPABASE_URL, $SUPABASE_KEY, $method);
         exit;
 
+    case 'public-videos':
+        requireMethod('GET');
+        publicVideos($SUPABASE_URL, $SUPABASE_KEY);
+        exit;
+
     case 'analytics':
         requireMethod('POST');
         requireSameOrigin($allowedOrigins);
@@ -374,6 +379,20 @@ function adminData(string $base, string $key, string $method): void {
 
 }
 
+function publicVideos(string $base, string $key): void {
+    header('Cache-Control: public, max-age=60, s-maxage=300, stale-while-revalidate=600');
+    $result = supabaseRequest(
+        $base,
+        $key,
+        'GET',
+        'youtube_videos?status=eq.approved&select=id,youtube_video_id,youtube_url,title,channel_title,thumbnail_url,summary,difficulty,tags,is_featured,display_order,published_at&order=is_featured.desc,display_order.asc,published_at.desc&limit=100'
+    );
+    $rows = is_array($result['data']) ? $result['data'] : [];
+    // Keep the public response limited to approved editorial fields only.
+    $publicRows = array_values(array_filter($rows, static fn($row) => is_array($row) && ($row['status'] ?? 'approved') === 'approved'));
+    echo json_encode($publicRows, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+}
+
 function extractYouTubeVideoId(string $input): string {
     $input = trim($input);
     if (preg_match('/^[A-Za-z0-9_-]{11}$/', $input)) return $input;
@@ -422,6 +441,15 @@ function cleanYouTubeVideoPayload(array $body, bool $required): array {
         if (!is_array($body['categories'])) fail(400, 'Categories must be a list.');
         $clean['categories'] = array_values(array_unique(array_filter($body['categories'], fn($v) => is_string($v) && preg_match('/^[a-z0-9_-]{1,40}$/', $v))));
     } elseif ($required) $clean['categories'] = [];
+    if (isset($body['tags'])) {
+        if (!is_array($body['tags'])) fail(400, 'Search tags must be a list.');
+        $clean['tags'] = array_values(array_unique(array_filter(
+            array_map(static fn($v) => is_string($v) ? strtolower(trim($v)) : '', $body['tags']),
+            static fn($v) => $v !== '' && strlen($v) <= 50 && preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $v)
+        )));
+        if (count($clean['tags']) !== count($body['tags'])) fail(400, 'Search tags must use letters, numbers and hyphens only.');
+        if (count($clean['tags']) > 20) fail(400, 'A video can have at most 20 search tags.');
+    } elseif ($required) $clean['tags'] = [];
     if (isset($body['status'])) { if (!in_array($body['status'], ['draft','approved','rejected'], true)) fail(400, 'Invalid video status.'); $clean['status'] = $body['status']; }
     elseif ($required) $clean['status'] = 'draft';
     if (isset($body['is_featured'])) $clean['is_featured'] = (bool)$body['is_featured'];

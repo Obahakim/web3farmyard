@@ -68,3 +68,18 @@ export function adminLogout(): Promise<{ authenticated: false }> {
     body: JSON.stringify({}),
   })
 }
+
+export interface YouTubePreview {
+  video_id: string
+  youtube_url: string
+  title: string
+  channel_title: string
+  thumbnail_url: string
+}
+
+export function adminYoutubePreview(url: string): Promise<YouTubePreview> {
+  return request<YouTubePreview>('youtube-preview', {
+    method: 'POST',
+    body: JSON.stringify({ url }),
+  })
+}

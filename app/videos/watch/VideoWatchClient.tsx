@@ -11,7 +11,7 @@ interface VideoRecord {
   channel_title: string
   summary: string
   difficulty: string[]
-  status: string
+  tags: string[]
 }
 
 export default function VideoWatchClient() {
@@ -22,14 +22,11 @@ export default function VideoWatchClient() {
     let active = true
     const id = new URLSearchParams(window.location.search).get('v')
     if (!id) { setState('missing'); return }
-    fetch('/api-proxy.php?action=admin-session', { credentials: 'include', cache: 'no-store' })
+    fetch('/api-proxy.php?action=public-videos', { cache: 'no-store' })
       .then(async response => {
-        const session = await response.json().catch(() => ({}))
-        if (!active) return
-        if (!response.ok || !session.authenticated || !session.csrfToken) { setState('denied'); return }
-        setAdminCsrfToken(session.csrfToken)
-        const rows = await adminGet<VideoRecord[]>('youtube_videos', 500)
-        const selected = rows.find(row => String(row.id) === id && row.status === 'approved')
+        if (!response.ok) throw new Error('Unable to load this video.')
+        const rows = await response.json()
+        const selected = Array.isArray(rows) ? rows.find((row: VideoRecord) => String(row.id) === id) : null
         if (!active) return
         if (selected) { setVideo(selected); setState('ready') } else setState('missing')
       })
@@ -50,7 +47,7 @@ export default function VideoWatchClient() {
       <p style={kicker}>WEB3FARMYARD / VIDEO LESSON</p>
       <h1 style={title}>{video.title}</h1>
       <p style={creator}>{video.channel_title}</p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, margin: '16px 0' }}>{(video.difficulty || []).map(item => <span key={item} style={tag}>{item.toUpperCase()}</span>)}</div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7, margin: '16px 0' }}>{(video.difficulty || []).map(item => <span key={item} style={tag}>{item.toUpperCase()}</span>)}{(video.tags || []).map(item => <span key={item} style={tag}>#{item.replace(/-/g, ' ')}</span>)}</div>
       {video.summary && <p style={summary}>{video.summary}</p>}
     </article>
   </main>

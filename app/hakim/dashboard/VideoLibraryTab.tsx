@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
-import { adminGet, adminPost, adminPatch, adminYoutubePreview, type YouTubePreview } from '@/lib/admin-api'
+import { adminGet, adminPost, adminPatch, adminDelete, adminYoutubePreview, type YouTubePreview } from '@/lib/admin-api'
 
 type VideoStatus = 'draft' | 'approved' | 'rejected'
 type Difficulty = 'Beginner' | 'Intermediate' | 'Advanced'
@@ -167,7 +167,7 @@ export default function VideoLibraryTab() {
   async function deleteVideo(video: VideoRecord) {
     if (!window.confirm('Permanently delete "' + video.title + '" from the video library?')) return
     try {
-      await (await import('@/lib/admin-api')).adminDelete('youtube_videos', video.id)
+      await adminDelete('youtube_videos', video.id)
       setVideos(current => current.filter(item => item.id !== video.id))
       if (editingId === video.id) resetForm()
       setNotice('Video record deleted.')

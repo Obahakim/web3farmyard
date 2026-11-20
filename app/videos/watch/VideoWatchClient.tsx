@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { adminGet, setAdminCsrfToken } from '@/lib/admin-api'
 
 interface VideoRecord {
   id: number | string

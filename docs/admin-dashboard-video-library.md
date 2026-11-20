@@ -19,6 +19,6 @@ New newsletter subscriptions receive the onboarding message in `api-proxy.php`. 
 
 ## Deployment
 
-Apply the migration `supabase/migrations/202611200001_youtube_video_library.sql` to the target Supabase project before deploying the updated static export and PHP proxy. The production Web3Farmyard Supabase project has already had this migration applied and the table/RLS state verified.
+Apply the migration `supabase/migrations/20261120010652_youtube_video_library.sql` to the target Supabase project before deploying the updated static export and PHP proxy. The production Web3Farmyard Supabase project has already had this migration applied and the table/RLS state verified.
 
 Build from the repository root with `npm ci` and `npm run build`. Upload the contents of `out/` to Hostinger `public_html/`, retaining the existing Showroom cron/data endpoint files and `uploads/` folder as documented in `README-DEPLOY.md`. Keep the secrets file outside `public_html/`.

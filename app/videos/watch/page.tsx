@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import VideoWatchClient from './VideoWatchClient'
 
 export const metadata: Metadata = {
-  title: 'Video Lesson',
-  description: 'A private preview of a Web3Farmyard video lesson.',
-  robots: { index: false, follow: false, noarchive: true },
+  title: 'Web3 Video Lesson',
+  description: 'Watch practical NFT and Web3 video lessons from creators and builders.',
+  robots: { index: false, follow: true, noarchive: true },
 }
 
 export default function VideoWatchPage() {

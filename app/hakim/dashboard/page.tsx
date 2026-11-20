@@ -1,6 +1,8 @@
 'use client'
 import { useEffect, useState, type FormEvent } from "react";
 import { adminGet, adminPost, adminPatch, adminDelete, adminSendNewsletter, adminLogout, setAdminCsrfToken } from "@/lib/admin-api";
+import VideoLibraryTab from "./VideoLibraryTab";
+import { AnalyticsTab, OverviewTab } from "./DashboardOverview";
 
 interface Airdrop {
     id: string;
@@ -30,7 +32,7 @@ interface Subscriber {
 
 
 function Dashboard() {
-    const [tab, setTab] = useState("airdrops");
+    const [tab, setTab] = useState("overview");
     const [authState, setAuthState] = useState<"checking" | "signedOut" | "signedIn">("checking");
     const [password, setPassword] = useState("");
     const [authError, setAuthError] = useState("");
@@ -130,12 +132,19 @@ function Dashboard() {
                 </div>
                 <button onClick={handleLogout} style={{ background: "transparent", border: "1px solid #333", color: "#aaa", padding: "7px 14px", fontFamily: "monospace", fontSize: "9px", cursor: "pointer" }}>LOG OUT</button>
             </div>
-            <main style={{ maxWidth: "1100px", margin: "0 auto", padding: "36px" }}>
-                <StatsBar posts={[]} users={overview.users} airdrops={overview.airdrops} subscribers={overview.subscribers} />
+            <main style={{ maxWidth: "1320px", margin: "0 auto", padding: "clamp(18px, 4vw, 42px)" }}>
+                <div style={{ marginBottom: "26px" }}>
+                    <div style={{ color: "#c8ff00", fontFamily: "monospace", fontSize: "9px", fontWeight: 700, letterSpacing: ".18em", marginBottom: "9px" }}>WEB3FARMYARD / CONTROL ROOM</div>
+                    <h1 style={{ margin: 0, color: "#f4f4f4", fontFamily: "Inter, sans-serif", fontSize: "clamp(27px, 4vw, 38px)", fontWeight: 600, letterSpacing: "-.05em" }}>Admin dashboard</h1>
+                    <p style={{ maxWidth: "650px", margin: "8px 0 0", color: "#858585", fontSize: "12px", lineHeight: 1.7 }}>Manage the Farmyard, its community, campaigns and educational content.</p>
+                </div>
                 <TabBar active={tab} onChange={setTab} />
+                {tab === "overview" && <OverviewTab airdrops={overview.airdrops.length} subscribers={overview.subscribers.length} users={overview.users.length} onNavigate={setTab} />}
                 {tab === "airdrops" && <AirdropsTab />}
                 {tab === "newsletter" && <NewsletterSendTab />}
                 {tab === "subscribers" && <SubscribersTab isuser={false} />}
+                {tab === "analytics" && <AnalyticsTab />}
+                {tab === "videos" && <VideoLibraryTab />}
                 {tab === "users" && <SubscribersTab isuser={true} />}
             </main>
         </div>
@@ -168,10 +177,18 @@ interface TabBarProps {
 }
 
 function TabBar({ active, onChange }: TabBarProps) {
-    const tabs = [{ id: "airdrops", label: "🌾 Airdrops" }, { id: "users", label: "👥 users" }, { id: "subscribers", label: "📬 Subscribers" }, { id: "newsletter", label: "✉️ Send Newsletter" }];
+    const tabs = [
+        { id: "overview", label: "OVERVIEW" },
+        { id: "airdrops", label: "AIRDROPS" },
+        { id: "newsletter", label: "NEWSLETTER" },
+        { id: "subscribers", label: "SUBSCRIBERS" },
+        { id: "analytics", label: "ANALYTICS" },
+        { id: "videos", label: "NFT VIDEO LIBRARY" },
+        { id: "users", label: "USERS" },
+    ];
     return (
         <div style={{ display: "flex", borderBottom: "1px solid #151515", marginBottom: "32px", overflowX: "auto" }}>
-            {tabs.map(t => <button key={t.id} onClick={() => onChange(t.id)} style={{ background: "transparent", border: "none", borderBottom: active === t.id ? "2px solid #c8ff00" : "2px solid transparent", color: active === t.id ? "#c8ff00" : "#3a3a3a", padding: "11px 18px", fontFamily: "mono", fontSize: "9px", letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.15s", marginBottom: "-1px", whiteSpace: "nowrap" }}>{t.label}</button>)}
+            {tabs.map(t => <button key={t.id} onClick={() => onChange(t.id)} style={{ background: "transparent", border: "none", borderBottom: active === t.id ? "2px solid #c8ff00" : "2px solid transparent", color: active === t.id ? "#c8ff00" : "#3a3a3a", padding: "13px 16px", fontFamily: "monospace", fontSize: "9px", fontWeight: 700, letterSpacing: "0.1em", cursor: "pointer", transition: "all 0.15s", marginBottom: "-1px", whiteSpace: "nowrap" }}>{t.label}</button>)}
         </div>
     );
 }

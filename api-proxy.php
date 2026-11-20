@@ -385,7 +385,7 @@ function publicVideos(string $base, string $key): void {
         $base,
         $key,
         'GET',
-        'youtube_videos?status=eq.approved&select=id,youtube_video_id,youtube_url,title,channel_title,thumbnail_url,summary,difficulty,tags,is_featured,display_order,published_at&order=is_featured.desc,display_order.asc,published_at.desc&limit=100'
+        'youtube_videos?status=eq.approved&select=id,youtube_video_id,youtube_url,title,channel_title,thumbnail_url,summary,difficulty,tags,is_featured,display_order,published_at,status&order=is_featured.desc,display_order.asc,published_at.desc&limit=100'
     );
     $rows = is_array($result['data']) ? $result['data'] : [];
     // Keep the public response limited to approved editorial fields only.

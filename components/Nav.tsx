@@ -11,6 +11,7 @@ export default function Nav() {
     { label: 'Home', href: '/' },
     { label: 'Toolkit', href: '/toolkit/' },
     { label: 'Showroom', href: '/showroom/' },
+    { label: 'Videos', href: '/videos/' },
     { label: 'Blog', href: '/blog/' },
     { label: 'Airdrops', href: '/airdrops/' },
     { label: 'Junkyard', href: '/junkyard/' },

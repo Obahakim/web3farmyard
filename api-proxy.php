@@ -291,7 +291,7 @@ function adminData(string $base, string $key, string $method): void {
         'user_progress' => ['GET' => true],
         'analytics_events' => ['GET' => true],
         'newsletter_sends' => ['GET' => true],
-        'youtube_videos' => ['GET' => true, 'POST' => true, 'PATCH' => true],
+        'youtube_videos' => ['GET' => true, 'POST' => true, 'PATCH' => true, 'DELETE' => true],
     ];
     if (!isset($allowed[$table][$method])) fail(403, 'This table/operation is not permitted.');
     $query = [];
@@ -342,6 +342,12 @@ function adminData(string $base, string $key, string $method): void {
             return;
         }
         fail(403, 'Insert not permitted.');
+    }
+    if ($method === 'DELETE') {
+        if (!in_array($table, ['airdrops', 'youtube_videos'], true) || !isset($_GET['id'])) fail(403, 'Delete not permitted.');
+        $result = supabaseRequest($base, $key, 'DELETE', $table . '?' . implode('&', $query), null, ['Prefer: return=representation']);
+        echo $result['raw'];
+        return;
     }
     if ($method === 'PATCH') {
         if (!$query || !isset($_GET['id'])) fail(400, 'A record id is required.');

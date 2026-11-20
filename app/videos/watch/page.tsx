@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import VideoWatchClient from './VideoWatchClient'
+import Nav from '@/components/Nav'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Web3 Video Lesson',
@@ -8,5 +10,9 @@ export const metadata: Metadata = {
 }
 
 export default function VideoWatchPage() {
-  return <VideoWatchClient />
+  return <>
+    <Nav />
+    <VideoWatchClient />
+    <Footer />
+  </>
 }

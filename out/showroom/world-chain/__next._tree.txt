@@ -1,6 +1,6 @@
-:HL["/_next/static/chunks/2p5gpyw89v3mf.css","style"]
+:HL["/_next/static/chunks/12bj884k0wp0b.css","style"]
 :HL["https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap","style"]
 3:[["children",{"s":"__PAGE__","h":160}]]
 2:[["children",{"s":{"n":"chain","t":"d","k":"world-chain","s":[]},"h":96,"c":"$Q3"}]]
 1:[["children",{"s":"showroom","h":64,"c":"$Q2"}]]
-0:{"b":"build-1795132919403","t":{"t":{"s":"","h":16,"c":"$Q1"}}}
+0:{"b":"build-1795144657377","t":{"t":{"s":"","h":16,"c":"$Q1"}}}

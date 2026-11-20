@@ -321,6 +321,12 @@ function adminData(string $base, string $key, string $method): void {
         echo $result['raw'];
         return;
     }
+    if ($method === 'DELETE') {
+        if (!in_array($table, ['airdrops', 'youtube_videos'], true) || !isset($_GET['id'])) fail(403, 'Delete not permitted.');
+        $result = supabaseRequest($base, $key, 'DELETE', $table . '?' . implode('&', $query), null, ['Prefer: return=representation']);
+        echo $result['raw'];
+        return;
+    }
     $body = readJson();
     if ($method === 'POST') {
         if ($table === 'airdrops') {
@@ -342,12 +348,6 @@ function adminData(string $base, string $key, string $method): void {
             return;
         }
         fail(403, 'Insert not permitted.');
-    }
-    if ($method === 'DELETE') {
-        if (!in_array($table, ['airdrops', 'youtube_videos'], true) || !isset($_GET['id'])) fail(403, 'Delete not permitted.');
-        $result = supabaseRequest($base, $key, 'DELETE', $table . '?' . implode('&', $query), null, ['Prefer: return=representation']);
-        echo $result['raw'];
-        return;
     }
     if ($method === 'PATCH') {
         if (!$query || !isset($_GET['id'])) fail(400, 'A record id is required.');
@@ -371,12 +371,7 @@ function adminData(string $base, string $key, string $method): void {
         echo $result['raw'];
         return;
     }
-    if ($method === 'DELETE') {
-        if ($table !== 'airdrops' || !isset($_GET['id'])) fail(403, 'Delete not permitted.');
-        $result = supabaseRequest($base, $key, 'DELETE', $table . '?' . implode('&', $query), null, ['Prefer: return=representation']);
-        echo $result['raw'];
-        return;
-    }
+
 }
 
 function extractYouTubeVideoId(string $input): string {

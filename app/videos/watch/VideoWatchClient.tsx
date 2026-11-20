@@ -15,7 +15,7 @@ interface VideoRecord {
 
 export default function VideoWatchClient() {
   const [video, setVideo] = useState<VideoRecord | null>(null)
-  const [state, setState] = useState<'checking' | 'ready' | 'denied' | 'missing'>('checking')
+  const [state, setState] = useState<'checking' | 'ready' | 'missing'>('checking')
 
   useEffect(() => {
     let active = true
@@ -36,7 +36,6 @@ export default function VideoWatchClient() {
   const frame = (videoId: string) => `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?rel=0`
 
   if (state === 'checking') return <main style={shell}>LOADING LESSON…</main>
-  if (state === 'denied') return <main style={shell}><p style={kicker}>PRIVATE PREVIEW</p><h1 style={title}>This lesson shelf is not public yet.</h1><Link href="/hakim/dashboard/" style={link}>ADMIN SIGN IN</Link></main>
   if (state === 'missing' || !video) return <main style={shell}><p style={kicker}>LESSON NOT FOUND</p><h1 style={title}>This lesson is unavailable.</h1><Link href="/videos/" style={link}>BACK TO THE SHELF</Link></main>
 
   return <main style={shell}>
